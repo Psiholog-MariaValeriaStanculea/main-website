@@ -13,5 +13,9 @@
   "servicesParental": "Parental counselling",
   "logo": "Psychologist Valeria Stănculea",
   "logoShort": "Valeria Stănculea",
-  "phone": "+40 7XX XXX XXX"
+  "phone": "+40 7XX XXX XXX",
+  "menu": "Menu",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "language": "Change language"
 }

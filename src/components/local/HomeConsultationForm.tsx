@@ -71,8 +71,8 @@ const HomeConsultationForm = () => {
       <div className="absolute -top-16 right-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute -bottom-20 left-0 h-72 w-72 rounded-full bg-secondary/10 blur-3xl" />
       <div className="container-max relative z-10">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
+          <div className="min-w-0 space-y-6">
             <SectionEyebrow icon={Send} label={t("consultationForm.eyebrow")} />
             <h2 className="max-w-2xl text-3xl font-heading font-bold leading-tight text-foreground md:text-5xl">
               {t("consultationForm.title")}
@@ -92,7 +92,7 @@ const HomeConsultationForm = () => {
                     <div className="mt-0.5 flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-primary-light/25 text-primary">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <div className="space-y-1">
+                    <div className="min-w-0 space-y-1">
                       <h3 className="font-semibold text-foreground">{point.title}</h3>
                       <p className="text-sm leading-relaxed text-muted-foreground">{point.description}</p>
                     </div>
@@ -104,7 +104,7 @@ const HomeConsultationForm = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-[34px] border border-border/40 bg-white/95 p-8 shadow-soft md:p-10 dark:border-white/10 dark:bg-slate-950/75"
+            className="min-w-0 space-y-5 rounded-[34px] border border-border/40 bg-white/95 p-6 shadow-soft sm:p-8 md:p-10 dark:border-white/10 dark:bg-slate-950/75"
           >
             <div className="rounded-[24px] bg-primary-light/10 px-5 py-4 text-sm text-muted-foreground dark:bg-primary/10 dark:text-slate-200">
               {t("consultationForm.formNote")}

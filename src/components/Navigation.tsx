@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { ChevronDown, Leaf, Mail, Menu, Phone, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -40,36 +40,39 @@ const Navigation = () => {
   useEffect(() => {
     setIsMobileOpen(false);
     setIsServicesOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
-    document.body.style.overflow = isMobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setIsMobileOpen(false);
     };
-  }, [isMobileOpen]);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   const contactEmail = siteConfig.contactEmail;
   const contactPhoneLabel = siteConfig.contactPhone;
   const mobileMenu =
-    isMobileOpen && typeof document !== "undefined"
-      ? createPortal(
-          <div id="mobile-menu" className="fixed inset-0 z-[100] flex flex-col bg-background lg:hidden">
+    <DialogPrimitive.Portal>
+      <DialogPrimitive.Overlay className="fixed inset-0 z-[90] bg-background/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-200" />
+          <DialogPrimitive.Content id="mobile-menu" aria-describedby={undefined} className="fixed inset-0 z-[100] flex flex-col bg-background outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:slide-in-from-right-8 data-[state=closed]:slide-out-to-right-8 duration-200">
+            <DialogPrimitive.Title className="sr-only">{t("menu")}</DialogPrimitive.Title>
             <div className="flex items-center justify-between border-b border-border/10 px-4 py-4">
-              <Link to={`/${currentLang}`} className="inline-flex items-center gap-3" onClick={() => setIsMobileOpen(false)}>
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm">
+              <Link to={`/${currentLang}`} className="inline-flex min-w-0 items-center gap-3" onClick={() => setIsMobileOpen(false)}>
+                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm">
                   <Leaf className="h-5 w-5" strokeWidth={2.25} />
                 </span>
-                <span className="font-heading text-[1rem] font-bold uppercase tracking-[0.18em] text-foreground">
+                <span className="truncate font-heading text-[1rem] font-bold uppercase tracking-[0.18em] text-foreground">
                   {brandName}
                 </span>
               </Link>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-none items-center gap-2">
                 <ThemeToggle />
                 <button
                   className="rounded-full border border-border/30 p-2.5 text-foreground transition-colors hover:bg-muted"
                   onClick={() => setIsMobileOpen(false)}
-                  aria-label="Close menu"
+                  aria-label={t("closeMenu")}
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -151,15 +154,14 @@ const Navigation = () => {
                 </Button>
               </div>
             </div>
-          </div>,
-          document.body,
-        )
-      : null;
+          </DialogPrimitive.Content>
+    </DialogPrimitive.Portal>;
 
   return (
+    <DialogPrimitive.Root open={isMobileOpen} onOpenChange={setIsMobileOpen}>
     <nav className="sticky top-0 z-50 border-b border-border/15 bg-background/95 shadow-[0_8px_30px_rgba(15,23,42,0.03)] backdrop-blur-xl">
-      <div className="hidden border-b border-border/10 bg-background/70 lg:block">
-        <div className="container-max">
+      <div className="hidden border-b border-border/10 bg-background/70 xl:block">
+        <div className="container-max px-4 sm:px-6 xl:px-0">
           <div className="flex h-11 items-center justify-between text-[12px] font-medium text-muted-foreground">
             <div className="flex items-center gap-6">
               {siteConfig.contactPhoneHref ? (
@@ -189,8 +191,8 @@ const Navigation = () => {
         </div>
       </div>
 
-      <div className="container-max">
-        <div className="hidden lg:flex items-end justify-between gap-8 py-5 xl:py-6">
+      <div className="container-max px-4 sm:px-6 xl:px-0">
+        <div className="hidden xl:flex items-end justify-between gap-8 py-5 xl:py-6">
           <div className="min-w-0 flex-1">
             <Link to={`/${currentLang}`} className="group inline-flex items-center gap-3 text-left">
               <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm transition-transform duration-300 group-hover:scale-105">
@@ -218,6 +220,16 @@ const Navigation = () => {
                       className="relative"
                       onMouseEnter={() => setIsServicesOpen(true)}
                       onMouseLeave={() => setIsServicesOpen(false)}
+                      onFocus={() => setIsServicesOpen(true)}
+                      onBlur={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget)) setIsServicesOpen(false);
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key === "Escape") {
+                          event.preventDefault();
+                          setIsServicesOpen(false);
+                        }
+                      }}
                     >
                       <Link
                         to={item.path}
@@ -226,7 +238,6 @@ const Navigation = () => {
                             ? "bg-primary/10 text-primary"
                             : "text-foreground hover:bg-muted hover:text-primary"
                         }`}
-                        aria-haspopup="menu"
                         aria-expanded={isServicesOpen}
                       >
                         <span>{item.label}</span>
@@ -234,7 +245,7 @@ const Navigation = () => {
                       </Link>
 
                       {isServicesOpen && (
-                        <div className="absolute left-0 top-full z-20 pt-3">
+                        <div className="absolute left-0 top-full z-20 pt-3 animate-in fade-in-0 slide-in-from-top-2 duration-200">
                           <div className="w-72 rounded-[1.5rem] border border-border/20 bg-background p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
                             {servicesLinks.map((service) => (
                               <Link
@@ -275,7 +286,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        <div className="flex h-18 items-center justify-between gap-4 py-3 lg:hidden">
+        <div className="flex h-18 items-center justify-between gap-4 py-3 xl:hidden">
           <Link to={`/${currentLang}`} className="group inline-flex min-w-0 items-center gap-3 text-left">
             <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm">
               <Leaf className="h-5 w-5" strokeWidth={2.25} />
@@ -290,23 +301,25 @@ const Navigation = () => {
             </span>
           </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-none items-center gap-2">
             <ThemeToggle />
+            <DialogPrimitive.Trigger asChild>
             <button
               className="rounded-full border border-border/30 p-2.5 text-foreground transition-colors hover:bg-muted"
-              onClick={() => setIsMobileOpen((value) => !value)}
-              aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+              aria-label={isMobileOpen ? t("closeMenu") : t("openMenu")}
               aria-expanded={isMobileOpen}
               aria-controls="mobile-menu"
             >
               {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
+            </DialogPrimitive.Trigger>
           </div>
         </div>
       </div>
 
       {mobileMenu}
     </nav>
+    </DialogPrimitive.Root>
   );
 };
 

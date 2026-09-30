@@ -207,7 +207,7 @@ All colors MUST be HSL.
   
   /* Simplified fade-in animation */
   .fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.6s ease-out both;
   }
 
   .fade-in-delay-300 {
@@ -235,7 +235,7 @@ All colors MUST be HSL.
   }
   
   .container-max {
-    @apply max-w-7xl mx-auto;
+    @apply w-full min-w-0 max-w-7xl mx-auto;
   }
   
   /* Simplified button styles */
@@ -249,7 +249,7 @@ All colors MUST be HSL.
   }
 
   .section-eyebrow {
-    @apply inline-flex items-center px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary mb-4;
+    @apply inline-flex max-w-full items-center px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary mb-4;
   }
 
   .hero-image-frame {
@@ -271,5 +271,29 @@ All colors MUST be HSL.
 
   .nav-link-active {
     @apply bg-primary-light/60 text-primary rounded-full px-4 py-2;
+  }
+}
+
+/* Keep FAQ content in HTML while collapsing it visually and for keyboard users. */
+.accordion-content-mounted {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 220ms ease, visibility 0s linear 220ms;
+}
+.accordion-content-persistent[data-state="open"] > .accordion-content-mounted {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
   }
 }

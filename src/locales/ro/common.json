@@ -31,7 +31,7 @@
     "hoursTitle": "Program",
     "hoursWeekdays": "Luni – Vineri: 9:00 – 18:00",
     "hoursWeekend": "Sâmbătă: cu programare",
-    "copyright": "© 2025 Valeria Maria Stănculea. Toate drepturile rezervate.",
+    "copyright": "© {{year}} Valeria Maria Stănculea. Toate drepturile rezervate.",
     "credentials": "Membru al Colegiului Psihologilor din România",
     "links": {
       "home": "Acasă",
@@ -52,5 +52,13 @@
     "analytics": "Cookie-uri de analiză",
     "marketing": "Cookie-uri de marketing",
     "preferences": "Preferințe salvate"
+  },
+  "theme": {
+    "light": "Mod luminos",
+    "dark": "Mod întunecat"
+  },
+  "carousel": {
+    "previous": "Mărturia anterioară",
+    "next": "Mărturia următoare"
   }
 }

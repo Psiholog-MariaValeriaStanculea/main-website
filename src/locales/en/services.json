@@ -64,5 +64,87 @@
     "title": "Ready to start?",
     "description": "Contact me for an initial consultation and let's discuss how I can help you.",
     "button": "Book Consultation"
+  },
+  "page": {
+    "eyebrow": "Clinical services for children, adolescents and families",
+    "officeLabel": "At the practice",
+    "officeDescription": "In-person sessions in Bucharest for assessment, psychotherapy and parental counselling.",
+    "onlineLabel": "Online",
+    "onlineDescription": "Online support for families across Romania, with a clear structure and continuity of care.",
+    "approachLabel": "Clinical approach",
+    "approachDescription": "An integrative, relational approach adapted to development, with family involvement when useful.",
+    "mainEyebrow": "Core services",
+    "mainTitle": "A clear structure for your family’s real needs",
+    "includes": "Includes",
+    "ageEyebrow": "Support by age group",
+    "ageTitle": "The pace of therapy is adapted to your child’s age",
+    "specializedEyebrow": "Specialized services",
+    "specializedTitle": "Extended support for special circumstances",
+    "processTitle": "How the therapeutic process works",
+    "additionalServices": [
+      {
+        "title": "Peer consultation",
+        "description": "Professional support and reflection groups for psychologists and specialists working with children and families."
+      },
+      {
+        "title": "Urgent consultations",
+        "description": "Availability for crisis situations requiring immediate psychological intervention and prompt clarity."
+      },
+      {
+        "title": "Court assessments",
+        "description": "Psychological expertise in custody, adoption or other legal proceedings involving minors."
+      }
+    ],
+    "ageGroups": [
+      {
+        "range": "4–6 years",
+        "focus": "Early development",
+        "methods": [
+          "Play therapy",
+          "Creative activities",
+          "Parent involvement"
+        ]
+      },
+      {
+        "range": "7–10 years",
+        "focus": "School age",
+        "methods": [
+          "Therapeutic play",
+          "Adapted cognitive techniques",
+          "Collaboration with school"
+        ]
+      },
+      {
+        "range": "11–17 years",
+        "focus": "Adolescence",
+        "methods": [
+          "Cognitive behavioral therapy",
+          "Mindfulness",
+          "Career counselling"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "step": "1",
+        "title": "First contact",
+        "desc": "Initial consultation to assess needs"
+      },
+      {
+        "step": "2",
+        "title": "Assessment",
+        "desc": "Detailed assessment and intervention planning"
+      },
+      {
+        "step": "3",
+        "title": "Therapy",
+        "desc": "Regular sessions adapted to the child’s needs"
+      },
+      {
+        "step": "4",
+        "title": "Monitoring",
+        "desc": "Tracking progress and adjusting the intervention"
+      }
+    ]
   }
 }

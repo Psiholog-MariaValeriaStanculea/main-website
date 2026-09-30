@@ -64,5 +64,87 @@
     "title": "Gata să începem?",
     "description": "Contactați-mă pentru o consultație inițială și să discutăm despre cum vă pot ajuta.",
     "button": "Programează Consultația"
+  },
+  "page": {
+    "eyebrow": "Servicii clinice pentru copii, adolescenți și familii",
+    "officeLabel": "Cabinet",
+    "officeDescription": "Ședințe față în față în București pentru evaluare, psihoterapie și consiliere parentală.",
+    "onlineLabel": "Online",
+    "onlineDescription": "Intervenții online pentru familii din toată România, cu structură clară și continuitate clinică.",
+    "approachLabel": "Orientare clinică",
+    "approachDescription": "Abordare integrativă, relațională și adaptată dezvoltării, cu implicarea familiei când este utilă.",
+    "mainEyebrow": "Servicii principale",
+    "mainTitle": "Structură clară pentru nevoile reale ale familiei",
+    "includes": "Include",
+    "ageEyebrow": "Abordare pe grupe de vârstă",
+    "ageTitle": "Ritmul terapiei este adaptat vârstei copilului",
+    "specializedEyebrow": "Servicii specializate",
+    "specializedTitle": "Suport extins pentru contexte speciale",
+    "processTitle": "Cum funcționează procesul terapeutic",
+    "additionalServices": [
+      {
+        "title": "Intervizare colegială",
+        "description": "Sprijin profesional și grupuri de reflecție pentru psihologi și specialiști care lucrează cu copii și familii."
+      },
+      {
+        "title": "Consultații de urgență",
+        "description": "Disponibilitate pentru situații de criză care necesită intervenție psihologică imediată și claritate rapidă."
+      },
+      {
+        "title": "Evaluări pentru instanțe",
+        "description": "Expertiză psihologică în cazuri de custodie, adopție sau alte proceduri legale care implică minori."
+      }
+    ],
+    "ageGroups": [
+      {
+        "range": "4-6 ani",
+        "focus": "Dezvoltare timpurie",
+        "methods": [
+          "Terapie prin joc",
+          "Activități creative",
+          "Implicarea părinților"
+        ]
+      },
+      {
+        "range": "7-10 ani",
+        "focus": "Vârsta școlară",
+        "methods": [
+          "Joc terapeutic",
+          "Tehnici cognitive adaptate",
+          "Lucrul cu școala"
+        ]
+      },
+      {
+        "range": "11-17 ani",
+        "focus": "Adolescență",
+        "methods": [
+          "Terapie cognitiv-comportamentală",
+          "Mindfulness",
+          "Consiliere vocațională"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "step": "1",
+        "title": "Primul contact",
+        "desc": "Consultație inițială pentru evaluarea nevoilor"
+      },
+      {
+        "step": "2",
+        "title": "Evaluarea",
+        "desc": "Analiză detaliată și stabilirea planului de intervenție"
+      },
+      {
+        "step": "3",
+        "title": "Terapia",
+        "desc": "Ședințe regulate adaptate nevoilor copilului"
+      },
+      {
+        "step": "4",
+        "title": "Monitorizarea",
+        "desc": "Urmărirea progresului și ajustarea intervenției"
+      }
+    ]
   }
 }

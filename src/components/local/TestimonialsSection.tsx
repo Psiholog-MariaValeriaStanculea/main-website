@@ -55,12 +55,13 @@ const TestimonialsSection = ({ variant = "full" }: TestimonialsSectionProps) => 
 
         <Carousel
           opts={{ align: "start", loop: true }}
-          className="w-full max-w-5xl mx-auto"
+          aria-label={t("testimonials.title")}
+          className="w-full max-w-5xl mx-auto pb-16 md:pb-0"
         >
           <CarouselContent>
             {testimonials.map((item, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                <div className="relative h-full overflow-hidden rounded-[30px] border border-border/40 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm mx-2 dark:border-white/10 dark:bg-slate-950/75">
+                <div className="relative h-full overflow-hidden rounded-[30px] border border-border/40 bg-white p-8 shadow-soft transition-all duration-300 hover:shadow-warm mx-2 dark:border-white/10 dark:bg-slate-950/75">
                   <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-primary-light/10 blur-2xl" />
                   <div className="relative flex items-center justify-between gap-4 mb-6">
                     <div className="flex gap-1">
@@ -81,8 +82,8 @@ const TestimonialsSection = ({ variant = "full" }: TestimonialsSectionProps) => 
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-5 h-11 w-11 border-border/30 bg-white shadow-soft dark:border-white/10 dark:bg-slate-950/80" />
-          <CarouselNext className="hidden md:flex -right-5 h-11 w-11 border-border/30 bg-white shadow-soft dark:border-white/10 dark:bg-slate-950/80" />
+          <CarouselPrevious className="left-3 top-auto bottom-0 translate-y-0 md:left-0 xl:-left-5 md:top-1/2 md:bottom-auto md:-translate-y-1/2 h-11 w-11 border-border/30 bg-white shadow-soft dark:border-white/10 dark:bg-slate-950/80" />
+          <CarouselNext className="right-3 top-auto bottom-0 translate-y-0 md:right-0 xl:-right-5 md:top-1/2 md:bottom-auto md:-translate-y-1/2 h-11 w-11 border-border/30 bg-white shadow-soft dark:border-white/10 dark:bg-slate-950/80" />
         </Carousel>
       </div>
     </section>

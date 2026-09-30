@@ -52,7 +52,7 @@ const HomeFAQPreview = () => {
                   <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5">
                     {item.q}
                   </AccordionTrigger>
-                  <AccordionContent forceMount className="data-[state=closed]:hidden text-muted-foreground leading-relaxed pb-5">
+                  <AccordionContent forceMount className="text-muted-foreground leading-relaxed pb-5">
                     {item.a}
                   </AccordionContent>
                 </AccordionItem>

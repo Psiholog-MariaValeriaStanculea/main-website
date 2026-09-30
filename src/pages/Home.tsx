@@ -44,9 +44,9 @@ const Home = () => {
           </div>
 
           <div className="container-max relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="space-y-6 md:space-y-8 fade-in-up text-left">
-                <div className="inline-flex items-center rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="min-w-0 space-y-6 md:space-y-8 fade-in-up text-left">
+                <div className="inline-flex max-w-full items-center rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary">
                   {t("home:hero.eyebrow")}
                 </div>
                 <h1 className="max-w-2xl text-[2.35rem] md:text-5xl lg:text-[3.35rem] font-heading font-bold text-foreground leading-[1.08] tracking-tight">
@@ -65,7 +65,7 @@ const Home = () => {
                   {t("home:hero.closing")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                  <Button size="lg" variant="default" className="text-base px-8 py-6 h-auto w-full sm:w-auto rounded-full" asChild>
+                  <Button size="lg" variant="default" className="whitespace-normal text-center text-base px-8 py-6 h-auto w-full sm:w-auto rounded-full" asChild>
                     <Link to={`/${currentLang}/contact`}>
                       {t("home:hero.ctaPrimary")}
                       <ArrowRight className="ml-2 w-5 h-5" />

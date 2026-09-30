@@ -54,6 +54,7 @@ const Blog = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input
                   placeholder={t('page.searchPlaceholder')}
+                  aria-label={t('page.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10"
@@ -66,6 +67,7 @@ const Blog = () => {
                 variant={selectedCategory === null ? "default" : "outline"}
                 size="sm"
                 onClick={() => setSelectedCategory(null)}
+                aria-pressed={selectedCategory === null}
               >
                 {t('page.allCategories')}
               </Button>
@@ -75,6 +77,7 @@ const Blog = () => {
                   variant={selectedCategory === category.id ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(category.id)}
+                  aria-pressed={selectedCategory === category.id}
                 >
                   {category.name} ({category.count})
                 </Button>
@@ -91,7 +94,7 @@ const Blog = () => {
                     <img loading="lazy" decoding="async" src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-8 flex flex-col justify-center bg-card/80 backdrop-blur-sm">
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex flex-wrap items-center gap-4 mb-4">
                       <Badge variant="secondary">{categories.find(c => c.id === featuredPost.category)?.name}</Badge>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="w-4 h-4" />
@@ -120,13 +123,13 @@ const Blog = () => {
                   <img loading="lazy" decoding="async" src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 mb-3">
+                  <div className="flex flex-wrap items-center gap-4 mb-3">
                     <Badge variant="outline">{categories.find(c => c.id === post.category)?.name}</Badge>
                     <span className="text-sm text-muted-foreground">{post.readTime}</span>
                   </div>
                   <h3 className="text-xl font-serif font-bold text-foreground mb-3">{post.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(post.date).toLocaleDateString(dateLocale)}</span>
@@ -152,7 +155,7 @@ const Blog = () => {
             </div>
           )}
 
-          <div className="mt-20 rounded-[2rem] border border-border/70 bg-card/80 p-12 text-center shadow-sanctuary backdrop-blur-md">
+          <div className="mt-20 rounded-[2rem] border border-border/70 bg-card/80 p-6 sm:p-12 text-center shadow-sanctuary backdrop-blur-md">
             <h2 className="text-3xl font-serif font-bold text-foreground mb-4">{t('page.newsletterTitle')}</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               {t('page.newsletterDescription')}

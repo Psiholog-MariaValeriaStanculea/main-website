@@ -64,5 +64,87 @@
     "title": "¿Listos para empezar?",
     "description": "Contáctame para una consulta inicial y discutamos cómo puedo ayudarte.",
     "button": "Reservar Consulta"
+  },
+  "page": {
+    "eyebrow": "Servicios clínicos para niños, adolescentes y familias",
+    "officeLabel": "En la consulta",
+    "officeDescription": "Sesiones presenciales en Bucarest para evaluación, psicoterapia y orientación parental.",
+    "onlineLabel": "Online",
+    "onlineDescription": "Apoyo online para familias de toda Rumanía, con una estructura clara y continuidad clínica.",
+    "approachLabel": "Enfoque clínico",
+    "approachDescription": "Un enfoque integrativo y relacional, adaptado al desarrollo, con participación familiar cuando resulta útil.",
+    "mainEyebrow": "Servicios principales",
+    "mainTitle": "Una estructura clara para las necesidades reales de la familia",
+    "includes": "Incluye",
+    "ageEyebrow": "Apoyo por grupos de edad",
+    "ageTitle": "El ritmo de la terapia se adapta a la edad del niño",
+    "specializedEyebrow": "Servicios especializados",
+    "specializedTitle": "Apoyo ampliado para situaciones especiales",
+    "processTitle": "Cómo funciona el proceso terapéutico",
+    "additionalServices": [
+      {
+        "title": "Consulta entre colegas",
+        "description": "Apoyo profesional y grupos de reflexión para psicólogos y especialistas que trabajan con niños y familias."
+      },
+      {
+        "title": "Consultas urgentes",
+        "description": "Disponibilidad para situaciones de crisis que requieren intervención psicológica inmediata y claridad rápida."
+      },
+      {
+        "title": "Evaluaciones judiciales",
+        "description": "Experiencia psicológica en casos de custodia, adopción u otros procedimientos legales que implican a menores."
+      }
+    ],
+    "ageGroups": [
+      {
+        "range": "4–6 años",
+        "focus": "Desarrollo temprano",
+        "methods": [
+          "Terapia de juego",
+          "Actividades creativas",
+          "Participación de los padres"
+        ]
+      },
+      {
+        "range": "7–10 años",
+        "focus": "Edad escolar",
+        "methods": [
+          "Juego terapéutico",
+          "Técnicas cognitivas adaptadas",
+          "Colaboración con la escuela"
+        ]
+      },
+      {
+        "range": "11–17 años",
+        "focus": "Adolescencia",
+        "methods": [
+          "Terapia cognitivo-conductual",
+          "Mindfulness",
+          "Orientación profesional"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "step": "1",
+        "title": "Primer contacto",
+        "desc": "Consulta inicial para evaluar las necesidades"
+      },
+      {
+        "step": "2",
+        "title": "Evaluación",
+        "desc": "Análisis detallado y planificación de la intervención"
+      },
+      {
+        "step": "3",
+        "title": "Terapia",
+        "desc": "Sesiones regulares adaptadas a las necesidades del niño"
+      },
+      {
+        "step": "4",
+        "title": "Seguimiento",
+        "desc": "Revisión del progreso y ajuste de la intervención"
+      }
+    ]
   }
 }

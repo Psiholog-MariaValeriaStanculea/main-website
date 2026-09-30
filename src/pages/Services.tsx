@@ -54,38 +54,9 @@ const Services = () => {
     },
   ];
 
-  const additionalServices = [
-    {
-      title: "Intervizare colegială",
-      description: "Sprijin profesional și grupuri de reflecție pentru psihologi și specialiști care lucrează cu copii și familii.",
-    },
-    {
-      title: "Consultații de urgență",
-      description: "Disponibilitate pentru situații de criză care necesită intervenție psihologică imediată și claritate rapidă.",
-    },
-    {
-      title: "Evaluări pentru instanțe",
-      description: "Expertiză psihologică în cazuri de custodie, adopție sau alte proceduri legale care implică minori.",
-    },
-  ];
+  const additionalServices = t("page.additionalServices", { returnObjects: true }) as { title: string; description: string }[];
 
-  const ageGroups = [
-    {
-      range: "4-6 ani",
-      focus: "Dezvoltare timpurie",
-      methods: ["Terapie prin joc", "Activități creative", "Implicarea părinților"],
-    },
-    {
-      range: "7-10 ani",
-      focus: "Vârsta școlară",
-      methods: ["Joc terapeutic", "Tehnici cognitive adaptate", "Lucrul cu școala"],
-    },
-    {
-      range: "11-17 ani",
-      focus: "Adolescență",
-      methods: ["Terapie cognitiv-comportamentală", "Mindfulness", "Consiliere vocațională"],
-    },
-  ];
+  const ageGroups = t("page.ageGroups", { returnObjects: true }) as { range: string; focus: string; methods: string[] }[];
 
   return (
     <>
@@ -99,7 +70,7 @@ const Services = () => {
           <div className="text-center space-y-5 mb-16 max-w-4xl mx-auto">
             <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary-light/20 px-4 py-2 text-sm font-medium text-primary shadow-soft">
               <Sparkles className="mr-2 h-4 w-4" />
-              Servicii clinice pentru copii, adolescenți și familii
+              {t("page.eyebrow")}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-heading font-bold text-foreground leading-tight">
               {t("title")}
@@ -111,29 +82,29 @@ const Services = () => {
 
           <div className="mb-20 grid gap-6 lg:grid-cols-3">
             <div className="rounded-[1.9rem] border border-border/50 bg-white/90 p-7 shadow-soft backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">Cabinet</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{t("page.officeLabel")}</p>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Ședințe față în față în București pentru evaluare, psihoterapie și consiliere parentală.
+                {t("page.officeDescription")}
               </p>
             </div>
             <div className="rounded-[1.9rem] border border-border/50 bg-white/90 p-7 shadow-soft backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">Online</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{t("page.onlineLabel")}</p>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Intervenții online pentru familii din toată România, cu structură clară și continuitate clinică.
+                {t("page.onlineDescription")}
               </p>
             </div>
             <div className="rounded-[1.9rem] border border-border/50 bg-[linear-gradient(135deg,rgba(249,174,56,0.16),rgba(44,166,161,0.10))] p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(249,174,56,0.10),rgba(44,166,161,0.08))]">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">Orientare clinică</p>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{t("page.approachLabel")}</p>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Abordare integrativă, relațională și adaptată dezvoltării, cu implicarea familiei când este utilă.
+                {t("page.approachDescription")}
               </p>
             </div>
           </div>
 
           <div className="mb-20">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Servicii principale</p>
-              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">Structură clară pentru nevoile reale ale familiei</h2>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">{t("page.mainEyebrow")}</p>
+              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">{t("page.mainTitle")}</h2>
             </div>
             <div className="grid gap-8 lg:grid-cols-2">
               {mainServices.map((service) => {
@@ -142,7 +113,7 @@ const Services = () => {
                   <Card
                     key={service.id}
                     id={service.id}
-                    className="group h-full overflow-hidden scroll-mt-32 rounded-[30px] border-border/50 bg-white/95 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75"
+                    className="group h-full overflow-hidden scroll-mt-24 lg:scroll-mt-48 rounded-[30px] border-border/50 bg-white/95 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75"
                   >
                     <CardHeader className="pb-4">
                       <div className="flex items-start gap-4">
@@ -167,7 +138,7 @@ const Services = () => {
                     <CardContent className="space-y-5 pt-0">
                       <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                       <div className="rounded-[24px] border border-border/30 bg-primary-light/10 p-5 dark:border-white/10 dark:bg-primary/10">
-                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary/80">Include</h4>
+                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary/80">{t("page.includes")}</h4>
                         <ul className="grid gap-3 sm:grid-cols-2">
                           {service.details.map((detail) => (
                             <li key={detail} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -186,8 +157,8 @@ const Services = () => {
 
           <div className="mb-20">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Abordare pe grupe de vârstă</p>
-              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">Ritmul terapiei este adaptat vârstei copilului</h2>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">{t("page.ageEyebrow")}</p>
+              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">{t("page.ageTitle")}</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {ageGroups.map((group) => (
@@ -215,8 +186,8 @@ const Services = () => {
 
           <div className="mb-20">
             <div className="text-center mb-12 max-w-3xl mx-auto">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">Servicii specializate</p>
-              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">Suport extins pentru contexte speciale</h2>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-secondary">{t("page.specializedEyebrow")}</p>
+              <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">{t("page.specializedTitle")}</h2>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {additionalServices.map((service) => (
@@ -235,15 +206,10 @@ const Services = () => {
 
           <div className="mb-20 rounded-[2.4rem] border border-border/50 bg-[linear-gradient(135deg,rgba(44,166,161,0.08),rgba(249,174,56,0.12))] p-8 shadow-soft md:p-10 dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(44,166,161,0.08),rgba(249,174,56,0.06))]">
             <h2 className="mb-8 text-center text-3xl font-heading font-bold text-foreground md:text-5xl">
-              Cum funcționează procesul terapeutic
+              {t("page.processTitle")}
             </h2>
             <div className="grid gap-6 md:grid-cols-4">
-              {[
-                { step: "1", title: "Primul contact", desc: "Consultație inițială pentru evaluarea nevoilor" },
-                { step: "2", title: "Evaluarea", desc: "Analiză detaliată și stabilirea planului de intervenție" },
-                { step: "3", title: "Terapia", desc: "Ședințe regulate adaptate nevoilor copilului" },
-                { step: "4", title: "Monitorizarea", desc: "Urmărirea progresului și ajustarea intervenției" },
-              ].map((item) => (
+              {(t("page.steps", { returnObjects: true }) as { step: string; title: string; desc: string }[]).map((item) => (
                 <div
                   key={item.step}
                   className="rounded-[1.6rem] border border-border/40 bg-white/90 p-5 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75"
@@ -260,14 +226,14 @@ const Services = () => {
 
           <div className="rounded-[2.4rem] border border-border/50 bg-[linear-gradient(135deg,#f5ecdf_0%,#eef7f4_100%)] p-8 text-center shadow-soft md:p-12 dark:border-white/10 dark:bg-[linear-gradient(135deg,#0f172a_0%,#111827_100%)]">
             <h2 className="text-3xl font-heading font-bold text-foreground md:text-5xl">
-              Începe procesul de vindecare
+              {t("cta.title")}
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              Primul pas către o viață mai echilibrată pentru copilul tău începe cu o consultație. Sunt aici să vă ofer sprijinul profesional de care aveți nevoie.
+              {t("cta.description")}
             </p>
             <Button size="lg" variant="cta" className="mt-8 rounded-full px-8 py-6 text-base font-semibold" asChild>
               <Link to={`/${currentLang}/contact`}>
-                Programează o Consultație
+                {t("cta.button")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

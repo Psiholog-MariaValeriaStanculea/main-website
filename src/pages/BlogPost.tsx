@@ -121,7 +121,7 @@ const BlogPost = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1 min-w-[250px]">
+                  <div className="flex-1 min-w-0 basis-64">
                     <h3 className="text-xl font-serif font-bold text-foreground mb-2">Valeria Stănculea</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       {t('post.authorRole')}

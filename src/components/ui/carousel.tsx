@@ -6,6 +6,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
+import { useTranslation } from "react-i18next"
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -56,6 +58,7 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
+    const reducedMotion = useReducedMotion()
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
@@ -76,24 +79,24 @@ const Carousel = React.forwardRef<
     }, [])
 
     const scrollPrev = React.useCallback(() => {
-      api?.scrollPrev()
-    }, [api])
+      api?.scrollPrev(reducedMotion)
+    }, [api, reducedMotion])
 
     const scrollNext = React.useCallback(() => {
-      api?.scrollNext()
-    }, [api])
+      api?.scrollNext(reducedMotion)
+    }, [api, reducedMotion])
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === "ArrowLeft") {
+        if (event.key === (orientation === "horizontal" ? "ArrowLeft" : "ArrowUp")) {
           event.preventDefault()
           scrollPrev()
-        } else if (event.key === "ArrowRight") {
+        } else if (event.key === (orientation === "horizontal" ? "ArrowRight" : "ArrowDown")) {
           event.preventDefault()
           scrollNext()
         }
       },
-      [scrollPrev, scrollNext]
+      [orientation, scrollPrev, scrollNext]
     )
 
     React.useEffect(() => {
@@ -115,6 +118,7 @@ const Carousel = React.forwardRef<
 
       return () => {
         api?.off("select", onSelect)
+        api?.off("reInit", onSelect)
       }
     }, [api, onSelect])
 
@@ -137,6 +141,7 @@ const Carousel = React.forwardRef<
           onKeyDownCapture={handleKeyDown}
           className={cn("relative", className)}
           role="region"
+          tabIndex={0}
           aria-roledescription="carousel"
           {...props}
         >
@@ -197,6 +202,7 @@ const CarouselPrevious = React.forwardRef<
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
+  const { t } = useTranslation("common")
 
   return (
     <Button
@@ -215,7 +221,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only">{t("carousel.previous")}</span>
     </Button>
   )
 })
@@ -226,6 +232,7 @@ const CarouselNext = React.forwardRef<
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollNext, canScrollNext } = useCarousel()
+  const { t } = useTranslation("common")
 
   return (
     <Button
@@ -244,7 +251,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">{t("carousel.next")}</span>
     </Button>
   )
 })

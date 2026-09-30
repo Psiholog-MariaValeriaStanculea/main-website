@@ -5,12 +5,19 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  const base = `/${(env.VITE_BASE_PATH || "/").replace(/^\/+|\/+$/g, "")}/`.replace(/^\/\/$/, "/");
+  if (env.VITE_SITE_URL && env.VITE_GITHUB_PAGES === "true") {
+    const sitePath = `/${new URL(env.VITE_SITE_URL).pathname.replace(/^\/+|\/+$/g, "")}/`.replace(/^\/\/$/, "/");
+    if (sitePath !== base) {
+      throw new Error(`VITE_BASE_PATH (${base}) must match the pathname of VITE_SITE_URL (${sitePath}).`);
+    }
+  }
   const inNodeModules = (id: string) => id.includes("node_modules");
   const matchesPackage = (id: string, packageName: string) =>
     id.includes(`node_modules/${packageName}/`) || id.includes(`node_modules/${packageName}.`);
 
   return {
-    base: env.VITE_BASE_PATH || "/",
+    base,
     server: {
       host: "::",
       port: 8080,

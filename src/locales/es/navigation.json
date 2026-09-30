@@ -13,5 +13,9 @@
   "servicesParental": "Orientación parental",
   "logo": "Psicóloga Valeria Stănculea",
   "logoShort": "Valeria Stănculea",
-  "phone": "+40 7XX XXX XXX"
+  "phone": "+40 7XX XXX XXX",
+  "menu": "Menú",
+  "openMenu": "Abrir menú",
+  "closeMenu": "Cerrar menú",
+  "language": "Cambiar idioma"
 }

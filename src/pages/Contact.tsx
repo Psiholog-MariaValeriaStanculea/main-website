@@ -569,7 +569,7 @@ const Contact = () => {
         </div>
 
         {/* Online Booking CTA */}
-        <div className="mt-20 rounded-[2rem] border border-border/70 bg-card/80 p-12 text-center shadow-sanctuary backdrop-blur-md">
+        <div className="mt-20 rounded-[2rem] border border-border/70 bg-card/80 p-6 sm:p-12 text-center shadow-sanctuary backdrop-blur-md">
           <h2 className="text-3xl font-serif font-bold text-foreground mb-4">
             {copy.booking.title}
           </h2>

@@ -8,11 +8,26 @@ const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]
 assert.equal(urls.length, 48, 'Expected six pages and six articles in four languages');
 assert.equal(new Set(urls).size, urls.length, 'Sitemap URLs must be unique');
 const titles = new Set();
+const firstPage = new URL(urls[0]);
+const deploymentPath = firstPage.pathname.replace(/\/(ro|en|es|it)(\/.*)?$/, '');
+const checkAssets = (html, page) => {
+  const tags = [...html.matchAll(/<(?:link|script|img)\b[^>]*>/g)].map(match => match[0]);
+  for (const tag of tags) {
+    if (tag.startsWith('<link') && !/rel="(?:stylesheet|modulepreload)"/.test(tag)) continue;
+    const path = tag.match(/(?:src|href)="([^"]+)"/)?.[1];
+    if (!path || /^https?:\/\//.test(path)) continue;
+    assert.ok(path.startsWith(`${deploymentPath}/`), `Asset outside deployment path on ${page}: ${path}`);
+    assert.ok(existsSync(resolve(dist, path.slice(deploymentPath.length + 1))), `Missing asset on ${page}: ${path}`);
+  }
+};
+checkAssets(readFileSync(resolve(dist, 'index.html'), 'utf8'), 'homepage');
+checkAssets(readFileSync(resolve(dist, '404.html'), 'utf8'), '404');
 for (const url of urls) {
   const match = new URL(url).pathname.match(/\/(ro|en|es|it)(\/.*)?$/);
   assert.ok(match, `Localized URL: ${url}`);
   const [, language, suffix = ''] = match;
   const html = readFileSync(resolve(dist, language, `.${suffix || '/'}`, 'index.html'), 'utf8');
+  checkAssets(html, url);
   assert.ok(html.includes(`<html lang="${language}">`), `Language: ${url}`);
   assert.equal((html.match(/<title\b/g) || []).length, 1, `Single title: ${url}`);
   const title = html.match(/<title[^>]*>(.*?)<\/title>/)[1];

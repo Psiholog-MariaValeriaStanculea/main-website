@@ -43,6 +43,7 @@ const SessionPackages = () => {
             <button
               type="button"
               onClick={() => setBilling("session")}
+              aria-pressed={billing === "session"}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 billing === "session"
                   ? "bg-primary text-primary-foreground shadow-sm"
@@ -54,6 +55,7 @@ const SessionPackages = () => {
             <button
               type="button"
               onClick={() => setBilling("package")}
+              aria-pressed={billing === "package"}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                 billing === "package"
                   ? "bg-primary text-primary-foreground shadow-sm"
@@ -65,11 +67,11 @@ const SessionPackages = () => {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3 items-stretch">
+        <div key={billing} className="grid grid-cols-1 gap-6 lg:grid-cols-3 items-stretch animate-fade-in">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative flex flex-col overflow-hidden rounded-[30px] p-8 transition-all duration-300 hover:-translate-y-1 ${
+              className={`relative min-w-0 flex flex-col overflow-hidden rounded-[30px] p-8 pt-12 transition-all duration-300 hover:-translate-y-1 ${
                 plan.popular
                   ? "scale-[1.015] border border-primary/20 bg-[linear-gradient(180deg,rgba(44,166,161,0.98)_0%,rgba(33,148,144,1)_100%)] text-primary-foreground shadow-[0_24px_60px_rgba(44,166,161,0.22)]"
                   : "border border-border/50 bg-white shadow-soft dark:border-white/10 dark:bg-slate-950/75"
@@ -78,7 +80,7 @@ const SessionPackages = () => {
               <div className={`absolute inset-x-0 top-0 h-1 ${plan.popular ? "bg-secondary" : "bg-primary/15"}`} />
 
               {plan.popular && plan.popularLabel && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-secondary px-4 py-1 text-xs font-bold text-secondary-foreground shadow-sm">
+                <span className="absolute top-3 left-1/2 -translate-x-1/2 rounded-full bg-secondary px-4 py-1 text-xs font-bold text-secondary-foreground shadow-sm">
                   {plan.popularLabel}
                 </span>
               )}
@@ -90,7 +92,7 @@ const SessionPackages = () => {
                 </h3>
               </div>
 
-              <div className="mb-2 flex items-end gap-2">
+              <div className="mb-2 flex flex-wrap items-end gap-2">
                 <span className="text-4xl font-heading font-bold leading-none">{plan.price}</span>
                 <span className={`text-sm pb-1 ${plan.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {plan.period}
@@ -122,7 +124,7 @@ const SessionPackages = () => {
 
               <Button
                 variant={plan.popular ? "secondary" : "default"}
-                className={`w-full rounded-full py-6 font-semibold ${plan.popular ? "bg-white text-primary hover:bg-white/90 dark:bg-white dark:text-primary dark:hover:bg-white/90" : ""}`}
+                className={`w-full whitespace-normal h-auto rounded-full py-4 font-semibold ${plan.popular ? "bg-white text-primary hover:bg-white/90 dark:bg-white dark:text-primary dark:hover:bg-white/90" : ""}`}
                 asChild
               >
                 <Link to={`/${currentLang}/contact`}>{t("pricing.cta")}</Link>

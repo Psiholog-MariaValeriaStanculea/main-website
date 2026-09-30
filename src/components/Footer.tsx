@@ -121,7 +121,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/15 pt-6 flex flex-col gap-2 text-sm text-primary-foreground/75 md:flex-row md:items-center md:justify-between">
-          <p>{t("common:footer.copyright")}</p>
+          <p>{t("common:footer.copyright", { year: new Date().getFullYear() })}</p>
           <p>{t("common:footer.credentials")}</p>
         </div>
       </div>
