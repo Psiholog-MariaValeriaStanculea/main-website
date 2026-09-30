@@ -1,0 +1,42 @@
+name: Regression tests
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Source and unit checks
+        run: |
+          npm run lint
+          npx tsc -b
+          npm run test:unit
+      - name: Build and audit Pages artifact
+        run: |
+          npm run build:github-pages
+          npm run check:seo
+          npm run check:pages
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Save browser failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: regression-browser-failures
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
