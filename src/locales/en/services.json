@@ -1,0 +1,68 @@
+{
+  "title": "My Services",
+  "subtitle": "Offered with a personalized integrative-relational approach",
+  "evaluation": {
+    "title": "Psychological Assessment",
+    "subtitle": "For children and adolescents",
+    "description": "Comprehensive evaluations that include psychological testing, clinical observation and behavioral analysis to identify specific needs and intervention recommendations.",
+    "duration": "2-3 sessions",
+    "price": "300-450 RON",
+    "includes": [
+      "Anamnesis interview with parents",
+      "Age-appropriate psychological testing",
+      "Clinical observation",
+      "Detailed report with recommendations"
+    ]
+  },
+  "therapy": {
+    "title": "Individual Psychotherapy",
+    "subtitle": "For children and adolescents",
+    "description": "Personalized therapy sessions using therapeutic play techniques for children and cognitive-behavioral techniques for adolescents, adapted to specific needs.",
+    "duration": "50 minutes/session",
+    "price": "200 RON/session",
+    "includes": [
+      "Play therapy for children",
+      "Cognitive-behavioral techniques",
+      "Family involvement in process",
+      "Progress monitoring"
+    ]
+  },
+  "parental": {
+    "title": "Parental Counseling",
+    "subtitle": "Support for parents",
+    "description": "Guidance and support for parents in understanding and managing child behavior, developing effective educational strategies and improving the parent-child relationship.",
+    "duration": "50 minutes/session",
+    "price": "180 RON/session",
+    "includes": [
+      "Effective communication strategies",
+      "Positive discipline techniques",
+      "Managing difficult behaviors",
+      "Personalized action plans"
+    ]
+  },
+  "family": {
+    "title": "Family Therapy",
+    "subtitle": "For the whole family",
+    "description": "Sessions involving the entire family to improve communication, resolve conflicts and strengthen family bonds.",
+    "duration": "60 minutes/session",
+    "price": "250 RON/session",
+    "includes": [
+      "Family dynamics assessment",
+      "Communication exercises",
+      "Conflict resolution",
+      "Joint activity plans"
+    ]
+  },
+  "consultation": {
+    "title": "Initial Consultation",
+    "description": "A getting-to-know meeting to discuss your concerns and establish the most appropriate intervention plan.",
+    "duration": "60 minutes",
+    "price": "150 RON",
+    "note": "The initial consultation price is deducted from subsequent evaluation or therapy costs."
+  },
+  "cta": {
+    "title": "Ready to start?",
+    "description": "Contact me for an initial consultation and let's discuss how I can help you.",
+    "button": "Book Consultation"
+  }
+}

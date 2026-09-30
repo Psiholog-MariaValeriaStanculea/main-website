@@ -1,0 +1,90 @@
+{
+  "whyFamiliesChoose": {
+    "eyebrow": "Valori & Sicurezza",
+    "title": "La terapia non serve a “riparare” un bambino, ma a sostenere un’intera famiglia",
+    "subtitle": "Scegliere lo psicologo giusto per tuo figlio è una decisione importante. Questi sono i principi che guidano la mia pratica:",
+    "professional": {
+      "title": "Accreditamento e Sicurezza Legale",
+      "description": "Sono psicologa clinica e psicoterapeuta integrativa con diritto di libera pratica rilasciato dal Collegio degli Psicologi della Romania. Ogni valutazione e intervento rispetta i più alti standard professionali ed etici."
+    },
+    "integrative": {
+      "title": "Approccio Integrativo Personalizzato",
+      "description": "Non credo in soluzioni standardizzate o tecniche rigide. Integro metodi di diverse scuole terapeutiche per creare un percorso unico, adattato al ritmo, alla personalità e ai bisogni della tua famiglia."
+    },
+    "confidential": {
+      "title": "Riservatezza Totale e Rispetto",
+      "description": "Tutto ciò che viene discusso nello studio o nelle sessioni online rimane strettamente protetto. Costruisco una relazione basata sul rispetto reciproco, in cui ogni membro della famiglia si sente validato e ascoltato."
+    },
+    "parents": {
+      "title": "Coinvolgimento Attivo dei Genitori",
+      "description": "Credo fermamente che il cambiamento duraturo avvenga quando lavoriamo come una squadra. Riceverai sempre feedback trasparente e indicazioni chiare su come continuare a sostenere tuo figlio a casa."
+    }
+  },
+  "howTherapyWorks": {
+    "eyebrow": "Servizi in breve",
+    "title": "Come lavoriamo insieme?",
+    "subtitle": "Servizi dedicati all’equilibrio emotivo della tua famiglia",
+    "playTherapy": {
+      "title": "Terapia del Gioco (4 - 10 anni)",
+      "description": "Il gioco è il linguaggio nativo dei bambini e i giocattoli sono le loro parole. Utilizzo tecniche guidate di Play Therapy per aiutarli a esprimere e elaborare paura, rabbia o ansia in modo sicuro.",
+      "points": [
+        "Trasformiamo i comportamenti difficili in momenti di sicurezza emotiva.",
+        "Costruiamo cooperazione attraverso il gioco, l’empatia e un ritmo delicato.",
+        "I genitori ricevono indicazioni chiare per proseguire il lavoro a casa."
+      ]
+    },
+    "teens": {
+      "title": "Psicoterapia per Adolescenti",
+      "description": "Un periodo di trasformazioni intense, pressione sociale e ricerca dell’identità. Offro uno spazio di assoluta riservatezza dove gli adolescenti possono parlare liberamente di ansia, autostima, stress scolastico o relazioni.",
+      "points": [
+        "Lavoriamo su fiducia, autonomia e regolazione emotiva.",
+        "Rafforziamo la comunicazione e i confini sani.",
+        "Il sostegno è adattato al ritmo e alla sensibilità di ciascun adolescente."
+      ]
+    },
+    "family": {
+      "title": "Consulenza Genitoriale & Terapia Familiare",
+      "description": "Non esiste un manuale per il genitore perfetto, ma puoi essere il genitore di cui tuo figlio ha bisogno. Lavoriamo in squadra per comprendere le reazioni dei più piccoli e implementare strategie calde, basate su gentilezza e limiti sani.",
+      "points": [
+        "Riduciamo lo stress genitoriale e aumentiamo la chiarezza in famiglia.",
+        "Stabiliamo routine e strategie che funzionano nella vita quotidiana.",
+        "Ricostruiamo i ponti di comunicazione tra genitore e figlio."
+      ]
+    }
+  },
+  "servicesLocation": {
+    "eyebrow": "Dove ci vediamo",
+    "title": "Vicino a te, ovunque tu sia in Romania",
+    "subtitle": "La distanza non dovrebbe mai essere una barriera per il benessere della tua famiglia. Per questo offro due modalità di lavoro flessibili:",
+    "onsiteEyebrow": "In Studio",
+    "onlineEyebrow": "Consulenze Online",
+    "onsite": {
+      "title": "In studio a Bucarest",
+      "description": "Ti aspetto in uno spazio luminoso, tranquillo e appositamente progettato per la terapia del gioco dei bambini. Lo studio è concepito come un ambiente accogliente e sicuro, dove i più piccoli possono esprimersi liberamente attraverso l’arte, la metafora e il gioco, mentre i genitori possono sentirsi rassicurati.",
+      "noteLabel": "Contesto sicuro",
+      "note": "Cura dei dettagli, ritmo delicato e atmosfera calda affinché il bambino si senta al sicuro fin dai primi minuti."
+    },
+    "online": {
+      "title": "Consulenze psicologiche online",
+      "description": "Se vivi fuori Bucarest, nella diaspora, o se il tempo non ti permette di spostarti, possiamo connetterci a distanza. Le sessioni online funzionano molto bene per la consulenza genitoriale e la psicoterapia per adolescenti, offrendo il comfort di casa e massima flessibilità.",
+      "point1": "Ideale per famiglie in tutta la Romania",
+      "point2": "Massima flessibilità e prenotazione facile"
+    }
+  },
+  "practicalRomania": {
+    "eyebrow": "Dettagli",
+    "title": "Informazioni Pratiche",
+    "insurance": {
+      "title": "Assicurazione e Pagamenti",
+      "description": "Tariffe in RON. Fatture deducibili con l'assicurazione sanitaria. Pagamenti contanti, carta o bonifico."
+    },
+    "technology": {
+      "title": "Tecnologia",
+      "description": "Piattaforma sicura per sessioni online, compatibile con qualsiasi dispositivo. Setup semplice."
+    },
+    "support": {
+      "title": "Supporto ed Emergenze",
+      "description": "Protocolli chiari per situazioni urgenti e collegamenti con risorse di crisi locali."
+    }
+  }
+}

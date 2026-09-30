@@ -1,0 +1,161 @@
+{
+  "title": "Întrebări Frecvente",
+  "intro": "Răspunsuri rapide la întrebările cele mai comune despre sprijinul psihologic pentru copii și familii.",
+  "lead": "Informațiile de mai jos răspund întrebărilor practice pe care le primesc cel mai des despre ședințe, programări, confidențialitate și lucrul online sau la cabinet.",
+  "categories": {
+    "booking": {
+      "title": "Programare și Anulare",
+      "items": [
+        {
+          "q": "Cum fac o programare?",
+          "a": "Poți să mă contactezi prin email la psiholog.mariavaleriabaciu@gmail.com sau folosind formularul de contact. Îți voi răspunde în maxim 24 de ore pentru a stabili o programare."
+        },
+        {
+          "q": "Care este politica de anulare?",
+          "a": "Te rog să mă anunți cu cel puțin 24 de ore înainte dacă nu poți veni la ședință. Anulările făcute în ultima zi se taxează 50% din valoarea ședinței."
+        },
+        {
+          "q": "Pot programa ședințe în weekend?",
+          "a": "De obicei lucrez Luni-Vineri 9:00-18:00, dar pot face excepții pentru ședințe în weekend în funcție de disponibilitate și nevoile urgente."
+        }
+      ]
+    },
+    "online": {
+      "title": "Cum Decurge Terapia Online",
+      "items": [
+        {
+          "q": "Ce platformă folosim pentru ședințele online?",
+          "a": "Folosesc platforme securizate precum Zoom sau Google Meet, care respectă confidențialitatea. Îți voi trimite linkul cu o zi înainte de ședință."
+        },
+        {
+          "q": "De ce echipamente am nevoie?",
+          "a": "O conexiune stabilă la internet, cameră video și căști (recomandate pentru confidențialitate). Asigură-te că ești într-un spațiu privat și liniștit."
+        },
+        {
+          "q": "Este la fel de eficientă terapia online?",
+          "a": "Da, studiile arată că terapia online este la fel de eficientă ca cea față în față pentru majoritatea problemelor psihologice. Mulți expați o preferă pentru flexibilitate."
+        }
+      ]
+    },
+    "languages": {
+      "title": "Limbi și Fusuri Orare",
+      "items": [
+        {
+          "q": "În ce limbi pot desfășura ședințele?",
+          "a": "Ofer ședințe în română, engleză, italiană și spaniolă. Poți alege limba în care te simți cel mai confortabil să îți exprimi gândurile și sentimentele."
+        },
+        {
+          "q": "Cum gestionezi diferitele fusuri orare?",
+          "a": "Sunt flexibilă cu programarea pentru expați din Europa. Stabilim împreună un orar care să funcționeze pentru ambele părți, luând în considerare diferența de fus orar."
+        },
+        {
+          "q": "Pot schimba limba pe parcursul terapiei?",
+          "a": "Absolut! Uneori este natural să vrei să exprimi anumite gânduri în limba maternă sau în cea în care trăiești acum. Suntem flexibili."
+        }
+      ]
+    },
+    "fees": {
+      "title": "Onorarii și Plăți",
+      "items": [
+        {
+          "q": "Care sunt tarifele pentru ședințe?",
+          "a": "Tarifele variază în funcție de tipul ședinței: individual adult 250 RON (55€), copii/adolescenți 280 RON (60€), familie 350 RON (75€). Preturile pot fi plătite în RON sau EUR."
+        },
+        {
+          "q": "Ce metode de plată accepti?",
+          "a": "Accept plăți prin transfer bancar, PayPal sau card. Pentru expați, prefer plățile electronice pentru simplicitate și siguranță."
+        },
+        {
+          "q": "Când se face plata?",
+          "a": "Plata se face la sfârșitul ședinței sau prin transfer în aceeași zi. Pentru ședințele online, prefer plata cu o zi înainte sau imediat după ședință."
+        }
+      ]
+    },
+    "insurance": {
+      "title": "Asigurări și Facturi",
+      "items": [
+        {
+          "q": "Emiți facturi pentru decontarea la asigurare?",
+          "a": "Da, emit facturi detaliate care pot fi folosite pentru decontarea la asigurările private. Nu am contract cu CNAS, dar mulți expați au asigurări internaționale care acoperă terapia."
+        },
+        {
+          "q": "Ce informații conține factura?",
+          "a": "Factura conține toate informațiile necesare: data ședinței, tipul serviciului, codul CPV pentru servicii psihologice, și datele mele de identificare profesională."
+        },
+        {
+          "q": "Pot obține factură pe firma?",
+          "a": "Da, pot emite factură pe persoană juridică dacă compania ta oferă beneficii pentru sănătatea mentală a angajaților."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Confidențialitate (GDPR)",
+      "items": [
+        {
+          "q": "Cum îmi protejezi datele personale?",
+          "a": "Respect strict normele GDPR. Datele tale sunt criptate și stocate securizat. Nu le partajez cu nimeni fără acordul tău explicit, exceptând situații de pericol iminent."
+        },
+        {
+          "q": "Cât timp îmi păstrezi datele?",
+          "a": "Dosarul tău se păstrează conform legii române - minimum 5 ani după ultima ședință. După această perioadă, datele sunt distruse securizat."
+        },
+        {
+          "q": "Pot să cer accesul la datele mele sau ștergerea lor?",
+          "a": "Da, ai dreptul să îți accesezi dosarul și să ceri modificarea sau ștergerea datelor conform GDPR. Îmi poți face cererea prin email."
+        }
+      ]
+    },
+    "emergency": {
+      "title": "Situații de Urgență",
+      "items": [
+        {
+          "q": "Ce fac dacă am o criză în afara programului?",
+          "a": "Nu ofer servicii de urgență 24/7. În caz de criză, contactează serviciile locale de urgență: 112 (Europa), sau linia de suport emoțional din țara în care te afli."
+        },
+        {
+          "q": "Cum mă pot pregăti pentru o situație de urgență?",
+          "a": "Împreună vom crea un plan de siguranță personalizat cu numerele importante din țara ta și strategii de gestionare a crizelor."
+        }
+      ]
+    },
+    "children": {
+      "title": "Terapie pentru Copii",
+      "items": [
+        {
+          "q": "Părintele trebuie să fie prezent la ședințe?",
+          "a": "Pentru copii sub 12 ani, părintele participă la prima ședință și periodic la altele. Pentru adolescenți, respectăm nevoia de privacitate, dar menținem comunicarea cu părinții."
+        },
+        {
+          "q": "Cum obții consimțământul pentru copiii expați?",
+          "a": "Am nevoie de consimțământul scris al ambilor părinți. Pentru familii divorțate sau în situații complexe, lucrăm conform legilor țării de reședință."
+        },
+        {
+          "q": "Cât durează o ședință cu copii?",
+          "a": "Ședințele cu copii mici durează 45 minute, cu pre-adolescenții 50 minute, iar cu adolescenții 50-60 minute, în funcție de nevoie."
+        }
+      ]
+    },
+    "continuity": {
+      "title": "Călătorii și Relocări",
+      "items": [
+        {
+          "q": "Pot continua terapia dacă mă mut în altă țară?",
+          "a": "Da! Unul din avantajele terapiei online este că poți continua ședințele indiferent unde te muți în UE. Stabilim doar noul program în funcție de fusul orar."
+        },
+        {
+          "q": "Ce se întâmplă dacă călătoresc frecvent?",
+          "a": "Mulți expați călătoresc pentru muncă. Adaptăm programul și putem face ședințe online din diferite locații, atâta timp cât ai intimitate și conexiune la internet."
+        },
+        {
+          "q": "Poate familia să participe din locații diferite?",
+          "a": "Da, pot facilita ședințe de familie cu participanți din orașe sau țări diferite. Folosim tehnologia pentru a menține legătura familială."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "stillQuestions": "Mai ai întrebări?",
+    "contact": "Contactează-mă",
+    "description": "Dacă întrebarea ta nu se află în lista de mai sus, nu ezita să mă contactezi direct."
+  }
+}

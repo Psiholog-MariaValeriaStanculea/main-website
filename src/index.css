@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Teal and Amber Template - Talking Minds */
+    --background: 0 0% 100%;
+    --foreground: 215 7% 34%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 7% 34%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 7% 34%;
+
+    /* Teal */
+    --primary: 176 64% 41%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 176 60% 95%;
+    --primary-dark: 176 64% 30%;
+
+    /* Amber / Orange */
+    --secondary: 38 93% 54%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-accent: 38 90% 93%;
+
+    /* Mist blue neutrals for readability and structure */
+    --muted: 180 16% 92%;
+    --muted-foreground: 195 12% 42%;
+
+    --accent: 196 28% 90%;
+    --accent-foreground: 195 22% 18%;
+
+    --destructive: 2 72% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 12% 84%;
+    --input: 180 12% 84%;
+    --ring: 174 28% 34%;
+
+    /* Calm clinical gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--accent) / 0.65));
+    --gradient-sanctuary: linear-gradient(135deg, hsl(48 35% 98%), hsl(180 24% 95%));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--background)));
+    
+    --shadow-soft: 0 6px 24px -6px hsl(var(--primary) / 0.14);
+    --shadow-warm: 0 10px 30px -10px hsl(var(--secondary-accent) / 0.28);
+    --shadow-sanctuary: 0 14px 36px -16px hsl(195 22% 18% / 0.16);
+    --shadow-glow: 0 0 28px hsl(var(--primary) / 0.16);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Blue-slate dark mode for evening sessions and low strain */
+    --background: 204 24% 12%;
+    --foreground: 48 20% 92%;
+
+    --card: 204 22% 15%;
+    --card-foreground: 48 20% 92%;
+
+    --popover: 204 22% 15%;
+    --popover-foreground: 48 20% 92%;
+
+    /* Lifted sage-teal for contrast on dark surfaces */
+    --primary: 170 34% 68%;
+    --primary-foreground: 204 24% 12%;
+    --primary-light: 170 18% 24%;
+    --primary-dark: 170 40% 76%;
+
+    --secondary: 26 30% 26%;
+    --secondary-foreground: 48 20% 92%;
+    --secondary-accent: 26 44% 66%;
+
+    --muted: 204 18% 19%;
+    --muted-foreground: 190 10% 68%;
+
+    --accent: 200 18% 22%;
+    --accent-foreground: 48 20% 92%;
+
+    --destructive: 4 60% 44%;
+    --destructive-foreground: 48 20% 92%;
+
+    --border: 200 14% 24%;
+    --input: 200 14% 24%;
+    --ring: 170 34% 68%;
+
+    /* Dark mode gradients and shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--secondary-accent)), hsl(26 36% 54%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.08), hsl(var(--accent) / 0.5));
+    --gradient-sanctuary: linear-gradient(135deg, hsl(204 24% 14%), hsl(204 18% 17%));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--primary) / 0.12), hsl(204 22% 14%));
+    
+    --shadow-soft: 0 8px 28px -10px hsl(var(--primary) / 0.16);
+    --shadow-warm: 0 10px 34px -12px hsl(var(--secondary-accent) / 0.28);
+    --shadow-sanctuary: 0 18px 42px -18px hsl(204 30% 5% / 0.48);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.12);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.7; /* Better readability for sanctuary experience */
+  }
+  
+  /* Digital Sanctuary typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  /* Sanctuary responsive typography */
+  @media (max-width: 640px) {
+    h1 { @apply text-3xl font-heading !important; }
+    h2 { @apply text-2xl font-heading !important; }
+    h3 { @apply text-xl font-heading !important; }
+    p { font-size: 1.125rem !important; line-height: 1.7 !important; }
+  }
+}
+
+@layer components {
+  /* Simplified professional image wrapper */
+  .professional-image {
+    @apply relative overflow-hidden rounded-xl;
+  }
+  
+  /* Digital sanctuary hero */
+  .hero-container {
+    @apply relative overflow-hidden isolate bg-gradient-hero;
+  }
+
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 18%, hsl(var(--secondary-accent) / 0.22), transparent 24%),
+      radial-gradient(circle at 82% 24%, hsl(var(--primary-light) / 0.45), transparent 28%),
+      radial-gradient(circle at 50% 76%, hsl(var(--accent) / 0.42), transparent 34%),
+      linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    opacity: 1;
+    z-index: -2;
+  }
+
+  .hero-container::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -1px 0;
+    height: 160px;
+    background: linear-gradient(180deg, transparent, hsl(var(--background)) 82%);
+    z-index: -1;
+  }
+  
+  /* Sanctuary card styles */
+  .sanctuary-card {
+    @apply rounded-[1.6rem] border border-white/50 bg-card backdrop-blur-md shadow-sanctuary;
+    background-color: hsl(var(--card) / 0.88);
+    border-color: hsl(var(--border) / 0.72);
+  }
+  
+  /* Clean card animations */
+  .animated-card {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-sanctuary hover:border-primary/15;
+  }
+  
+  /* Simplified fade-in animation */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .fade-in-delay-400 {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Professional layout patterns */
+  .section-padding {
+    @apply py-16 px-4 sm:py-20 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Simplified button styles */
+  .btn-professional {
+    @apply bg-gradient-primary shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-sanctuary;
+  }
+  
+  /* Image lazy loading placeholder */
+  .image-placeholder {
+    @apply bg-gradient-professional animate-pulse;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center px-4 py-2 bg-secondary/10 rounded-full text-sm font-semibold text-secondary mb-4;
+  }
+
+  .hero-image-frame {
+    @apply relative w-full aspect-[4/5] md:aspect-square lg:aspect-[4/5] overflow-hidden;
+    border-radius: 120px 24px 120px 24px;
+  }
+
+  .hero-shape-beige {
+    @apply absolute -top-6 -left-6 w-[85%] h-[85%] bg-secondary-accent/80 rounded-3xl -z-10;
+  }
+
+  .hero-shape-teal {
+    @apply absolute -bottom-6 -right-6 w-[85%] h-[85%] bg-primary-light/70 rounded-3xl -z-10;
+  }
+
+  .stat-value {
+    @apply text-4xl md:text-5xl font-heading font-bold text-secondary leading-none;
+  }
+
+  .nav-link-active {
+    @apply bg-primary-light/60 text-primary rounded-full px-4 py-2;
+  }
+}

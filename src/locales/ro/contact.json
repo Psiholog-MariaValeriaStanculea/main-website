@@ -1,0 +1,60 @@
+{
+  "title": "Contactează-mă",
+  "subtitle": "Sunt aici să vă ajut pe dumneavoastră și familia",
+  "form": {
+    "title": "Trimite un Mesaj",
+    "name": "Numele complet",
+    "email": "Adresa de email",
+    "phone": "Numărul de telefon",
+    "subject": "Subiectul",
+    "message": "Mesajul",
+    "send": "Trimite Mesajul",
+    "sending": "Se trimite...",
+    "success": "Mesajul a fost trimis cu succes!",
+    "error": "A apărut o eroare. Vă rugăm să încercați din nou."
+  },
+  "info": {
+    "location": {
+      "title": "Locația",
+      "address": "Strada Cercului, nr.2, Sector 2, Bucuresti",
+      "note": "Consultații online și la cabinet"
+    },
+    "contact": {
+      "title": "Date de Contact",
+      "email": "psiholog.mariavaleriabaciu@gmail.com"
+    },
+    "schedule": {
+      "title": "Program",
+      "weekdays": "Luni - Vineri: 9:00 - 19:00",
+      "weekend": "Sâmbătă: 9:00 - 15:00",
+      "note": "Programări doar cu acordare prealabilă"
+    }
+  },
+  "faq": {
+    "title": "Întrebări Frecvente",
+    "q1": {
+      "question": "Cât durează o ședință de terapie?",
+      "answer": "O ședință de terapie durează în general 50 de minute pentru copii și adolescenți, și 60 de minute pentru terapia de familie."
+    },
+    "q2": {
+      "question": "Cu ce frecvență sunt recomandate ședințele?",
+      "answer": "De obicei, ședințele se desfășoară săptămânal, dar frecvența poate fi adaptată în funcție de nevoile specifice ale copilului și familiei."
+    },
+    "q3": {
+      "question": "Acceptați asigurări de sănătate?",
+      "answer": "În prezent, serviciile se plătesc direct. Pot furniza documentele necesare pentru rambursarea de la asigurările private."
+    },
+    "q4": {
+      "question": "De la ce vârstă pot beneficia copiii de serviciile dumneavoastră?",
+      "answer": "Lucrez cu copii începând de la vârsta de 4 ani și până la 18 ani, adaptând metodele terapeutice în funcție de vârstă."
+    }
+  },
+  "ui": {
+    "heroLabel": "Contact & Programări",
+    "introCards": [
+      { "title": "Răspuns", "description": "Revin de obicei în 24 de ore, cu prioritate pentru solicitările urgente.", "accent": "card" },
+      { "title": "Cabinet & online", "description": "Poți programa ședințe în București sau online, în funcție de nevoile familiei.", "accent": "card" },
+      { "title": "Primul pas", "description": "Un mesaj scurt despre context și obiectivul tău este suficient pentru a începe.", "accent": "sanctuary" }
+    ]
+  }
+}

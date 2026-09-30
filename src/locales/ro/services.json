@@ -1,0 +1,68 @@
+{
+  "title": "Serviciile Mele",
+  "subtitle": "Oferit cu o abordare integrativ-relațională personalizată",
+  "evaluation": {
+    "title": "Evaluare Psihologică",
+    "subtitle": "Pentru copii și adolescenți",
+    "description": "Evaluări comprehensive care includ aplicarea de teste psihologice, observare clinică și analiza comportamentului pentru identificarea nevoilor specifice și recomandări de intervenție.",
+    "duration": "2-3 sesiuni",
+    "price": "300-450 RON",
+    "includes": [
+      "Interviu de anamneză cu părinții",
+      "Testare psihologică adaptată vârstei",
+      "Observare clinică",
+      "Raport detaliat cu recomandări"
+    ]
+  },
+  "therapy": {
+    "title": "Psihoterapie Individuală",
+    "subtitle": "Pentru copii și adolescenți",
+    "description": "Ședințe de terapie personalizate care folosesc tehnici de joc terapeutic pentru copii și tehnici cognitiv-comportamentale pentru adolescenți, adaptate nevoilor specifice.",
+    "duration": "50 minute/ședință",
+    "price": "200 RON/ședință",
+    "includes": [
+      "Terapie prin joc pentru copii",
+      "Tehnici cognitiv-comportamentale",
+      "Implicarea familiei în proces",
+      "Monitorizare progres"
+    ]
+  },
+  "parental": {
+    "title": "Consiliere Parentală",
+    "subtitle": "Suport pentru părinți",
+    "description": "Ghidare și suport pentru părinți în înțelegerea și gestionarea comportamentului copilului, dezvoltarea strategiilor educaționale eficiente și îmbunătățirea relației părinte-copil.",
+    "duration": "50 minute/ședință",
+    "price": "180 RON/ședință",
+    "includes": [
+      "Strategii de comunicare eficientă",
+      "Tehnici de disciplină pozitivă",
+      "Gestionarea comportamentelor dificile",
+      "Planuri personalizate de acțiune"
+    ]
+  },
+  "family": {
+    "title": "Terapie de Familie",
+    "subtitle": "Pentru întreaga familie",
+    "description": "Sesiuni care implică întreaga familie pentru îmbunătățirea comunicării, rezolvarea conflictelor și consolidarea legăturilor familiale.",
+    "duration": "60 minute/ședință",
+    "price": "250 RON/ședință",
+    "includes": [
+      "Evaluarea dinamicii familiale",
+      "Exerciții de comunicare",
+      "Rezolvarea conflictelor",
+      "Planuri de activități comune"
+    ]
+  },
+  "consultation": {
+    "title": "Consultație Inițială",
+    "description": "O întâlnire de cunoaștere pentru a discuta despre preocupările dumneavoastră și a stabili cel mai potrivit plan de intervenție.",
+    "duration": "60 minute",
+    "price": "150 RON",
+    "note": "Prețul consultației inițiale se deduce din costul evaluării sau terapiei ulterioare."
+  },
+  "cta": {
+    "title": "Gata să începem?",
+    "description": "Contactați-mă pentru o consultație inițială și să discutăm despre cum vă pot ajuta.",
+    "button": "Programează Consultația"
+  }
+}

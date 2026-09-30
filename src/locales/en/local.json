@@ -1,0 +1,90 @@
+{
+  "whyFamiliesChoose": {
+    "eyebrow": "Values & Safety",
+    "title": "Therapy is not about “fixing” a child, but about supporting an entire family",
+    "subtitle": "Choosing the right psychologist for your child is an important decision. These are the principles that guide my practice:",
+    "professional": {
+      "title": "Accreditation and Legal Safety",
+      "description": "I am a clinical psychologist and integrative psychotherapist with legal practice rights issued by the Romanian College of Psychologists. Every assessment and intervention follows the highest professional and ethical standards."
+    },
+    "integrative": {
+      "title": "Personalized Integrative Approach",
+      "description": "I do not believe in standardized solutions or rigid techniques. I combine methods from several therapeutic schools to create a path uniquely adapted to your family’s rhythm, personality, and needs."
+    },
+    "confidential": {
+      "title": "Complete Confidentiality and Respect",
+      "description": "Everything discussed in the practice or during online sessions remains strictly protected. I build a relationship based on mutual respect, where every family member feels validated and heard."
+    },
+    "parents": {
+      "title": "Active Parent Involvement",
+      "description": "I strongly believe lasting change happens when we work as a team. You will always receive transparent feedback and clear guidance on how to continue supporting your child at home."
+    }
+  },
+  "howTherapyWorks": {
+    "eyebrow": "Services at a glance",
+    "title": "How do we work together?",
+    "subtitle": "Services dedicated to your family’s emotional balance",
+    "playTherapy": {
+      "title": "Play Therapy (4 - 10 years)",
+      "description": "Play is children’s native language, and toys are their words. I use guided Play Therapy techniques to help children express and process fear, anger, or anxiety in a safe way.",
+      "points": [
+        "We turn difficult behaviors into moments of emotional safety.",
+        "We build cooperation through play, empathy, and a gentle pace.",
+        "Parents receive clear guidance to continue the work at home."
+      ]
+    },
+    "teens": {
+      "title": "Psychotherapy for Adolescents",
+      "description": "A period of intense change, social pressure, and identity search. I offer a fully confidential space where adolescents can speak freely about anxiety, self-esteem, school stress, or relationships.",
+      "points": [
+        "We work on confidence, autonomy, and emotional regulation.",
+        "We strengthen communication and healthy boundaries.",
+        "Support is adapted to each adolescent’s pace and sensitivity."
+      ]
+    },
+    "family": {
+      "title": "Parent Counseling & Family Therapy",
+      "description": "There is no manual for the perfect parent, but you can be the parent your child needs. We work as a team to understand children’s reactions and implement warm strategies based on kindness and healthy limits.",
+      "points": [
+        "We reduce parental stress and increase clarity at home.",
+        "We establish routines and strategies that work in daily life.",
+        "We rebuild bridges of communication between parent and child."
+      ]
+    }
+  },
+  "servicesLocation": {
+    "eyebrow": "Where we meet",
+    "title": "Close to you, wherever you are in Romania",
+    "subtitle": "Distance should never be a barrier to your family’s well-being. That is why I offer two flexible ways of working:",
+    "onsiteEyebrow": "At the Practice",
+    "onlineEyebrow": "Online Consultations",
+    "onsite": {
+      "title": "At the Practice in Bucharest",
+      "description": "I welcome you in a bright, calm, and specially designed space for child play therapy. The practice is intended as a warm and safe environment, where children can express themselves freely through art, metaphor, and play, while parents can feel reassured they are in good hands.",
+      "noteLabel": "Safe setting",
+      "note": "Attention to detail, a gentle pace, and a warm atmosphere so the child feels safe from the first minutes."
+    },
+    "online": {
+      "title": "Online Psychological Consultations",
+      "description": "If you live outside Bucharest, in the diaspora, or if your schedule does not allow travel, we can connect remotely. Online sessions work especially well for parent counseling and adolescent psychotherapy, giving you the comfort of home and maximum flexibility.",
+      "point1": "Ideal for families across Romania",
+      "point2": "Maximum flexibility and easy scheduling"
+    }
+  },
+  "practicalRomania": {
+    "eyebrow": "Details",
+    "title": "Practical Information",
+    "insurance": {
+      "title": "Insurance & Payments",
+      "description": "Fees in RON. Invoices deductible with health insurance. Cash, card, or bank transfer payments."
+    },
+    "technology": {
+      "title": "Technology",
+      "description": "Secure platform for online sessions, compatible with any device. Simple setup."
+    },
+    "support": {
+      "title": "Support & Emergencies",
+      "description": "Clear protocols for urgent situations and connections with local crisis resources."
+    }
+  }
+}

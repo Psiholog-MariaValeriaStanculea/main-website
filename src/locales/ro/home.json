@@ -1,0 +1,255 @@
+{
+  "hero": {
+    "eyebrow": "Psiholog clinician și psihoterapeut integrativ",
+    "title": "În spatele fiecărui comportament greu se ascunde o emoție care cere să fie auzită.",
+    "description": "Atunci când cei mici se confruntă cu frici, anxietate sau furie, ei nu au întotdeauna cuvintele pentru a spune ce îi doare. Îți arată asta prin comportament, plâns, retragere sau refuzuri constante.",
+    "description2": "Părintele din tine simte această neputință și caută o cale de comunicare. Sunt aici să vă ghidez și să redescoperim împreună liniștea.",
+    "bio": "Numele meu este Valeria Maria Stănculea și sunt psiholog clinician și psihoterapeut integrativ specializat în terapia copilului, acreditat de Colegiul Psihologilor din România. Dincolo de acreditări și diplome, sunt un aliat cald pentru universul interior al copilului tău și un sprijin real pentru tine, ca părinte.",
+    "closing": "În cabinetul meu nu există judecată, ci spațiu pentru vindecare, blândețe și înțelegere reciprocă.",
+    "ctaPrimary": "Haideți să povestim. Rezervă o ședință",
+    "badge1": "Cabinet București",
+    "badge2": "5+ Ani Experiență",
+    "badge3": "Cabinet și Online",
+    "imageAlt": "Valeria Maria Stănculea - Psiholog Copii și Familii București",
+    "experienceBadge": "10+ Ani de Experiență"
+  },
+  "stats": {
+    "experience": {
+      "value": "10+",
+      "label": "Ani de experiență clinică"
+    },
+    "families": {
+      "value": "500+",
+      "label": "Familii sprijinite"
+    },
+    "satisfaction": {
+      "value": "98%",
+      "label": "Părinți recomandă serviciile"
+    }
+  },
+  "services": {
+    "eyebrow": "Cum lucrăm împreună?",
+    "title": "Servicii dedicate echilibrului emoțional al familiei tale",
+    "subtitle": "Fiecare etapă de creștere vine cu propriile provocări. De aceea, abordarea mea este adaptată specific fiecărei vârste și fiecărei dinamici de familie.",
+    "viewAll": "Vezi Toate Serviciile",
+    "moreInfo": "Află mai multe",
+    "evaluation": {
+      "title": "Terapie prin Joc (4 - 10 ani)",
+      "description": "Jocul este limbajul nativ al copiilor, iar jucăriile sunt cuvintele lor. Folosesc tehnici ghidate de Play Therapy pentru a ajuta copiii să își exprime și să își proceseze fricile, furia sau anxietatea într-un mod sigur."
+    },
+    "therapy": {
+      "title": "Psihoterapie pentru Adolescenți",
+      "description": "O perioadă a transformărilor intense, a presiunii sociale și a căutării identității. Ofer un spațiu de confidențialitate absolută unde adolescenții pot discuta liber despre anxietate, stimă de sine, stres școlar sau relații."
+    },
+    "counseling": {
+      "title": "Consiliere Parentală & Terapie de Familie",
+      "description": "Nu există un manual pentru părintele perfect, dar poți fi părintele de care copilul tău are nevoie. Lucrăm în echipă pentru a descifra reacțiile celor mici și pentru a implementa strategii calde, bazate pe blândețe și limite sănătoase."
+    }
+  },
+  "about": {
+    "eyebrow": "Despre Abordarea Mea",
+    "title": "Despre Abordarea Mea",
+    "description1": "Ca psiholog clinician și psihoterapeut integrativ, lucrez cu copiii, adolescenții și familiile folosind o abordare care combină componente cognitive, emoționale și comportamentale.",
+    "description2": "Terapia prin joc este modalitatea centrală de explorare și reglare în lucrul cu copiii, iar implicarea familiei este parte integrantă a procesului de susținere și schimbare.",
+    "readMore": "Citește Mai Mult",
+    "specializations": {
+      "title": "Specializări",
+      "behavioral": "Tulburări de comportament și emoționale",
+      "adhd": "ADHD și autism înalt funcțional",
+      "trauma": "Trauma de dezvoltare și adopție",
+      "relational": "Dificultăți relaționale și socio-emoționale"
+    }
+  },
+  "pricing": {
+    "eyebrow": "Tarife și Pachete",
+    "title": "Planuri de Ședințe",
+    "subtitle": "Opțiuni flexibile adaptate nevoilor copilului și familiei tale.",
+    "toggleSession": "Per ședință",
+    "togglePackage": "Pachete",
+    "cta": "Programează Consultație",
+    "disclaimer": "Tarifele sunt orientative. Detaliile exacte se discută la prima consultație.",
+    "plans": {
+      "session": [
+        {
+          "name": "Consultație Inițială",
+          "price": "250 RON",
+          "period": "/ ședință",
+          "note": "Evaluare și plan terapeutic",
+          "features": [
+            "Durată 50 minute",
+            "Evaluare inițială",
+            "Plan personalizat",
+            "Recomandări pentru părinți"
+          ]
+        },
+        {
+          "name": "Ședință Standard",
+          "price": "200 RON",
+          "period": "/ ședință",
+          "popular": true,
+          "popularLabel": "Cel mai popular",
+          "note": "Pentru copii și adolescenți",
+          "features": [
+            "Durată 50 minute",
+            "Terapie individuală",
+            "Raport de progres",
+            "Suport între ședințe"
+          ]
+        },
+        {
+          "name": "Consiliere Parentală",
+          "price": "220 RON",
+          "period": "/ ședință",
+          "note": "Pentru părinți",
+          "features": [
+            "Durată 50 minute",
+            "Strategii parentale",
+            "Ghidaj educațional",
+            "Plan de acțiune"
+          ]
+        }
+      ],
+      "package": [
+        {
+          "name": "Pachet Start",
+          "price": "900 RON",
+          "period": "/ 5 ședințe",
+          "note": "Economisești 100 RON",
+          "features": [
+            "5 ședințe individuale",
+            "Evaluare inițială inclusă",
+            "Raport intermediar",
+            "Flexibilitate programare"
+          ]
+        },
+        {
+          "name": "Pachet Familie",
+          "price": "1.600 RON",
+          "period": "/ 8 ședințe",
+          "popular": true,
+          "popularLabel": "Cel mai popular",
+          "note": "Copil + părinți",
+          "features": [
+            "6 ședințe copil",
+            "2 ședințe consiliere parentală",
+            "Plan integrat familie",
+            "Suport email"
+          ]
+        },
+        {
+          "name": "Pachet Intensiv",
+          "price": "2.800 RON",
+          "period": "/ 15 ședințe",
+          "note": "Pentru programe extinse",
+          "features": [
+            "15 ședințe individuale",
+            "Evaluări periodice",
+            "Coordonare cu școală",
+            "Prioritate programare"
+          ]
+        }
+      ]
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimoniale",
+    "title": "Ce Spun Familiile",
+    "subtitle": "Experiențe reale ale familiilor cu care am lucrat (nume schimbate pentru confidențialitate).",
+    "items": [
+      {
+        "name": "Maria P.",
+        "role": "Mama unui copil de 8 ani",
+        "text": "Valeria ne-a ajutat să înțelegem comportamentul fiului nostru și să găsim strategii care funcționează acasă. Procesul a fost cald, profesional și adaptat nevoilor noastre."
+      },
+      {
+        "name": "Andrei M.",
+        "role": "Tata a doi adolescenți",
+        "text": "Ședințele online au fost o salvare pentru familia noastră. Comunicarea a fost clară, iar fiica noastră s-a simțit în siguranță de la prima întâlnire."
+      },
+      {
+        "name": "Elena D.",
+        "role": "Mama unui copil de 6 ani",
+        "text": "Abordarea prin joc a fost exact ce avea nevoie copilul meu. Am văzut progrese reale în gestionarea emoțiilor și în relația noastră de acasă."
+      },
+      {
+        "name": "Cristina L.",
+        "role": "Părinte expat",
+        "text": "Flexibilitatea programărilor și faptul că putem lucra în română și engleză ne-a oferit exact sprijinul de care aveam nevoie după relocare."
+      }
+    ]
+  },
+  "consultationForm": {
+    "eyebrow": "Consultație Gratuită",
+    "title": "Programează prima consultație online",
+    "description": "Completează formularul și te voi contacta în maxim 24 de ore pentru a stabili o programare.",
+    "formNote": "O primă conversație calmă și confidențială. Vei primi ghidaj clar înainte, în timpul și după ședință.",
+    "fields": {
+      "name": "Nume",
+      "phone": "Telefon",
+      "therapy": "Tip de serviciu"
+    },
+    "placeholders": {
+      "name": "Numele tău",
+      "phone": "Număr de telefon",
+      "therapy": "Selectează serviciul"
+    },
+    "therapyOptions": [
+      "Evaluare psihologică",
+      "Terapie individuală copil",
+      "Consiliere parentală",
+      "Terapie online"
+    ],
+    "submit": "Programează Consultație",
+    "emailSubject": "Cerere consultație de pe site",
+    "successTitle": "Email pregătit",
+    "successDescription": "Trimite mesajul din aplicația de email pentru a solicita o consultație.",
+    "trust": {
+      "safeSpaceTitle": "Spațiu sigur și blând",
+      "safeSpaceDescription": "Primul contact este gândit ca un cadru cald și lipsit de presiune, în care puteți pune întrebări și clarifica nevoile familiei.",
+      "flexibleTitle": "Programare flexibilă",
+      "flexibleDescription": "Poți alege între cabinet și online, în funcție de ritmul și disponibilitatea familiei.",
+      "responseTitle": "Răspuns rapid",
+      "responseDescription": "Îți răspund în cel mult 24 de ore și îți ofer pașii clari pentru programare."
+    }
+  },
+  "latestArticles": {
+    "eyebrow": "Blog",
+    "title": "Articole Recente",
+    "subtitle": "Idei scurte și utile despre copil, relație și reglare emoțională.",
+    "readMore": "Citește mai mult",
+    "viewAll": "Vezi toate articolele"
+  },
+  "faqPreview": {
+    "eyebrow": "Întrebări Frecvente",
+    "title": "Cele mai frecvente întrebări",
+    "description": "Răspunsuri rapide la întrebările pe care le primesc cel mai des de la părinți.",
+    "viewAll": "Vezi toate întrebările",
+    "items": [
+      {
+        "q": "Cum fac o programare?",
+        "a": "Poți să mă contactezi prin email sau formularul de contact. Îți voi răspunde în maxim 24 de ore pentru a stabili o programare."
+      },
+      {
+        "q": "Este la fel de eficientă terapia online?",
+        "a": "Da, studiile arată că terapia online este la fel de eficientă ca cea față în față pentru majoritatea problemelor psihologice la copii și adolescenți."
+      },
+      {
+        "q": "Ce vârstă au copiii cu care lucrezi?",
+        "a": "Lucrez cu copii de la 3 ani în sus, adolescenți și familii. Abordarea este adaptată vârstei și nevoilor specifice."
+      },
+      {
+        "q": "Care este politica de anulare?",
+        "a": "Te rog să mă anunți cu cel puțin 24 de ore înainte dacă nu poți veni la ședință. Anulările tardive se taxează parțial."
+      },
+      {
+        "q": "În ce limbi oferi servicii?",
+        "a": "Ofer servicii în română, engleză, italiană și spaniolă, atât la cabinet cât și online."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Fă primul pas către o atmosferă mai caldă și mai liniștită în căminul vostru.",
+    "description": "Fiecare zi contează în dezvoltarea armonioasă a copilului tău. Haideți să transformăm provocările de astăzi în punți de conectare pentru viitor.",
+    "button": "Programează o consultație inițială"
+  }
+}

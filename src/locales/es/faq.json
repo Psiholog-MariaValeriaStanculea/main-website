@@ -1,0 +1,161 @@
+{
+  "title": "Preguntas Frecuentes",
+  "intro": "Respuestas rápidas a las preguntas más comunes sobre el apoyo psicológico para niños y familias.",
+  "lead": "La información de abajo responde a las preguntas prácticas que recibo con más frecuencia sobre sesiones, programación, confidencialidad y trabajo online o presencial.",
+  "categories": {
+    "booking": {
+      "title": "Reserva y Cancelación",
+      "items": [
+        {
+          "q": "¿Cómo hago una cita?",
+          "a": "Puedes contactarme por email a psiholog.mariavaleriabaciu@gmail.com o usando el formulario de contacto. Te responderé en máximo 24 horas para programar una cita."
+        },
+        {
+          "q": "¿Cuál es tu política de cancelación?",
+          "a": "Por favor avísame con al menos 24 horas de anticipación si no puedes asistir a la sesión. Las cancelaciones del último día se cobran al 50% del valor de la sesión."
+        },
+        {
+          "q": "¿Puedo reservar sesiones en fin de semana?",
+          "a": "Normalmente trabajo Lunes-Viernes 9:00-18:00, pero puedo hacer excepciones para sesiones de fin de semana según disponibilidad y necesidades urgentes."
+        }
+      ]
+    },
+    "online": {
+      "title": "Cómo Funciona la Terapia Online",
+      "items": [
+        {
+          "q": "¿Qué plataforma usamos para las sesiones online?",
+          "a": "Uso plataformas seguras como Zoom o Google Meet que respetan la confidencialidad. Te enviaré el enlace un día antes de la sesión."
+        },
+        {
+          "q": "¿Qué equipo necesito?",
+          "a": "Una conexión estable a internet, cámara de video y auriculares (recomendados para privacidad). Asegúrate de estar en un espacio privado y silencioso."
+        },
+        {
+          "q": "¿Es la terapia online igual de efectiva?",
+          "a": "Sí, los estudios muestran que la terapia online puede ser tan eficaz como la presencial para muchas dificultades psicológicas. Muchas familias la eligen por la flexibilidad que ofrece."
+        }
+      ]
+    },
+    "languages": {
+      "title": "Idiomas y Zonas Horarias",
+      "items": [
+        {
+          "q": "¿En qué idiomas se pueden realizar las sesiones?",
+          "a": "Ofrezco sesiones en rumano, inglés, italiano y español. Puedes elegir el idioma en el que te sientes más cómodo expresando tus pensamientos y sentimientos."
+        },
+        {
+          "q": "¿Cómo manejas las diferentes zonas horarias?",
+          "a": "Soy flexible al coordinar sesiones entre distintos husos horarios de Europa. Definiremos un horario que funcione bien para tu familia y permita mantener la continuidad terapéutica."
+        },
+        {
+          "q": "¿Puedo cambiar de idioma durante la terapia?",
+          "a": "¡Absolutamente! A veces es natural querer expresar ciertos pensamientos en tu idioma nativo o en el que vives actualmente. Somos flexibles."
+        }
+      ]
+    },
+    "fees": {
+      "title": "Honorarios y Pagos",
+      "items": [
+        {
+          "q": "¿Cuáles son las tarifas para las sesiones?",
+          "a": "Las tarifas varían por tipo de sesión: individual adulto 250 RON (55€), niños/adolescentes 280 RON (60€), familia 350 RON (75€). Los precios pueden pagarse en RON o EUR."
+        },
+        {
+          "q": "¿Qué métodos de pago aceptas?",
+          "a": "Acepto transferencias bancarias, PayPal y pagos con tarjeta. El pago electrónico suele ser la opción más simple y segura."
+        },
+        {
+          "q": "¿Cuándo se debe hacer el pago?",
+          "a": "El pago se hace al final de la sesión o por transferencia el mismo día. Para sesiones online, prefiero el pago un día antes o inmediatamente después de la sesión."
+        }
+      ]
+    },
+    "insurance": {
+      "title": "Seguros y Facturas",
+      "items": [
+        {
+          "q": "¿Emites facturas para reembolso de seguros?",
+          "a": "Sí, emito facturas detalladas que pueden utilizarse para el reembolso con seguros privados. No tengo convenio con el sistema público rumano, pero muchas familias utilizan seguros privados o internacionales para cubrir la terapia."
+        },
+        {
+          "q": "¿Qué información contiene la factura?",
+          "a": "La factura contiene toda la información necesaria: fecha de la sesión, tipo de servicio, código CPV para servicios psicológicos, y mis datos de identificación profesional."
+        },
+        {
+          "q": "¿Puedo obtener una factura para mi empresa?",
+          "a": "Sí, puedo emitir una factura a una persona jurídica si tu empresa ofrece beneficios de salud mental para empleados."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Confidencialidad (GDPR)",
+      "items": [
+        {
+          "q": "¿Cómo proteges mis datos personales?",
+          "a": "Respeto estrictamente las normas GDPR. Tus datos están encriptados y almacenados de forma segura. No los comparto con nadie sin tu consentimiento explícito, excepto en situaciones de peligro inminente."
+        },
+        {
+          "q": "¿Cuánto tiempo conservas mis datos?",
+          "a": "Tu expediente se conserva según la ley rumana - mínimo 5 años después de la última sesión. Después de este período, los datos se destruyen de forma segura."
+        },
+        {
+          "q": "¿Puedo solicitar acceso a mis datos o su eliminación?",
+          "a": "Sí, tienes derecho a acceder a tu expediente y solicitar modificación o eliminación de datos según GDPR. Puedes hacer la solicitud por email."
+        }
+      ]
+    },
+    "emergency": {
+      "title": "Situaciones de Emergencia",
+      "items": [
+        {
+          "q": "¿Qué hago si tengo una crisis fuera del horario de trabajo?",
+          "a": "No ofrezco servicios de emergencia 24/7. En caso de crisis, contacta los servicios de emergencia locales: 112 (Europa), o la línea de apoyo emocional de tu país."
+        },
+        {
+          "q": "¿Cómo puedo prepararme para una situación de emergencia?",
+          "a": "Juntos crearemos un plan de seguridad personalizado con los números importantes de tu país y estrategias de manejo de crisis."
+        }
+      ]
+    },
+    "children": {
+      "title": "Terapia para Niños",
+      "items": [
+        {
+          "q": "¿Debe estar presente el padre en las sesiones?",
+          "a": "Para niños menores de 12 años, el padre participa en la primera sesión y periódicamente en otras. Para adolescentes, respetamos la necesidad de privacidad manteniendo comunicación con los padres."
+        },
+        {
+          "q": "¿Cómo obtienes el consentimiento cuando un niño vive entre distintos países o marcos legales?",
+          "a": "Necesito consentimiento escrito de ambos padres. Para familias divorciadas o situaciones complejas, trabajamos según las leyes del país de residencia."
+        },
+        {
+          "q": "¿Cuánto dura una sesión con niños?",
+          "a": "Las sesiones con niños pequeños duran 45 minutos, con pre-adolescentes 50 minutos, y con adolescentes 50-60 minutos, según la necesidad."
+        }
+      ]
+    },
+    "continuity": {
+      "title": "Viajes y Reubicaciones",
+      "items": [
+        {
+          "q": "¿Puedo continuar la terapia si me mudo a otro país?",
+          "a": "¡Sí! Una de las ventajas de la terapia online es que puedes continuar las sesiones sin importar dónde te mudes dentro de la UE. Solo ajustamos el horario según la zona horaria."
+        },
+        {
+          "q": "¿Qué pasa si viajo frecuentemente?",
+          "a": "Muchas familias viajan con frecuencia por trabajo o por motivos personales. Podemos adaptar el horario y continuar online desde distintas ubicaciones, siempre que haya privacidad y una conexión estable a internet."
+        },
+        {
+          "q": "¿Puede la familia participar desde diferentes ubicaciones?",
+          "a": "Sí, puedo facilitar sesiones familiares con participantes desde diferentes ciudades o países. Usamos tecnología para mantener la conexión familiar."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "stillQuestions": "¿Aún tienes preguntas?",
+    "contact": "Contáctame",
+    "description": "Si tu pregunta no está listada arriba, no dudes en contactarme directamente."
+  }
+}

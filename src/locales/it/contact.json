@@ -1,0 +1,60 @@
+{
+  "title": "Contattami",
+  "subtitle": "Sono qui per aiutare te e la tua famiglia",
+  "form": {
+    "title": "Invia un Messaggio",
+    "name": "Nome completo",
+    "email": "Indirizzo email",
+    "phone": "Numero di telefono",
+    "subject": "Oggetto",
+    "message": "Messaggio",
+    "send": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "success": "Messaggio inviato con successo!",
+    "error": "Si è verificato un errore. Riprova."
+  },
+  "info": {
+    "location": {
+      "title": "Indirizzo",
+      "address": "Strada Cercului, nr.2, Sector 2, Bucarest",
+      "note": "Sedute in studio a Bucarest e consulenze online"
+    },
+    "contact": {
+      "title": "Dettagli di Contatto",
+      "email": "psiholog.mariavaleriabaciu@gmail.com"
+    },
+    "schedule": {
+      "title": "Orari",
+      "weekdays": "Lunedì - Venerdì: 9:00 - 19:00",
+      "weekend": "Sabato: 9:00 - 15:00",
+      "note": "Appuntamenti disponibili solo su prenotazione"
+    }
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "q1": {
+      "question": "Quanto dura una sessione di terapia?",
+      "answer": "Una sessione di terapia dura generalmente 50 minuti per bambini e adolescenti, e 60 minuti per la terapia familiare."
+    },
+    "q2": {
+      "question": "Con che frequenza sono raccomandate le sessioni?",
+      "answer": "Di solito, le sessioni si svolgono settimanalmente, ma la frequenza può essere adattata in base alle esigenze specifiche del bambino e della famiglia."
+    },
+    "q3": {
+      "question": "Accettate assicurazioni sanitarie?",
+      "answer": "Attualmente, i servizi sono pagati direttamente. Posso fornire i documenti necessari per il rimborso da assicurazioni private."
+    },
+    "q4": {
+      "question": "Da che età i bambini possono beneficiare dei vostri servizi?",
+      "answer": "Lavoro con bambini a partire dai 4 anni fino ai 18 anni, adattando i metodi terapeutici in base all'età."
+    }
+  },
+  "ui": {
+    "heroLabel": "Contatto e Appuntamenti",
+    "introCards": [
+      { "title": "Risposta", "description": "Di solito rispondo entro 24 ore, con priorità per le richieste urgenti.", "accent": "card" },
+      { "title": "Studio e online", "description": "Puoi programmare sedute a Bucarest o online, in base alle esigenze della tua famiglia.", "accent": "card" },
+      { "title": "Primo passo", "description": "Un breve messaggio sul tuo contesto e obiettivo è sufficiente per iniziare.", "accent": "sanctuary" }
+    ]
+  }
+}

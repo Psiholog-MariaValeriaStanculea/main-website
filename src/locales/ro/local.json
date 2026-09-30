@@ -1,0 +1,106 @@
+{
+  "whyFamiliesChoose": {
+    "eyebrow": "Valori & Siguranță",
+    "title": "Terapia nu este despre a „repara” un copil, ci despre a susține o întreagă familie",
+    "subtitle": "Alegerea psihologului potrivit pentru copilul tău este o decizie importantă. Iată principiile care îmi ghidează practica:",
+    "professional": {
+      "title": "Acreditare și Siguranță Legală",
+      "description": "Sunt psiholog clinician și psihoterapeut integrativ cu drept de liberă practică eliberat de Colegiul Psihologilor din România. Fiecare evaluare și intervenție respectă cele mai înalte standarde profesionale și etice."
+    },
+    "integrative": {
+      "title": "Abordare Integrativă Personalizată",
+      "description": "Nu cred în soluții standardizate sau tehnici rigide. Îmbin metode din mai multe școli terapeutice pentru a crea un parcurs adaptat unic ritmului, personalității și nevoilor specifice ale familiei tale."
+    },
+    "confidential": {
+      "title": "Confidențialitate și Respect Deplin",
+      "description": "Tot ceea ce se discută în spațiul cabinetului sau în sesiunile online rămâne strict protejat. Construiesc o relație bazată pe respect mutual, unde fiecare membru al familiei se simte validat și ascultat."
+    },
+    "parents": {
+      "title": "Implicarea Activă a Părinților",
+      "description": "Cred cu tărie că schimbarea durabilă se produce atunci când lucrăm ca o echipă. Vei primi mereu feedback transparent și ghidaj clar despre cum poți continua procesul de susținere a copilului acasă."
+    }
+  },
+  "howTherapyWorks": {
+    "eyebrow": "Servicii pe scurt",
+    "title": "Cum lucrăm împreună?",
+    "subtitle": "Servicii dedicate echilibrului emoțional al familiei tale",
+    "playTherapy": {
+      "title": "Terapie prin Joc (4 - 10 ani)",
+      "description": "Jocul este limbajul nativ al copiilor, iar jucăriile sunt cuvintele lor. Folosesc tehnici ghidate de Play Therapy pentru a ajuta copiii să își exprime și să își proceseze fricile, furia sau anxietatea într-un mod sigur.",
+      "points": [
+        "Transformăm comportamentele dificile în momente de siguranță emoțională.",
+        "Construim cooperare prin joc, empatie și ritm blând.",
+        "Părinții primesc ghidaj clar pentru continuitate acasă."
+      ]
+    },
+    "teens": {
+      "title": "Psihoterapie pentru Adolescenți",
+      "description": "O perioadă a transformărilor intense, a presiunii sociale și a căutării identității. Ofer un spațiu de confidențialitate absolută unde adolescenții pot discuta liber despre anxietate, stimă de sine, stres școlar sau relații.",
+      "points": [
+        "Lucrăm la încredere, autonomie și reglarea emoțiilor.",
+        "Consolidăm comunicarea și limitele sănătoase.",
+        "Sprijinul este adaptat ritmului și sensibilității fiecărui adolescent."
+      ]
+    },
+    "family": {
+      "title": "Consiliere Parentală & Terapie de Familie",
+      "description": "Nu există un manual pentru părintele perfect, dar poți fi părintele de care copilul tău are nevoie. Lucrăm în echipă pentru a descifra reacțiile celor mici și pentru a implementa strategii calde, bazate pe blândețe și limite sănătoase.",
+      "points": [
+        "Reducem stresul parental și creștem claritatea în familie.",
+        "Stabilim rutine și strategii care funcționează în viața de zi cu zi.",
+        "Refacem punțile de comunicare dintre părinte și copil."
+      ]
+    },
+    "step1": {
+      "title": "Consultația Inițială",
+      "description": "Întâlnire de 50 de minute la cabinet sau online pentru evaluarea nevoilor familiei."
+    },
+    "step2": {
+      "title": "Plan Personalizat",
+      "description": "Crearea unei abordări terapeutice adaptată vârstei copilului și nevoilor specifice."
+    },
+    "step3": {
+      "title": "Sesiuni Regulate",
+      "description": "Ședințe săptămânale sau bisăptămânale la cabinet în București sau online în România."
+    },
+    "step4": {
+      "title": "Suport pentru Familie",
+      "description": "Implicarea părinților și a familiei în procesul terapeutic când este benefic."
+    }
+  },
+  "servicesLocation": {
+    "eyebrow": "Unde ne vedem?",
+    "title": "Aproape de tine, oriunde te-ai afla în România",
+    "subtitle": "Distanța nu ar trebui să fie niciodată o barieră în calea stării de bine a familiei tale. De aceea, îți pun la dispoziție două modalități flexibile de lucru:",
+    "onsiteEyebrow": "La Cabinet",
+    "onlineEyebrow": "Consultații Online",
+    "onsite": {
+      "title": "La Cabinet în București",
+      "description": "Te aștept într-un spațiu luminos, liniștit și special amenajat pentru terapia prin joc a copiilor. Cabinetul este conceput ca un mediu primitor și sigur, unde cei mici se pot exprima liber prin artă, metaforă și joc, iar părinții se pot relaxa știind că sunt pe mâini bune.",
+      "noteLabel": "Cadru sigur",
+      "note": "Atenție la detalii, ritm blând și atmosferă caldă, astfel încât copilul să se simtă în siguranță încă din primele minute."
+    },
+    "online": {
+      "title": "Consultații Psihologice Online",
+      "description": "Dacă locuiești în afara Bucureștiului, în diaspora sau dacă timpul nu îți permite să te deplasezi, ne putem conecta de la distanță. Ședințele online funcționează excelent pentru consilierea parentală și psihoterapia adolescenților, oferindu-ți confortul propriei case și flexibilitate maximă în programare.",
+      "point1": "Ideal pentru familii din toată România",
+      "point2": "Flexibilitate maximă și programare ușoară"
+    }
+  },
+  "practicalRomania": {
+    "eyebrow": "Detalii",
+    "title": "Informații Practice",
+    "insurance": {
+      "title": "Asigurări și Plăți",
+      "description": "Tarife în RON. Facturi decontabile la Casa de Asigurări. Plăți cash, card sau transfer bancar."
+    },
+    "technology": {
+      "title": "Tehnologie",
+      "description": "Platformă securizată pentru sesiuni online, compatibilă cu orice dispozitiv. Setup simplu."
+    },
+    "support": {
+      "title": "Suport și Urgențe",
+      "description": "Protocoale clare pentru situații urgente și conexiuni cu resurse locale de criză."
+    }
+  }
+}

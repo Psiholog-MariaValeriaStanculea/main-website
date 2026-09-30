@@ -1,0 +1,161 @@
+{
+  "title": "Frequently Asked Questions",
+  "intro": "Quick answers to the most common questions about psychological support for children and families.",
+  "lead": "The information below answers the practical questions I receive most often about sessions, scheduling, confidentiality, and working online or in person.",
+  "categories": {
+    "booking": {
+      "title": "Booking and Cancellation",
+      "items": [
+        {
+          "q": "How do I book an appointment?",
+          "a": "You can contact me via email at psiholog.mariavaleriabaciu@gmail.com or using the contact form. I will respond within 24 hours to schedule an appointment."
+        },
+        {
+          "q": "What is your cancellation policy?",
+          "a": "Please notify me at least 24 hours in advance if you cannot attend a session. Cancellations made on the same day are charged 50% of the session fee."
+        },
+        {
+          "q": "Can I book weekend sessions?",
+          "a": "I usually work Monday-Friday 9:00-18:00, but I can make exceptions for weekend sessions based on availability and urgent needs."
+        }
+      ]
+    },
+    "online": {
+      "title": "How Online Therapy Works",
+      "items": [
+        {
+          "q": "What platform do we use for online sessions?",
+          "a": "I use secure platforms like Zoom or Google Meet that respect confidentiality. I will send you the link one day before the session."
+        },
+        {
+          "q": "What equipment do I need?",
+          "a": "A stable internet connection, video camera, and headphones (recommended for privacy). Make sure you're in a private and quiet space."
+        },
+        {
+          "q": "Is online therapy as effective?",
+          "a": "Yes, studies show that online therapy can be just as effective as in-person work for many psychological concerns. Many families choose it for the flexibility it offers."
+        }
+      ]
+    },
+    "languages": {
+      "title": "Languages and Time Zones",
+      "items": [
+        {
+          "q": "What languages can sessions be conducted in?",
+          "a": "I offer sessions in Romanian, English, Italian, and Spanish. You can choose the language you feel most comfortable expressing your thoughts and feelings in."
+        },
+        {
+          "q": "How do you handle different time zones?",
+          "a": "I'm flexible when coordinating sessions across different European time zones. We'll agree on a schedule that works well for your family and for clinical continuity."
+        },
+        {
+          "q": "Can I switch languages during therapy?",
+          "a": "Absolutely! Sometimes it's natural to want to express certain thoughts in your native language or the one you currently live in. We're flexible."
+        }
+      ]
+    },
+    "fees": {
+      "title": "Fees and Payments",
+      "items": [
+        {
+          "q": "What are the fees for sessions?",
+          "a": "Fees vary by session type: individual adult 250 RON (55€), children/adolescents 280 RON (60€), family 350 RON (75€). Prices can be paid in RON or EUR."
+        },
+        {
+          "q": "What payment methods do you accept?",
+          "a": "I accept bank transfers, PayPal, and card payments. Electronic payment is usually the simplest and most secure option."
+        },
+        {
+          "q": "When is payment due?",
+          "a": "Payment is made at the end of the session or by transfer on the same day. For online sessions, I prefer payment one day before or immediately after the session."
+        }
+      ]
+    },
+    "insurance": {
+      "title": "Insurance and Invoices",
+      "items": [
+        {
+          "q": "Do you issue invoices for insurance reimbursement?",
+          "a": "Yes, I issue detailed invoices that can be used for reimbursement through private insurance. I do not have a contract with CNAS, but many families use private or international insurance for therapy services."
+        },
+        {
+          "q": "What information does the invoice contain?",
+          "a": "The invoice contains all necessary information: session date, service type, CPV code for psychological services, and my professional identification data."
+        },
+        {
+          "q": "Can I get an invoice for my company?",
+          "a": "Yes, I can issue an invoice to a legal entity if your company offers mental health benefits for employees."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Confidentiality (GDPR)",
+      "items": [
+        {
+          "q": "How do you protect my personal data?",
+          "a": "I strictly comply with GDPR regulations. Your data is encrypted and stored securely. I don't share it with anyone without your explicit consent, except in situations of imminent danger."
+        },
+        {
+          "q": "How long do you keep my data?",
+          "a": "Your file is kept according to Romanian law - minimum 5 years after the last session. After this period, data is securely destroyed."
+        },
+        {
+          "q": "Can I request access to my data or its deletion?",
+          "a": "Yes, you have the right to access your file and request modification or deletion of data according to GDPR. You can make the request via email."
+        }
+      ]
+    },
+    "emergency": {
+      "title": "Emergency Situations",
+      "items": [
+        {
+          "q": "What do I do if I have a crisis outside office hours?",
+          "a": "I don't offer 24/7 emergency services. In case of crisis, contact local emergency services: 112 (Europe), or the emotional support hotline in your country."
+        },
+        {
+          "q": "How can I prepare for an emergency situation?",
+          "a": "Together we will create a personalized safety plan with important numbers from your country and crisis management strategies."
+        }
+      ]
+    },
+    "children": {
+      "title": "Child Therapy",
+      "items": [
+        {
+          "q": "Does the parent need to be present at sessions?",
+          "a": "For children under 12, the parent participates in the first session and periodically in others. For adolescents, we respect the need for privacy while maintaining communication with parents."
+        },
+        {
+          "q": "How do you obtain consent when a child lives between countries or legal systems?",
+          "a": "I need written consent from both parents. For divorced families or complex situations, we work according to the laws of the country of residence."
+        },
+        {
+          "q": "How long is a session with children?",
+          "a": "Sessions with young children last 45 minutes, with pre-teens 50 minutes, and with adolescents 50-60 minutes, depending on need."
+        }
+      ]
+    },
+    "continuity": {
+      "title": "Travel and Relocation",
+      "items": [
+        {
+          "q": "Can I continue therapy if I move to another country?",
+          "a": "Yes! One of the advantages of online therapy is that you can continue sessions regardless of where you move within the EU. We just adjust the schedule according to the time zone."
+        },
+        {
+          "q": "What happens if I travel frequently?",
+          "a": "Many families travel frequently for work or personal reasons. We can adapt the schedule and continue online from different locations, as long as privacy and a stable internet connection are available."
+        },
+        {
+          "q": "Can family participate from different locations?",
+          "a": "Yes, I can facilitate family sessions with participants from different cities or countries. We use technology to maintain family connection."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "stillQuestions": "Still have questions?",
+    "contact": "Contact me",
+    "description": "If your question isn't listed above, don't hesitate to contact me directly."
+  }
+}

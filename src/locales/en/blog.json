@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Blog - Child and Family Psychology Resources | Valeria Stănculea",
+    "description": "Articles, guides, and resources about child psychology, parenting, and family therapy.",
+    "eyebrow": "Clinical Resources",
+    "intro": "Resources and practical guides for parents, insights into child development, and professional perspectives from clinical psychology.",
+    "searchPlaceholder": "Search articles...",
+    "allCategories": "All Categories",
+    "featured": "Featured Article",
+    "featuredCta": "Read Article",
+    "readMore": "Read more",
+    "emptyTitle": "No articles found",
+    "emptyDescription": "Try changing the search criteria or choosing a different category.",
+    "newsletterTitle": "Need More Guidance?",
+    "newsletterDescription": "If a topic from the blog feels close to your family's situation, we can explore it together in a consultation adapted to your child and context.",
+    "newsletterCta": "Book a consultation"
+  },
+  "post": {
+    "notFoundTitle": "Article not found",
+    "notFoundDescription": "The article may have been moved or removed.",
+    "backToBlog": "Back to Blog",
+    "readLabel": "read",
+    "shareTitle": "Share this article",
+    "shareDescription": "Share it with a parent or caregiver who may find it helpful",
+    "shareButton": "Share",
+    "profileButton": "See Full Profile",
+    "ctaTitle": "Would you like to discuss your child’s situation?",
+    "ctaDescription": "If the themes in this article resonate with what your family is going through, we can look at them together in a tailored consultation.",
+    "ctaButton": "Contact me for a consultation",
+    "authorRole": "Clinical psychologist and integrative psychotherapist licensed by the Romanian College of Psychologists."
+  }
+}

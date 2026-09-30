@@ -1,0 +1,56 @@
+{
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "success": "Success!",
+  "submit": "Submit",
+  "cancel": "Cancel",
+  "close": "Close",
+  "save": "Save",
+  "edit": "Edit",
+  "delete": "Delete",
+  "yes": "Yes",
+  "no": "No",
+  "required": "This field is required",
+  "email": {
+    "invalid": "Email address is not valid",
+    "required": "Email address is required"
+  },
+  "phone": {
+    "invalid": "Phone number is not valid",
+    "required": "Phone number is required"
+  },
+  "message": {
+    "required": "Message is required",
+    "minLength": "Message must be at least 10 characters long"
+  },
+  "footer": {
+    "description": "Clinical psychologist and integrative psychotherapist specializing in work with children and families.",
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact",
+    "location": "Bucharest, Sector 2 — in-person and online",
+    "hoursTitle": "Working Hours",
+    "hoursWeekdays": "Monday – Friday: 9:00 AM – 6:00 PM",
+    "hoursWeekend": "Saturday: by appointment",
+    "copyright": "© 2025 Valeria Maria Stănculea. All rights reserved.",
+    "credentials": "Member of the Romanian College of Psychologists",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "cookies": {
+    "title": "Cookie Usage",
+    "description": "We use cookies to improve your browsing experience and analyze website traffic. By continuing to browse this site, you consent to the use of cookies.",
+    "acceptAll": "Accept All",
+    "rejectAll": "Reject All",
+    "customize": "Customize",
+    "necessary": "Necessary cookies",
+    "analytics": "Analytics cookies",
+    "marketing": "Marketing cookies",
+    "preferences": "Preferences saved"
+  }
+}

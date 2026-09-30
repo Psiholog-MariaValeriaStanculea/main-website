@@ -1,0 +1,68 @@
+{
+  "title": "I Miei Servizi",
+  "subtitle": "Offerti con un approccio integrativo-relazionale personalizzato",
+  "evaluation": {
+    "title": "Valutazione Psicologica",
+    "subtitle": "Per bambini e adolescenti",
+    "description": "Valutazioni complete che includono test psicologici, osservazione clinica e analisi comportamentale per identificare bisogni specifici e raccomandazioni di intervento.",
+    "duration": "2-3 sessioni",
+    "price": "300-450 RON",
+    "includes": [
+      "Colloquio anamnestico con i genitori",
+      "Test psicologici adatti all'età",
+      "Osservazione clinica",
+      "Relazione dettagliata con raccomandazioni"
+    ]
+  },
+  "therapy": {
+    "title": "Psicoterapia Individuale",
+    "subtitle": "Per bambini e adolescenti",
+    "description": "Sessioni di terapia personalizzate che utilizzano tecniche di gioco terapeutico per bambini e tecniche cognitivo-comportamentali per adolescenti, adattate ai bisogni specifici.",
+    "duration": "50 minuti/sessione",
+    "price": "200 RON/sessione",
+    "includes": [
+      "Terapia del gioco per bambini",
+      "Tecniche cognitivo-comportamentali",
+      "Coinvolgimento della famiglia nel processo",
+      "Monitoraggio dei progressi"
+    ]
+  },
+  "parental": {
+    "title": "Consulenza Genitoriale",
+    "subtitle": "Supporto per genitori",
+    "description": "Orientamento e supporto per i genitori nella comprensione e gestione del comportamento del bambino, sviluppo di strategie educative efficaci e miglioramento della relazione genitore-figlio.",
+    "duration": "50 minuti/sessione",
+    "price": "180 RON/sessione",
+    "includes": [
+      "Strategie di comunicazione efficace",
+      "Tecniche di disciplina positiva",
+      "Gestione di comportamenti difficili",
+      "Piani d'azione personalizzati"
+    ]
+  },
+  "family": {
+    "title": "Terapia Familiare",
+    "subtitle": "Per tutta la famiglia",
+    "description": "Sessioni che coinvolgono tutta la famiglia per migliorare la comunicazione, risolvere i conflitti e rafforzare i legami familiari.",
+    "duration": "60 minuti/sessione",
+    "price": "250 RON/sessione",
+    "includes": [
+      "Valutazione delle dinamiche familiari",
+      "Esercizi di comunicazione",
+      "Risoluzione dei conflitti",
+      "Piani di attività congiunte"
+    ]
+  },
+  "consultation": {
+    "title": "Consulto Iniziale",
+    "description": "Un incontro conoscitivo per discutere delle vostre preoccupazioni e stabilire il piano di intervento più appropriato.",
+    "duration": "60 minuti",
+    "price": "150 RON",
+    "note": "Il prezzo del consulto iniziale viene detratto dai costi successivi di valutazione o terapia."
+  },
+  "cta": {
+    "title": "Pronti per iniziare?",
+    "description": "Contattatemi per un consulto iniziale e discutiamo di come posso aiutarvi.",
+    "button": "Prenota Consulto"
+  }
+}

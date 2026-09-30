@@ -1,0 +1,72 @@
+{
+  "title": "Sobre Mí",
+  "subtitle": "Psicóloga clínica y psicoterapeuta integrativa",
+  "introduction": "Soy Valeria Maria Stănculea, psicóloga clínica y psicoterapeuta integrativa con derecho de práctica libre reconocido por el Colegio de Psicólogos de Rumania. Trabajo con niños, adolescentes, padres y familias, con un enfoque especial en la evaluación e intervención psicoterapéutica para niños de 4 a 10 años.",
+  "education": {
+    "title": "Formación y Certificaciones",
+    "bachelor": "Licenciatura en Psicología, Universidad Alexandru Ioan Cuza, 2018",
+    "psychotherapy": "Formación en Psicoterapia Integrativa, A.R.P.I., 2018–2021",
+    "master": "Máster en Psicología Clínica y Psicoterapia del Niño y la Familia, Universidad de Bucarest, 2023",
+    "additional": "Cursos y supervisión en Evaluación experiencial, Intervenciones de terapia de juego, Consejería parental"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "private": "Consulta privada - Psicóloga clínica y psicoterapeuta",
+    "privatePeriod": "Enero 2022 - presente",
+    "privateDesc": "Evaluación psicológica e intervención psicoterapéutica para niños, adolescentes y familias, con foco en dificultades de conducta, ansiedad, autismo de alto funcionamiento y retos relacionales.",
+    "fdp": "Psicóloga - Asociación FDP \"Protagonistas en educación\"",
+    "fdpPeriod": "2020 - 2023",
+    "fdpDesc": "Evaluación psicológica e intervenciones educativas para niños con necesidades especiales, incluyendo orientación parental y colaboración multidisciplinaria.",
+    "aba": "Terapeuta ABA - Asociación Help Autism",
+    "abaPeriod": "2019 - 2020",
+    "abaDesc": "Implementación de planes de intervención conductual para niños con autismo, con formación y supervisión en técnicas ABA."
+  },
+  "specializations": {
+    "title": "Áreas de Especialización",
+    "behavioral": "Trastornos de comportamiento: trastorno oposicional desafiante, trastorno de conducta",
+    "emotional": "Trastornos emocionales: depresión, ansiedad, tics, mutismo selectivo",
+    "neurodevelopmental": "Trastornos del neurodesarrollo: TDAH, autismo de alto funcionamiento",
+    "trauma": "Trauma del desarrollo, niños adoptados, impacto de separaciones",
+    "relational": "Dificultades relacionales y de regulación socio-emocional"
+  },
+  "approach": {
+    "title": "Cómo Trabajo",
+    "description": "Ofrezco un marco terapéutico de confianza y estabilidad para el niño y la familia. El enfoque teórico es integrativo-relacional: el niño es comprendido en su singularidad, y las intervenciones combinan componentes cognitivos, emocionales y conductuales, adaptados a la edad y necesidades.",
+    "playTherapy": "El trabajo con niños incluye la terapia de juego como modalidad central de exploración y regulación, y la participación familiar es parte integral del proceso de apoyo y cambio."
+  },
+  "ui": {
+    "heroBadge": "Psicóloga clínica para niños, adolescentes y familias",
+    "educationCard": {
+      "title": "Formación acreditada",
+      "subtitle": "Estudios universitarios y formación en psicoterapia integrativa"
+    },
+    "experienceCard": {
+      "title": "Experiencia aplicada",
+      "subtitle": "Consulta privada, trabajo en ONG e intervención ABA"
+    },
+    "approachBadge": "Cómo trabajo",
+    "playTherapyTitle": "Terapia de juego y trabajo relacional",
+    "playTherapyDescription": "El niño recibe apoyo mediante intervenciones adaptadas a su edad, ritmo y forma natural de expresión.",
+    "parentalSupportTitle": "Apoyo también para los padres",
+    "parentalSupportDescription": "El proceso también incluye orientación parental y colaboración continua con la familia cuando es beneficioso.",
+    "educationBadge": "Estudios y certificaciones",
+    "experienceBadge": "Práctica profesional",
+    "expertiseBadge": "Especialización clínica",
+    "developmentBadge": "Desarrollo continuo",
+    "developmentTitle": "Formación continua e implicación profesional",
+    "coursesTitle": "Cursos y profundización",
+    "activitiesTitle": "Actividades profesionales",
+    "courseItems": [
+      "Evaluación experiencial y formulación clínica integrativa",
+      "Intervenciones de terapia de juego para niños",
+      "Orientación parental y trabajo con el sistema familiar",
+      "Supervisión clínica continua en psicoterapia"
+    ],
+    "activityItems": [
+      "Participación en conferencias y talleres de psicología clínica",
+      "Colaboración interdisciplinaria para casos complejos",
+      "Actualización constante de intervenciones basadas en el desarrollo infantil",
+      "Integración de la perspectiva relacional en el trabajo con toda la familia"
+    ]
+  }
+}

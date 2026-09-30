@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Blog - Risorse di Psicologia per Bambini e Famiglie | Valeria Stănculea",
+    "description": "Articoli, guide e risorse su psicologia infantile, genitorialità e terapia familiare.",
+    "eyebrow": "Risorse Cliniche",
+    "intro": "Risorse e guide pratiche per genitori, approfondimenti sullo sviluppo del bambino e prospettive professionali dalla psicologia clinica.",
+    "searchPlaceholder": "Cerca articoli...",
+    "allCategories": "Tutte le Categorie",
+    "featured": "Articolo in Evidenza",
+    "featuredCta": "Leggi l'articolo",
+    "readMore": "Leggi di più",
+    "emptyTitle": "Nessun articolo trovato",
+    "emptyDescription": "Prova a modificare i criteri di ricerca o a scegliere un'altra categoria.",
+    "newsletterTitle": "Hai bisogno di più orientamento?",
+    "newsletterDescription": "Se uno di questi temi assomiglia a ciò che sta vivendo la tua famiglia, possiamo approfondirlo insieme in una consulenza costruita sul vostro contesto.",
+    "newsletterCta": "Prenota una consulenza"
+  },
+  "post": {
+    "notFoundTitle": "Articolo non trovato",
+    "notFoundDescription": "L'articolo potrebbe essere stato spostato o rimosso.",
+    "backToBlog": "Torna al blog",
+    "readLabel": "di lettura",
+    "shareTitle": "Condividi questo articolo",
+    "shareDescription": "Condividilo con un genitore o un caregiver a cui potrebbe essere utile",
+    "shareButton": "Condividi",
+    "profileButton": "Vedi profilo completo",
+    "ctaTitle": "Vuoi parlare della situazione di tuo figlio?",
+    "ctaDescription": "Se i temi di questo articolo rispecchiano ciò che sta vivendo la tua famiglia, possiamo approfondirli insieme in una consulenza personalizzata.",
+    "ctaButton": "Contattami per una consulenza",
+    "authorRole": "Psicologa clinica e psicoterapeuta integrativa abilitata dall'Ordine degli Psicologi della Romania."
+  }
+}
