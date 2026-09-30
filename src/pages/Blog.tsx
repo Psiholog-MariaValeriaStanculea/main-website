@@ -35,10 +35,7 @@ const Blog = () => {
 
   return (
     <>
-      <SEOHead
-        title={t('page.title')}
-        description={t('page.description')}
-      />
+      <SEOHead />
       <div className="bg-background py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
@@ -91,7 +88,7 @@ const Blog = () => {
               <Card className="overflow-hidden hover:shadow-sanctuary transition-all duration-300">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                   <div className="aspect-[4/3] lg:aspect-auto">
-                    <img src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover" />
+                    <img loading="lazy" decoding="async" src={featuredPost.image} alt={featuredPost.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="p-8 flex flex-col justify-center bg-card/80 backdrop-blur-sm">
                     <div className="flex items-center gap-4 mb-4">
@@ -120,7 +117,7 @@ const Blog = () => {
             {regularPosts.map((post) => (
               <Card key={post.id} className="hover:shadow-sanctuary transition-all duration-300 overflow-hidden group">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-3">

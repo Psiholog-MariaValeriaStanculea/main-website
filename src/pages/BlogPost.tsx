@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { pageUrl } from "@/lib/seo";
 import { SEOHead } from "@/components/SEOHead";
 import { getBlogPosts, getBlogCategories, localeMap } from "@/data/blogPosts";
 import { SupportedLanguage, defaultLanguage } from "@/lib/i18n";
@@ -40,7 +41,7 @@ const BlogPost = () => {
 
   return (
     <>
-      <SEOHead title={`${post.title} | Blog`} description={post.excerpt} ogType="article" />
+      <SEOHead title={`${post.title} | Blog`} description={post.excerpt} ogType="article" article={post} />
       <div className="bg-background py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
@@ -77,7 +78,7 @@ const BlogPost = () => {
               </h1>
 
               <div className="aspect-[16/9] rounded-2xl overflow-hidden">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+                <img decoding="async" src={post.image} alt={post.title} className="w-full h-full object-cover" />
               </div>
             </header>
 
@@ -102,7 +103,7 @@ const BlogPost = () => {
                   </p>
                 </div>
                 <Button variant="outline" size="sm" asChild>
-                  <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(window.location.href)}`}>
+                  <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(pageUrl(`/${currentLang}/blog/${post.id}`))}`}>
                   <Share2 className="mr-2 w-4 h-4" />
                   {t('post.shareButton')}
                   </a>
@@ -114,7 +115,7 @@ const BlogPost = () => {
               <CardContent className="p-8">
                 <div className="flex items-start gap-6 flex-wrap">
                   <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={`${import.meta.env.BASE_URL}lovable-uploads/f7058975-3973-4045-bee5-8886215af9ac.png`}
                       alt="Valeria Stănculea"
                       className="w-full h-full object-cover"

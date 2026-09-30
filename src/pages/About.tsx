@@ -75,11 +75,7 @@ const About = () => {
 
   return (
     <>
-      <SEOHead 
-        title={`${t('title')} - ${t('subtitle')} - Valeria Stănculea`}
-        description={t('introduction')}
-        keywords="psiholog clinician, psihoterapeut integrativ, experienta profesionala, educatie psihologie"
-      />
+      <SEOHead />
       <div className="bg-background">
       
       {/* Hero Section */}

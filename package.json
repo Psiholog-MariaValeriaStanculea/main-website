@@ -9,7 +9,8 @@
     "build:dev": "vite build --mode development",
     "build:github-pages": "vite build --mode production && node scripts/postbuild-pages.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

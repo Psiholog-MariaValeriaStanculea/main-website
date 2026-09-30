@@ -42,7 +42,9 @@ jobs:
           VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ vars.VITE_EMAILJS_PUBLIC_KEY }}
-        run: npm run build
+        run: |
+          npm run build
+          npm run check:seo
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { serializeJsonLd } from "@/lib/seo";
 import { Helmet } from "react-helmet-async";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
@@ -56,10 +57,10 @@ const FAQ = () => {
 
   return (
     <>
-      <SEOHead title={`${t('title')} - Psiholog Valeria Stănculea`} description={t('intro')} />
+      <SEOHead />
       <Helmet>
         <script type="application/ld+json">
-          {JSON.stringify(generateStructuredData())}
+          {serializeJsonLd(generateStructuredData())}
         </script>
       </Helmet>
 
@@ -104,7 +105,7 @@ const FAQ = () => {
                         <AccordionTrigger className="text-left text-foreground hover:text-primary font-medium py-4">
                           {item.q}
                         </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
+                        <AccordionContent forceMount className="data-[state=closed]:hidden text-muted-foreground leading-relaxed pb-4">
                           {item.a}
                         </AccordionContent>
                       </AccordionItem>

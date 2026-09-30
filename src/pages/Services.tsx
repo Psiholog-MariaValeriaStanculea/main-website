@@ -89,7 +89,7 @@ const Services = () => {
 
   return (
     <>
-      <SEOHead title={`${t("title")} | Valeria Stănculea`} description={t("subtitle")} />
+      <SEOHead />
       <div className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#faf8f4_100%)] py-16 md:py-20 dark:bg-[linear-gradient(180deg,#0b1120_0%,#111827_100%)]">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="absolute right-0 top-24 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />

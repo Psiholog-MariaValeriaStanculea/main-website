@@ -363,7 +363,7 @@ const Contact = () => {
 
   return (
     <>
-      <SEOHead title={`${t('title')} | Valeria Stănculea`} description={t('subtitle')} />
+      <SEOHead />
       <div className="bg-background py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

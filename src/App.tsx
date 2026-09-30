@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, HashRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -23,7 +23,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 const queryClient = new QueryClient();
-const Router = import.meta.env.VITE_GITHUB_PAGES === "true" ? HashRouter : BrowserRouter;
+const Router = BrowserRouter;
 
 const BlogPostRedirect = () => {
   const { id } = useParams<{ id: string }>();
@@ -46,7 +46,7 @@ const App = () => (
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <Router basename={import.meta.env.VITE_GITHUB_PAGES === "true" ? undefined : import.meta.env.BASE_URL}>
+          <Router basename={import.meta.env.BASE_URL}>
             <Suspense fallback={<RouteLoader />}>
               <Routes>
                 {/* Default language routes (Romanian) */}

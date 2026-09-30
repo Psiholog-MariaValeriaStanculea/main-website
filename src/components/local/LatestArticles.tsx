@@ -32,7 +32,7 @@ const LatestArticles = () => {
           {posts.map((post) => (
             <Card key={post.id} className="group overflow-hidden rounded-[30px] border border-border/50 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-warm dark:border-white/10 dark:bg-slate-950/75">
               <div className="relative aspect-[16/10] overflow-hidden bg-muted">
-                <img
+                <img loading="lazy" decoding="async"
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

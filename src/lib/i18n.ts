@@ -100,6 +100,8 @@ i18n
   .init({
     resources,
     fallbackLng: defaultLanguage,
+    supportedLngs: supportedLanguages,
+    load: "languageOnly",
     debug: false,
     
     detection: {

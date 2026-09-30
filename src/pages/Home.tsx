@@ -33,11 +33,7 @@ const Home = () => {
 
   return (
     <>
-      <SEOHead
-        title={`${t("home:hero.eyebrow")} - Valeria Stănculea`}
-        description={t("home:hero.description")}
-        keywords="psiholog copii București, cabinet psihologie Sector 2, terapie familie România, psiholog clinician, consiliere parentală"
-      />
+      <SEOHead />
       <div className="bg-background relative overflow-hidden">
         {/* Hero */}
         <section className="hero-container section-padding min-h-[82vh] lg:min-h-[88vh] flex items-center pt-24 lg:pt-28">
@@ -83,7 +79,7 @@ const Home = () => {
                 <div className="hero-shape-beige" />
                 <div className="hero-shape-teal" />
                 <div className="hero-image-frame border-8 border-white shadow-xl dark:border-slate-950">
-                  <img
+                  <img {...{ fetchpriority: "high" }} decoding="async"
                     src={HERO_IMAGE}
                     alt={t("home:hero.imageAlt")}
                     className="w-full h-full object-cover object-center"
@@ -152,7 +148,7 @@ const Home = () => {
               <div className="relative fade-in-up order-2 lg:order-1">
                 <div className="hero-shape-beige" />
                 <div className="relative w-full aspect-square rounded-[60px] overflow-hidden shadow-xl border-8 border-white dark:border-slate-950">
-                  <img src={ABOUT_IMAGE} alt={t("home:about.title")} className="w-full h-full object-cover object-center" />
+                  <img loading="lazy" decoding="async" src={ABOUT_IMAGE} alt={t("home:about.title")} className="w-full h-full object-cover object-center" />
                 </div>
               </div>
               <div className="fade-in-up space-y-6 order-1 lg:order-2">
