@@ -1,0 +1,21 @@
+{
+  "logo": {
+    "hiddenImageIncluded": 1,
+    "error": "TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 1193.873ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    2 × waiting for element to be stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying scroll into view action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n"
+  },
+  "contact": {
+    "concurrentRequestsAfterSpaReturn": 2,
+    "firstRequestStillPending": true,
+    "draftRestored": true
+  },
+  "anchor": {
+    "targetTop": 103.59375,
+    "scrollY": 3303
+  },
+  "noJs404": {
+    "status": 404,
+    "requestedLanguage": "en",
+    "renderedLanguage": "ro",
+    "heading": "Pagina nu a fost găsită"
+  }
+}

@@ -69,8 +69,8 @@ export default {
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'serif': ['Playfair Display', 'Georgia', 'serif'],
-				'heading': ['Playfair Display', 'Georgia', 'serif'],
+				'serif': ['Valeria Serif', 'Georgia', 'serif'],
+				'heading': ['Valeria Serif', 'Georgia', 'serif'],
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

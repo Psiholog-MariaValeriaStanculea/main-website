@@ -1,0 +1,8 @@
+{
+  "rejection": "Build identity mismatch: http://127.0.0.1:4199/main-website/\n+ actual - expected\n\n+ undefined\n- '6f5956d4c7438523f385d16432f4d6ea7764eef9354eee27f0957732fc506c0f'\n",
+  "syntheticOldReleaseRejected": true,
+  "externalNetworkRequests": 0,
+  "calls": [
+    "http://127.0.0.1:4199/main-website/"
+  ]
+}

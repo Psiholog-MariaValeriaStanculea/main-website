@@ -1,0 +1,13 @@
+{
+  "result": "Pages HTTP checks passed: 3 pages and 2 production assets at http://127.0.0.1:4199/main-website/",
+  "syntheticOldReleaseAccepted": true,
+  "englishContactActuallyRomanianHomepage": true,
+  "externalNetworkRequests": 0,
+  "calls": [
+    "http://127.0.0.1:4199/main-website/",
+    "http://127.0.0.1:4199/main-website/ro/",
+    "http://127.0.0.1:4199/main-website/en/contact/",
+    "http://127.0.0.1:4199/main-website/assets/old-release.js",
+    "http://127.0.0.1:4199/main-website/assets/old-release.css"
+  ]
+}

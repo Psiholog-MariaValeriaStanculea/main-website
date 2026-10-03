@@ -1,0 +1,352 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "services": "Servicios",
+    "resources": "Recursos",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contacto",
+    "blog": "Artículos",
+    "privacy": "Privacidad",
+    "cookies": "Cookies y preferencias"
+  },
+  "ui": {
+    "role": "Psicóloga clínica · Psicoterapeuta integrativa relacional",
+    "skip": "Ir al contenido",
+    "menu": "Menú",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú",
+    "language": "Cambiar idioma",
+    "theme": "Apariencia",
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "more": "Más información",
+    "contact": "Contacta conmigo",
+    "services": "Descubre los servicios",
+    "allResources": "Todos los recursos",
+    "read": "Leer el artículo",
+    "allFAQ": "Todas las preguntas",
+    "contents": "En esta página",
+    "selectedCourses": "Ver cursos y formaciones seleccionados",
+    "backArticles": "Volver a los artículos",
+    "related": "Artículos relacionados",
+    "copyright": "Todos los derechos reservados.",
+    "directEmail": "También puedes escribir directamente por email",
+    "email": "Dirección de email",
+    "loading": "Cargando…",
+    "notFound": "Página no encontrada",
+    "notFoundText": "El enlace puede ser incorrecto o la página puede haber cambiado. Puedes continuar desde las páginas de abajo.",
+    "backHome": "Volver a la página principal"
+  },
+  "home": {
+    "title": "Apoyo psicológico para niños y familias",
+    "intro": "A veces, el comportamiento del niño es la parte visible de emociones difíciles de expresar, necesidades de desarrollo o dificultades en sus relaciones. Juntos podemos comprender mejor qué hay detrás de estas manifestaciones y encontrar un apoyo adecuado para el niño, el progenitor, su relación y toda la familia.",
+    "recognitionTitle": "Quizá has llegado aquí porque…",
+    "recognition": [
+      "tu hijo atraviesa un momento difícil y quieres comprender mejor lo que vive;",
+      "observas cambios emocionales, conductuales o relacionales que te preocupan;",
+      "la relación con tu hijo se ha vuelto tensa o os cuesta más entenderos;",
+      "tu hijo tiene dificultades para adaptarse a la guardería, al colegio o a otros cambios en su vida;",
+      "las tensiones entre hermanos u otras dificultades afectan al equilibrio de toda la familia;",
+      "los retos de la crianza te abruman y necesitas apoyo para comprender las necesidades de tu hijo y cómo acompañarlo."
+    ],
+    "supportTitle": "¿Cómo puedo apoyarte?",
+    "supports": [
+      {
+        "title": "Tu hijo",
+        "text": "Cuando observas dificultades emocionales, conductuales, relacionales o de adaptación y quieres entender las necesidades que hay detrás.",
+        "anchor": "copii-adolescenti",
+        "link": "Más información"
+      },
+      {
+        "title": "Tú, como madre o padre",
+        "text": "Cuando necesitas apoyo para comprender lo que vive tu hijo, responder a sus necesidades y sentirte más seguro en tu papel.",
+        "anchor": "consiliere-parentala",
+        "link": "Más información"
+      },
+      {
+        "title": "Las relaciones familiares",
+        "text": "Cuando surgen tensiones entre progenitores e hijos, entre hermanos o en la familia y necesitáis apoyo para comprenderlas y construir relaciones más equilibradas.",
+        "anchor": "familie",
+        "link": "Más información"
+      },
+      {
+        "title": "Apoyo online para rumanos en el extranjero",
+        "text": "Sesiones de apoyo psicológico en rumano, exclusivamente online, para niños, progenitores y familias que viven fuera de Rumanía.",
+        "anchor": "online",
+        "link": "Descubre el apoyo online"
+      }
+    ],
+    "approachTitle": "Primero comprendemos. Después construimos juntos.",
+    "approachText": "En mi trabajo, la formación profesional y la experiencia clínica se encuentran con una presencia tranquila, auténtica y cercana. Deseo que las personas con las que trabajo se sientan escuchadas, respetadas y comprendidas, sin juicios ni presión por encontrar todas las respuestas de inmediato.",
+    "approachLink": "Conóceme",
+    "firstTitle": "Cómo empieza el primer contacto",
+    "steps": [
+      "Envía una solicitud, aunque todavía no sepas qué apoyo es adecuado.",
+      "Hablamos de la solicitud y aclaramos las necesidades del niño y de la familia.",
+      "Acordamos el siguiente paso cuando la colaboración sea apropiada."
+    ],
+    "resourcesTitle": "Para comprender mejor",
+    "resourcesIntro": "Artículos sobre desarrollo infantil, crianza y relaciones familiares.",
+    "faqTitle": "Antes del primer contacto",
+    "closingTitle": "No necesitas tener todas las respuestas.",
+    "closingText": "Puedes empezar con una pregunta. Juntos podemos aclarar qué tipo de apoyo podría ser adecuado."
+  },
+  "services": {
+    "title": "Formas de apoyo",
+    "intro": "El niño, el progenitor y las relaciones familiares se consideran juntos, en el contexto del desarrollo y las experiencias. Explora las áreas siguientes o contacta conmigo si aún no sabes qué sería adecuado.",
+    "groups": [
+      "Niños y adolescentes",
+      "Progenitores y relaciones familiares",
+      "Apoyo online"
+    ],
+    "cta": "Hablemos de esta forma de apoyo",
+    "initial": "En el primer contacto aclaramos la solicitud y hablamos del apoyo adecuado para vuestra situación.",
+    "items": [
+      {
+        "id": "evaluare",
+        "category": "child",
+        "title": "Evaluación psicológica clínica",
+        "text": "La evaluación ayuda a comprender el funcionamiento emocional, conductual y relacional del niño o adolescente en el contexto de su desarrollo.",
+        "examples": [
+          "Comprender las dificultades observadas y las necesidades del niño.",
+          "Aclarar posibles direcciones de apoyo e intervención."
+        ]
+      },
+      {
+        "id": "consiliere-copii",
+        "category": "child",
+        "title": "Orientación psicológica para niños y adolescentes",
+        "text": "Un proceso de apoyo adaptado a la edad y las necesidades del niño o adolescente, en relación con los retos cotidianos.",
+        "examples": [
+          "Dificultades emocionales, relacionales o de adaptación.",
+          "Cambios familiares, escolares o en relaciones importantes."
+        ]
+      },
+      {
+        "id": "terapie",
+        "category": "child",
+        "title": "Psicoterapia integrativa para niños y adolescentes",
+        "text": "La intervención integrativa relacional considera al niño en su historia, desarrollo y relaciones. Los objetivos y la forma de trabajo se construyen con la familia.",
+        "examples": [
+          "Comprender experiencias y desarrollar recursos emocionales.",
+          "Apoyar las relaciones y formas más adaptativas de afrontar los retos."
+        ]
+      },
+      {
+        "id": "consiliere-parentala",
+        "category": "parent",
+        "title": "Orientación parental",
+        "text": "Un espacio de reflexión y apoyo que considera las necesidades del niño junto con los recursos, límites y experiencias del adulto.",
+        "examples": [
+          "Comprender los comportamientos del niño y su contexto.",
+          "Explorar las respuestas y dificultades en el papel de madre o padre."
+        ]
+      },
+      {
+        "id": "relatia-parinte-copil",
+        "category": "family",
+        "title": "La relación entre progenitores e hijos",
+        "text": "Apoyo para comprender y mejorar la relación entre progenitor e hijo, atendiendo a las necesidades y la perspectiva de cada uno.",
+        "examples": [
+          "Tensiones y dificultades de comunicación.",
+          "Construir formas de relación más equilibradas."
+        ]
+      },
+      {
+        "id": "familie",
+        "category": "family",
+        "title": "Dinámicas y relaciones familiares",
+        "text": "Consideramos cómo las relaciones y los cambios familiares influyen en cada miembro, sin reducir las dificultades a una sola persona.",
+        "examples": [
+          "Relaciones entre hermanos y entre niños y cuidadores.",
+          "Cambios o tensiones que afectan al equilibrio familiar."
+        ]
+      },
+      {
+        "id": "online",
+        "category": "online",
+        "title": "Apoyo online para rumanos en el extranjero",
+        "text": "Sesiones de apoyo psicológico en rumano, exclusivamente online, para niños, progenitores y familias que viven fuera de Rumanía.",
+        "examples": [
+          "La adecuación del formato online se discute individualmente.",
+          "La disponibilidad y las condiciones se aclaran antes de la cita."
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Valeria Stănculea",
+    "valuesTitle": "Los valores que guían mi trabajo",
+    "values": [
+      {
+        "title": "Relación",
+        "text": "El cambio comienza y se desarrolla en relaciones seguras, estables y auténticas."
+      },
+      {
+        "title": "Respeto",
+        "text": "Respeto el ritmo, la singularidad, los límites y la historia de cada persona y familia."
+      },
+      {
+        "title": "Ética profesional",
+        "text": "Trabajo con responsabilidad, dentro de límites profesionales claros y con intervenciones fundamentadas científicamente."
+      },
+      {
+        "title": "Autenticidad",
+        "text": "Creo en una presencia profesional humana, natural y sincera, sin construir la imagen de una profesional «perfecta»."
+      },
+      {
+        "title": "Equilibrio",
+        "text": "Busco el equilibrio entre emoción y razón, las necesidades del niño y de los progenitores, aceptación y cambio, y vida profesional y personal."
+      }
+    ]
+  },
+  "resources": {
+    "title": "Recursos para niños, progenitores y familias",
+    "intro": "Perspectivas e información para comprender el desarrollo infantil y las relaciones familiares. Los materiales son informativos y no sustituyen una evaluación o apoyo individual.",
+    "articles": "Artículos",
+    "search": "Buscar artículos",
+    "placeholder": "Un tema, una palabra o un título",
+    "all": "Todos los temas",
+    "clear": "Borrar búsqueda",
+    "count": "{count} artículos",
+    "empty": "No se encontraron artículos",
+    "emptyText": "Prueba otra palabra o vuelve a todos los temas.",
+    "reset": "Restablecer filtros",
+    "notice": "La información general no establece un diagnóstico ni sustituye una conversación sobre tu situación.",
+    "countOne": "1 artículo"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "intro": "Respuestas que pueden ayudarte antes del primer contacto. Puedes enviar una solicitud con preguntas sobre tu situación.",
+    "groups": [
+      {
+        "title": "Primer contacto",
+        "items": [
+          {
+            "question": "¿Tengo que saber qué servicio necesito?",
+            "answer": "No. Puedes elegir «No estoy seguro/a» en el formulario. El primer contacto ayuda a aclarar la solicitud y hablar de qué apoyo podría ser adecuado."
+          },
+          {
+            "question": "¿Enviar el formulario reserva una cita?",
+            "answer": "No. El formulario envía una solicitud. La cita y las condiciones de colaboración se acuerdan por separado después de hablar de la solicitud."
+          },
+          {
+            "question": "¿Qué debo incluir en el mensaje?",
+            "answer": "Un mensaje breve es suficiente y el campo es opcional. En este primer contacto, evita detalles médicos e información sensible sobre ti o tu hijo."
+          }
+        ]
+      },
+      {
+        "title": "Niños, progenitores y familia",
+        "items": [
+          {
+            "question": "¿Participan también los progenitores?",
+            "answer": "La colaboración con los progenitores es una parte importante del proceso. Su participación se adapta a la edad, las necesidades del niño y los objetivos acordados juntos."
+          },
+          {
+            "question": "¿Cómo se elige el tipo de apoyo?",
+            "answer": "El proceso comienza comprendiendo la situación y aclarando las necesidades. Sobre esa base hablamos de objetivos y apoyo adecuado dentro de las competencias profesionales."
+          },
+          {
+            "question": "¿Cuánto dura la colaboración?",
+            "answer": "La duración varía según las necesidades, objetivos y evolución. El sitio no establece una duración universal; las condiciones y la revisión de objetivos se discuten juntos."
+          }
+        ]
+      },
+      {
+        "title": "Formato y marco profesional",
+        "items": [
+          {
+            "question": "¿Puedo solicitar apoyo si vivo fuera de Rumanía?",
+            "answer": "Puedes preguntar por el apoyo online en rumano. La adecuación, posibilidad de colaboración y condiciones aplicables se discuten individualmente antes de la cita."
+          },
+          {
+            "question": "¿Se ofrecen sesiones en todos los idiomas del sitio?",
+            "answer": "Los idiomas disponibles en el sitio no indican automáticamente los idiomas en los que se ofrecen sesiones. Puedes pedir aclaraciones antes de la cita."
+          },
+          {
+            "question": "¿Cómo se aborda la confidencialidad?",
+            "answer": "La confidencialidad y sus límites se discuten en la colaboración, conforme a las obligaciones profesionales y legales aplicables. No es una promesa sin excepciones; puedes solicitar aclaraciones concretas."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Empecemos con una pregunta",
+    "intro": "Puedes enviar una solicitud aunque todavía no sepas qué forma de apoyo es adecuada.",
+    "formTitle": "Enviar una solicitud",
+    "name": "Nombre",
+    "category": "¿De qué te gustaría hablar?",
+    "message": "Mensaje (opcional)",
+    "required": "El nombre y la dirección de email son obligatorios.",
+    "messageHelp": "Para este primer contacto, evita detalles médicos u otra información sensible sobre ti o tu hijo.",
+    "privacyHelp": "Conoce cómo se utiliza la información del formulario.",
+    "selected": "Forma de apoyo seleccionada",
+    "submit": "Enviar solicitud",
+    "newRequest": "Enviar una nueva solicitud",
+    "retry": "Intentar de nuevo",
+    "nameError": "Introduce tu nombre.",
+    "emailError": "Introduce una dirección de email válida para poder recibir una respuesta.",
+    "lengthError": "El mensaje puede contener hasta 1.000 caracteres.",
+    "sending": "Enviando la solicitud…",
+    "success": "La solicitud se ha transmitido. La cita se acuerda por separado después de hablar de la solicitud.",
+    "rejected": "No se pudo enviar la solicitud. Tus datos siguen en el formulario. Puedes intentarlo de nuevo o escribir directamente por email.",
+    "uncertain": "No podemos confirmar el envío. Tus datos siguen en el formulario. Otro intento podría enviar la misma solicitud dos veces.",
+    "unavailable": "El formulario no está disponible en este momento. Puedes escribir directamente al email indicado abajo.",
+    "noJS": "Para utilizar el formulario necesitas JavaScript. También puedes escribir directamente por email.",
+    "appointment": "Una solicitud no confirma una cita. La disponibilidad y las condiciones se discuten por separado.",
+    "categories": {
+      "child": "Niños y adolescentes",
+      "parent": "Apoyo a progenitores",
+      "family": "Relaciones familiares",
+      "online": "Apoyo online",
+      "professional": "Consulta profesional",
+      "unsure": "No estoy seguro/a"
+    }
+  },
+  "legal": {
+    "privacyTitle": "Privacidad",
+    "cookiesTitle": "Cookies y preferencias",
+    "privacyIntro": "Información sobre los datos utilizados al navegar o enviar una solicitud.",
+    "cookiesIntro": "Preferencias de visualización e información guardada en el navegador.",
+    "privacySections": [
+      {
+        "title": "Primer contacto",
+        "text": "El formulario solicita nombre, email, categoría de consulta y un mensaje opcional. La información se utiliza para recibir y responder a tu solicitud. Evita detalles médicos u otros datos sensibles en este primer mensaje."
+      },
+      {
+        "title": "Transmisión de la solicitud",
+        "text": "Cuando está disponible, el formulario transmite la solicitud a través de EmailJS al email de contacto de la consulta. También puedes escribir directamente por email. Una solicitud no confirma una cita."
+      },
+      {
+        "title": "Alojamiento del sitio",
+        "text": "Para el sitio público alojado en GitHub Pages, GitHub registra las direcciones IP de los visitantes con fines de seguridad."
+      },
+      {
+        "title": "Preguntas sobre tus datos",
+        "text": "Para aclaraciones sobre acceso a la información, conservación o ejercicio de derechos aplicables, puedes escribir al email de contacto indicado abajo."
+      }
+    ],
+    "cookieSections": [
+      {
+        "title": "Preferencia de apariencia",
+        "text": "Si eliges apariencia clara, oscura o de sistema, la elección puede guardarse localmente en el navegador. Si el almacenamiento está bloqueado, el sitio sigue funcionando, pero la preferencia puede no recordarse."
+      },
+      {
+        "title": "Idioma de la página",
+        "text": "El idioma lo determina la página que visitas. Cambiarlo mantiene la misma página y, cuando corresponde, la misma sección."
+      },
+      {
+        "title": "Análisis y publicidad",
+        "text": "Esta versión del sitio no carga herramientas de análisis del tráfico ni publicidad. Los datos del formulario no se guardan en el almacenamiento local del navegador."
+      }
+    ],
+    "providers": "Información sobre proveedores",
+    "hostingPolicy": "Declaración de privacidad de GitHub",
+    "deliveryPolicy": "Política de privacidad de EmailJS"
+  }
+}

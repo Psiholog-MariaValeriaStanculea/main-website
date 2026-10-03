@@ -22,6 +22,7 @@ jobs:
         run: |
           npm run lint
           npx tsc -b
+          npm run check:files
           npm run test:unit
       - name: Build and audit Pages artifact
         run: |
@@ -30,6 +31,8 @@ jobs:
           npm run check:pages
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
+      - run: npm run test:responsive
+      - run: npm run test:contact
       - name: Save browser failure diagnostics
         if: failure()
         uses: actions/upload-artifact@v7
@@ -38,5 +41,9 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            contact-test-results/
+            contact-playwright-report/
+            responsive-test-results/
+            responsive-playwright-report/
           if-no-files-found: ignore
           retention-days: 7

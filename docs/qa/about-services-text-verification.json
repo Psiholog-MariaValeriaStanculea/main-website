@@ -1,0 +1,42 @@
+{
+  "ro/despre": {
+    "unchanged": true,
+    "orderedTextNodes": 132,
+    "sha256": "57a541e3e425fcaf1bcc8e275210357f519f631d491bf038a74f4c6157c3a506"
+  },
+  "ro/servicii": {
+    "unchanged": true,
+    "orderedTextNodes": 57,
+    "sha256": "84d2b16627692d3eb461146f83b06668e34c197d31c8765aa92866644fbd4c54"
+  },
+  "en/despre": {
+    "unchanged": true,
+    "orderedTextNodes": 131,
+    "sha256": "244ec04a98795f5b5a2dee36b320b3dbb8011e2129c60aff48a89a4769272db8"
+  },
+  "en/servicii": {
+    "unchanged": true,
+    "orderedTextNodes": 57,
+    "sha256": "bd02c9362657710f6304fa25349726b3f8875707ae841ea4ab184f6f80a91e02"
+  },
+  "it/despre": {
+    "unchanged": true,
+    "orderedTextNodes": 131,
+    "sha256": "8e196a09251e22c6721eddb315cf0aef2d44ea5a4c43e98a22fd8728bd524243"
+  },
+  "it/servicii": {
+    "unchanged": true,
+    "orderedTextNodes": 57,
+    "sha256": "cde8938a4fa373527ea2cd71f106808bb52a825ec877b1f3fb33ae5be460b548"
+  },
+  "es/despre": {
+    "unchanged": true,
+    "orderedTextNodes": 131,
+    "sha256": "9d472638953cee8764195a7ae8003ca35fac890c9c0754dc91cfeeec287ec48e"
+  },
+  "es/servicii": {
+    "unchanged": true,
+    "orderedTextNodes": 57,
+    "sha256": "1bb2fdcc60a49ef78c0189a560e51ba4f44cc8c2148c78b8d292f150145fff0f"
+  }
+}

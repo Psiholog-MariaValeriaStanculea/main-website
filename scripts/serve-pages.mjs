@@ -40,10 +40,14 @@ export function createPagesServer(root, basePath) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const sitemap = readFileSync('dist/sitemap.xml', 'utf8');
+  const rootIndex=process.argv.indexOf('--root');
+  const root=rootIndex>=0?process.argv[rootIndex+1]:'dist';
+  const sitemap = readFileSync(resolve(root,'sitemap.xml'), 'utf8');
   const firstPage = new URL(sitemap.match(/<loc>([^<]+)<\/loc>/)[1]);
   const basePath = firstPage.pathname.replace(/(?:ro|en|it|es)(?:\/.*)?$/, '');
-  const server = createPagesServer('dist', basePath);
-  server.listen(4180, '127.0.0.1', () => console.log(`Pages test server: http://127.0.0.1:4180${basePath}`));
+  const server = createPagesServer(root, basePath);
+  const portIndex = process.argv.indexOf('--port');
+  const port = portIndex >= 0 ? Number(process.argv[portIndex + 1]) : 4180;
+  server.listen(port, '127.0.0.1', () => console.log(`Pages test server: http://127.0.0.1:${port}${basePath}`));
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => server.close());
 }

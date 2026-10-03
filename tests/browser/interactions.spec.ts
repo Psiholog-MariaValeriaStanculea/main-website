@@ -1,157 +1,126 @@
 import { test, expect } from './fixtures';
-
-test.beforeEach(async ({ page }) => {
-  await page.goto('en/');
-  await expect(page.getByRole('button', { name: 'Dark mode', exact: true })).toBeVisible();
+import type { Page } from '@playwright/test';
+import { mkdirSync, readFileSync } from 'node:fs';
+async function theme(page:Page,value:string){
+ if(page.viewportSize()!.width<1280 && await page.getByRole('dialog').count()===0)await page.getByRole('button',{name:'Open menu',exact:true}).click();
+ await expect(page.getByRole('button',{name:'Appearance',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Appearance',exact:true}).click();
+ await page.getByRole('menuitemradio',{name:value,exact:true}).click();
+ await expect(page.getByRole('menuitemradio')).toHaveCount(0);
+ await expect(page.getByRole('button',{name:'Appearance',exact:true})).toBeVisible();
+}
+async function logo(page:Page,mode:'light'|'dark'){
+ await expect(page.locator('.brand-logo-'+mode)).toBeVisible();
+ await expect(page.locator('.brand-logo-'+(mode==='dark'?'light':'dark'))).toBeHidden();
+ await expect.poll(()=>page.locator('.brand-logo-'+mode).evaluate(element=>(element as HTMLImageElement).complete&&(element as HTMLImageElement).naturalWidth>0)).toBe(true);
+}
+test.beforeEach(async({page})=>{await page.goto('en/');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');});
+test('system, light and dark appearance work and explicit preference persists',async({page},info)=>{
+ await page.emulateMedia({colorScheme:'dark'});await expect(page.locator('html')).toHaveClass(/dark/);
+ await logo(page,'dark');
+ await theme(page,'Light');await expect(page.locator('html')).toHaveClass(/light/);
+ await logo(page,'light');
+ await page.reload();await expect(page.locator('html')).toHaveClass(/light/);
+ await logo(page,'light');
+ await theme(page,'Dark');await expect(page.locator('html')).toHaveClass(/dark/);
+ await logo(page,'dark');
+ await page.goto('ro/');await expect(page.locator('html')).toHaveClass(/dark/);
+ mkdirSync('docs/qa',{recursive:true});await page.evaluate(()=>document.fonts.ready);
+ await page.screenshot({path:'docs/qa/ro-home-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png',fullPage:true});
+ for(const suffix of ['intrebari-frecvente','contact']){
+  await page.goto('ro/'+suffix+'/');
+  if(suffix==='intrebari-frecvente'){
+   const first=page.locator('main button[aria-controls]').first();await expect(first).toHaveAttribute('aria-expanded','false');await first.click();await expect(first).toHaveAttribute('aria-expanded','true');
+  }
+  await page.screenshot({path:'docs/qa/ro-'+suffix+'-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png',fullPage:true,animations:'disabled'});
+ }
+ await page.goto('en/');
+ await theme(page,'System');await page.emulateMedia({colorScheme:'light'});await expect(page.locator('html')).toHaveClass(/light/);
+ await logo(page,'light');
 });
-
-test('theme toggles, persists, and follows system changes until explicitly selected', async ({ page }) => {
-  await page.emulateMedia({ colorScheme: 'dark' });
-  await expect(page.locator('html')).toHaveClass(/dark/);
-  await page.getByRole('button', { name: 'Light mode', exact: true }).click();
-  await expect(page.locator('html')).toHaveClass(/light/);
-  await page.reload();
-  await expect(page.locator('html')).toHaveClass(/light/);
-  await page.getByRole('button', { name: 'Dark mode', exact: true }).click();
-  await expect(page.locator('html')).toHaveClass(/dark/);
+test('blocked storage does not break the site or theme selection',async({page})=>{
+ await page.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Blocked','SecurityError');}});});
+ await page.reload();await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
+ await theme(page,'Dark');await expect(page.locator('html')).toHaveClass(/dark/);
 });
-
-test('blocked browser storage still allows content, theme and cookie dismissal', async ({ page }) => {
-  await page.addInitScript(() => {
-    Object.defineProperty(window, 'localStorage', { get() { throw new DOMException('Blocked', 'SecurityError'); } });
-  });
-  await page.reload();
-  await expect(page.locator('main h1')).toBeVisible();
-  await page.getByRole('button', { name: 'Dark mode', exact: true }).click();
-  await expect(page.locator('html')).toHaveClass(/dark/);
-  await page.getByRole('button', { name: 'Reject All', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Cookie Usage' })).toHaveCount(0);
+test('mobile menu traps focus and Escape returns to the opener',async({page},info)=>{
+ test.skip(info.project.name!=='mobile','Mobile menu');
+ const opener=page.getByRole('button',{name:'Open menu',exact:true});await opener.click();
+ const menu=page.getByRole('dialog',{name:'Menu',exact:true});await expect(menu).toBeVisible();
+ await expect(page.locator('body')).toHaveCSS('overflow','hidden');
+ await menu.locator('a').last().focus();await page.keyboard.press('Tab');
+ expect(await menu.evaluate(element=>element.contains(document.activeElement))).toBe(true);
+ await page.keyboard.press('Escape');await expect(menu).toHaveCount(0);await expect(opener).toBeFocused();
+ await expect(page.locator('body')).not.toHaveCSS('overflow','hidden');
 });
-
-test.describe('cookie consent', () => {
-  test.use({ savedConsent: false });
-  test('cookie rejection persists across reloads and retains necessary consent', async ({ page }) => {
-    await page.getByRole('button', { name: 'Reject All', exact: true }).click();
-    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('cookie-consent')!))).toEqual({ necessary: true, analytics: false, marketing: false });
-    await page.clock.install();
-    await page.reload();
-    await expect(page.locator('html')).toHaveClass(/light/);
-    await page.clock.fastForward(1600);
-    await expect(page.getByRole('heading', { name: 'Cookie Usage' })).toHaveCount(0);
-  });
+test('resizing an open mobile menu releases scrolling',async({page},info)=>{
+ test.skip(info.project.name!=='mobile','Mobile menu');
+ await page.getByRole('button',{name:'Open menu',exact:true}).click();await page.setViewportSize({width:1440,height:900});
+ await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.locator('body')).not.toHaveCSS('overflow','hidden');
+ await expect(page.locator('header nav').getByRole('link',{name:'Services',exact:true})).toBeVisible();
 });
-
-test('mobile menu traps focus, closes with Escape and releases scroll', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'mobile', 'Mobile navigation only');
-  const trigger = page.getByRole('button', { name: 'Open menu', exact: true });
-  await trigger.click();
-  const dialog = page.getByRole('dialog', { name: 'Menu', exact: true });
-  await expect(dialog).toBeVisible();
-  await expect(page.locator('body')).toHaveCSS('overflow', 'hidden');
-  await dialog.getByRole('link', { name: 'Book Now', exact: true }).focus();
-  await page.keyboard.press('Tab');
-  expect(await dialog.evaluate(element => element.contains(document.activeElement))).toBe(true);
-  await page.keyboard.press('Escape');
-  await expect(dialog).toHaveCount(0);
-  await expect(trigger).toBeFocused();
-  await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden');
+test('language selection preserves page, query and anchor',async({page})=>{
+ await page.goto('en/servicii/?source=test#evaluare');
+ await page.getByRole('button',{name:'Change language',exact:true}).click();await page.getByRole('menuitem',{name:'Română',exact:true}).click();
+ await expect(page).toHaveURL(/\/ro\/servicii\/\?source=test#evaluare$/);
+ await expect(page.locator('html')).toHaveAttribute('lang','ro');await expect(page.locator('#evaluare')).toBeInViewport();
 });
-
-test('resizing an open mobile menu restores desktop navigation and scrolling', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'mobile', 'Mobile navigation only');
-  await page.getByRole('button', { name: 'Open menu', exact: true }).click();
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await expect(page.getByRole('dialog')).toHaveCount(0);
-  await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden');
-  await expect(page.locator('nav').getByRole('link', { name: 'Services', exact: true })).toBeVisible();
+test('homepage support links lead to the intended service section',async({page})=>{
+ await page.locator('a[href$="/servicii#consiliere-parentala"]').click();
+ await expect(page.locator('#consiliere-parentala')).toBeInViewport();
+ await page.locator('#consiliere-parentala a').click();
+ await expect(page).toHaveURL(/\/en\/contact\?service=consiliere-parentala$/);
+ await expect(page.locator('#category')).toContainText('Support for parents');
+ await expect(page.getByText('Selected form of support:',{exact:false})).toContainText('Parent counselling');
 });
-
-test('language dropdown is clickable above the mobile dialog and preserves query/anchor', async ({ page }, testInfo) => {
-  await page.goto('en/servicii/?tracking=regression#evaluare');
-  if (testInfo.project.name === 'mobile') await page.getByRole('button', { name: 'Open menu', exact: true }).click();
-  await page.getByRole('button', { name: 'Change language', exact: true }).click();
-  await page.getByRole('menuitem', { name: /Română/ }).click();
-  await expect(page).toHaveURL(/\/ro\/servicii\/\?tracking=regression#evaluare$/);
-  await expect(page.locator('html')).toHaveAttribute('lang', 'ro');
-  await expect(page.getByRole('dialog')).toHaveCount(0);
-  await expect(page.locator('body')).not.toHaveCSS('overflow', 'hidden');
-  await expect(page.locator('#evaluare')).toBeInViewport();
+test('contact draft survives language changes without browser persistence',async({page})=>{
+ await page.goto('en/contact/?service=terapie');await page.locator('#name').fill("Ștefania D'Angelo");
+ await page.locator('#email').fill('reader@example.invalid');await page.locator('#message').fill('Draft with accents: ș ț î & ?');
+ await page.getByRole('button',{name:'Change language',exact:true}).click();await page.getByRole('menuitem',{name:'Italiano',exact:true}).click();
+ await expect(page.locator('#name')).toHaveValue("Ștefania D'Angelo");await expect(page.locator('#message')).toHaveValue('Draft with accents: ș ț î & ?');
+ const stores=await page.evaluate(()=>JSON.stringify(localStorage)+JSON.stringify(sessionStorage));
+ expect(stores).not.toContain('reader@example.invalid');expect(stores).not.toContain('Draft with accents');
+ await expect(page.locator('main form input[name="phone"]')).toHaveCount(0);
+ await expect(page.locator('main form input[name="childAge"]')).toHaveCount(0);
 });
-
-test('desktop services dropdown opens with keyboard focus and navigates to its anchor', async ({ page }, testInfo) => {
-  test.skip(testInfo.project.name !== 'desktop', 'Desktop navigation only');
-  const services = page.locator('nav').getByRole('link', { name: 'Services', exact: true });
-  await services.focus();
-  await expect(services).toHaveAttribute('aria-expanded', 'true');
-  await page.keyboard.press('Tab');
-  const assessment = page.locator('nav').getByRole('link', { name: 'Psychological assessment', exact: true });
-  await expect(assessment).toBeFocused();
-  await page.keyboard.press('Escape');
-  await expect(services).toHaveAttribute('aria-expanded', 'false');
-  await services.focus();
-  await page.keyboard.press('Tab');
-  await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/en\/servicii#evaluare$/);
-  await expect(page.locator('#evaluare')).toBeInViewport();
+test('missing configuration offers direct email without false success or email-app launch',async({page})=>{
+ test.skip(JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured,'Production provider is configured; failure states run in the isolated suite.');
+ await page.goto('en/contact/');
+ await expect(page.getByRole('status')).toContainText('The form is currently unavailable');
+ await expect(page.locator('form button[type=submit]')).toBeDisabled();
+ await expect(page.locator('main a[href="mailto:psiholog.mariavaleriabaciu@gmail.com"]').first()).toBeVisible();
+ await expect(page.locator('form')).not.toContainText('Your inquiry has been submitted');
 });
-
-test('package toggle changes plans, pressed state and retains a visible popular badge', async ({ page }) => {
-  const packages = page.getByRole('button', { name: 'Packages', exact: true });
-  const session = page.getByRole('button', { name: 'Per session', exact: true });
-  await expect(session).toHaveAttribute('aria-pressed', 'true');
-  await packages.click();
-  await expect(packages).toHaveAttribute('aria-pressed', 'true');
-  await expect(session).toHaveAttribute('aria-pressed', 'false');
-  await expect(page.getByRole('heading', { name: 'Family Package', exact: true })).toBeVisible();
-  const badge = page.getByText('Most Popular', { exact: true });
-  expect(await badge.evaluate(element => {
-    const badge = element.getBoundingClientRect(); const card = element.parentElement!.getBoundingClientRect();
-    return badge.top >= card.top && badge.bottom <= card.bottom;
-  })).toBe(true);
-  await session.click();
-  await expect(page.getByRole('heading', { name: 'Standard Session', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Family Package', exact: true })).toHaveCount(0);
+test('reading the privacy notice and returning preserves the in-memory inquiry',async({page})=>{
+ await page.goto('en/contact/');await page.locator('#name').fill('Reader');await page.locator('#message').fill('Unsure where to start.');
+ await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy');
+ await page.goBack();await expect(page.locator('#message')).toHaveValue('Unsure where to start.');
+ await page.reload();await expect(page.locator('#message')).toHaveValue('');
 });
-
-test('blog search includes featured articles, empty results and category reset', async ({ page }) => {
-  await page.goto('en/blog/');
-  const search = page.getByRole('textbox', { name: 'Search articles...' });
-  const firstTitle = (await page.locator('main h3').first().innerText()).trim();
-  await search.fill(firstTitle);
-  await expect(page.getByRole('heading', { name: firstTitle, exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Featured Article', exact: true })).toHaveCount(0);
-  await search.fill('no-such-article-regression-9834');
-  await expect(page.getByRole('heading', { name: 'No articles found', exact: true })).toBeVisible();
-  await expect(page.locator('main a[href*="/blog/"]')).toHaveCount(0);
-  await search.fill('');
-  await page.locator('main button[aria-pressed="false"]').first().click();
-  await expect(page.getByRole('heading', { name: 'Featured Article', exact: true })).toHaveCount(0);
-  await page.getByRole('button', { name: 'All Categories', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Featured Article', exact: true })).toBeVisible();
-  await page.getByRole('link', { name: 'Read Article', exact: true }).click();
-  await expect(page.locator('main h1')).toHaveText(firstTitle);
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/en\/blog\/\d+$/);
+test('article search, empty state, clear and back-to-collection preserve filtering',async({page})=>{
+ await page.goto('en/resurse/');const search=page.getByRole('searchbox',{name:'Search articles',exact:true});
+ await search.fill('9834-nonexistent-topic');await expect(page.getByRole('heading',{name:'No articles found',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'Reset filters',exact:true}).click();await expect(search).toHaveValue('');
+ const title=(await page.locator('main h3').first().innerText()).trim();await search.fill(title);
+ await page.locator('main h3 a').first().click();await expect(page.locator('main h1')).toHaveText(title);
+ await page.getByRole('link',{name:'Back to articles',exact:true}).click();await expect(search).toHaveValue(title);
+ await expect(page.getByRole('status')).toContainText('1 article');
 });
-
-test('contact form rejects missing/invalid fields and encodes inquiry text in its email link', async ({ page }) => {
-  await page.goto('en/contact/');
-  const submit = page.locator('form button[type="submit"]');
-  await submit.click();
-  await expect(page.locator('#name')).toBeFocused();
-  await page.locator('#name').fill('Regression Test');
-  await page.locator('#email').fill('invalid-email');
-  await submit.click();
-  await expect(page.locator('#email')).toBeFocused();
-  await page.locator('#email').fill('test@example.invalid');
-  const subject = 'A & B? Ședință'; const message = 'Testing accents: ș ț î & ? +\nSecond line';
-  await page.locator('#subject').fill(subject);
-  await page.locator('#message').fill(message);
-  // Inspect the prepared email only; never send an inquiry or open an email application.
-  const mailto = await page.locator('main a[href^="mailto:"][href*="subject="]').last().getAttribute('href');
-  const query = new URLSearchParams(mailto!.split('?')[1]);
-  expect(query.get('subject')).toBe(subject);
-  expect(query.get('body')).toContain(message);
-  expect(query.get('body')).toContain('test@example.invalid');
-  await expect(page.locator('#name')).toHaveValue('Regression Test');
+test('Back restores the reading position rather than scrolling to the top',async({page})=>{
+ await page.goto('en/resurse/');await page.locator('main h3 a').last().scrollIntoViewIfNeeded();
+ const before=await page.evaluate(()=>scrollY);await page.locator('main h3 a').last().click();await page.goBack();
+ await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(Math.max(0,before-100));
+});
+test('selected courses are labelled accurately and no launch testimonials or fees appear',async({page})=>{
+ await page.goto('en/despre/');const disclosure=page.locator('details');await disclosure.locator('summary').click();
+ await expect(disclosure.locator('li')).toHaveCount(8);await expect(disclosure).toContainText('2025');
+ await expect(page.locator('main')).not.toContainText(/Testimonials|All courses|RON/);
+ await page.goto('en/');await expect(page.locator('main form')).toHaveCount(0);await expect(page.locator('[aria-roledescription="carousel"]')).toHaveCount(0);
+});
+for(const language of ['ro','en','it','es'])test('hero actions fit the first mobile viewport: '+language,async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto(language+'/');
+ const actions=page.locator('.hero-text a');await expect(actions).toHaveCount(2);
+ for(const link of await actions.all()){
+  const rect=await link.boundingBox();expect(rect!.y+rect!.height).toBeLessThanOrEqual(844);
+ }
 });

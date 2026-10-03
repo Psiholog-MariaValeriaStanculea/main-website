@@ -14,7 +14,10 @@
     "check:pages": "node scripts/check-pages.mjs",
     "test:unit": "node --test tests/unit/*.test.mjs",
     "test:e2e": "playwright test",
-    "test": "npm run test:unit && npm run build:github-pages && npm run check:seo && npm run check:pages && npm run test:e2e"
+    "test:contact": "node scripts/test-contact.mjs",
+    "test:responsive": "playwright test --config playwright.responsive.config.ts",
+    "check:files": "node scripts/check-project-files.mjs",
+    "test": "npm run check:files && npm run test:unit && npm run build:github-pages && npm run check:seo && npm run check:pages && npm run test:e2e && npm run test:responsive && npm run test:contact"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

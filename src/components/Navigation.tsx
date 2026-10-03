@@ -1,326 +1,71 @@
-import { useEffect, useState } from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Link, useLocation, useParams } from "react-router-dom";
-import { ChevronDown, Leaf, Mail, Menu, Phone, X } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "./ThemeToggle";
-import { LanguageSwitcher } from "./LanguageSwitcher";
-import { SupportedLanguage, defaultLanguage } from "@/lib/i18n";
-import { siteConfig } from "@/lib/siteConfig";
+import { useEffect, useRef, useState } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { navigationRoutes, withoutLanguage } from '@/lib/routes';
+import { useEditorial } from '@/lib/editorial';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { ThemeToggle } from './ThemeToggle';
+import { Action } from './editorial/Action';
+import { siteConfig } from '@/lib/siteConfig';
 
-const Navigation = () => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const location = useLocation();
-  const { t } = useTranslation("navigation");
-  const { lang } = useParams<{ lang?: string }>();
-  const currentLang = (lang as SupportedLanguage) || defaultLanguage;
-
-  const isActive = (path: string) => location.pathname === path;
-  const servicesPath = `/${currentLang}/servicii`;
-  const contactPath = `/${currentLang}/contact`;
-  const appointmentLabel = t("appointmentShort");
-  const brandName = t("logoShort").toUpperCase();
-  const servicesLinks = [
-    { label: t("servicesEvaluation"), href: `${servicesPath}#evaluare` },
-    { label: t("servicesTherapy"), href: `${servicesPath}#terapie` },
-    { label: t("servicesParental"), href: `${servicesPath}#consiliere-parentala` },
-  ];
-
-  const navItems = [
-    { path: `/${currentLang}`, label: t("home") },
-    { path: `/${currentLang}/despre`, label: t("about") },
-    { path: servicesPath, label: t("services"), icon: ChevronDown, isServices: true },
-    { path: `/${currentLang}/blog`, label: t("blog") },
-    { path: `/${currentLang}/intrebari-frecvente`, label: t("faq") },
-    { path: contactPath, label: t("contact") },
-  ];
-
-  useEffect(() => {
-    setIsMobileOpen(false);
-    setIsServicesOpen(false);
-  }, [location.pathname, location.hash]);
-
-  useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 1280px)");
-    const closeOnDesktop = () => {
-      if (desktop.matches) setIsMobileOpen(false);
-    };
-    desktop.addEventListener("change", closeOnDesktop);
-    return () => desktop.removeEventListener("change", closeOnDesktop);
-  }, []);
-
-  const contactEmail = siteConfig.contactEmail;
-  const contactPhoneLabel = siteConfig.contactPhone;
-  const mobileMenu =
-    <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="fixed inset-0 z-[90] bg-background/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-200" />
-          <DialogPrimitive.Content id="mobile-menu" aria-describedby={undefined} className="fixed inset-0 z-[100] flex flex-col bg-background outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:slide-in-from-right-8 data-[state=closed]:slide-out-to-right-8 duration-200">
-            <DialogPrimitive.Title className="sr-only">{t("menu")}</DialogPrimitive.Title>
-            <div className="flex items-center justify-between border-b border-border/10 px-4 py-4">
-              <Link to={`/${currentLang}`} className="inline-flex min-w-0 items-center gap-3" onClick={() => setIsMobileOpen(false)}>
-                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm">
-                  <Leaf className="h-5 w-5" strokeWidth={2.25} />
-                </span>
-                <span className="truncate font-heading text-[1rem] font-bold uppercase tracking-[0.18em] text-foreground">
-                  {brandName}
-                </span>
-              </Link>
-              <div className="flex flex-none items-center gap-2">
-                <ThemeToggle />
-                <button
-                  className="rounded-full border border-border/30 p-2.5 text-foreground transition-colors hover:bg-muted"
-                  onClick={() => setIsMobileOpen(false)}
-                  aria-label={t("closeMenu")}
-                >
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
-
-            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-5">
-              <div className="mb-4 flex items-center gap-2">
-                <LanguageSwitcher />
-              </div>
-
-              <div className="space-y-2">
-                {navItems.map((item) => {
-                  if (item.isServices) {
-                    return (
-                      <div key={item.path} className="rounded-[1.5rem] border border-border/10 bg-muted/20 p-2">
-                        <Link
-                          to={item.path}
-                          className="flex items-center justify-between rounded-[1.15rem] px-4 py-4 text-base font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
-                          onClick={() => setIsMobileOpen(false)}
-                        >
-                          <span>{item.label}</span>
-                          <ChevronDown className="h-4 w-4" />
-                        </Link>
-                        <div className="px-2 pb-2">
-                          {servicesLinks.map((service) => (
-                            <Link
-                              key={service.href}
-                              to={service.href}
-                              className="flex items-center gap-3 rounded-[1rem] px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-background hover:text-primary"
-                              onClick={() => setIsMobileOpen(false)}
-                            >
-                              <span className="h-2 w-2 rounded-full bg-primary/60" />
-                              <span>{service.label}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  }
-
-                  return (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      className={`block rounded-[1.15rem] px-4 py-4 text-base font-medium transition-colors ${
-                        isActive(item.path)
-                          ? "bg-primary/10 text-primary"
-                          : "text-muted-foreground hover:bg-muted hover:text-primary"
-                      }`}
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="mt-5 rounded-[1.5rem] border border-border/10 bg-card/80 p-4 text-sm text-muted-foreground shadow-sm">
-                {siteConfig.contactPhoneHref && (
-                  <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    <a href={siteConfig.contactPhoneHref} className="hover:text-primary">{contactPhoneLabel}</a>
-                  </div>
-                )}
-                <div className="mt-2 flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  <a href={`mailto:${siteConfig.contactEmail}`} className="break-all hover:text-primary">
-                    {contactEmail}
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-auto border-t border-border/10 bg-background pt-4">
-                <Button variant="cta" size="lg" className="w-full rounded-full py-6 text-base font-semibold" asChild>
-                  <Link to={contactPath} onClick={() => setIsMobileOpen(false)}>
-                    {appointmentLabel}
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </DialogPrimitive.Content>
-    </DialogPrimitive.Portal>;
-
-  return (
-    <DialogPrimitive.Root open={isMobileOpen} onOpenChange={setIsMobileOpen}>
-    <nav className="sticky top-0 z-50 border-b border-border/15 bg-background/95 shadow-[0_8px_30px_rgba(15,23,42,0.03)] backdrop-blur-xl">
-      <div className="hidden border-b border-border/10 bg-background/70 xl:block">
-        <div className="container-max px-4 sm:px-6 xl:px-0">
-          <div className="flex h-11 items-center justify-between text-[12px] font-medium text-muted-foreground">
-            <div className="flex items-center gap-6">
-              {siteConfig.contactPhoneHref ? (
-                <a
-                  href={siteConfig.contactPhoneHref}
-                  className="inline-flex items-center gap-2 transition-colors hover:text-primary"
-                  aria-label={contactPhoneLabel}
-                >
-                  <Phone className="h-3.5 w-3.5" />
-                  <span>{contactPhoneLabel}</span>
-                </a>
-              ) : null}
-              <a
-                href={`mailto:${siteConfig.contactEmail}`}
-                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
-              >
-                <Mail className="h-3.5 w-3.5" />
-                <span>{contactEmail}</span>
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <LanguageSwitcher />
-              <ThemeToggle showLabel />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-max px-4 sm:px-6 xl:px-0">
-        <div className="hidden xl:flex items-end justify-between gap-8 py-5 xl:py-6">
-          <div className="min-w-0 flex-1">
-            <Link to={`/${currentLang}`} className="group inline-flex items-center gap-3 text-left">
-              <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm transition-transform duration-300 group-hover:scale-105">
-                <Leaf className="h-5 w-5" strokeWidth={2.25} />
-              </span>
-              <span className="min-w-0">
-                <span className="block font-heading text-[1.55rem] font-bold uppercase leading-none tracking-[0.22em] text-foreground xl:text-[1.75rem]">
-                  {brandName}
-                </span>
-                <span className="mt-2 block max-w-2xl text-[12px] leading-5 text-muted-foreground xl:text-[13px]">
-                  {t("subtitle")}
-                </span>
-              </span>
-            </Link>
-          </div>
-
-          <div className="flex min-w-0 items-center gap-1">
-            <div className="flex items-center gap-1 rounded-full border border-border/20 bg-background/80 p-1 shadow-sm backdrop-blur-sm">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                if (item.isServices) {
-                  return (
-                    <div
-                      key={item.path}
-                      className="relative"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
-                      onFocus={() => setIsServicesOpen(true)}
-                      onBlur={(event) => {
-                        if (!event.currentTarget.contains(event.relatedTarget)) setIsServicesOpen(false);
-                      }}
-                      onKeyDown={(event) => {
-                        if (event.key === "Escape") {
-                          event.preventDefault();
-                          setIsServicesOpen(false);
-                        }
-                      }}
-                    >
-                      <Link
-                        to={item.path}
-                        className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                          isActive(item.path)
-                            ? "bg-primary/10 text-primary"
-                            : "text-foreground hover:bg-muted hover:text-primary"
-                        }`}
-                        aria-expanded={isServicesOpen}
-                      >
-                        <span>{item.label}</span>
-                        {Icon ? <Icon className="h-3.5 w-3.5" /> : null}
-                      </Link>
-
-                      {isServicesOpen && (
-                        <div className="absolute left-0 top-full z-20 pt-3 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                          <div className="w-72 rounded-[1.5rem] border border-border/20 bg-background p-2 shadow-[0_24px_80px_rgba(15,23,42,0.12)]">
-                            {servicesLinks.map((service) => (
-                              <Link
-                                key={service.href}
-                                to={service.href}
-                                className="flex items-start gap-3 rounded-[1.1rem] px-4 py-3 text-left text-sm text-foreground transition-colors hover:bg-muted hover:text-primary"
-                              >
-                                <span className="mt-1 h-2 w-2 rounded-full bg-primary/70" />
-                                <span className="leading-5">{service.label}</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                      isActive(item.path)
-                        ? "bg-primary/10 text-primary"
-                        : "text-foreground hover:bg-muted hover:text-primary"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-
-            <Button variant="cta" className="ml-3 rounded-full px-6 py-5 text-sm font-semibold shadow-sm" asChild>
-              <Link to={contactPath}>{appointmentLabel}</Link>
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex h-18 items-center justify-between gap-4 py-3 xl:hidden">
-          <Link to={`/${currentLang}`} className="group inline-flex min-w-0 items-center gap-3 text-left">
-            <span className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-border/30 bg-primary/8 text-primary shadow-sm">
-              <Leaf className="h-5 w-5" strokeWidth={2.25} />
-            </span>
-            <span className="min-w-0">
-              <span className="block truncate font-heading text-[1.02rem] font-bold uppercase leading-none tracking-[0.18em] text-foreground">
-                {brandName}
-              </span>
-              <span className="mt-1 hidden max-w-[14rem] truncate text-[11px] leading-4 text-muted-foreground sm:block">
-                {t("subtitle")}
-              </span>
-            </span>
-          </Link>
-
-          <div className="flex flex-none items-center gap-2">
-            <ThemeToggle />
-            <DialogPrimitive.Trigger asChild>
-            <button
-              className="rounded-full border border-border/30 p-2.5 text-foreground transition-colors hover:bg-muted"
-              aria-label={isMobileOpen ? t("closeMenu") : t("openMenu")}
-              aria-expanded={isMobileOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-            </DialogPrimitive.Trigger>
-          </div>
-        </div>
-      </div>
-
-      {mobileMenu}
-    </nav>
-    </DialogPrimitive.Root>
-  );
-};
-
-export default Navigation;
+export default function Navigation() {
+ const { copy, path } = useEditorial();
+ const location = useLocation();
+ const [open, setOpen] = useState(false);
+ const header = useRef<HTMLElement>(null);
+ const menuTrigger=useRef<HTMLButtonElement>(null);
+ useEffect(() => setOpen(false), [location.pathname, location.hash]);
+ useEffect(() => {
+  const media = matchMedia('(min-width: 1280px)');
+  const resize = () => { if (media.matches) setOpen(false); };
+  media.addEventListener('change', resize);
+  const observer = new ResizeObserver(() => {
+   if (header.current) document.documentElement.style.setProperty('--header-height', header.current.offsetHeight + 'px');
+  });
+  if (header.current) observer.observe(header.current);
+  return () => { media.removeEventListener('change', resize); observer.disconnect(); };
+ }, []);
+ const current = withoutLanguage(location.pathname);
+ const links = navigationRoutes.map(route => <Link key={route.key} to={path(route.path)}
+  aria-current={(current === route.path || route.key === 'resources' && current.startsWith('/blog')) ? 'page' : undefined}
+  className={route.key === 'contact' ? 'nav-link bg-primary !text-primary-foreground px-4 !no-underline' : 'nav-link hover:bg-muted'}
+ >{copy.nav[route.key]}</Link>);
+ return <Dialog.Root open={open} onOpenChange={setOpen}>
+  <header ref={header} className="site-header">
+   <div className="site-container header-top-row flex min-h-[76px] items-center justify-between gap-4 py-3">
+    <Link to={path()} className="brand header-brand min-w-0">
+     <span className="brand-mark" aria-hidden="true">
+      <img className="brand-logo-light" src={import.meta.env.BASE_URL+'images/brand-family-logo-v1-128.webp'} srcSet={import.meta.env.BASE_URL+'images/brand-family-logo-v1-128.webp 128w, '+import.meta.env.BASE_URL+'images/brand-family-logo-v1-256.webp 256w'} sizes="(min-width: 1280px) 58px, 40px" width="128" height="128" alt="" decoding="async" />
+      <img className="brand-logo-dark" src={import.meta.env.BASE_URL+'images/brand-family-logo-dark-v1-128.webp'} srcSet={import.meta.env.BASE_URL+'images/brand-family-logo-dark-v1-128.webp 128w, '+import.meta.env.BASE_URL+'images/brand-family-logo-dark-v1-256.webp 256w'} sizes="(min-width: 1280px) 58px, 40px" width="128" height="128" alt="" decoding="async" />
+     </span>
+     <span className="brand-copy"><span>Valeria <span className="block min-[420px]:inline">Stănculea</span></span>
+      <span className="hidden xl:block mt-1 max-w-[17rem] font-sans text-sm leading-snug tracking-normal text-muted-foreground">{copy.ui.role}</span>
+     </span>
+    </Link>
+    <nav aria-label={copy.ui.menu} className="enhanced-navigation hidden xl:flex min-w-0 flex-1 flex-wrap justify-center items-center gap-0.5">{links}</nav>
+    <div className="header-controls flex shrink-0 items-center gap-1">
+     <LanguageSwitcher />
+     <div className="hidden xl:block"><ThemeToggle /></div>
+     <Dialog.Trigger asChild><Action ref={menuTrigger} variant="ghost" className="utility-button xl:hidden p-2" aria-label={copy.ui.openMenu}><Menu /></Action></Dialog.Trigger>
+    </div>
+   </div>
+   <noscript><style>{'.site-header{position:static}.site-header .utility-button,.site-header .enhanced-navigation{display:none}.header-top-row{flex-wrap:wrap}.header-top-row>.header-brand{flex:1 1 100%}.header-controls{width:100%}'}</style><nav aria-label={copy.ui.menu} className="site-container flex flex-wrap gap-x-3 gap-y-1 pb-3 text-sm">{links}</nav></noscript>
+  </header>
+  <Dialog.Portal>
+   <Dialog.Overlay className="fixed inset-0 z-[90] bg-foreground/30" />
+   <Dialog.Content onCloseAutoFocus={event=>{event.preventDefault();menuTrigger.current?.focus({preventScroll:true});}} aria-describedby={undefined} className="mobile-navigation fixed inset-0 z-[100] bg-background flex flex-col p-5 outline-none overflow-hidden">
+    <Dialog.Title className="sr-only">{copy.ui.menu}</Dialog.Title>
+    <div className="flex shrink-0 justify-between items-center gap-4 pb-5 border-b">
+     <span className="brand">Valeria Stănculea</span>
+     <Dialog.Close asChild><Action variant="ghost" className="utility-button p-2" aria-label={copy.ui.closeMenu}><X /></Action></Dialog.Close>
+    </div>
+    <div className="mobile-menu-body min-h-0 flex-1 overflow-y-auto">
+    <nav className="flex flex-col gap-2 py-5" aria-label={copy.ui.menu}>{links}</nav>
+    <div className="flex items-center justify-between gap-4 py-5 border-t"><LanguageSwitcher /><ThemeToggle showLabel /></div>
+    <a className="text-link email-link inline-block min-h-11 text-sm mt-4" href={'mailto:' + siteConfig.contactEmail}>{siteConfig.contactEmail}</a>
+    </div>
+   </Dialog.Content>
+  </Dialog.Portal>
+ </Dialog.Root>;
+}

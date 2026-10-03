@@ -1,0 +1,293 @@
+{
+  "light": [
+    {
+      "foreground": "foreground",
+      "background": "background",
+      "ratio": 11.39
+    },
+    {
+      "foreground": "foreground",
+      "background": "card",
+      "ratio": 12.04
+    },
+    {
+      "foreground": "foreground",
+      "background": "primary-light",
+      "ratio": 9.8
+    },
+    {
+      "foreground": "foreground",
+      "background": "secondary-accent",
+      "ratio": 9.94
+    },
+    {
+      "foreground": "foreground",
+      "background": "warm-peach",
+      "ratio": 9.29
+    },
+    {
+      "foreground": "foreground",
+      "background": "warm-honey",
+      "ratio": 10.28
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "background",
+      "ratio": 5.98
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "card",
+      "ratio": 6.32
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "primary-light",
+      "ratio": 5.15
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "secondary-accent",
+      "ratio": 5.22
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "warm-peach",
+      "ratio": 4.88
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "warm-honey",
+      "ratio": 5.4
+    },
+    {
+      "foreground": "primary",
+      "background": "background",
+      "ratio": 7.35
+    },
+    {
+      "foreground": "primary",
+      "background": "card",
+      "ratio": 7.77
+    },
+    {
+      "foreground": "primary",
+      "background": "primary-light",
+      "ratio": 6.32
+    },
+    {
+      "foreground": "primary",
+      "background": "secondary-accent",
+      "ratio": 6.41
+    },
+    {
+      "foreground": "primary",
+      "background": "warm-peach",
+      "ratio": 6.0
+    },
+    {
+      "foreground": "primary",
+      "background": "warm-honey",
+      "ratio": 6.63
+    },
+    {
+      "foreground": "secondary",
+      "background": "background",
+      "ratio": 5.74
+    },
+    {
+      "foreground": "secondary",
+      "background": "card",
+      "ratio": 6.07
+    },
+    {
+      "foreground": "secondary",
+      "background": "primary-light",
+      "ratio": 4.94
+    },
+    {
+      "foreground": "secondary",
+      "background": "secondary-accent",
+      "ratio": 5.01
+    },
+    {
+      "foreground": "secondary",
+      "background": "warm-peach",
+      "ratio": 4.69
+    },
+    {
+      "foreground": "secondary",
+      "background": "warm-honey",
+      "ratio": 5.18
+    },
+    {
+      "foreground": "primary-foreground",
+      "background": "primary",
+      "ratio": 7.77
+    },
+    {
+      "foreground": "secondary-foreground",
+      "background": "secondary",
+      "ratio": 6.07
+    }
+  ],
+  "dark": [
+    {
+      "foreground": "foreground",
+      "background": "background",
+      "ratio": 11.16
+    },
+    {
+      "foreground": "foreground",
+      "background": "card",
+      "ratio": 8.91
+    },
+    {
+      "foreground": "foreground",
+      "background": "primary-light",
+      "ratio": 7.39
+    },
+    {
+      "foreground": "foreground",
+      "background": "secondary-accent",
+      "ratio": 9.0
+    },
+    {
+      "foreground": "foreground",
+      "background": "warm-peach",
+      "ratio": 8.86
+    },
+    {
+      "foreground": "foreground",
+      "background": "warm-honey",
+      "ratio": 7.69
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "background",
+      "ratio": 8.0
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "card",
+      "ratio": 6.39
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "primary-light",
+      "ratio": 5.3
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "secondary-accent",
+      "ratio": 6.46
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "warm-peach",
+      "ratio": 6.35
+    },
+    {
+      "foreground": "muted-foreground",
+      "background": "warm-honey",
+      "ratio": 5.51
+    },
+    {
+      "foreground": "primary",
+      "background": "background",
+      "ratio": 8.49
+    },
+    {
+      "foreground": "primary",
+      "background": "card",
+      "ratio": 6.77
+    },
+    {
+      "foreground": "primary",
+      "background": "primary-light",
+      "ratio": 5.62
+    },
+    {
+      "foreground": "primary",
+      "background": "secondary-accent",
+      "ratio": 6.85
+    },
+    {
+      "foreground": "primary",
+      "background": "warm-peach",
+      "ratio": 6.74
+    },
+    {
+      "foreground": "primary",
+      "background": "warm-honey",
+      "ratio": 5.85
+    },
+    {
+      "foreground": "secondary",
+      "background": "background",
+      "ratio": 7.56
+    },
+    {
+      "foreground": "secondary",
+      "background": "card",
+      "ratio": 6.04
+    },
+    {
+      "foreground": "secondary",
+      "background": "primary-light",
+      "ratio": 5.01
+    },
+    {
+      "foreground": "secondary",
+      "background": "secondary-accent",
+      "ratio": 6.1
+    },
+    {
+      "foreground": "secondary",
+      "background": "warm-peach",
+      "ratio": 6.0
+    },
+    {
+      "foreground": "secondary",
+      "background": "warm-honey",
+      "ratio": 5.21
+    },
+    {
+      "foreground": "primary-foreground",
+      "background": "primary",
+      "ratio": 9.03
+    },
+    {
+      "foreground": "secondary-foreground",
+      "background": "secondary",
+      "ratio": 8.05
+    }
+  ],
+  "darkClosingPanelText": [
+    {
+      "foreground": "#2b3749",
+      "background": "#c0d3e7",
+      "ratio": 7.86
+    },
+    {
+      "foreground": "#2b3749",
+      "background": "#d5cee8",
+      "ratio": 7.92
+    },
+    {
+      "foreground": "#435069",
+      "background": "#c0d3e7",
+      "ratio": 5.29
+    },
+    {
+      "foreground": "#435069",
+      "background": "#d5cee8",
+      "ratio": 5.34
+    },
+    {
+      "foreground": "#fffaf2",
+      "background": "#354960",
+      "ratio": 8.89
+    }
+  ]
+}

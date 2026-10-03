@@ -1,0 +1,13 @@
+{
+  "host": "win32",
+  "osBuild": "10.0.26200.0",
+  "engines": {
+    "firefoxInstalled": false,
+    "webkitInstalled": false
+  },
+  "browsers": {
+    "chromium": "153.0.8010.12",
+    "chrome": "154.0.8037.93",
+    "msedge": "154.0.4258.53"
+  }
+}

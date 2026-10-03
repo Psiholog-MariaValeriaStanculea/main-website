@@ -1,0 +1,42 @@
+{
+  "ro/intrebari-frecvente": {
+    "unchanged": true,
+    "orderedTextNodes": 25,
+    "sha256": "30ba9b7eef8f944ffb379ff41330410644421557dda459edb51f90300d73ab27"
+  },
+  "ro/contact": {
+    "unchanged": true,
+    "orderedTextNodes": 21,
+    "sha256": "0c81997d241fe97dfd9887786a5f693294222e55653de7e2cd22260fde5ad676"
+  },
+  "en/intrebari-frecvente": {
+    "unchanged": true,
+    "orderedTextNodes": 25,
+    "sha256": "fd53f7c6e1068c0a375bbd834564a2ea439182309897268ae646800b0f13fe48"
+  },
+  "en/contact": {
+    "unchanged": true,
+    "orderedTextNodes": 21,
+    "sha256": "3f3e13dde18c3a55e8534635797e09b4961ecb925c8f4f6159550ed14a2bcbfd"
+  },
+  "it/intrebari-frecvente": {
+    "unchanged": true,
+    "orderedTextNodes": 25,
+    "sha256": "cb1de6290895e63272e12ebd7235eec950feb56b22d83247d17a2d16f01ac441"
+  },
+  "it/contact": {
+    "unchanged": true,
+    "orderedTextNodes": 21,
+    "sha256": "aacf1ddad6e18dd9fc4f6ff2ab8acb539090fb2fba9a75cbfccf3232189ea0e7"
+  },
+  "es/intrebari-frecvente": {
+    "unchanged": true,
+    "orderedTextNodes": 25,
+    "sha256": "a1bbee71f54b0fa68ff87fc303eb557f9b3d44582790dfb1ef796dfa59e5640e"
+  },
+  "es/contact": {
+    "unchanged": true,
+    "orderedTextNodes": 21,
+    "sha256": "ad75ee7c438bb6f7bedd02b163c23756370088dece1e0e4450fad2bcece15eb3"
+  }
+}

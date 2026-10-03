@@ -1,69 +1,21 @@
-import { Globe } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import { SupportedLanguage, supportedLanguages, defaultLanguage } from '@/lib/i18n';
-import { useTranslation } from 'react-i18next';
-
-const languageNames: Record<SupportedLanguage, string> = {
-  ro: 'Română',
-  en: 'English',
-  it: 'Italiano',
-  es: 'Español',
-};
-
-const languageFlags: Record<SupportedLanguage, string> = {
-  ro: '🇷🇴',
-  en: '🇬🇧',
-  it: '🇮🇹',
-  es: '🇪🇸',
-};
-
-export const LanguageSwitcher = () => {
-  const { t } = useTranslation('navigation');
-  const navigate = useNavigate();
-  const { lang } = useParams<{ lang?: string }>();
-  const location = useLocation();
-  const currentLang = (lang as SupportedLanguage) || defaultLanguage;
-
-  const handleLanguageChange = (newLang: SupportedLanguage) => {
-    // Replace current language in pathname with new language
-    const pathSegments = location.pathname.split('/');
-    if (pathSegments[1] && supportedLanguages.includes(pathSegments[1] as SupportedLanguage)) {
-      pathSegments[1] = newLang;
-    } else {
-      pathSegments.splice(1, 0, newLang);
-    }
-    const newPath = pathSegments.join('/');
-    navigate({ pathname: newPath, search: location.search, hash: location.hash });
-  };
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button aria-label={t('language')} variant="ghost" size="sm" className="gap-2 rounded-full border border-border/40 px-3 text-[11px] font-semibold uppercase tracking-[0.16em] hover:bg-muted">
-          <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{languageFlags[currentLang]} {currentLang.toUpperCase()}</span>
-          <span className="sm:hidden">{languageFlags[currentLang]}</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="z-[110] bg-background border-border shadow-lg">
-        {supportedLanguages.map((language) => (
-          <DropdownMenuItem
-            key={language}
-            onClick={() => handleLanguageChange(language)}
-            className={`gap-2 ${currentLang === language ? 'bg-accent text-accent-foreground' : ''}`}
-          >
-            <span>{languageFlags[language]}</span>
-            <span>{languageNames[language]}</span>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
-};
+import { Link, useLocation } from 'react-router-dom';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { supportedLanguages } from '@/lib/i18n';
+import { useEditorial } from '@/lib/editorial';
+import { Action } from './editorial/Action';
+import { useMenuFocusReturn } from '@/hooks/useMenuFocusReturn';
+const names = {ro:'Română',en:'English',it:'Italiano',es:'Español'};
+export function LanguageSwitcher() {
+ const { copy, language } = useEditorial();
+ const location = useLocation();
+ const focus=useMenuFocusReturn();
+ const href = (lang: string) => ({pathname: location.pathname.replace(/^\/(ro|en|it|es)(?=\/|$)/, '/' + lang), search:location.search, hash:location.hash});
+ return <div>
+  <DropdownMenu modal={false}><DropdownMenuTrigger asChild>
+   <Action ref={focus.triggerRef} variant="ghost" className="utility-button px-2 text-sm" aria-label={copy.ui.language}>{language.toUpperCase()}</Action>
+  </DropdownMenuTrigger><DropdownMenuContent {...focus.contentProps} align="end" className="z-[120]">
+   {supportedLanguages.map(lang => <DropdownMenuItem key={lang} asChild className="min-h-11 text-base"><Link to={href(lang)} state={location.state} lang={lang} hrefLang={lang} aria-current={lang === language ? 'true' : undefined}>{names[lang]}</Link></DropdownMenuItem>)}
+  </DropdownMenuContent></DropdownMenu>
+  <noscript><div className="flex flex-wrap gap-3 text-sm">{supportedLanguages.map(lang => <Link key={lang} to={href(lang)} lang={lang} hrefLang={lang} className="text-link inline-flex items-center min-h-11">{names[lang]}</Link>)}</div></noscript>
+ </div>;
+}

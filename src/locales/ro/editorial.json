@@ -1,0 +1,352 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre mine",
+    "services": "Servicii",
+    "resources": "Resurse",
+    "faq": "Întrebări frecvente",
+    "contact": "Contact",
+    "blog": "Articole",
+    "privacy": "Confidențialitate",
+    "cookies": "Cookie-uri și preferințe"
+  },
+  "ui": {
+    "role": "Psiholog clinician · Psihoterapeut integrativ relațional",
+    "skip": "Sari la conținut",
+    "menu": "Meniu",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "language": "Schimbă limba",
+    "theme": "Aspect",
+    "system": "Sistem",
+    "light": "Luminos",
+    "dark": "Întunecat",
+    "more": "Află mai multe",
+    "contact": "Contactează-mă",
+    "services": "Descoperă serviciile",
+    "allResources": "Vezi toate resursele",
+    "read": "Citește articolul",
+    "allFAQ": "Vezi toate întrebările",
+    "contents": "Pe această pagină",
+    "selectedCourses": "Vezi cursurile și formările selectate",
+    "backArticles": "Înapoi la articole",
+    "related": "Articole pe aceeași temă",
+    "copyright": "Toate drepturile rezervate.",
+    "directEmail": "Poți scrie și direct prin email",
+    "email": "Adresă de email",
+    "loading": "Se încarcă…",
+    "notFound": "Pagina nu a fost găsită",
+    "notFoundText": "Linkul poate fi incorect sau pagina a fost mutată. Poți continua din paginile de mai jos.",
+    "backHome": "Înapoi la pagina principală"
+  },
+  "home": {
+    "title": "Sprijin psihologic pentru copii și familii",
+    "intro": "Uneori, comportamentul copilului este partea vizibilă a unor emoții greu de exprimat, a unor nevoi de dezvoltare sau a unor dificultăți în relațiile sale. Împreună putem înțelege mai bine ce se află în spatele acestor manifestări și putem găsi forme de sprijin potrivite copilului, părintelui, relației dintre ei și întregii familii.",
+    "recognitionTitle": "Poate ai ajuns aici pentru că…",
+    "recognition": [
+      "copilul tău trece printr-o perioadă dificilă și îți dorești să înțelegi mai bine ceea ce trăiește;",
+      "observi schimbări emoționale, comportamentale sau relaționale care te îngrijorează;",
+      "relația dintre tine și copilul tău a devenit tensionată sau simți că vă este mai greu să vă înțelegeți;",
+      "copilul întâmpină dificultăți de adaptare la creșă, grădiniță, școală sau la alte schimbări din viața lui;",
+      "apar tensiuni între frați sau dificultăți care influențează echilibrul întregii familii;",
+      "provocările rolului de părinte au devenit copleșitoare și ai nevoie de sprijin pentru a înțelege mai bine nevoile copilului și modul în care îi poți fi alături."
+    ],
+    "supportTitle": "Cum te pot sprijini?",
+    "supports": [
+      {
+        "title": "Copilul tău",
+        "text": "Atunci când observi dificultăți emoționale, comportamentale, relaționale sau de adaptare și îți dorești să înțelegi mai bine nevoile care se află în spatele manifestărilor lui.",
+        "anchor": "copii-adolescenti",
+        "link": "Află mai multe"
+      },
+      {
+        "title": "Tu, ca părinte",
+        "text": "Atunci când ai nevoie de sprijin pentru a înțelege ceea ce trăiește copilul, pentru a răspunde mai potrivit nevoilor lui și pentru a te simți mai sigur în rolul tău de părinte.",
+        "anchor": "consiliere-parentala",
+        "link": "Află mai multe"
+      },
+      {
+        "title": "Relațiile din familie",
+        "text": "Atunci când apar tensiuni sau dificultăți în relația părinte–copil, între frați ori în dinamica familiei și simțiți că aveți nevoie de sprijin pentru a le înțelege și a construi relații mai echilibrate.",
+        "anchor": "familie",
+        "link": "Află mai multe"
+      },
+      {
+        "title": "Sprijin online pentru românii din diaspora",
+        "text": "Ședințe de sprijin psihologic în limba română, desfășurate exclusiv online, pentru copii, părinți și familii care locuiesc în afara țării.",
+        "anchor": "online",
+        "link": "Descoperă serviciile online"
+      }
+    ],
+    "approachTitle": "Mai întâi, înțelegem. Apoi, construim împreună.",
+    "approachText": "În munca mea, pregătirea profesională și experiența clinică se întâlnesc cu o prezență calmă, autentică și apropiată. Îmi doresc ca persoanele cu care lucrez să se simtă ascultate, respectate și înțelese, fără judecată și fără presiunea de a găsi imediat toate răspunsurile.",
+    "approachLink": "Cunoaște-mă",
+    "firstTitle": "Cum începe primul contact",
+    "steps": [
+      "Trimiți o solicitare, chiar dacă nu știi încă ce formă de sprijin este potrivită.",
+      "Discutăm cererea și clarificăm nevoile copilului și ale familiei.",
+      "Stabilim împreună următorul pas, atunci când colaborarea este potrivită."
+    ],
+    "resourcesTitle": "Pentru a înțelege mai bine",
+    "resourcesIntro": "Articole despre dezvoltarea copilului, rolul de părinte și relațiile din familie.",
+    "faqTitle": "Înainte de primul contact",
+    "closingTitle": "Nu trebuie să ai deja toate răspunsurile.",
+    "closingText": "Poți începe cu o întrebare. Împreună putem clarifica ce formă de sprijin ar fi potrivită."
+  },
+  "services": {
+    "title": "Forme de sprijin",
+    "intro": "Copilul, părintele și relațiile din familie sunt privite împreună, în contextul dezvoltării și al experiențelor lor. Explorează direcțiile de mai jos sau contactează-mă dacă nu știi încă ce ar fi potrivit.",
+    "groups": [
+      "Copii și adolescenți",
+      "Părinți și relații de familie",
+      "Sprijin online"
+    ],
+    "cta": "Discutăm despre această formă de sprijin",
+    "initial": "În primul contact clarificăm cererea și discutăm forma de sprijin potrivită situației voastre.",
+    "items": [
+      {
+        "id": "evaluare",
+        "category": "child",
+        "title": "Evaluare psihologică clinică",
+        "text": "Evaluarea urmărește înțelegerea funcționării emoționale, comportamentale și relaționale a copilului sau adolescentului, în contextul dezvoltării sale.",
+        "examples": [
+          "Pentru a înțelege mai bine dificultățile observate și nevoile copilului.",
+          "Pentru clarificarea direcțiilor de sprijin și intervenție."
+        ]
+      },
+      {
+        "id": "consiliere-copii",
+        "category": "child",
+        "title": "Consiliere psihologică pentru copii și adolescenți",
+        "text": "Un proces de sprijin adaptat vârstei și nevoilor copilului sau adolescentului, în legătură cu provocările din viața de zi cu zi.",
+        "examples": [
+          "Dificultăți emoționale, relaționale sau de adaptare.",
+          "Schimbări în familie, la școală sau în relațiile importante."
+        ]
+      },
+      {
+        "id": "terapie",
+        "category": "child",
+        "title": "Psihoterapie integrativă pentru copii și adolescenți",
+        "text": "Intervenția integrativ-relațională privește copilul în contextul poveștii, dezvoltării și relațiilor sale. Obiectivele și modul de lucru sunt construite în colaborare cu familia.",
+        "examples": [
+          "Înțelegerea experiențelor și dezvoltarea resurselor emoționale.",
+          "Sprijin pentru relații și modalități mai adaptate de a face față provocărilor."
+        ]
+      },
+      {
+        "id": "consiliere-parentala",
+        "category": "parent",
+        "title": "Consiliere parentală",
+        "text": "Un spațiu de reflecție și sprijin pentru părinți, care ia în considerare atât nevoile copilului, cât și resursele, limitele și experiențele adultului.",
+        "examples": [
+          "Înțelegerea comportamentelor copilului și a contextului lor.",
+          "Clarificarea răspunsurilor parentale și a dificultăților din rolul de părinte."
+        ]
+      },
+      {
+        "id": "relatia-parinte-copil",
+        "category": "family",
+        "title": "Relația părinte–copil",
+        "text": "Sprijin pentru înțelegerea și îmbunătățirea relației dintre părinte și copil, cu atenție la nevoile și perspectiva fiecăruia.",
+        "examples": [
+          "Tensiuni și dificultăți de comunicare.",
+          "Construirea unor modalități de relaționare mai echilibrate."
+        ]
+      },
+      {
+        "id": "familie",
+        "category": "family",
+        "title": "Dinamica și relațiile din familie",
+        "text": "Privim felul în care relațiile și schimbările din familie influențează experiența fiecărui membru, fără a reduce dificultățile la o singură persoană.",
+        "examples": [
+          "Relațiile dintre frați și dintre copii și îngrijitori.",
+          "Schimbări sau tensiuni care afectează echilibrul familiei."
+        ]
+      },
+      {
+        "id": "online",
+        "category": "online",
+        "title": "Sprijin online pentru românii din diaspora",
+        "text": "Ședințe de sprijin psihologic în limba română, desfășurate exclusiv online, pentru copii, părinți și familii care locuiesc în afara țării.",
+        "examples": [
+          "Potrivirea formatului online se discută individual.",
+          "Disponibilitatea și cadrul colaborării se clarifică înainte de programare."
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "Despre mine",
+    "intro": "Valeria Stănculea",
+    "valuesTitle": "Valorile care îmi ghidează munca",
+    "values": [
+      {
+        "title": "Relația",
+        "text": "Schimbarea începe și se dezvoltă în relații sigure, stabile și autentice."
+      },
+      {
+        "title": "Respectul",
+        "text": "Respect ritmul, unicitatea, limitele și povestea fiecărei persoane și familii."
+      },
+      {
+        "title": "Etica profesională",
+        "text": "Îmi desfășor activitatea cu responsabilitate, în limite profesionale clare și prin intervenții fundamentate științific."
+      },
+      {
+        "title": "Autenticitatea",
+        "text": "Cred într-o prezență profesională umană, firească și sinceră, fără construirea imaginii unui profesionist „perfect”."
+      },
+      {
+        "title": "Echilibrul",
+        "text": "Urmăresc echilibrul dintre emoție și rațiune, dintre nevoile copilului și ale părinților, dintre acceptare și schimbare și dintre viața profesională și cea personală."
+      }
+    ]
+  },
+  "resources": {
+    "title": "Resurse pentru copii, părinți și familii",
+    "intro": "Perspective și informații pentru a înțelege dezvoltarea copilului și relațiile de familie. Materialele au un rol informativ și nu înlocuiesc evaluarea sau sprijinul individual.",
+    "articles": "Articole",
+    "search": "Caută în articole",
+    "placeholder": "Un subiect, un cuvânt sau un titlu",
+    "all": "Toate subiectele",
+    "clear": "Șterge căutarea",
+    "count": "{count} articole",
+    "empty": "Nu am găsit articole",
+    "emptyText": "Încearcă un alt cuvânt sau revino la toate subiectele.",
+    "reset": "Resetează filtrele",
+    "notice": "Informațiile generale nu stabilesc un diagnostic și nu înlocuiesc o discuție despre situația ta.",
+    "countOne": "1 articol"
+  },
+  "faq": {
+    "title": "Întrebări frecvente",
+    "intro": "Câteva răspunsuri care te pot ajuta înainte de primul contact. Pentru întrebări legate de situația ta, poți trimite o solicitare.",
+    "groups": [
+      {
+        "title": "Primul contact",
+        "items": [
+          {
+            "question": "Trebuie să știu de ce serviciu am nevoie?",
+            "answer": "Nu. Poți alege „Nu sunt sigur(ă)” în formular. Primul contact ne ajută să clarificăm cererea și să discutăm ce direcție de sprijin ar putea fi potrivită."
+          },
+          {
+            "question": "Trimiterea formularului înseamnă că am o programare?",
+            "answer": "Nu. Formularul transmite o solicitare. O programare și condițiile colaborării se stabilesc separat, după discutarea cererii."
+          },
+          {
+            "question": "Ce informații să includ în mesaj?",
+            "answer": "Un mesaj scurt este suficient, iar câmpul este opțional. Pentru acest prim contact, evită detaliile medicale și informațiile sensibile despre tine sau copil."
+          }
+        ]
+      },
+      {
+        "title": "Copii, părinți și familie",
+        "items": [
+          {
+            "question": "Sunt implicați și părinții?",
+            "answer": "Colaborarea cu părinții este o parte importantă a procesului. Felul în care sunt implicați se adaptează vârstei, nevoilor copilului și obiectivelor stabilite împreună."
+          },
+          {
+            "question": "Cum se stabilește forma de sprijin?",
+            "answer": "Procesul începe prin înțelegerea situației și clarificarea nevoilor. Pe această bază, discutăm obiectivele și forma de sprijin potrivită, în limitele competențelor profesionale."
+          },
+          {
+            "question": "Cât durează colaborarea?",
+            "answer": "Durata diferă în funcție de nevoi, obiective și evoluție. Nu este stabilită o durată universală pe site; cadrul și reevaluarea obiectivelor se discută în colaborare."
+          }
+        ]
+      },
+      {
+        "title": "Format și cadru profesional",
+        "items": [
+          {
+            "question": "Pot solicita sprijin dacă locuiesc în afara României?",
+            "answer": "Poți întreba despre sprijinul online în limba română. Potrivirea formatului, posibilitatea colaborării și condițiile aplicabile se discută individual înainte de programare."
+          },
+          {
+            "question": "Ședințele se oferă în toate limbile site-ului?",
+            "answer": "Limbile în care este disponibil site-ul nu stabilesc automat limbile în care se desfășoară ședințele. Poți cere clarificări înainte de programare."
+          },
+          {
+            "question": "Cum este abordată confidențialitatea?",
+            "answer": "Confidențialitatea și limitele sale sunt discutate în cadrul colaborării, conform obligațiilor profesionale și legale aplicabile. Nu este o promisiune fără excepții; pentru întrebări concrete poți solicita clarificări."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Să începem cu o întrebare",
+    "intro": "Poți trimite o solicitare chiar dacă nu știi încă ce formă de sprijin este potrivită.",
+    "formTitle": "Trimite o solicitare",
+    "name": "Nume",
+    "category": "Despre ce ai vrea să discutăm?",
+    "message": "Mesaj (opțional)",
+    "required": "Numele și adresa de email sunt obligatorii.",
+    "messageHelp": "Pentru acest prim contact, evită detaliile medicale sau alte informații sensibile despre tine ori copil.",
+    "privacyHelp": "Află cum sunt folosite informațiile din formular.",
+    "selected": "Forma de sprijin selectată",
+    "submit": "Trimite solicitarea",
+    "newRequest": "Trimite o nouă solicitare",
+    "retry": "Încearcă din nou",
+    "nameError": "Completează numele.",
+    "emailError": "Introdu o adresă de email validă pentru a putea primi un răspuns.",
+    "lengthError": "Mesajul poate avea cel mult 1.000 de caractere.",
+    "sending": "Solicitarea se trimite…",
+    "success": "Solicitarea a fost transmisă. O programare se stabilește separat, după discutarea cererii.",
+    "rejected": "Solicitarea nu a putut fi trimisă. Datele completate sunt păstrate în formular. Poți încerca din nou sau poți scrie direct prin email.",
+    "uncertain": "Nu putem confirma trimiterea. Datele sunt păstrate în formular. O nouă încercare poate trimite aceeași solicitare de două ori.",
+    "unavailable": "Formularul nu este disponibil momentan. Poți scrie direct la adresa de email de mai jos.",
+    "noJS": "Pentru a folosi formularul este necesar JavaScript. Poți scrie direct prin email.",
+    "appointment": "O solicitare nu confirmă o programare. Disponibilitatea și condițiile colaborării se discută separat.",
+    "categories": {
+      "child": "Copii și adolescenți",
+      "parent": "Sprijin pentru părinți",
+      "family": "Relații de familie",
+      "online": "Sprijin online",
+      "professional": "Întrebare profesională",
+      "unsure": "Nu sunt sigur(ă)"
+    }
+  },
+  "legal": {
+    "privacyTitle": "Confidențialitate",
+    "cookiesTitle": "Cookie-uri și preferințe",
+    "privacyIntro": "Informații despre datele folosite atunci când navighezi pe site sau trimiți o solicitare.",
+    "cookiesIntro": "Preferințele de afișare și informațiile păstrate în browser.",
+    "privacySections": [
+      {
+        "title": "Contactul inițial",
+        "text": "Formularul solicită numele, adresa de email, categoria cererii și, opțional, un mesaj. Aceste informații sunt folosite pentru a primi și a răspunde solicitării tale. Evită informațiile medicale sau alte date sensibile în acest prim mesaj."
+      },
+      {
+        "title": "Transmiterea solicitării",
+        "text": "Atunci când formularul este disponibil, solicitarea este transmisă prin EmailJS către adresa de contact a cabinetului. Poți alege și contactul direct prin email. Trimiterea unei solicitări nu confirmă o programare."
+      },
+      {
+        "title": "Găzduirea site-ului",
+        "text": "Pentru site-ul public găzduit pe GitHub Pages, GitHub înregistrează adresa IP a vizitatorului în scopuri de securitate."
+      },
+      {
+        "title": "Întrebări despre datele tale",
+        "text": "Pentru clarificări despre accesul la informații, păstrarea lor sau exercitarea drepturilor aplicabile, poți scrie la adresa de contact de mai jos."
+      }
+    ],
+    "cookieSections": [
+      {
+        "title": "Preferința de aspect",
+        "text": "Dacă alegi un aspect luminos, întunecat sau de sistem, opțiunea poate fi păstrată local în browser. Dacă stocarea este blocată, site-ul rămâne utilizabil, dar preferința poate să nu fie reținută."
+      },
+      {
+        "title": "Limba paginii",
+        "text": "Limba este stabilită de pagina pe care o vizitezi. Schimbarea limbii păstrează aceeași pagină și, unde este cazul, aceeași secțiune."
+      },
+      {
+        "title": "Analiză și publicitate",
+        "text": "Această versiune a site-ului nu încarcă instrumente de analiză a traficului sau de publicitate. Datele introduse în formular nu sunt salvate în stocarea locală a browserului."
+      }
+    ],
+    "providers": "Informații despre furnizori",
+    "hostingPolicy": "Politica de confidențialitate GitHub",
+    "deliveryPolicy": "Politica de confidențialitate EmailJS"
+  }
+}

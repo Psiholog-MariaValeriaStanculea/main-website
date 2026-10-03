@@ -1,0 +1,352 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "services": "Services",
+    "resources": "Resources",
+    "faq": "Frequently asked questions",
+    "contact": "Contact",
+    "blog": "Articles",
+    "privacy": "Privacy",
+    "cookies": "Cookies and preferences"
+  },
+  "ui": {
+    "role": "Clinical psychologist · Relational integrative psychotherapist",
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Change language",
+    "theme": "Appearance",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "more": "Learn more",
+    "contact": "Contact me",
+    "services": "Explore services",
+    "allResources": "View all resources",
+    "read": "Read article",
+    "allFAQ": "View all questions",
+    "contents": "On this page",
+    "selectedCourses": "View selected courses and training",
+    "backArticles": "Back to articles",
+    "related": "Related articles",
+    "copyright": "All rights reserved.",
+    "directEmail": "You can also email directly",
+    "email": "Email address",
+    "loading": "Loading…",
+    "notFound": "Page not found",
+    "notFoundText": "The link may be incorrect or the page may have moved. You can continue using the pages below.",
+    "backHome": "Back to the homepage"
+  },
+  "home": {
+    "title": "Psychological support for children and families",
+    "intro": "Sometimes, a child's behaviour is the visible part of emotions that are hard to express, developmental needs, or difficulties in their relationships. Together, we can better understand what lies behind these expressions and find support suited to the child, the parent, their relationship, and the whole family.",
+    "recognitionTitle": "You may have come here because…",
+    "recognition": [
+      "your child is going through a difficult time and you want to understand their experience better;",
+      "you notice emotional, behavioural, or relational changes that concern you;",
+      "your relationship with your child has become strained, or understanding each other feels harder;",
+      "your child finds it difficult to adjust to nursery, school, or other changes in their life;",
+      "tensions between siblings or other difficulties affect the balance of the whole family;",
+      "the challenges of parenting feel overwhelming and you need support to understand your child's needs and how to be there for them."
+    ],
+    "supportTitle": "How can I support you?",
+    "supports": [
+      {
+        "title": "Your child",
+        "text": "When you notice emotional, behavioural, relational, or adjustment difficulties and want to better understand the needs behind them.",
+        "anchor": "copii-adolescenti",
+        "link": "Learn more"
+      },
+      {
+        "title": "You, as a parent",
+        "text": "When you need support to understand your child's experience, respond to their needs, and feel more confident as a parent.",
+        "anchor": "consiliere-parentala",
+        "link": "Learn more"
+      },
+      {
+        "title": "Family relationships",
+        "text": "When tensions arise between parent and child, between siblings, or within the family, and you need support to understand them and build more balanced relationships.",
+        "anchor": "familie",
+        "link": "Learn more"
+      },
+      {
+        "title": "Online support for Romanians abroad",
+        "text": "Psychological support sessions in Romanian, held exclusively online, for children, parents, and families living outside Romania.",
+        "anchor": "online",
+        "link": "Explore online support"
+      }
+    ],
+    "approachTitle": "First, we understand. Then, we build together.",
+    "approachText": "In my work, professional training and clinical experience meet a calm, authentic, and approachable presence. I want the people I work with to feel heard, respected, and understood, without judgement or pressure to find every answer immediately.",
+    "approachLink": "Get to know me",
+    "firstTitle": "How first contact works",
+    "steps": [
+      "Send an inquiry, even if you do not yet know which form of support is appropriate.",
+      "We discuss the request and clarify the child's and family's needs.",
+      "We agree on a next step when working together is appropriate."
+    ],
+    "resourcesTitle": "A little more understanding",
+    "resourcesIntro": "Articles about child development, parenting, and family relationships.",
+    "faqTitle": "Before you make contact",
+    "closingTitle": "You do not need to have every answer.",
+    "closingText": "You can start with a question. Together, we can clarify what kind of support might be appropriate."
+  },
+  "services": {
+    "title": "Forms of support",
+    "intro": "The child, parent, and family relationships are considered together, in the context of development and experience. Explore the areas below or contact me if you are unsure what would be appropriate.",
+    "groups": [
+      "Children and adolescents",
+      "Parents and family relationships",
+      "Online support"
+    ],
+    "cta": "Discuss this form of support",
+    "initial": "During first contact, we clarify the request and discuss support appropriate to your circumstances.",
+    "items": [
+      {
+        "id": "evaluare",
+        "category": "child",
+        "title": "Clinical psychological assessment",
+        "text": "Assessment helps understand a child's or adolescent's emotional, behavioural, and relational functioning in the context of their development.",
+        "examples": [
+          "Understanding the difficulties observed and the child's needs.",
+          "Clarifying possible directions for support and intervention."
+        ]
+      },
+      {
+        "id": "consiliere-copii",
+        "category": "child",
+        "title": "Counselling for children and adolescents",
+        "text": "Support adapted to a child's or adolescent's age and needs, in relation to everyday challenges.",
+        "examples": [
+          "Emotional, relational, or adjustment difficulties.",
+          "Changes in the family, at school, or in important relationships."
+        ]
+      },
+      {
+        "id": "terapie",
+        "category": "child",
+        "title": "Integrative psychotherapy for children and adolescents",
+        "text": "Relational integrative work considers the child within their story, development, and relationships. Goals and ways of working are developed collaboratively with the family.",
+        "examples": [
+          "Understanding experiences and developing emotional resources.",
+          "Supporting relationships and more adaptive ways of meeting challenges."
+        ]
+      },
+      {
+        "id": "consiliere-parentala",
+        "category": "parent",
+        "title": "Parent counselling",
+        "text": "A space for reflection and support that considers the child's needs alongside the adult's resources, limits, and experiences.",
+        "examples": [
+          "Understanding a child's behaviour and its context.",
+          "Exploring parenting responses and challenges."
+        ]
+      },
+      {
+        "id": "relatia-parinte-copil",
+        "category": "family",
+        "title": "The parent–child relationship",
+        "text": "Support to understand and improve the relationship between parent and child, with attention to each person's needs and perspective.",
+        "examples": [
+          "Tensions and communication difficulties.",
+          "Building more balanced ways of relating."
+        ]
+      },
+      {
+        "id": "familie",
+        "category": "family",
+        "title": "Family dynamics and relationships",
+        "text": "We consider how relationships and changes within the family affect each member, without reducing difficulties to one person.",
+        "examples": [
+          "Relationships between siblings and between children and caregivers.",
+          "Changes or tensions affecting the family's balance."
+        ]
+      },
+      {
+        "id": "online",
+        "category": "online",
+        "title": "Online support for Romanians abroad",
+        "text": "Psychological support sessions in Romanian, held exclusively online, for children, parents, and families living outside Romania.",
+        "examples": [
+          "Suitability for online work is discussed individually.",
+          "Availability and arrangements are clarified before an appointment."
+        ]
+      }
+    ]
+  },
+  "about": {
+    "title": "About me",
+    "intro": "Valeria Stănculea",
+    "valuesTitle": "The values that guide my work",
+    "values": [
+      {
+        "title": "Relationship",
+        "text": "Change begins and develops in safe, stable, authentic relationships."
+      },
+      {
+        "title": "Respect",
+        "text": "I respect the pace, uniqueness, limits, and story of each person and family."
+      },
+      {
+        "title": "Professional ethics",
+        "text": "I work responsibly, within clear professional boundaries, using scientifically grounded interventions."
+      },
+      {
+        "title": "Authenticity",
+        "text": "I believe in a human, natural, sincere professional presence, without constructing an image of a ‘perfect’ professional."
+      },
+      {
+        "title": "Balance",
+        "text": "I seek balance between emotion and reason, children's and parents' needs, acceptance and change, and professional and personal life."
+      }
+    ]
+  },
+  "resources": {
+    "title": "Resources for children, parents, and families",
+    "intro": "Perspectives and information to understand child development and family relationships. These materials are informative and do not replace an individual assessment or support.",
+    "articles": "Articles",
+    "search": "Search articles",
+    "placeholder": "A topic, word, or title",
+    "all": "All topics",
+    "clear": "Clear search",
+    "count": "{count} articles",
+    "empty": "No articles found",
+    "emptyText": "Try another word or return to all topics.",
+    "reset": "Reset filters",
+    "notice": "General information does not establish a diagnosis or replace a discussion of your circumstances.",
+    "countOne": "1 article"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Answers that may help before first contact. You can send an inquiry about questions specific to your circumstances.",
+    "groups": [
+      {
+        "title": "First contact",
+        "items": [
+          {
+            "question": "Do I need to know which service I need?",
+            "answer": "No. You can choose ‘I'm not sure’ in the form. First contact helps clarify the request and discuss which direction of support may be appropriate."
+          },
+          {
+            "question": "Does submitting the form book an appointment?",
+            "answer": "No. The form sends an inquiry. An appointment and working arrangements are agreed separately after discussing the request."
+          },
+          {
+            "question": "What should I include in the message?",
+            "answer": "A brief message is enough, and the field is optional. For this first contact, avoid medical details and sensitive information about you or your child."
+          }
+        ]
+      },
+      {
+        "title": "Children, parents, and families",
+        "items": [
+          {
+            "question": "Are parents involved?",
+            "answer": "Collaboration with parents is an important part of the process. Their involvement is adapted to the child's age, needs, and the goals agreed together."
+          },
+          {
+            "question": "How is the form of support chosen?",
+            "answer": "The process begins with understanding the situation and clarifying needs. On this basis, we discuss goals and appropriate support within professional competencies."
+          },
+          {
+            "question": "How long does the work take?",
+            "answer": "Duration varies with needs, goals, and progress. The website does not set a universal duration; arrangements and review of goals are discussed together."
+          }
+        ]
+      },
+      {
+        "title": "Format and professional boundaries",
+        "items": [
+          {
+            "question": "Can I ask for support if I live outside Romania?",
+            "answer": "You can ask about online support in Romanian. Suitability, whether working together is possible, and applicable arrangements are discussed individually before an appointment."
+          },
+          {
+            "question": "Are sessions available in every website language?",
+            "answer": "The languages available on the website do not automatically indicate the languages in which sessions are provided. Please ask for clarification before an appointment."
+          },
+          {
+            "question": "How is confidentiality approached?",
+            "answer": "Confidentiality and its limits are discussed within the working relationship, in line with applicable professional and legal obligations. It is not a promise without exceptions; you can ask about specific questions."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's start with a question",
+    "intro": "You can send an inquiry even if you do not yet know which form of support is appropriate.",
+    "formTitle": "Send an inquiry",
+    "name": "Name",
+    "category": "What would you like to discuss?",
+    "message": "Message (optional)",
+    "required": "Name and email address are required.",
+    "messageHelp": "For this first contact, avoid medical details or other sensitive information about you or your child.",
+    "privacyHelp": "Learn how information from the form is used.",
+    "selected": "Selected form of support",
+    "submit": "Send inquiry",
+    "newRequest": "Send a new inquiry",
+    "retry": "Try again",
+    "nameError": "Enter your name.",
+    "emailError": "Enter a valid email address so you can receive a reply.",
+    "lengthError": "The message can contain up to 1,000 characters.",
+    "sending": "Sending your inquiry…",
+    "success": "Your inquiry has been submitted. An appointment is arranged separately after discussing your request.",
+    "rejected": "Your inquiry could not be sent. Your entries are still in the form. You can try again or email directly.",
+    "uncertain": "We cannot confirm submission. Your entries are still in the form. Another attempt may send the same inquiry twice.",
+    "unavailable": "The form is currently unavailable. You can email directly at the address below.",
+    "noJS": "JavaScript is needed to use the form. You can email directly instead.",
+    "appointment": "An inquiry does not confirm an appointment. Availability and arrangements are discussed separately.",
+    "categories": {
+      "child": "Children and adolescents",
+      "parent": "Support for parents",
+      "family": "Family relationships",
+      "online": "Online support",
+      "professional": "Professional inquiry",
+      "unsure": "I'm not sure"
+    }
+  },
+  "legal": {
+    "privacyTitle": "Privacy",
+    "cookiesTitle": "Cookies and preferences",
+    "privacyIntro": "Information about data used when you visit the website or send an inquiry.",
+    "cookiesIntro": "Display preferences and information stored in your browser.",
+    "privacySections": [
+      {
+        "title": "First contact",
+        "text": "The form requests your name, email address, inquiry category, and an optional message. This information is used to receive and respond to your inquiry. Avoid medical details or other sensitive data in this first message."
+      },
+      {
+        "title": "Sending an inquiry",
+        "text": "When the form is available, your inquiry is sent through EmailJS to the practice's contact address. You can also choose to email directly. Sending an inquiry does not confirm an appointment."
+      },
+      {
+        "title": "Website hosting",
+        "text": "For the public website hosted on GitHub Pages, GitHub records visitor IP addresses for security purposes."
+      },
+      {
+        "title": "Questions about your data",
+        "text": "For clarification about access to information, retention, or exercising applicable rights, you can email the contact address below."
+      }
+    ],
+    "cookieSections": [
+      {
+        "title": "Appearance preference",
+        "text": "If you choose a light, dark, or system appearance, that choice may be stored locally in your browser. If storage is blocked, the website remains usable but your preference may not be remembered."
+      },
+      {
+        "title": "Page language",
+        "text": "The language is determined by the page you visit. Changing language keeps the same page and, where relevant, the same section."
+      },
+      {
+        "title": "Analytics and advertising",
+        "text": "This version of the website does not load traffic analytics or advertising tools. Form entries are not saved in the browser's local storage."
+      }
+    ],
+    "providers": "Provider information",
+    "hostingPolicy": "GitHub privacy statement",
+    "deliveryPolicy": "EmailJS privacy policy"
+  }
+}

@@ -8,9 +8,15 @@ import { spawnSync } from 'node:child_process';
 import { checkHtml, checkArtifact, checkLive } from '../../scripts/check-pages.mjs';
 import { createPagesServer } from '../../scripts/serve-pages.mjs';
 
-const html = '<html><head><script type="module" src="/main-website/assets/app.js"></script>' +
+const buildId='a'.repeat(64);
+const expected={buildId};
+const html = '<html lang="ro"><head><script type="module" src="/main-website/assets/app.js"></script>' +
+  `<meta name="site-build-id" content="${buildId}"><link rel="canonical" href="https://example.test/main-website/ro/">` +
   '<link rel="stylesheet" href="/main-website/assets/app.css"></head>' +
   '<body><main><h1>Visible website</h1></main></body></html>';
+function pageHtml(path){
+  return path.includes('/en/contact/')?html.replace('lang="ro"','lang="en"').replace('/ro/','/en/contact/'):html;
+}
 
 test('compiled prerendered HTML passes; 404 needs a heading but no main', () => {
   checkHtml(html, 'index.html');
@@ -23,7 +29,7 @@ for (const [name, content, error] of [
   ['unresolved Vite placeholders', html.replace('Visible website', '%BASE_URL%'), /Unprocessed Vite template/],
   ['source TypeScript script', html.replace('/main-website/assets/app.js', '/src/main.tsx'), /Unbuilt source script/],
   ['missing compiled JS', html.replace(/<script.*?<\/script>/, ''), /Missing production JavaScript/],
-  ['missing compiled CSS', html.replace(/<link[^>]+>/, ''), /Missing production stylesheet/],
+  ['missing compiled CSS', html.replace(/<link rel="stylesheet"[^>]+>/, ''), /Missing production stylesheet/],
 ]) test(`rejects ${name}`, () => assert.throws(() => checkHtml(content, 'index.html'), error));
 
 function artifact(t) {
@@ -35,7 +41,8 @@ function artifact(t) {
     writeFileSync(join(root, file), content);
   };
   write('.github/workflows/deploy-github-pages.yml', 'steps:\n  - uses: actions/deploy-pages@v5\n');
-  for (const file of ['index.html', 'ro/index.html', 'en/contact/index.html', '404.html']) write(`dist/${file}`, html);
+  for (const file of ['index.html', 'ro/index.html', 'en/contact/index.html', '404.html']) write(`dist/${file}`, pageHtml('/'+file));
+  write('dist/build-info.json',JSON.stringify({buildId}));
   write('dist/.nojekyll', '');
   write('dist/assets/app.js', 'console.log("built");');
   write('dist/assets/app.css', 'body { color: black; }');
@@ -63,7 +70,7 @@ function siteFetch(override = () => undefined) {
     const changed = override(path);
     if (changed) return changed;
     const asset = /\/assets\//.test(path);
-    return new Response(asset ? 'compiled asset' : html, {
+    return new Response(asset ? 'compiled asset' : pageHtml(path), {
       headers: { 'content-type': asset ? (path.endsWith('.css') ? 'text/css' : 'text/javascript') : 'text/html' },
     });
   };
@@ -74,14 +81,14 @@ test('HTTP check follows language routes and deduplicates JS/CSS requests', asyn
   const fetchSite = siteFetch();
   await checkLive('https://example.test/main-website?old=1#old', async url => {
     requests.push(String(url)); return fetchSite(url);
-  });
+  },expected);
   assert.deepEqual(requests, ['', 'ro/', 'en/contact/', 'assets/app.js', 'assets/app.css']
     .map(path => `https://example.test/main-website/${path}`));
 });
 test('custom-domain root assets are supported', async () => {
-  const fetchSite = async url => new Response(new URL(url).pathname.includes('/assets/') ? 'compiled' : html.replaceAll('/main-website/', '/'),
+  const fetchSite = async url => new Response(new URL(url).pathname.includes('/assets/') ? 'compiled' : pageHtml(new URL(url).pathname).replaceAll('/main-website/', '/'),
     { headers: { 'content-type': String(url).endsWith('.css') ? 'text/css' : String(url).endsWith('.js') ? 'text/javascript' : 'text/html' } });
-  await checkLive('https://example.test/', fetchSite);
+  await checkLive('https://example.test/', fetchSite,expected);
 });
 for (const [name, override, error] of [
   ['missing language route', path => path.endsWith('/en/contact/') ? new Response('', { status: 404 }) : undefined, /Page unavailable/],
@@ -89,9 +96,24 @@ for (const [name, override, error] of [
   ['CSS returns HTML fallback', path => path.endsWith('.css') ? new Response(html, { headers: { 'content-type': 'text/html' } }) : undefined, /Invalid asset type/],
   ['missing JS', path => path.endsWith('.js') ? new Response('', { status: 404 }) : undefined, /Asset unavailable/],
   ['empty CSS', path => path.endsWith('.css') ? new Response(' ', { headers: { 'content-type': 'text/css' } }) : undefined, /Empty production asset/],
-  ['wrong project base path', path => !path.includes('/assets/') ? new Response(html.replaceAll('/main-website/', '/'), { headers: { 'content-type': 'text/html' } }) : undefined, /Asset outside Pages path/],
+  ['wrong project base path', path => !path.includes('/assets/') ? new Response(pageHtml(path).replaceAll('/main-website/assets/', '/assets/'), { headers: { 'content-type': 'text/html' } }) : undefined, /Asset outside Pages path/],
+  ['old release', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace(buildId,'b'.repeat(64)), {headers:{'content-type':'text/html'}}) : undefined, /Build identity mismatch/],
+  ['missing build marker', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace(/<meta name="site-build-id"[^>]+>/,''), {headers:{'content-type':'text/html'}}) : undefined, /Build identity mismatch/],
+  ['Romanian fallback on an English route', path => path.endsWith('/en/contact/') ? new Response(html, {headers:{'content-type':'text/html'}}) : undefined, /Wrong page language/],
+  ['English homepage instead of Contact', path => path.endsWith('/en/contact/') ? new Response(pageHtml(path).replace('/en/contact/','/en/'), {headers:{'content-type':'text/html'}}) : undefined, /Wrong canonical route/],
+  ['wrong canonical host', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace('https://example.test','https://wrong.test'), {headers:{'content-type':'text/html'}}) : undefined, /Wrong canonical origin/],
 ]) test(`HTTP check rejects ${name}`, async () => {
-  await assert.rejects(checkLive('https://example.test/main-website/', siteFetch(override)), error);
+  await assert.rejects(checkLive('https://example.test/main-website/', siteFetch(override),expected), error);
+});
+
+test('HTTP checks require a build identity supplied independently of the response',async()=>{
+  await assert.rejects(checkLive('https://example.test/',siteFetch()),/An expected build ID is required/);
+});
+
+test('artifact rejects a nested page from a different build',t=>{
+  const {root,write}=artifact(t);
+  write('dist/en/contact/index.html',pageHtml('/en/contact/').replace(buildId,'b'.repeat(64)));
+  assert.throws(()=>checkArtifact(root),/Build identity mismatch/);
 });
 test('non-HTTP deployment URLs are rejected', async () => {
   await assert.rejects(checkLive('file:///main-website/'), /Expected an HTTP/);
@@ -113,7 +135,7 @@ test('strict test server exposes real nested pages, asset MIME, HEAD and missing
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
   const base = `http://127.0.0.1:${server.address().port}/main-website/`;
-  await checkLive(base);
+  await checkLive(base,fetch,{buildId,canonicalBaseUrl:'https://example.test/main-website/'});
   const redirect = await fetch(base.slice(0, -1), { redirect: 'manual' });
   assert.equal(redirect.status, 301);
   const head = await fetch(`${base}assets/app.css`, { method: 'HEAD' });
@@ -135,12 +157,22 @@ test('deployment has test gates before upload and exactly one deployer', () => {
   assert.deepEqual(deployers[0].jobs.deploy.permissions, { contents: 'read', pages: 'write', 'id-token': 'write' });
   const upload = build.findIndex(step => step.uses?.startsWith('actions/upload-pages-artifact@'));
   assert.ok(upload > 0);
-  for (const command of ['npm run test:unit', 'npm run test:e2e', 'npm run check:seo', 'npm run check:pages']) {
+  for (const command of ['npm run test:unit', 'npm run test:e2e', 'npm run test:contact', 'npm run check:seo', 'npm run check:pages']) {
     assert.ok(build.slice(0, upload).some(step => step.run?.includes(command)), `${command} must gate artifact upload`);
   }
+  const review=build.slice(0,upload).find(step=>step.env?.RELEASE_APPROVED);
+  assert.equal(review?.env.RELEASE_APPROVED,'${{ vars.WEBSITE_RELEASE_APPROVED }}');
+  assert.ok(review?.run.includes('"$RELEASE_APPROVED" != "true"'));
+  assert.ok(review?.run.includes('"$PRIVACY_REVIEWED" != "true"'));
+  assert.ok(review?.run.includes('contactConfigured'));
   assert.equal(build[upload].with.path, './dist');
   assert.equal(deployers[0].jobs.deploy.needs, 'build');
   assert.ok(deployers[0].jobs.deploy.steps.some(step => step.run?.includes('scripts/check-pages.mjs --url')));
+  assert.equal(deployers[0].jobs.build.outputs.build_id,'${{ steps.build.outputs.build_id }}');
+  assert.ok(build.find(step=>step.id==='build').run.includes('GITHUB_OUTPUT'));
+  const verify=deployers[0].jobs.deploy.steps.find(step=>step.run?.includes('scripts/check-pages.mjs --url'));
+  assert.equal(verify.env.EXPECTED_BUILD_ID,'${{ needs.build.outputs.build_id }}');
+  assert.ok(verify.run.includes('--build-id "$EXPECTED_BUILD_ID"'));
 });
 test('pull requests get tests without publishing a Pages artifact', () => {
   const workflow = parse(readFileSync('.github/workflows/test.yml', 'utf8'));

@@ -15,6 +15,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    outputs:
+      build_id: ${{ steps.build.outputs.build_id }}
     permissions:
       contents: read
       pages: read
@@ -39,14 +41,16 @@ jobs:
         run: |
           npm run lint
           npx tsc -b
+          npm run check:files
           npm run test:unit
 
       - name: Build site
+        id: build
         env:
           VITE_GITHUB_PAGES: "true"
           VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
           VITE_SITE_URL: ${{ steps.pages.outputs.base_url }}
-          VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
+          VITE_PRIVACY_REVIEWED: ${{ vars.VITE_PRIVACY_REVIEWED }}
           VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ vars.VITE_EMAILJS_PUBLIC_KEY }}
@@ -54,12 +58,19 @@ jobs:
           npm run build
           npm run check:seo
           npm run check:pages
+          node --input-type=module -e "import {readFileSync,appendFileSync} from 'node:fs'; appendFileSync(process.env.GITHUB_OUTPUT,'build_id='+JSON.parse(readFileSync('dist/build-info.json','utf8')).buildId+'\n');"
 
       - name: Install test browser
         run: npx playwright install --with-deps chromium
 
       - name: Browser regression tests
         run: npm run test:e2e
+
+      - name: Responsive viewport and interaction matrix
+        run: npm run test:responsive
+
+      - name: Contact feedback tests with intercepted requests
+        run: npm run test:contact
 
       - name: Save browser failure diagnostics
         if: failure()
@@ -69,8 +80,23 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            contact-test-results/
+            contact-playwright-report/
+            responsive-test-results/
+            responsive-playwright-report/
           if-no-files-found: ignore
           retention-days: 7
+
+      - name: Require publication review
+        env:
+          RELEASE_APPROVED: ${{ vars.WEBSITE_RELEASE_APPROVED }}
+          PRIVACY_REVIEWED: ${{ vars.VITE_PRIVACY_REVIEWED }}
+        run: |
+          if [ "$RELEASE_APPROVED" != "true" ] || [ "$PRIVACY_REVIEWED" != "true" ]; then
+            echo "::error::Complete docs/implementation-review.md publication checks before enabling WEBSITE_RELEASE_APPROVED."
+            exit 1
+          fi
+          node --input-type=module -e "import {readFileSync} from 'node:fs'; if (!JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured) { console.error('Production EmailJS configuration is missing.'); process.exit(1); }"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
@@ -103,9 +129,10 @@ jobs:
       - name: Verify live Pages content
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_BUILD_ID: ${{ needs.build.outputs.build_id }}
         run: |
           for attempt in {1..12}; do
-            if node scripts/check-pages.mjs --url "$PAGE_URL"; then
+            if node scripts/check-pages.mjs --url "$PAGE_URL" --build-id "$EXPECTED_BUILD_ID"; then
               exit 0
             fi
             echo "Waiting for Pages to serve the new build (attempt $attempt/12)..."

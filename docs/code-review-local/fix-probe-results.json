@@ -1,0 +1,26 @@
+{
+  "logo": {
+    "hiddenImageIncluded": 1,
+    "allImagesLoaded": true,
+    "hiddenImageScrollOmitted": true
+  },
+  "contact": {
+    "concurrentRequestsAfterSpaReturn": 1,
+    "firstRequestStillPending": true,
+    "draftRestored": true
+  },
+  "anchor": {
+    "targetTop": 103.59375,
+    "scrollY": 3303
+  },
+  "noJs404": {
+    "status": 404,
+    "requestedLanguage": "en",
+    "recoveryLanguages": [
+      "ro",
+      "en",
+      "it",
+      "es"
+    ]
+  }
+}

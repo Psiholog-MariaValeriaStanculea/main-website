@@ -1,38 +1,11 @@
-import { storage } from "@/lib/storage";
-import { useEffect } from 'react';
+import { useEffect, type ReactNode } from 'react';
+import { useLocation, useParams, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useParams, useNavigate } from 'react-router-dom';
-import { SupportedLanguage, supportedLanguages, defaultLanguage } from '@/lib/i18n';
-
-interface MultilingualLayoutProps {
-  children: React.ReactNode;
+import { supportedLanguages, type SupportedLanguage } from '@/lib/i18n';
+export function MultilingualLayout({children}:{children:ReactNode}){
+ const {lang}=useParams();const location=useLocation();const {i18n}=useTranslation();
+ const valid=supportedLanguages.includes(lang as SupportedLanguage);
+ useEffect(()=>{if(valid){void i18n.changeLanguage(lang);document.documentElement.lang=lang!;}},[valid,lang,i18n]);
+ if(!valid)return <Navigate replace to={'/ro'+location.pathname.replace(/^\/[^/]+/,'')+location.search+location.hash} />;
+ return <>{children}</>;
 }
-
-export const MultilingualLayout = ({ children }: MultilingualLayoutProps) => {
-  const { lang } = useParams<{ lang?: string }>();
-  const { i18n } = useTranslation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const currentLang = lang as SupportedLanguage || defaultLanguage;
-    
-    // Validate language parameter
-    if (lang && !supportedLanguages.includes(lang as SupportedLanguage)) {
-      navigate(`/${defaultLanguage}`, { replace: true });
-      return;
-    }
-
-    // Change language if different
-    if (currentLang !== i18n.language) {
-      i18n.changeLanguage(currentLang);
-    }
-
-    // Update document lang attribute for SEO
-    document.documentElement.lang = currentLang;
-    
-    // Store in localStorage for persistence
-    storage.setItem('language', currentLang);
-  }, [lang, i18n, navigate]);
-
-  return <>{children}</>;
-};

@@ -1,26 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psiholog copii și familii București | Valeria Stănculea</title>
-    <meta name="description" content="Cabinet de psihologie în București specializat în lucrul cu copii, adolescenți și familii. Servicii la cabinet și online, în română, engleză, italiană și spaniolă." />
-    <meta name="author" content="Valeria Maria Stănculea" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <meta property="og:title" content="Psiholog copii și familii București | Valeria Stănculea" />
-    <meta property="og:description" content="Cabinet de psihologie pentru copii, adolescenți și familii, cu servicii la cabinet și online în mai multe limbi." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="%BASE_URL%lovable-uploads/f7058975-3973-4045-bee5-8886215af9ac.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="%BASE_URL%lovable-uploads/f7058975-3973-4045-bee5-8886215af9ac.png" />
-  </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <link rel="preload" href="/src/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/src/assets/fonts/valeria-serif.woff2" as="font" type="font/woff2" crossorigin />
+  <title>Sprijin psihologic pentru copii și familii | Valeria Stănculea</title>
+  <meta name="description" content="Sprijin psihologic pentru copii, adolescenți, părinți și familii. Cunoaște abordarea Valeriei Stănculea și trimite o solicitare." />
+  <script>
+   try {
+    var theme = localStorage.getItem('lovable-ui-theme');
+    var dark = theme === 'dark' || (theme !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.add(dark ? 'dark' : 'light');
+   } catch (_) {
+    document.documentElement.classList.add(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+   }
+  </script>
+ </head>
+ <body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body>
 </html>

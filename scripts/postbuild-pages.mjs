@@ -1,8 +1,10 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { resolve, dirname } from 'node:path';
 import { createServer } from 'vite';
 
-const outDir = resolve(process.cwd(), 'dist');
+const outDirIndex=process.argv.indexOf('--outDir');
+const outDir = resolve(process.cwd(), outDirIndex>=0?process.argv[outDirIndex+1]:'dist');
 const template = readFileSync(resolve(outDir, 'index.html'), 'utf8');
 const server = await createServer({
   mode: 'production', server: { middlewareMode: true, watch: null },
@@ -10,8 +12,9 @@ const server = await createServer({
 });
 const escapeXml = value => value.replace(/[<>&"']/g, char => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;', "'": '&apos;' }[char]));
 try {
-  const { render, getPages } = await server.ssrLoadModule('/src/entry-server.tsx');
-  const pages = getPages();
+  const { render, getPages, getBuildInfo } = await server.ssrLoadModule('/src/entry-server.tsx');
+  const allPages = getPages();
+  const pages = allPages.filter(page => page.indexable);
   const writePage = async (path, language, file) => {
     const { body, head } = await render(path, language);
     const html = template
@@ -23,9 +26,10 @@ try {
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, html, 'utf8');
   };
-  for (const page of pages) await writePage(page.path, page.language, resolve(outDir, `.${page.path}`, 'index.html'));
+  for (const page of allPages) await writePage(page.path, page.language, resolve(outDir, `.${page.path}`, 'index.html'));
+  writeFileSync(resolve(outDir, 'route-manifest.json'), JSON.stringify(allPages, null, 2));
   await writePage('/ro', 'ro', resolve(outDir, 'index.html'));
-  await writePage('/pagina-inexistenta/404', 'ro', resolve(outDir, '404.html'));
+  await writePage('/ro/pagina-inexistenta', 'ro', resolve(outDir, '404.html'));
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${pages.map(page => `  <url>
@@ -39,7 +43,18 @@ ${pages.filter(other => other.route === page.route).map(other => `    <xhtml:lin
   baseUrl.pathname = baseUrl.pathname.replace(/\/ro$/, '');
   writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap, 'utf8');
   writeFileSync(resolve(outDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl.href.replace(/\/$/, '')}/sitemap.xml\n`, 'utf8');
-  console.log(`SEO: rendered ${pages.length} localized pages, sitemap, robots.txt and 404 page.`);
+  // Fingerprint the actual compiled/prerendered artifact, including local edits.
+  // Compute before adding markers so every page carries the same identity.
+  const files=readdirSync(outDir,{recursive:true,withFileTypes:true}).filter(entry=>entry.isFile())
+    .map(entry=>resolve(entry.parentPath,entry.name)).filter(file=>file!==resolve(outDir,'build-info.json')).sort();
+  const hash=createHash('sha256');
+  for(const file of files)hash.update(file.slice(outDir.length).replaceAll('\\','/')).update('\0').update(readFileSync(file));
+  const buildId=hash.digest('hex');
+  for(const file of files.filter(file=>file.endsWith('.html'))){
+    writeFileSync(file,readFileSync(file,'utf8').replace('</head>',`<meta name="site-build-id" content="${buildId}"></head>`));
+  }
+  writeFileSync(resolve(outDir, 'build-info.json'), JSON.stringify({...getBuildInfo(),buildId}));
+  console.log(`SEO: rendered ${allPages.length} localized pages; ${pages.length} indexable sitemap entries, robots.txt and 404 page.`);
 } finally {
   await server.close();
 }

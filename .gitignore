@@ -13,6 +13,31 @@ dist-ssr
 *.local
 playwright-report/
 test-results/
+contact-test-results/
+contact-playwright-report/
+.contact-test-dist/
+.tmp-fonttools/
+responsive-test-results/
+responsive-playwright-report/
+blob-report/
+coverage/
+.cache/
+.vite/
+*.tsbuildinfo
+/.tmp-*
+
+# Local environment values; only the reviewed public templates are versioned.
+.env
+.env.*
+!.env.example
+!.env.production
+
+# Python import helper and OS-generated metadata
+__pycache__/
+*.py[cod]
+Thumbs.db
+Desktop.ini
+._*
 
 # Editor directories and files
 .vscode/*
