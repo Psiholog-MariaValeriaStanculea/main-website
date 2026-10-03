@@ -235,9 +235,6 @@ Următoarele direcții sunt propuse sau rămân de finalizat; nu sunt prezentate
 - Revizuirea finală a conținutului clinic, traducerilor și informațiilor profesionale.
 - Completarea notificării de confidențialitate și verificarea setărilor furnizorilor, protecției antiabuz și livrării reale a emailului.
 - Verificarea domeniului, HTTPS, deployment-ului și procedurii de rollback înainte de publicare.
-- Testare pe dispozitive native, în Safari/Firefox și cu tehnologii asistive, plus evaluare cu cititori reprezentativi.
-- Măsurarea Lighthouse și Core Web Vitals, urmată de optimizări bazate pe rezultate.
-- Adăugarea informațiilor verificate pentru local SEO, dacă practica confirmă adresa și datele publicabile.
 - Consolidarea surselor de conținut și eliminarea controlată a fișierelor istorice neutilizate.
 
 Planificarea și rapoartele fiecărei etape se păstrează în documente dedicate, fără a transforma README-ul într-un jurnal al modificărilor.
