@@ -1,4 +1,5 @@
-import { mkdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { captureQa } from './qa';
 import { execFileSync } from 'node:child_process';
 import { test, expect } from './fixtures';
 const manifest=JSON.parse(readFileSync('dist/route-manifest.json','utf8')) as {url:string;path:string;language:string;indexable:boolean}[];
@@ -66,7 +67,7 @@ test.describe('without JavaScript',()=>{
    }
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(page.viewportSize()!.width+1);
   }
-  mkdirSync('docs/qa',{recursive:true});await page.screenshot({path:'docs/qa/404-no-js-'+info.project.name+'.png',fullPage:true});
+  await captureQa(page,info,'404-no-js-'+info.project.name+'.png');
   await page.locator('.static-error-language[lang="en"] a').first().click();
   await expect(page).toHaveURL(/\/en\/$/);await expect(page.locator('html')).toHaveAttribute('lang','en');await expect(page.locator('main h1')).toBeVisible();
  });

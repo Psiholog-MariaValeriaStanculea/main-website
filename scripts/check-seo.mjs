@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { checkAssetPaths } from './html-assets.mjs';
 
 const dist = resolve('dist');
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8');
@@ -14,14 +15,7 @@ const titles = new Set();
 const firstPage = new URL(urls[0]);
 const deploymentPath = firstPage.pathname.replace(/\/(ro|en|es|it)(\/.*)?$/, '');
 const checkAssets = (html, page) => {
-  const tags = [...html.matchAll(/<(?:link|script|img)\b[^>]*>/g)].map(match => match[0]);
-  for (const tag of tags) {
-    if (tag.startsWith('<link') && !/rel="(?:stylesheet|modulepreload)"/.test(tag)) continue;
-    const path = tag.match(/(?:src|href)="([^"]+)"/)?.[1];
-    if (!path || /^https?:\/\//.test(path)) continue;
-    assert.ok(path.startsWith(`${deploymentPath}/`), `Asset outside deployment path on ${page}: ${path}`);
-    assert.ok(existsSync(resolve(dist, path.slice(deploymentPath.length + 1))), `Missing asset on ${page}: ${path}`);
-  }
+  checkAssetPaths(html, { dist, deploymentPath, page });
 };
 checkAssets(readFileSync(resolve(dist, 'index.html'), 'utf8'), 'homepage');
 checkAssets(readFileSync(resolve(dist, '404.html'), 'utf8'), '404');

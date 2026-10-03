@@ -1,4 +1,4 @@
-import { mkdirSync } from 'node:fs';
+import { captureQa } from './qa';
 import { test, expect } from './fixtures';
 test('responsive reading and controls at all review widths',async({page},info)=>{
  test.skip(info.project.name!=='desktop','One viewport matrix suffices');
@@ -9,8 +9,8 @@ test('responsive reading and controls at all review widths',async({page},info)=>
   expect(await page.evaluate(()=>document.documentElement.scrollWidth),JSON.stringify(overflow)).toBeLessThanOrEqual(width+1);
   await expect(page.locator('main h1')).toBeVisible();
   if((width===1440 && ['', '/despre','/servicii','/resurse','/contact','/intrebari-frecvente'].includes(suffix)) || (width===390 && ['', '/contact','/despre','/servicii','/intrebari-frecvente'].includes(suffix))){
-   mkdirSync('docs/qa',{recursive:true});await page.evaluate(()=>document.fonts.ready);
-   await page.screenshot({path:'docs/qa/ro-'+(suffix.slice(1)||'home')+'-'+width+'.png',fullPage:true});
+   await page.evaluate(()=>document.fonts.ready);
+   await captureQa(page,info,'ro-'+(suffix.slice(1)||'home')+'-'+width+'.png');
   }
  }
 });

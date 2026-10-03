@@ -1,4 +1,5 @@
-import { mkdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { captureQa } from './qa';
 import { test, expect } from './fixtures';
 const copy=(language:string)=>JSON.parse(readFileSync('src/locales/'+language+'/editorial.json','utf8'));
 const endpoint='https://api.emailjs.com/api/v1.0/email/send';
@@ -14,14 +15,20 @@ for(const language of ['ro','en','it','es'])test('localized validation, rejectio
  await expect(page.locator('#category')).toContainText(c.categories.unsure);
  await page.locator('form button[type=submit]').click();
  await expect(page.locator('#name-error')).toHaveText(c.nameError);await expect(page.locator('#name')).toBeFocused();expect(requests).toBe(0);
+ await expect(page.locator('#name')).toHaveAttribute('aria-invalid','true');
+ const errorColor=await page.evaluate(()=>{
+  const sample=document.createElement('span');sample.style.color='hsl('+getComputedStyle(document.documentElement).getPropertyValue('--destructive')+')';
+  document.body.append(sample);const color=getComputedStyle(sample).color;sample.remove();return color;
+ });
+ await expect(page.locator('#name')).toHaveCSS('border-top-color',errorColor);
  await draft(page);await page.locator('form button[type=submit]').click();
  await expect(page.getByRole('status')).toContainText(c.rejected);
  await expect(page.locator('#message')).toHaveValue('Please discuss options. No clinical details.');
  await expect(page.locator('#name')).toHaveValue("Ștefania D'Angelo");expect(requests).toBe(1);
- if(language==='ro'){mkdirSync('docs/qa',{recursive:true});await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'docs/qa/mocked-contact-rejected-'+info.project.name+'.png',fullPage:true});}
+ if(language==='ro'){await page.evaluate(()=>scrollTo(0,0));await captureQa(page,info,'mocked-contact-rejected-'+info.project.name+'.png');}
  await page.locator('form button[type=submit]').click();await expect(page.getByRole('status')).toContainText(c.success);expect(requests).toBe(2);
  await expect(page.locator('#name')).toBeDisabled();
- if(language==='ro'){await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:'docs/qa/mocked-contact-accepted-'+info.project.name+'.png',fullPage:true});}
+ if(language==='ro'){await page.evaluate(()=>scrollTo(0,0));await captureQa(page,info,'mocked-contact-accepted-'+info.project.name+'.png');}
  await page.getByRole('button',{name:c.newRequest,exact:true}).click();await expect(page.locator('#name')).toHaveValue('');
 });
 test('an optional message sends stable service context once and preserves the draft while sending',async({page})=>{

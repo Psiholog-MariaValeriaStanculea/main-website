@@ -1,4 +1,5 @@
-import { mkdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { captureQa } from './qa';
 import { test, expect } from './fixtures';
 
 const originalText=JSON.parse(readFileSync('docs/qa/about-services-text-before.json','utf8')) as Record<string,string[]>;
@@ -17,8 +18,8 @@ for(const language of ['ro','en','it','es'])for(const route of ['despre','servic
    await expect(page.locator('html')).toHaveClass(new RegExp(colorScheme));
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
    if(language==='ro'){
-    mkdirSync('docs/qa',{recursive:true});await page.evaluate(()=>document.fonts.ready);
-    await page.screenshot({path:'docs/qa/ro-'+route+'-'+colorScheme+'-'+width+'.png',fullPage:true});
+    await page.evaluate(()=>document.fonts.ready);
+    await captureQa(page,info,'ro-'+route+'-'+colorScheme+'-'+width+'.png');
    }
    // Every indexed section remains reachable through its original fragment.
    const sectionLinks=page.locator('main nav a[href*="#"]');

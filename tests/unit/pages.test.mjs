@@ -10,17 +10,22 @@ import { createPagesServer } from '../../scripts/serve-pages.mjs';
 
 const buildId='a'.repeat(64);
 const expected={buildId};
-const html = '<html lang="ro"><head><script type="module" src="/main-website/assets/app.js"></script>' +
-  `<meta name="site-build-id" content="${buildId}"><link rel="canonical" href="https://example.test/main-website/ro/">` +
-  '<link rel="stylesheet" href="/main-website/assets/app.css"></head>' +
-  '<body><main><h1>Visible website</h1></main></body></html>';
-function pageHtml(path){
-  return path.includes('/en/contact/')?html.replace('lang="ro"','lang="en"').replace('/ro/','/en/contact/'):html;
+const compiledScript = '<script type="module" src="/main-website/assets/app.js"></script>';
+const compiledStylesheet = '<link rel="stylesheet" href="/main-website/assets/app.css">';
+const buildMarker = `<meta name="site-build-id" content="${buildId}">`;
+function renderedHtml({ script = compiledScript, stylesheet = compiledStylesheet, marker = buildMarker, main = true } = {}) {
+  return '<html lang="ro"><head>' + script + marker +
+    '<link rel="canonical" href="https://example.test/main-website/ro/">' + stylesheet + '</head>' +
+    '<body>' + (main ? '<main>' : '') + '<h1>Visible website</h1>' + (main ? '</main>' : '') + '</body></html>';
+}
+const html = renderedHtml();
+function pageHtml(path, content = html){
+  return path.includes('/en/contact/')?content.replace('lang="ro"','lang="en"').replace('/ro/','/en/contact/'):content;
 }
 
 test('compiled prerendered HTML passes; 404 needs a heading but no main', () => {
   checkHtml(html, 'index.html');
-  checkHtml(html.replace(/<\/?main>/g, ''), '404.html');
+  checkHtml(renderedHtml({ main: false }), '404.html');
 });
 
 for (const [name, content, error] of [
@@ -28,8 +33,8 @@ for (const [name, content, error] of [
   ['Jekyll publishing the original source', readFileSync('index.html', 'utf8'), /Missing rendered content/],
   ['unresolved Vite placeholders', html.replace('Visible website', '%BASE_URL%'), /Unprocessed Vite template/],
   ['source TypeScript script', html.replace('/main-website/assets/app.js', '/src/main.tsx'), /Unbuilt source script/],
-  ['missing compiled JS', html.replace(/<script.*?<\/script>/, ''), /Missing production JavaScript/],
-  ['missing compiled CSS', html.replace(/<link rel="stylesheet"[^>]+>/, ''), /Missing production stylesheet/],
+  ['missing compiled JS', renderedHtml({ script: '' }), /Missing production JavaScript/],
+  ['missing compiled CSS', renderedHtml({ stylesheet: '' }), /Missing production stylesheet/],
 ]) test(`rejects ${name}`, () => assert.throws(() => checkHtml(content, 'index.html'), error));
 
 function artifact(t) {
@@ -98,7 +103,7 @@ for (const [name, override, error] of [
   ['empty CSS', path => path.endsWith('.css') ? new Response(' ', { headers: { 'content-type': 'text/css' } }) : undefined, /Empty production asset/],
   ['wrong project base path', path => !path.includes('/assets/') ? new Response(pageHtml(path).replaceAll('/main-website/assets/', '/assets/'), { headers: { 'content-type': 'text/html' } }) : undefined, /Asset outside Pages path/],
   ['old release', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace(buildId,'b'.repeat(64)), {headers:{'content-type':'text/html'}}) : undefined, /Build identity mismatch/],
-  ['missing build marker', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace(/<meta name="site-build-id"[^>]+>/,''), {headers:{'content-type':'text/html'}}) : undefined, /Build identity mismatch/],
+  ['missing build marker', path => !path.includes('/assets/') ? new Response(pageHtml(path, renderedHtml({ marker: '' })), {headers:{'content-type':'text/html'}}) : undefined, /Build identity mismatch/],
   ['Romanian fallback on an English route', path => path.endsWith('/en/contact/') ? new Response(html, {headers:{'content-type':'text/html'}}) : undefined, /Wrong page language/],
   ['English homepage instead of Contact', path => path.endsWith('/en/contact/') ? new Response(pageHtml(path).replace('/en/contact/','/en/'), {headers:{'content-type':'text/html'}}) : undefined, /Wrong canonical route/],
   ['wrong canonical host', path => !path.includes('/assets/') ? new Response(pageHtml(path).replace('https://example.test','https://wrong.test'), {headers:{'content-type':'text/html'}}) : undefined, /Wrong canonical origin/],

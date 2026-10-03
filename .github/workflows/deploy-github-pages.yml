@@ -92,11 +92,19 @@ jobs:
           RELEASE_APPROVED: ${{ vars.WEBSITE_RELEASE_APPROVED }}
           PRIVACY_REVIEWED: ${{ vars.VITE_PRIVACY_REVIEWED }}
         run: |
-          if [ "$RELEASE_APPROVED" != "true" ] || [ "$PRIVACY_REVIEWED" != "true" ]; then
-            echo "::error::Complete docs/implementation-review.md publication checks before enabling WEBSITE_RELEASE_APPROVED."
+          missing_approval=0
+          if [ "$RELEASE_APPROVED" != "true" ]; then
+            echo "::error::WEBSITE_RELEASE_APPROVED must be true in repository Settings > Secrets and variables > Actions > Variables after completing docs/implementation-review.md publication checks."
+            missing_approval=1
+          fi
+          if [ "$PRIVACY_REVIEWED" != "true" ]; then
+            echo "::error::VITE_PRIVACY_REVIEWED must be true in repository Actions Variables after the complete privacy notice has been reviewed."
+            missing_approval=1
+          fi
+          if [ "$missing_approval" -ne 0 ]; then
             exit 1
           fi
-          node --input-type=module -e "import {readFileSync} from 'node:fs'; if (!JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured) { console.error('Production EmailJS configuration is missing.'); process.exit(1); }"
+          node --input-type=module -e "import {readFileSync} from 'node:fs'; if (!JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured) { console.error('Production EmailJS configuration is missing. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID and VITE_EMAILJS_PUBLIC_KEY in repository Actions Variables, then rebuild.'); process.exit(1); }"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

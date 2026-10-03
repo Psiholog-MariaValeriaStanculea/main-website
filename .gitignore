@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+# npm is the supported package manager; do not reintroduce the obsolete Bun lock.
+/bun.lockb
 dist
 dist-ssr
 *.local

@@ -1,6 +1,7 @@
 import { test, expect } from './fixtures';
 import type { Page } from '@playwright/test';
-import { mkdirSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { captureQa } from './qa';
 async function theme(page:Page,value:string){
  if(page.viewportSize()!.width<1280 && await page.getByRole('dialog').count()===0)await page.getByRole('button',{name:'Open menu',exact:true}).click();
  await expect(page.getByRole('button',{name:'Appearance',exact:true})).toBeVisible();
@@ -25,14 +26,14 @@ test('system, light and dark appearance work and explicit preference persists',a
  await theme(page,'Dark');await expect(page.locator('html')).toHaveClass(/dark/);
  await logo(page,'dark');
  await page.goto('ro/');await expect(page.locator('html')).toHaveClass(/dark/);
- mkdirSync('docs/qa',{recursive:true});await page.evaluate(()=>document.fonts.ready);
- await page.screenshot({path:'docs/qa/ro-home-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png',fullPage:true});
+ await page.evaluate(()=>document.fonts.ready);
+ await captureQa(page,info,'ro-home-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png');
  for(const suffix of ['intrebari-frecvente','contact']){
   await page.goto('ro/'+suffix+'/');
   if(suffix==='intrebari-frecvente'){
    const first=page.locator('main button[aria-controls]').first();await expect(first).toHaveAttribute('aria-expanded','false');await first.click();await expect(first).toHaveAttribute('aria-expanded','true');
   }
-  await page.screenshot({path:'docs/qa/ro-'+suffix+'-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png',fullPage:true,animations:'disabled'});
+  await captureQa(page,info,'ro-'+suffix+'-dark-'+(info.project.name==='desktop'?'1440':'320')+'.png',{animations:'disabled'});
  }
  await page.goto('en/');
  await theme(page,'System');await page.emulateMedia({colorScheme:'light'});await expect(page.locator('html')).toHaveClass(/light/);

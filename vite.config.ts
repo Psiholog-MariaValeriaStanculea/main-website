@@ -25,6 +25,8 @@ export default defineConfig(({ mode }) => {
     plugins: [
       react(),
     ].filter(Boolean),
+    // Node 24 supports the synchronous ESM entry exposed by React Router v7.
+    ssr: { resolve: { externalConditions: ['node', 'module-sync'] } },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
