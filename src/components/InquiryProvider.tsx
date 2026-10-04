@@ -2,8 +2,8 @@ import { createContext, useContext, useEffect, useRef, useState, type Dispatch, 
 import { createSubmissionController, type SubmissionState } from '@/lib/inquiry';
 import { contactConfigured, sendInquiry } from '@/lib/inquiryTransport';
 
-type Draft={data:{name:string;email:string;category:string;message:string};context:string;sourceService:string|null};
-const emptyDraft=(sourceService:string|null=null):Draft=>({data:{name:'',email:'',category:'unsure',message:''},context:'',sourceService});
+type Draft={data:{name:string;email:string;category:string;message:string};privacyAgreed:boolean;context:string;sourceService:string|null};
+const emptyDraft=(sourceService:string|null=null):Draft=>({data:{name:'',email:'',category:'unsure',message:''},privacyAgreed:false,context:'',sourceService});
 const InquiryContext=createContext<{
  draft:Draft;setDraft:Dispatch<SetStateAction<Draft>>;state:SubmissionState;
  submit:(payload:Record<string,string>)=>void;reset:(sourceService:string|null)=>void;

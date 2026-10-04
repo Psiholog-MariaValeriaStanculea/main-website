@@ -8,7 +8,8 @@
     "contact": "Contact",
     "blog": "Articles",
     "privacy": "Privacy",
-    "cookies": "Cookies and preferences"
+    "cookies": "Cookies and preferences",
+    "terms": "Terms and conditions"
   },
   "ui": {
     "role": "Clinical psychologist · Relational integrative psychotherapist",
@@ -306,47 +307,274 @@
       "online": "Online support",
       "professional": "Professional inquiry",
       "unsure": "I'm not sure"
-    }
+    },
+    "captchaLabel": "Security check",
+    "captchaHelp": "This form is protected by Google reCAPTCHA to prevent abuse.",
+    "captchaRequired": "Complete the “I’m not a robot” check before sending.",
+    "captchaFailed": "We could not connect to Google verification. Retry or contact us directly by email.",
+    "captchaLoading": "Preparing verification…",
+    "captchaVerified": "Verification complete. You can send your inquiry.",
+    "captchaExpired": "Verification expired. Check “I’m not a robot” again.",
+    "captchaRetry": "Retry verification",
+    "identityTitle": "Contact details",
+    "inquiryTitle": "About your inquiry",
+    "sendTitle": "Check and send",
+    "privacyAgree": "I have read",
+    "privacyPolicy": "privacy policy",
+    "privacyAgreeError": "Confirm that you have read the privacy policy before sending.",
+    "sendHelp": "Read the privacy policy and complete the security verification.",
+    "expectationTitle": "What happens next?",
+    "expectationText": "We discuss your inquiry, availability and the conditions of a possible collaboration by email.",
+    "captchaDetails": "How verification data is processed"
   },
   "legal": {
-    "privacyTitle": "Privacy",
-    "cookiesTitle": "Cookies and preferences",
-    "privacyIntro": "Information about data used when you visit the website or send an inquiry.",
-    "cookiesIntro": "Display preferences and information stored in your browser.",
+    "privacyTitle": "Privacy policy (GDPR)",
+    "cookiesTitle": "Cookie policy",
+    "termsTitle": "Terms and conditions",
+    "privacyIntro": "How data is used when browsing, making an initial enquiry and receiving psychological services.",
+    "cookiesIntro": "What the website stores in your browser and how abuse prevention works.",
+    "termsIntro": "Using the website, contacting the practice and arranging a possible professional relationship.",
+    "updated": "Reviewed: 4 October 2026",
+    "draftNotice": "Prepared for review. Information marked “TO CONFIRM” and provider practices must be validated before publication.",
+    "contents": "On this page",
+    "related": "Related policies",
+    "sourcesTitle": "Sources and applicable framework",
+    "providers": "Providers and supervisory authority",
+    "contactHeading": "Questions and data requests",
     "privacySections": [
       {
-        "title": "First contact",
-        "text": "The form requests your name, email address, inquiry category, and an optional message. This information is used to receive and respond to your inquiry. Avoid medical details or other sensitive data in this first message."
+        "id": "operator",
+        "title": "Who is responsible for your data",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria is the controller of data used in the practice. Contact: psiholog.mariavaleriabaciu@gmail.com. Tax identifier: [TO CONFIRM]. Registered/professional address: [TO CONFIRM]. Practice registration and professional code: [TO CONFIRM]. Authorised persons with access and, if appointed, the data protection officer’s contact: [TO CONFIRM]."
       },
       {
-        "title": "Sending an inquiry",
-        "text": "When the form is available, your inquiry is sent through EmailJS to the practice's contact address. You can also choose to email directly. Sending an inquiry does not confirm an appointment."
+        "id": "date",
+        "title": "Data we need",
+        "text": "The form asks for your name, email and enquiry category; the message is optional. The page language and selected service, if any, are also sent. Name and email are needed to reply through the form. It does not request files, national identifiers, diagnoses or bank details. The category and message may indirectly reveal health information: avoid clinical details and other people’s data at first contact. Providers may process IP addresses, browser information and technical logs."
       },
       {
-        "title": "Website hosting",
-        "text": "For the public website hosted on GitHub Pages, GitHub records visitor IP addresses for security purposes."
+        "id": "scopuri",
+        "title": "Purposes and legal bases",
+        "text": "Steps you request before a contract and performance of the contract: GDPR Article 6(1)(b). General questions and abuse prevention: legitimate interests under Article 6(1)(f), subject to an assessment of necessity and your rights [TO CONFIRM]. Applicable legal obligations: Article 6(1)(c). Form data is not used for marketing. Acknowledging this notice is not blanket consent to all processing."
       },
       {
-        "title": "Questions about your data",
-        "text": "For clarification about access to information, retention, or exercising applicable rights, you can email the contact address below."
+        "id": "clinice",
+        "title": "Clinical data and professional confidentiality",
+        "text": "Before services begin, you receive specific information about assessment, counselling or psychotherapy and the scope and limits of confidentiality. Health data also requires an Article 9 condition: for healthcare, Article 9(2)(h) together with Article 9(3), where the legal and professional secrecy conditions are met. Bases for each activity and any other purpose: [TO CONFIRM]. Professional informed consent, GDPR consent and consent to cookies serve different purposes."
+      },
+      {
+        "id": "minori",
+        "title": "Children and adolescents",
+        "text": "For an initial enquiry, use a parent’s or legal representative’s contact details and avoid identifying the child or providing medical history in the form. Representation and required permissions are checked before services. The Romanian professional code requires both parents’ consent to counselling and psychotherapy where parental authority is shared, subject to applicable legal exceptions. Information for the child is adapted to their age and understanding."
+      },
+      {
+        "id": "destinatari",
+        "title": "Recipients and providers",
+        "text": "EmailJS sends the enquiry through the connected Gmail service to the practice. EmailJS history is configured to retain the name, email, message and enquiry parameters; Analytics is disabled. Gmail retains the received email. GitHub Pages hosts the site and may process technical data. Google provides abuse prevention. Authorised persons, the Gmail account type, processing agreements and the online consultation platform: [TO CONFIRM]. Disclosure to authorities takes place only as permitted or required by law."
+      },
+      {
+        "id": "securitate",
+        "title": "reCAPTCHA verification",
+        "text": "Google reCAPTCHA v2 loads automatically on Contact. It uses technical signals to prevent abuse and may set cookies. Google states that, since 2 April 2026, it acts as processor for this data under Google Cloud terms. The form does not pass your message as a reCAPTCHA analysis parameter. The necessity of automatic loading and cookie lifetimes are [TO CONFIRM]. Direct email remains available."
+      },
+      {
+        "id": "transferuri",
+        "title": "Processing outside the EEA",
+        "text": "EmailJS declares processing in the USA and standard contractual clauses for EU transfers. GitHub, Google and email providers may involve processing outside the European Economic Area. Contracting entities, locations, safeguards and the assessment of the practice’s actual transfers: [TO CONFIRM]. You may request information and a copy of applicable safeguards by email. A provider’s public policy does not verify the practice’s account configuration."
+      },
+      {
+        "id": "pastrare",
+        "title": "Retention",
+        "text": "Proposed rule for Gmail enquiries without a contract: six months after the last interaction, followed by periodic deletion. EmailJS declares 30 days for active-account data; its application to this account’s history and existing copies needs verification. Deletion procedures: [TO CONFIRM]. Psychological tests, results, professional notes and recordings must be retained for at least ten years after the professional relationship ends under point 42 of the Romanian professional code, or longer where required by law. Contract, tax, dispute and backup retention periods: [TO CONFIRM], separately from initial enquiries."
+      },
+      {
+        "id": "browser",
+        "title": "Form data in your browser",
+        "text": "The draft and acknowledgement remain in application memory during internal navigation and disappear on reload. Provider acceptance clears personal fields. The reCAPTCHA token is consumed at every attempt and cleared on expiry or navigation; it is not stored in browser storage or the email. The display preference may be stored locally. The form does not archive or provide durable evidence of clinical consent."
+      },
+      {
+        "id": "drepturi",
+        "title": "Your rights",
+        "text": "Under the conditions of GDPR, you may request access, correction, erasure, restriction, portability and object to processing. Where consent is the basis, you may withdraw it without affecting earlier processing. Erasure is not absolute: some records must be kept for professional or legal obligations or legal claims. Requests are assessed against the relevant data and legal basis. Contact does not require marketing consent."
+      },
+      {
+        "id": "cereri",
+        "title": "Exercising your rights",
+        "text": "Email the practice. Responses are normally free and provided within one month; complex or numerous requests may require two additional months, with reasons and notice within the first month. Where there are reasonable doubts, only information needed to verify identity is requested. You can complain to ANSPDCP or seek a judicial remedy. Contacting the practice first does not remove those rights."
+      },
+      {
+        "id": "automatizare",
+        "title": "Security and automated decisions",
+        "text": "We use secure website and provider connections, but email and the internet cannot offer absolute confidentiality. The practice’s access controls, backups and incident procedures: [TO CONFIRM]. The website does not automatically make diagnoses, therapy admission decisions or contracts. reCAPTCHA may technically block sending; direct email is an alternative. Incidents must be managed and notified where GDPR requires."
+      },
+      {
+        "id": "actualizari",
+        "title": "Scope and updates",
+        "text": "This notice covers the website and the practice’s general framework. You receive completed information about the particular service, online platform and clinical data before processing begins. Relevant changes are communicated before new purposes or technologies are introduced; an updated text does not retroactively authorise other processing. Items awaiting confirmation are not verified practices."
       }
     ],
     "cookieSections": [
       {
-        "title": "Appearance preference",
-        "text": "If you choose a light, dark, or system appearance, that choice may be stored locally in your browser. If storage is blocked, the website remains usable but your preference may not be remembered."
+        "id": "tehnologii",
+        "title": "Cookies and similar technologies",
+        "text": "Cookies and local storage can keep information on your device. This policy covers the application and embedded third-party components; providers’ settings may have separate effects. A technical inventory on the public domain, including each third-party cookie’s name, domain and lifetime: [TO CONFIRM]."
       },
       {
-        "title": "Page language",
-        "text": "The language is determined by the page you visit. Changing language keeps the same page and, where relevant, the same section."
+        "id": "aspect",
+        "title": "Display preference",
+        "text": "The localStorage key “lovable-ui-theme” stores light, dark or system mode. It serves the appearance you request, not advertising, and contains no form data. The application sets no automatic expiry: it remains until you change the option or clear browser data. The website remains usable if storage is blocked."
       },
       {
+        "id": "limba",
+        "title": "Language, draft and verification",
+        "text": "The page address determines language without a language cookie. The draft and notice acknowledgement remain only in application memory. The reCAPTCHA token is temporary, consumed on an attempt and cleared on expiry or navigation. The form does not save this information in localStorage."
+      },
+      {
+        "id": "captcha",
+        "title": "Google reCAPTCHA on Contact",
+        "text": "Verification v2 loads automatically only on Contact. Google describes “_GRECAPTCHA” as a risk-analysis cookie and technical data processing for security. Actual domains and lifetimes, and access to other Google cookies already in the browser: [TO CONFIRM] through an audit. Your form message is not a reCAPTCHA parameter. Direct email is available."
+      },
+      {
+        "id": "acord",
+        "title": "Information, necessity and consent",
+        "text": "Romanian Law 506/2004, Article 4(5), requires information and consent for storage/access on a device, subject to the limited Article 4(6) exceptions, including strict necessity for a requested service. A “security” label alone does not establish the exception. The assessment of automatic reCAPTCHA loading is [TO CONFIRM]. Any nonessential technology identified by the audit must be blocked until consent, with equally easy refusal and withdrawal. Browsing alone is not consent."
+      },
+      {
+        "id": "analiza",
         "title": "Analytics and advertising",
-        "text": "This version of the website does not load traffic analytics or advertising tools. Form entries are not saved in the browser's local storage."
+        "text": "The application does not load Google Analytics, advertising pixels or marketing tools. EmailJS Analytics is disabled. Provider-side enquiry history is personal data processing described in the GDPR notice, not proof of an analytics cookie on the website. New tools require an assessment and updated information."
+      },
+      {
+        "id": "control",
+        "title": "Controlling storage",
+        "text": "You can change the display mode and delete or block site data in your browser. Google cookies may belong to another domain and need separate management. Blocking the security component may prevent form submission; you can email directly. Clearing browser data does not delete messages already sent to the practice or EmailJS history."
+      },
+      {
+        "id": "actualizare",
+        "title": "Controller and updates",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria is responsible for selecting website technologies. Questions: psiholog.mariavaleriabaciu@gmail.com. The inventory, necessity assessment and provider agreements must be validated before publication. The review date records editorial review, not certification of every cookie in your browser."
       }
     ],
-    "providers": "Provider information",
-    "hostingPolicy": "GitHub privacy statement",
-    "deliveryPolicy": "EmailJS privacy policy"
+    "termsSections": [
+      {
+        "id": "furnizor",
+        "title": "Service provider",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria presents clinical psychology and relational integrative psychotherapy within authorised professional competence. The professional framework includes Romanian Law 213/2004 and the professional code. Tax identifier, professional address, registration and professional code: [TO CONFIRM]. Contact: psiholog.mariavaleriabaciu@gmail.com. Actual authorisations and specialities must be confirmed before publication."
+      },
+      {
+        "id": "informatii",
+        "title": "Website information",
+        "text": "Materials provide general information and do not replace an individual assessment or advice from a professional familiar with your circumstances. Clinical outcomes or appointment availability are not guaranteed. Service descriptions alone do not constitute a complete contractual offer. Conditions suitable for your enquiry are discussed before collaboration."
+      },
+      {
+        "id": "solicitare",
+        "title": "Initial enquiries",
+        "text": "The form starts an enquiry; it does not conclude a contract, book a session or take payment. Technical acceptance does not prove arrival in the inbox. Name and email are necessary for a reply; the message is optional. Avoid clinical information and identifiable details about children. If abuse verification fails, use direct email."
+      },
+      {
+        "id": "contract",
+        "title": "Email contract and bank transfer",
+        "text": "The contract is sent and concluded by email, with payment made separately by bank transfer according to the practice’s instructions. The website has no checkout or card processing. Before acceptance you receive the agreed service, complete provider identity, total fee and applicable tax treatment, duration/frequency, payment method and rescheduling, cancellation and termination rules. The actual contract and these rules: [TO CONFIRM]."
+      },
+      {
+        "id": "online",
+        "title": "Online consultations",
+        "text": "Online consultations are available where suitable for the situation and the practice’s competence. The platform, technical requirements, confidentiality conditions and connection-failure procedure are explained before the session; platform: [TO CONFIRM]. A private space and suitable participation conditions are needed. Any audio/video recording requires prior permission and information about purpose and retention; reading the website notice does not provide that permission."
+      },
+      {
+        "id": "consimtamant",
+        "title": "Professional consent and minors",
+        "text": "Informed consent is obtained before services, including online, following an explanation of purpose, confidentiality limits, benefits, risks, alternatives and fees. Counselling/psychotherapy for minors under shared parental authority requires both parents’ consent, subject to applicable legal exceptions. Representation and information for the child are handled separately. Acknowledging the GDPR notice is not consent to therapy."
+      },
+      {
+        "id": "renuntare",
+        "title": "Rescheduling, cancellation and withdrawal",
+        "text": "Request changes by email. Deadlines and any costs are specified in the contract before acceptance; this page creates no penalties. The legal withdrawal regime depends on the actual service: certain healthcare services are excluded from Romanian Emergency Ordinance 34/2014, but not every psychological service is automatically excluded. Where it applies, mandatory information and rights are explained before contracting. Payment alone does not waive a statutory right."
+      },
+      {
+        "id": "urgente",
+        "title": "Emergencies",
+        "text": "The form and email are not emergency channels and should not be assumed to be continuously monitored. For immediate danger to yourself or another person, call 112 in Romania or the local emergency service abroad. An individual crisis-support plan is discussed within the professional relationship."
+      },
+      {
+        "id": "utilizare",
+        "title": "Responsible use and content",
+        "text": "You may read materials and share links, respecting copyright and legal exceptions. Do not use the form for spam, unauthorised access or illegal content. Maintenance or providers may affect technical availability. These conditions do not exclude liability or rights that cannot legally be waived."
+      },
+      {
+        "id": "date",
+        "title": "Personal data",
+        "text": "The GDPR and cookie policies describe initial enquiries, providers and abuse prevention. Specific clinical-service information is completed separately before processing. Reading the notice does not authorise marketing, session recording or every use of health data. Do not send sensitive data through a channel that has not been agreed for that purpose."
+      },
+      {
+        "id": "litigii",
+        "title": "Questions and disputes",
+        "text": "You may complain to the practice by email without losing the right to contact the competent authority or court. Professional issues may be referred to the Romanian College of Psychologists, and data issues to ANSPDCP. The SAL banner leads to the ANPC platform; admissibility depends on the service and jurisdiction, including healthcare exclusions in Romanian Ordinance 38/2015. The European ODR platform closed in 2025."
+      },
+      {
+        "id": "lege",
+        "title": "Applicable law and changes",
+        "text": "Romanian law and relevant European rules apply, preserving mandatory protections for service users. The website imposes no exclusive court or waiver of rights. Updates apply to future use and do not retroactively change an existing contract. Complete identity and the actual contract must be reviewed before publication and the first collaboration."
+      }
+    ],
+    "providerLinks": [
+      {
+        "title": "GitHub Pages",
+        "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "EmailJS — Privacy",
+        "url": "https://www.emailjs.com/legal/privacy-policy/"
+      },
+      {
+        "title": "EmailJS — Data Processing Agreement",
+        "url": "https://www.emailjs.com/legal/data-protection-agreement/"
+      },
+      {
+        "title": "Google Cloud — Data Processing Addendum",
+        "url": "https://cloud.google.com/terms/data-processing-addendum"
+      },
+      {
+        "title": "Google reCAPTCHA — FAQ (2026)",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/faq"
+      },
+      {
+        "title": "ANSPDCP",
+        "url": "https://www.dataprotection.ro/?page=Plangeri_pagina_principala"
+      }
+    ],
+    "frameworkLinks": [
+      {
+        "title": "GDPR / RGPD — (UE) 2016/679",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=ro"
+      },
+      {
+        "title": "Legea 190/2018",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocumentAfis/203151"
+      },
+      {
+        "title": "Legea 506/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/257056"
+      },
+      {
+        "title": "Legea 213/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/52375"
+      },
+      {
+        "title": "Codul deontologic al profesiei de psiholog",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/267043"
+      }
+    ]
+  },
+  "footer": {
+    "usefulLinks": "Useful links",
+    "consumerProtection": "Consumer protection",
+    "cookies": "Cookie policy",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "anpc": "ANPC",
+    "sal": "Alternative Dispute Resolution",
+    "salAlt": "ANPC — Alternative Dispute Resolution (SAL)",
+    "email": "Contact me by email"
   }
 }

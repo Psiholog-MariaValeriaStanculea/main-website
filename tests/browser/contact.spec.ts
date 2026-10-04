@@ -7,6 +7,7 @@ async function draft(page:import('@playwright/test').Page){
  await page.locator('#name').fill("Ștefania D'Angelo");
  await page.locator('#email').fill('reader@example.invalid');
  await page.locator('#message').fill('Please discuss options. No clinical details.');
+ await page.locator('#privacy-agreed').check();
 }
 for(const language of ['ro','en','it','es'])test('localized validation, rejection, preserved draft and explicit retry: '+language,async({page},info)=>{
  const c=copy(language).contact;let requests=0;
@@ -72,7 +73,7 @@ test('pending inquiry survives privacy navigation, Back and language change with
  await page.route(endpoint,async route=>{requests++;payload=route.request().postDataJSON();await new Promise<void>(resolve=>{release=resolve;});await route.fulfill({status:200,body:'OK'});});
  await page.goto('en/contact/?service=consiliere-parentala');await draft(page);await page.clock.install();
  await page.locator('form button[type=submit]').click();await expect.poll(()=>requests).toBe(1);
- await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy');
+ await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy policy (GDPR)');
  await page.goBack();await expect(page.locator('#message')).toHaveValue('Please discuss options. No clinical details.');
  await expect(page.locator('form button[type=submit]')).toBeDisabled();
  await page.locator('form').evaluate((form:HTMLFormElement)=>form.requestSubmit());
@@ -90,12 +91,39 @@ for(const accepted of [true,false])test('provider result while Contact is unmoun
  let release!:()=>void;let requests=0;
  await page.route(endpoint,async route=>{requests++;if(requests===1)await new Promise<void>(resolve=>{release=resolve;});await route.fulfill({status:accepted||requests>1?200:403,body:accepted||requests>1?'OK':'Forbidden'});});
  await page.goto('en/contact/');await draft(page);await page.locator('form button[type=submit]').click();await expect.poll(()=>requests).toBe(1);
- await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy');
+ await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy policy (GDPR)');
  const response=page.waitForResponse(endpoint);release();await response;
  await page.goBack();await expect(page.getByRole('status')).toContainText(accepted?copy('en').contact.success:copy('en').contact.rejected);
  await expect(page.locator('#name')).toHaveValue(accepted?'':"Ștefania D'Angelo");
  await expect(page.locator('#message')).toHaveValue(accepted?'':'Please discuss options. No clinical details.');
  expect(await page.evaluate(()=>JSON.stringify(localStorage)+JSON.stringify(sessionStorage))).not.toContain('reader@example.invalid');
  if(accepted){await page.getByRole('button',{name:copy('en').contact.newRequest,exact:true}).click();await expect(page.locator('#name')).toBeEnabled();}
- else{await page.locator('form button[type=submit]').click();await expect(page.getByRole('status')).toContainText(copy('en').contact.success);expect(requests).toBe(2);}
+ else{await draft(page);await page.locator('form button[type=submit]').click();await expect(page.getByRole('status')).toContainText(copy('en').contact.success);expect(requests).toBe(2);}
+});
+
+
+test('privacy agreement is explicit, preserves the draft on policy navigation, and resets after acceptance',async({page})=>{
+ let requests=0;await page.route(endpoint,route=>{requests++;return route.fulfill({status:200,body:'OK'});});
+ await page.goto('ro/contact/');await draft(page);await page.locator('#privacy-agreed').uncheck();
+ await expect(page.locator('#privacy-agreed')).toHaveAccessibleName(copy('ro').contact.privacyAgree+' '+copy('ro').contact.privacyPolicy);
+ await page.locator('form button[type=submit]').click();
+ await expect(page.locator('#privacy-error')).toHaveText(copy('ro').contact.privacyAgreeError);
+ await expect(page.locator('#privacy-agreed')).toBeFocused();expect(requests).toBe(0);
+ await page.locator('form a[href$="/confidentialitate"]').click();await page.goBack();
+ await expect(page.locator('#name')).toHaveValue("Ștefania D'Angelo");await expect(page.locator('#privacy-agreed')).not.toBeChecked();
+ await page.locator('#privacy-agreed').check();await page.locator('form a[href$="/confidentialitate"]').click();await page.goBack();
+ await expect(page.locator('#privacy-agreed')).toBeChecked();await page.locator('form button[type=submit]').click();
+ await expect(page.getByRole('status')).toContainText(copy('ro').contact.success);expect(requests).toBe(1);
+ await page.getByRole('button',{name:copy('ro').contact.newRequest,exact:true}).click();await expect(page.locator('#privacy-agreed')).not.toBeChecked();
+});
+
+for(const language of ['ro','en','it','es'])test('footer policies and SAL remain usable at 320px: '+language,async({page})=>{
+ await page.setViewportSize({width:320,height:740});await page.goto(language+'/contact/');
+ const footer=page.locator('footer');await expect(footer.getByRole('img')).toBeVisible();
+ const badge=footer.getByRole('img');expect(await badge.evaluate((img:HTMLImageElement)=>img.complete&&img.naturalWidth>0)).toBe(true);
+ await expect(footer.locator('a[href="https://reclamatiisal.anpc.ro/"]')).toHaveCount(1);
+ expect(await footer.innerText()).not.toMatch(/NETOPIA|parteneri|partners|acreditări|accreditations|diplome/i);
+ await footer.locator('a[href$="/termeni-si-conditii"]').click();await expect(page.locator('main h1')).toHaveText(copy(language).legal.termsTitle);
+ await expect(page.locator('meta[name=robots]')).toHaveAttribute('content',/noindex/);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

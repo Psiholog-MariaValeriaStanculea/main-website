@@ -42,6 +42,7 @@ jobs:
           npm run lint
           npx tsc -b
           npm run check:files
+          npm run check:content
           npm run test:unit
 
       - name: Build site
@@ -54,6 +55,7 @@ jobs:
           VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
           VITE_EMAILJS_PUBLIC_KEY: ${{ vars.VITE_EMAILJS_PUBLIC_KEY }}
+          VITE_RECAPTCHA_SITE_KEY: ${{ vars.VITE_RECAPTCHA_SITE_KEY }}
         run: |
           npm run build
           npm run check:seo
@@ -104,7 +106,16 @@ jobs:
           if [ "$missing_approval" -ne 0 ]; then
             exit 1
           fi
-          node --input-type=module -e "import {readFileSync} from 'node:fs'; if (!JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured) { console.error('Production EmailJS configuration is missing. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID and VITE_EMAILJS_PUBLIC_KEY in repository Actions Variables, then rebuild.'); process.exit(1); }"
+          npm run check:release
+          node --input-type=module -e "import {readFileSync} from 'node:fs'; if (!JSON.parse(readFileSync('dist/build-info.json','utf8')).contactConfigured) { console.error('Production Contact configuration is missing. Set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY and VITE_RECAPTCHA_SITE_KEY in repository Actions Variables; enable reCAPTCHA verification in EmailJS, then rebuild.'); process.exit(1); }"
+
+      - name: Retain production artifact for rollback
+        uses: actions/upload-artifact@v7
+        with:
+          name: website-release-${{ steps.build.outputs.build_id }}
+          path: ./dist
+          include-hidden-files: true
+          retention-days: 90
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

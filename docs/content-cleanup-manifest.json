@@ -1,0 +1,263 @@
+{
+  "files": [
+    {
+      "path": "src/components/CookieBanner.tsx",
+      "bytes": 13401,
+      "sha256": "fcffcb08da5de9ac8de2c794b9837860ac40dd8cd4fb3ca6785d87ec965475f0"
+    },
+    {
+      "path": "src/components/local/HeroStats.tsx",
+      "bytes": 781,
+      "sha256": "e335386f5ab69bb75c890b7b46c337330934e3b234c2308629ed9de3918c756c"
+    },
+    {
+      "path": "src/components/local/HomeConsultationForm.tsx",
+      "bytes": 6753,
+      "sha256": "213a646e37fc6732af7dd53b0813256e59644880240aa287ceae68361bdf65d6"
+    },
+    {
+      "path": "src/components/local/HomeFAQPreview.tsx",
+      "bytes": 3084,
+      "sha256": "82d88d658142689870b1dad5bafe504d0d4aee03052309bc7e5f0f847f968e74"
+    },
+    {
+      "path": "src/components/local/HowTherapyWorks.tsx",
+      "bytes": 2684,
+      "sha256": "882eea7ece5cec1c5ff11a7b9e8fe12103424b13ab61573aed82e726c49f70d2"
+    },
+    {
+      "path": "src/components/local/LatestArticles.tsx",
+      "bytes": 4510,
+      "sha256": "0e2c238888b9a6acbd576b96ddb8466b3be5f2a20f746a2775d31a7343ef75b6"
+    },
+    {
+      "path": "src/components/local/PracticalInfoRomania.tsx",
+      "bytes": 2320,
+      "sha256": "41457144a13b6bf6dbac8c0f6bd55ba7d9cb1fd5a34eba233b23d9c80e0a1210"
+    },
+    {
+      "path": "src/components/local/SectionEyebrow.tsx",
+      "bytes": 319,
+      "sha256": "5108a0d88c641330e7a710d0df8aad4355b55b3349640381d4ff72db8b1d4c5e"
+    },
+    {
+      "path": "src/components/local/ServicesLocation.tsx",
+      "bytes": 4445,
+      "sha256": "0dc59c88ebbe8dbb79c0c43f6adb888564c94eeb2c15ebbaff7785a20ccf4b01"
+    },
+    {
+      "path": "src/components/local/SessionPackages.tsx",
+      "bytes": 6647,
+      "sha256": "b5b9f19a445559521b4f0914de1fbe7c586a00f1dd846465464cb1457f3e4dfb"
+    },
+    {
+      "path": "src/components/local/TestimonialsSection.tsx",
+      "bytes": 4089,
+      "sha256": "918e6e7a4e78d206a91b2dc142577be97cb0e7e52d57d638fa8e9a6e71912579"
+    },
+    {
+      "path": "src/components/local/WhyFamiliesChooseMe.tsx",
+      "bytes": 2068,
+      "sha256": "df18a740fc5f6cf59a6d8d5fd462035bab80379cd1519f485d3a7209cd478731"
+    },
+    {
+      "path": "src/contexts/LanguageContext.tsx",
+      "bytes": 1519,
+      "sha256": "b669d74b31dd6dce4d7242568ced71c03b6d2e88bbbc243c1bf41e23ff609c2a"
+    },
+    {
+      "path": "src/data/seoMetadata.ts",
+      "bytes": 5867,
+      "sha256": "0f514d41a994cd6bdfa5fb786c1e5a3a857a15ef5f7c85a63ff4dcb4269fd4dc"
+    },
+    {
+      "path": "src/locales/en/about.json",
+      "bytes": 4606,
+      "sha256": "bf28ab29e6e11b2aa53e01f602969e10454ffe015e653bcbab4a5074b3a35183"
+    },
+    {
+      "path": "src/locales/en/blog.json",
+      "bytes": 1807,
+      "sha256": "3cfc86ab96801325339a1de47608b490807492f81d88674fa018f2a98e2f5af7"
+    },
+    {
+      "path": "src/locales/en/common.json",
+      "bytes": 1961,
+      "sha256": "a87af3e04d601ee82b466ed78c61375ac132cd87d53c6e7deabce63492e2697d"
+    },
+    {
+      "path": "src/locales/en/contact.json",
+      "bytes": 2377,
+      "sha256": "4407cf7e1b40bacbd670b5a1ac159c07dcd51fc1cb092566c132cb59ec0432c3"
+    },
+    {
+      "path": "src/locales/en/faq.json",
+      "bytes": 7814,
+      "sha256": "7dbb9a851f330355e1eed648daff9ffb6ff09ec6408f3037dc7c94f1ff45f1c2"
+    },
+    {
+      "path": "src/locales/en/home.json",
+      "bytes": 10589,
+      "sha256": "63e71767bda8720bff2e3df717c4f93f540ea21053905318e4cb40cdc4a0dfcd"
+    },
+    {
+      "path": "src/locales/en/local.json",
+      "bytes": 5220,
+      "sha256": "fdf6fb5fcdbe4e1f29c0a6d45c68b583e88ade26efb653282f080fe157c34f7d"
+    },
+    {
+      "path": "src/locales/en/navigation.json",
+      "bytes": 676,
+      "sha256": "dc6ee3c65bec4326cf339ad8fb2774e73f15a48391e83d7721fb05b4ba5dd0b3"
+    },
+    {
+      "path": "src/locales/en/services.json",
+      "bytes": 5470,
+      "sha256": "478e888c270a0d308e07fb18c7cd233b4dfa3d4e9e405e81eb75563ac188f573"
+    },
+    {
+      "path": "src/locales/es/about.json",
+      "bytes": 4760,
+      "sha256": "a9de5a965d058304298484cd00e0f8f051c640860c21707952a6287576b9c9ff"
+    },
+    {
+      "path": "src/locales/es/blog.json",
+      "bytes": 1896,
+      "sha256": "e4d11b03d89ddbc1d5ae5419a2f1e6d73f177e927aa329291738a6c4436e9f17"
+    },
+    {
+      "path": "src/locales/es/common.json",
+      "bytes": 2116,
+      "sha256": "bd7e1d9c96d6e8165f4b92168720226b506bd577164eb53727c15609cea1cb54"
+    },
+    {
+      "path": "src/locales/es/contact.json",
+      "bytes": 2502,
+      "sha256": "8d2be1ba6ac4466007f28e7b3a4eb1ffb4841e9689d0fe0d4b16108f682a8b85"
+    },
+    {
+      "path": "src/locales/es/faq.json",
+      "bytes": 8312,
+      "sha256": "c3720f2bbd471fd08aee261fd6dca66fd79758a0cfeee53ddf13ea4319ecd2ae"
+    },
+    {
+      "path": "src/locales/es/home.json",
+      "bytes": 11187,
+      "sha256": "96057b386bfe5ee3538aa6d77a66a258042cf170a832e33d5b994b681eadc454"
+    },
+    {
+      "path": "src/locales/es/local.json",
+      "bytes": 5543,
+      "sha256": "a91e94565fe40de68519546ea039dea06ba1ac242abb82cd88c478d420a13824"
+    },
+    {
+      "path": "src/locales/es/navigation.json",
+      "bytes": 706,
+      "sha256": "84027c8cb6c2c6be759e3f7ce08493027553f4742a646388bc950c18af85b6c8"
+    },
+    {
+      "path": "src/locales/es/services.json",
+      "bytes": 5806,
+      "sha256": "d92791b69d29e7165eaa5955c611841e79b2aa9b93ec3aa466be91bffcb6136f"
+    },
+    {
+      "path": "src/locales/it/about.json",
+      "bytes": 4702,
+      "sha256": "bee9fa8ed97a7d9513fff453a73d2e16bd02c5ab1e6e920c010ab9d736c210ba"
+    },
+    {
+      "path": "src/locales/it/blog.json",
+      "bytes": 1911,
+      "sha256": "ba138716070b2f0221eab9178cf4a9589d362540f0450d7cb5814b0824dc1d07"
+    },
+    {
+      "path": "src/locales/it/common.json",
+      "bytes": 2119,
+      "sha256": "f606acc132a72dcf358f5ff92a9239a805cb81927246023c5e29e35286591f07"
+    },
+    {
+      "path": "src/locales/it/contact.json",
+      "bytes": 2478,
+      "sha256": "04be88fbeae919fa36d59b25eaaf27f0c6c15c4bd31e4bf132b4cf78ee4a3c15"
+    },
+    {
+      "path": "src/locales/it/faq.json",
+      "bytes": 8230,
+      "sha256": "2b09709255f809b733d8d381122a67bd5bca82e5fe52e14fa451abd726cc0a6f"
+    },
+    {
+      "path": "src/locales/it/home.json",
+      "bytes": 10923,
+      "sha256": "a92cd9af0235f151898de66c946a6012b7695c2bbacd5c79a731ee8ef36e7b98"
+    },
+    {
+      "path": "src/locales/it/local.json",
+      "bytes": 5541,
+      "sha256": "efe123d67725f463105bf5676583f844cada4252108e32961af4424ee2b1e756"
+    },
+    {
+      "path": "src/locales/it/navigation.json",
+      "bytes": 694,
+      "sha256": "5c69b4e02b18df9bdc2ef83b354d1c5aa330d75d1040a5bb8204c7843f571906"
+    },
+    {
+      "path": "src/locales/it/services.json",
+      "bytes": 5776,
+      "sha256": "b1fe31f1237ba0471049b45245b0e03e9760d5ab3bb86b9630eb45c8fe10caaa"
+    },
+    {
+      "path": "src/locales/ro/about.json",
+      "bytes": 4648,
+      "sha256": "8a85ca754b7faac91df3c4a846f50144ac71b0626aab5aabd709ab462ec68604"
+    },
+    {
+      "path": "src/locales/ro/blog.json",
+      "bytes": 1812,
+      "sha256": "b04c49b325d5c5b403332e03b807ac5aaecdb9a9634cdf9742bc073998e79ed3"
+    },
+    {
+      "path": "src/locales/ro/common.json",
+      "bytes": 2152,
+      "sha256": "86a49084284c04df3285d4aeed7db3643cc2469a03f0a629b6d5642072edb4cf"
+    },
+    {
+      "path": "src/locales/ro/contact.json",
+      "bytes": 2543,
+      "sha256": "a119c78cf8b6556637c62f77440b82a83aed26e0d9bb699c7d8b0c7308ea2f43"
+    },
+    {
+      "path": "src/locales/ro/faq.json",
+      "bytes": 8075,
+      "sha256": "0a1b20e927eb30f5c741d27f0c250343e9bfa36b56b7f4bf650f8d91f6d87f93"
+    },
+    {
+      "path": "src/locales/ro/home.json",
+      "bytes": 11444,
+      "sha256": "4deec8b6b45752ef13a03b0d69f6ec1a22e04a7f8487b2f7a4074b76241d7654"
+    },
+    {
+      "path": "src/locales/ro/local.json",
+      "bytes": 6365,
+      "sha256": "153916b2eeb56dc69792573c9fd1c8c0b9cb9e9926b619503893661deb57143c"
+    },
+    {
+      "path": "src/locales/ro/navigation.json",
+      "bytes": 706,
+      "sha256": "873c22ab0ef223dfc66ecc109f2e5c3d8dfbff7e40c337e05cc50a7138d9a89a"
+    },
+    {
+      "path": "src/locales/ro/services.json",
+      "bytes": 5840,
+      "sha256": "1e4c7dbcbac16bd6ddb08fdd2008a1666e5c3eb9c40e38463eebee89263f76bd"
+    },
+    {
+      "path": "src/pages/Index.tsx",
+      "bytes": 469,
+      "sha256": "8e181bbb0be169fca9672878304930085d6133de8c6a6bef1fcd8482a83a1885"
+    }
+  ],
+  "date": "2026-10-04",
+  "reason": "Unreachable from client and SSR entry points; active copy and public assets preserved",
+  "sourceCommit": "f023d482b752567377a91c2d4a13c436ca7622dc",
+  "backup": ".release-archives/legacy-content-2026-10-04"
+}

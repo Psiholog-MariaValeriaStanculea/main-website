@@ -1,9 +1,11 @@
 const serviceID=import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim();
 const templateID=import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim();
 const publicKey=import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim();
-export const contactConfigured=Boolean(serviceID && templateID && publicKey);
+export const recaptchaSiteKey=import.meta.env.VITE_RECAPTCHA_SITE_KEY?.trim()||'';
+export const contactConfigured=Boolean(serviceID && templateID && publicKey && recaptchaSiteKey);
 
 export async function sendInquiry(payload:Record<string,string>) {
+ if(!payload['g-recaptcha-response']?.trim())throw {status:400};
  // Avoid the SDK's storage getter when browser privacy settings block it.
  let storageReadable=true;
  try { void window.localStorage; } catch { storageReadable=false; }

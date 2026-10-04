@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-04",
+  "template": "Solicitare site Valeria",
+  "providerSettings": {
+    "recaptchaV2Enabled": true,
+    "privateHistoryDisabled": false,
+    "analyticsTrackingEnabled": false,
+    "observedThrough": "Saved and reloaded EmailJS settings: personal history enabled by explicit user choice; Analytics off; CAPTCHA on",
+    "keyPairDistinct": true,
+    "screenshot": "docs/qa/emailjs-history-preference-2026-10-04.jpg"
+  },
+  "serverValidation": {
+    "origin": "http://127.0.0.1:4181",
+    "testData": "Technical test only; no clinical data",
+    "missingToken": {
+      "status": 400,
+      "response": "reCAPTCHA: The g-recaptcha-response parameter not found",
+      "captchaRejected": true
+    },
+    "invalidToken": {
+      "status": 400,
+      "response": "reCAPTCHA: invalid-input-response",
+      "captchaRejected": true
+    },
+    "qualification": "Direct HTTPS requests with an explicit Origin header verify provider CAPTCHA rejection. They do not prove a successful browser challenge or inbox receipt.",
+    "latestCheckedAt": "2026-10-04T08:21:01.114Z",
+    "latestProbes": [
+      {
+        "mode": "missing-token",
+        "status": 400,
+        "response": "reCAPTCHA: The g-recaptcha-response parameter not found",
+        "captchaRejected": true
+      },
+      {
+        "mode": "invalid-token",
+        "status": 400,
+        "response": "reCAPTCHA: invalid-input-response",
+        "captchaRejected": true
+      }
+    ]
+  },
+  "activation": {
+    "publicSiteKey": "New public key supplied by user and written directly to ignored .env.production.local; widget no longer shows key-type error",
+    "privateCredentialReplacement": "saved by user; distinct from local public key",
+    "googleDomainRegistration": "User reports saved domain changes; both 127.0.0.1 and localhost widgets still rejected shortly afterward; propagation may take up to 30 minutes per official Google Cloud docs",
+    "successfulRealChallenge": "blocked: local test hostname not permitted by Google domain configuration",
+    "inboxReceipt": "pending",
+    "replyTo": "pending",
+    "requiredCorrection": "Await propagation for the reported domain update, then recheck widget. Do not infer that saved domains are wrong solely from an immediate error.",
+    "widgetScreenshot": "docs/qa/recaptcha-modern-contact-2026-10-04.jpg",
+    "historyPreference": "User explicitly requested name, email and message retained in EmailJS history",
+    "githubPublicVariable": "User reports completed update; administration setting not directly verified",
+    "domainPropagation": {
+      "maximumDocumentedMinutes": 30,
+      "source": "https://docs.cloud.google.com/recaptcha/docs/manage-keys",
+      "qualification": "Propagation is a possible explanation; saved domain list was not directly inspected."
+    },
+    "loadingMode": "Automatic on Contact, expressly selected by user"
+  },
+  "credentialHandling": "No reCAPTCHA secret was stored in the repository or in client environment variables.",
+  "build": {
+    "id": "e4b4959038bd7b6b56742a5315d4edaf30ce9ca2975edd99d32d91dc1a43b175",
+    "contactConfigured": true,
+    "recaptchaConfigured": true,
+    "seo": "passed",
+    "pagesArtifact": "passed",
+    "qualification": "Automatic Contact widget; local domain error remains; real challenge/email unverified"
+  },
+  "localRollback": {
+    "snapshot": ".release-archives/candidate-captcha-modern-2026-10-04",
+    "restored": ".release-archives/restored-captcha-modern-2026-10-04",
+    "result": "Exact file inventory and hashes verified locally; no deployment or production rollback",
+    "buildId": "e4b4959038bd7b6b56742a5315d4edaf30ce9ca2975edd99d32d91dc1a43b175"
+  }
+}

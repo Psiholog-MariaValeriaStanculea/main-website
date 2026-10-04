@@ -9,8 +9,8 @@ const basePath = firstPage.pathname.replace(/(?:ro|en|it|es)(?:\/.*)?$/, '');
 
 export default defineConfig({
   testDir: './tests/browser',
-  testMatch: contactTests?'contact.spec.ts':'**/*.spec.ts',
-  testIgnore: contactTests?[]:['**/contact.spec.ts'],
+  testMatch: contactTests?['contact.spec.ts','recaptcha.spec.ts']:'**/*.spec.ts',
+  testIgnore: contactTests?[]:['**/contact.spec.ts','**/recaptcha.spec.ts'],
   outputDir: contactTests?'contact-test-results':'test-results',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,

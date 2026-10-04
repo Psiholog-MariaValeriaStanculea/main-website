@@ -5,7 +5,7 @@ import FAQ from './pages/FAQ';import Contact from './pages/Contact';import Blog 
 import Legal from './pages/Legal';import NotFound from './pages/NotFound';
 import { MultilingualLayout } from './components/MultilingualLayout';
 import { pageRoutes } from './lib/routes';
-const components={home:Home,about:About,services:Services,faq:FAQ,contact:Contact,resources:Blog,blog:Blog,privacy:Legal,cookies:Legal};
+const components={home:Home,about:About,services:Services,faq:FAQ,contact:Contact,resources:Blog,blog:Blog,privacy:Legal,cookies:Legal,terms:Legal};
 function LegacyRedirect(){const location=useLocation();return <Navigate replace to={'/ro'+location.pathname+location.search+location.hash} />;}
 export function SiteRoutes(){
  return <Routes>

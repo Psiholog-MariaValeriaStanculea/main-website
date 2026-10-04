@@ -7,6 +7,7 @@ Object.assign(process.env,{
  VITE_EMAILJS_SERVICE_ID:'test_service',
  VITE_EMAILJS_TEMPLATE_ID:'test_template',
  VITE_EMAILJS_PUBLIC_KEY:'test_public_key',
+ VITE_RECAPTCHA_SITE_KEY:'test_recaptcha_site_key',
  PLAYWRIGHT_CONTACT_TESTS:'1',
 });
 await build({mode:'production',build:{outDir:'.contact-test-dist'}});

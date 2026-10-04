@@ -94,7 +94,7 @@ test('missing configuration offers direct email without false success or email-a
 });
 test('reading the privacy notice and returning preserves the in-memory inquiry',async({page})=>{
  await page.goto('en/contact/');await page.locator('#name').fill('Reader');await page.locator('#message').fill('Unsure where to start.');
- await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy');
+ await page.locator('form a[href$="/confidentialitate"]').click();await expect(page.locator('main h1')).toHaveText('Privacy policy (GDPR)');
  await page.goBack();await expect(page.locator('#message')).toHaveValue('Unsure where to start.');
  await page.reload();await expect(page.locator('#message')).toHaveValue('');
 });

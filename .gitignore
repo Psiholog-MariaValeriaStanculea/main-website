@@ -51,3 +51,5 @@ Desktop.ini
 *.njsproj
 *.sln
 *.sw?
+# Recoverable local release snapshots and historical copy; never publish these.
+.release-archives/

@@ -23,6 +23,7 @@ jobs:
           npm run lint
           npx tsc -b
           npm run check:files
+          npm run check:content
           npm run test:unit
       - name: Build and audit Pages artifact
         run: |

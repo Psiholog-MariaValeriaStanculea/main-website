@@ -8,7 +8,8 @@
     "contact": "Contact",
     "blog": "Articole",
     "privacy": "Confidențialitate",
-    "cookies": "Cookie-uri și preferințe"
+    "cookies": "Cookie-uri și preferințe",
+    "terms": "Termeni și condiții"
   },
   "ui": {
     "role": "Psiholog clinician · Psihoterapeut integrativ relațional",
@@ -306,47 +307,274 @@
       "online": "Sprijin online",
       "professional": "Întrebare profesională",
       "unsure": "Nu sunt sigur(ă)"
-    }
+    },
+    "captchaLabel": "Verificare de securitate",
+    "captchaHelp": "Formular protejat de Google reCAPTCHA pentru prevenirea abuzului.",
+    "captchaRequired": "Completează verificarea „Nu sunt robot” înainte de trimitere.",
+    "captchaFailed": "Nu am putut conecta verificarea Google. Reîncearcă sau scrie-ne direct prin email.",
+    "captchaLoading": "Se pregătește verificarea…",
+    "captchaVerified": "Verificare finalizată. Poți trimite solicitarea.",
+    "captchaExpired": "Verificarea a expirat. Bifează din nou „Nu sunt robot”.",
+    "captchaRetry": "Reîncearcă verificarea",
+    "identityTitle": "Date de contact",
+    "inquiryTitle": "Despre solicitare",
+    "sendTitle": "Verifică și trimite",
+    "privacyAgree": "Am citit",
+    "privacyPolicy": "politica de confidențialitate",
+    "privacyAgreeError": "Confirmă că ai citit politica de confidențialitate înainte de trimitere.",
+    "sendHelp": "Citește politica de confidențialitate și completează verificarea de securitate.",
+    "expectationTitle": "Ce urmează?",
+    "expectationText": "Discutăm solicitarea, disponibilitatea și condițiile unei posibile colaborări prin email.",
+    "captchaDetails": "Cum sunt prelucrate datele verificării"
   },
   "legal": {
-    "privacyTitle": "Confidențialitate",
-    "cookiesTitle": "Cookie-uri și preferințe",
-    "privacyIntro": "Informații despre datele folosite atunci când navighezi pe site sau trimiți o solicitare.",
-    "cookiesIntro": "Preferințele de afișare și informațiile păstrate în browser.",
+    "privacyTitle": "Politica de confidențialitate (GDPR)",
+    "cookiesTitle": "Politica cookies",
+    "termsTitle": "Termeni și condiții",
+    "privacyIntro": "Cum sunt folosite datele la navigare, la primul contact și în cadrul serviciilor psihologice.",
+    "cookiesIntro": "Ce păstrează site-ul în browser și cum funcționează verificarea antiabuz.",
+    "termsIntro": "Utilizarea site-ului, solicitările de contact și condițiile unei posibile colaborări cu cabinetul.",
+    "updated": "Revizuire: 4 octombrie 2026",
+    "draftNotice": "Versiune pregătită pentru revizuire. Datele marcate „DE CONFIRMAT” și practicile furnizorilor trebuie validate înainte de publicare.",
+    "contents": "Pe această pagină",
+    "related": "Politici asociate",
+    "sourcesTitle": "Surse și cadrul aplicabil",
+    "providers": "Furnizori și autoritatea de supraveghere",
+    "contactHeading": "Întrebări și cereri privind datele",
     "privacySections": [
       {
-        "title": "Contactul inițial",
-        "text": "Formularul solicită numele, adresa de email, categoria cererii și, opțional, un mesaj. Aceste informații sunt folosite pentru a primi și a răspunde solicitării tale. Evită informațiile medicale sau alte date sensibile în acest prim mesaj."
+        "id": "operator",
+        "title": "Cine răspunde pentru date",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria este operatorul datelor folosite în activitatea cabinetului. Contact: psiholog.mariavaleriabaciu@gmail.com. CIF: [DE CONFIRMAT]. Sediu/adresă profesională: [DE CONFIRMAT]. Înregistrarea cabinetului și codul profesional: [DE CONFIRMAT]. Persoanele autorizate să acceseze datele și, dacă este desemnat, contactul responsabilului cu protecția datelor: [DE CONFIRMAT]."
       },
       {
-        "title": "Transmiterea solicitării",
-        "text": "Atunci când formularul este disponibil, solicitarea este transmisă prin EmailJS către adresa de contact a cabinetului. Poți alege și contactul direct prin email. Trimiterea unei solicitări nu confirmă o programare."
+        "id": "date",
+        "title": "Ce date sunt necesare",
+        "text": "Formularul solicită numele, emailul și categoria cererii; mesajul este opțional. Se transmit și limba paginii și serviciul ales, dacă există. Fără nume și email nu putem folosi formularul pentru a răspunde. Nu cere fișiere, CNP, diagnostice sau date bancare. Categoria și mesajul pot dezvălui indirect informații despre sănătate: evită detaliile clinice și datele altor persoane la primul contact. Furnizorii pot prelucra IP, date despre browser și jurnale tehnice."
       },
       {
-        "title": "Găzduirea site-ului",
-        "text": "Pentru site-ul public găzduit pe GitHub Pages, GitHub înregistrează adresa IP a vizitatorului în scopuri de securitate."
+        "id": "scopuri",
+        "title": "De ce folosim datele și pe ce temei",
+        "text": "Pentru demersurile precontractuale cerute de tine și executarea contractului: art. 6 alin. (1) lit. b GDPR. Pentru întrebări generale și prevenirea abuzului: interes legitim, art. 6 alin. (1) lit. f, cu evaluarea necesității și a drepturilor tale [DE CONFIRMAT]. Pentru obligațiile legale aplicabile: art. 6 alin. (1) lit. c. Datele formularului nu sunt folosite pentru marketing. Confirmarea citirii politicii nu este consimțământ general pentru orice prelucrare."
       },
       {
-        "title": "Întrebări despre datele tale",
-        "text": "Pentru clarificări despre accesul la informații, păstrarea lor sau exercitarea drepturilor aplicabile, poți scrie la adresa de contact de mai jos."
+        "id": "clinice",
+        "title": "Datele clinice și confidențialitatea profesională",
+        "text": "Înainte de servicii primești informarea specifică privind evaluarea, consilierea sau psihoterapia, confidențialitatea și limitele ei. Datele de sănătate necesită și o condiție din art. 9 GDPR: pentru îngrijirea sănătății, art. 9 alin. (2) lit. h împreună cu alin. (3), dacă sunt îndeplinite condițiile legale și de secret profesional. Temeiul pentru fiecare activitate și eventualele alte scopuri: [DE CONFIRMAT]. Consimțământul profesional informat, consimțământul GDPR și acordul pentru cookie-uri au roluri distincte."
+      },
+      {
+        "id": "minori",
+        "title": "Solicitări privind copii și adolescenți",
+        "text": "La primul contact folosește datele părintelui sau reprezentantului legal și evită identificarea copilului ori istoricul său medical în formular. Calitatea reprezentantului și acordurile necesare sunt verificate înainte de servicii. Pentru consiliere și psihoterapie, Codul deontologic cere acordul ambilor părinți când autoritatea părintească este comună, sub rezerva excepțiilor legale aplicabile. Informarea copilului este adaptată vârstei și capacității de înțelegere."
+      },
+      {
+        "id": "destinatari",
+        "title": "Cine poate primi datele",
+        "text": "EmailJS transmite solicitarea prin serviciul Gmail conectat către cabinet. Istoricul EmailJS este configurat să păstreze numele, emailul, mesajul și parametrii cererii; Analytics este dezactivat. Gmail păstrează mesajul primit. GitHub Pages găzduiește site-ul și poate prelucra date tehnice. Google furnizează verificarea antiabuz. Lista persoanelor autorizate, tipul contului Gmail, acordurile de prelucrare și platforma consultațiilor online: [DE CONFIRMAT]. Transmitem date autorităților doar în condițiile legii."
+      },
+      {
+        "id": "securitate",
+        "title": "Verificarea reCAPTCHA",
+        "text": "Google reCAPTCHA v2 se încarcă automat pe pagina Contact. Folosește semnale tehnice pentru prevenirea abuzului și poate seta cookie-uri. Din 2 aprilie 2026, Google declară rolul de persoană împuternicită pentru aceste date, potrivit condițiilor Google Cloud. Formularul nu transmite mesajul tău ca parametru de analiză reCAPTCHA. Necesitatea încărcării automate și durata cookie-urilor sunt [DE CONFIRMAT]. Poți contacta cabinetul și direct prin email."
+      },
+      {
+        "id": "transferuri",
+        "title": "Prelucrare în afara SEE",
+        "text": "EmailJS declară procesare în SUA și clauze contractuale standard pentru transferurile din UE. GitHub, Google și furnizorii de email pot implica prelucrare în afara Spațiului Economic European. Entitățile contractante, locațiile, mecanismele și evaluarea transferurilor efective ale cabinetului: [DE CONFIRMAT]. Poți cere informații și o copie a garanțiilor aplicabile prin email. Politica publică a unui furnizor nu dovedește configurarea contului cabinetului."
+      },
+      {
+        "id": "pastrare",
+        "title": "Cât timp păstrăm datele",
+        "text": "Regula propusă pentru solicitările Gmail fără contract: șase luni de la ultima interacțiune, apoi ștergere periodică. EmailJS declară 30 de zile pentru datele conturilor active; aplicarea la istoricul contului și copiile existente trebuie verificată. Implementarea ștergerii: [DE CONFIRMAT]. Probele psihologice, rezultatele, însemnările și înregistrările profesionale se păstrează minimum zece ani după încheierea relației profesionale, potrivit pct. 42 din Codul deontologic, sau mai mult dacă legea cere. Termenele pentru contracte, documente fiscale, litigii și copii de siguranță: [DE CONFIRMAT], separat de primul contact."
+      },
+      {
+        "id": "browser",
+        "title": "Datele formularului în browser",
+        "text": "Draftul și confirmarea citirii politicii rămân în memoria aplicației pe durata navigării interne și dispar la reîncărcare. Acceptarea solicitării de furnizor golește câmpurile personale. Tokenul reCAPTCHA este consumat la fiecare încercare și eliminat la expirare sau navigare; nu este salvat în storage ori în email. Preferința de aspect poate fi păstrată local. Formularul nu oferă arhivarea sau dovada durabilă a unui consimțământ clinic."
+      },
+      {
+        "id": "drepturi",
+        "title": "Drepturile tale",
+        "text": "În condițiile GDPR, ai dreptul la acces, rectificare, ștergere, restricționare, portabilitate și opoziție. Poți retrage un consimțământ folosit ca temei, fără a afecta prelucrarea anterioară. Ștergerea nu este absolută: unele documente trebuie păstrate pentru obligații profesionale sau legale ori apărarea unui drept. Solicitările se analizează în raport cu temeiul și datele vizate. Nu condiționăm contactul de acord pentru marketing."
+      },
+      {
+        "id": "cereri",
+        "title": "Cum exerciți drepturile",
+        "text": "Scrie la emailul cabinetului. Răspunsul se oferă, de regulă gratuit, în cel mult o lună; pentru cereri complexe sau numeroase termenul poate fi prelungit cu două luni, cu informarea și motivarea prelungirii în prima lună. Dacă există îndoieli rezonabile, cerem doar informațiile necesare verificării identității. Poți depune plângere la ANSPDCP sau te poți adresa instanței; contactarea cabinetului în prealabil nu înlătură aceste drepturi."
+      },
+      {
+        "id": "automatizare",
+        "title": "Securitate și decizii automate",
+        "text": "Folosim conexiunile securizate ale site-ului și furnizorilor, dar emailul și internetul nu oferă confidențialitate absolută. Măsurile de acces, copii de siguranță și răspuns la incidente ale cabinetului: [DE CONFIRMAT]. Site-ul nu stabilește automat diagnostice, acceptarea în terapie sau contracte. reCAPTCHA poate bloca tehnic o expediere; emailul direct rămâne alternativă. Incidentele sunt gestionate și notificate atunci când GDPR impune acest lucru."
+      },
+      {
+        "id": "actualizari",
+        "title": "Domeniul acestei informări",
+        "text": "Politica descrie site-ul și cadrul general al cabinetului. Pentru serviciul concret, platforma online și datele clinice primești informarea completată înainte de prelucrare. Modificările relevante sunt comunicate înainte de utilizarea unor scopuri sau tehnologii noi; actualizarea textului nu autorizează retroactiv alte prelucrări. Câmpurile de confirmat nu reprezintă practici deja verificate."
       }
     ],
     "cookieSections": [
       {
+        "id": "tehnologii",
+        "title": "Cookie-uri și alte tehnologii",
+        "text": "Cookie-urile și stocarea locală pot păstra informații pe dispozitiv. Această politică acoperă aplicația și componentele terțe încorporate; setările unui furnizor pot avea efecte distincte. Inventarul tehnic pe domeniul public, inclusiv numele, domeniul și durata fiecărui cookie terț: [DE CONFIRMAT]."
+      },
+      {
+        "id": "aspect",
         "title": "Preferința de aspect",
-        "text": "Dacă alegi un aspect luminos, întunecat sau de sistem, opțiunea poate fi păstrată local în browser. Dacă stocarea este blocată, site-ul rămâne utilizabil, dar preferința poate să nu fie reținută."
+        "text": "Cheia localStorage „lovable-ui-theme” păstrează alegerea luminos, întunecat sau sistem. Este folosită pentru aspectul cerut de tine, nu pentru publicitate, și nu conține datele formularului. Nu are un termen automat de expirare în aplicație; rămâne până la schimbarea opțiunii ori ștergerea datelor browserului. Dacă stocarea este blocată, site-ul rămâne utilizabil."
       },
       {
-        "title": "Limba paginii",
-        "text": "Limba este stabilită de pagina pe care o vizitezi. Schimbarea limbii păstrează aceeași pagină și, unde este cazul, aceeași secțiune."
+        "id": "limba",
+        "title": "Limba, draftul și verificarea",
+        "text": "Limba este în adresa paginii, fără cookie de limbă. Draftul și confirmarea citirii politicii sunt numai în memoria aplicației. Tokenul reCAPTCHA este temporar, consumat la încercare și eliminat la expirare ori navigare. Aceste informații nu sunt salvate de formular în localStorage."
       },
       {
+        "id": "captcha",
+        "title": "Google reCAPTCHA pe Contact",
+        "text": "Verificarea v2 se încarcă automat numai pe Contact. Google declară folosirea cookie-ului „_GRECAPTCHA” pentru analiza riscului și prelucrarea datelor tehnice pentru securitate. Domeniul și durata efective, precum și accesul la alte cookie-uri Google deja existente în browser: [DE CONFIRMAT] prin audit. Mesajul formularului nu este un parametru reCAPTCHA. Contactul direct prin email este disponibil."
+      },
+      {
+        "id": "acord",
+        "title": "Informare, necesitate și consimțământ",
+        "text": "Legea 506/2004, art. 4 alin. (5), cere informare și acord pentru stocarea/accesul în terminal, cu excepțiile limitate de la alin. (6), inclusiv stricta necesitate pentru serviciul cerut. Eticheta „securitate” nu dovedește singură excepția. Evaluarea încărcării automate reCAPTCHA este [DE CONFIRMAT]. Dacă auditul identifică tehnologii neesențiale, acestea trebuie blocate înainte de consimțământ și trebuie oferit refuzul și retragerea la fel de ușor. Simpla navigare nu este acord."
+      },
+      {
+        "id": "analiza",
         "title": "Analiză și publicitate",
-        "text": "Această versiune a site-ului nu încarcă instrumente de analiză a traficului sau de publicitate. Datele introduse în formular nu sunt salvate în stocarea locală a browserului."
+        "text": "Aplicația nu încarcă Google Analytics, pixeli publicitari sau instrumente de marketing. Analytics în EmailJS este dezactivat. Păstrarea istoricului solicitărilor la furnizor este o prelucrare de date personale descrisă în politica GDPR, nu dovada instalării unui cookie de analiză pe site. Introducerea unor instrumente noi necesită o evaluare și o informare actualizată."
+      },
+      {
+        "id": "control",
+        "title": "Cum poți controla stocarea",
+        "text": "Poți schimba aspectul din site și șterge sau bloca datele site-urilor din browser. Cookie-urile Google pot fi asociate altui domeniu și trebuie administrate separat. Blocarea componentei de securitate poate împiedica formularul; poți scrie direct prin email. Ștergerea datelor browserului nu șterge mesajele deja trimise cabinetului sau istoricul EmailJS."
+      },
+      {
+        "id": "actualizare",
+        "title": "Operator și actualizări",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria răspunde pentru alegerea tehnologiilor site-ului. Pentru întrebări: psiholog.mariavaleriabaciu@gmail.com. Inventarul, justificarea necesității și acordurile furnizorilor trebuie validate înainte de publicare. Data revizuirii indică verificarea editorială, nu o certificare a tuturor cookie-urilor din browser."
       }
     ],
-    "providers": "Informații despre furnizori",
-    "hostingPolicy": "Politica de confidențialitate GitHub",
-    "deliveryPolicy": "Politica de confidențialitate EmailJS"
+    "termsSections": [
+      {
+        "id": "furnizor",
+        "title": "Furnizorul serviciilor",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria prezintă activitatea de psihologie clinică și psihoterapie integrativă relațională, în limitele competențelor profesionale autorizate. Cadrul profesional include Legea 213/2004 și Codul deontologic. CIF, sediu profesional, număr de înregistrare și cod profesional: [DE CONFIRMAT]. Contact: psiholog.mariavaleriabaciu@gmail.com. Atestatele și specialitățile efective trebuie confirmate înainte de publicare."
+      },
+      {
+        "id": "informatii",
+        "title": "Rolul informațiilor de pe site",
+        "text": "Materialele oferă informații generale și nu înlocuiesc evaluarea individuală sau recomandările unui profesionist care cunoaște situația ta. Nu sunt garantate rezultate clinice sau disponibilitatea unei programări. Descrierea serviciilor nu este, singură, oferta unui contract complet. Condițiile potrivite solicitării tale se discută înainte de colaborare."
+      },
+      {
+        "id": "solicitare",
+        "title": "Primul contact",
+        "text": "Formularul inițiază o solicitare; nu încheie contractul, nu rezervă o ședință și nu încasează plata. Acceptarea tehnică a mesajului nu dovedește sosirea în inbox. Numele și emailul sunt necesare pentru răspuns, iar mesajul este opțional. Evită datele clinice și informațiile identificabile despre copii. Dacă verificarea antiabuz nu funcționează, folosește emailul direct."
+      },
+      {
+        "id": "contract",
+        "title": "Contract prin email, plată prin transfer bancar",
+        "text": "Contractul se transmite și se încheie prin email, iar plata se face separat prin transfer bancar, conform instrucțiunilor cabinetului. Site-ul nu are checkout sau procesare de carduri. Înainte de acceptare primești serviciul convenit, identitatea completă a furnizorului, tariful total și regimul fiscal aplicabil, durata/frecvența, modalitatea plății și regulile de reprogramare, anulare și încetare. Contractul efectiv și aceste reguli: [DE CONFIRMAT]."
+      },
+      {
+        "id": "online",
+        "title": "Consultațiile online",
+        "text": "Consultațiile online sunt disponibile când sunt adecvate situației și competențelor cabinetului. Platforma folosită, cerințele tehnice, condițiile de confidențialitate și procedura întreruperii conexiunii se comunică înainte de ședință; platforma: [DE CONFIRMAT]. Sunt necesare un spațiu privat și condiții potrivite participării. Orice înregistrare audio/video necesită acord prealabil și informare privind scopul și păstrarea; nu rezultă din citirea politicii site-ului."
+      },
+      {
+        "id": "consimtamant",
+        "title": "Consimțământ profesional și minori",
+        "text": "Consimțământul informat pentru servicii se obține înainte de începere, inclusiv online, după explicarea scopului, limitelor confidențialității, beneficiilor, riscurilor, alternativelor și tarifelor. Pentru consilierea/psihoterapia minorilor cu autoritate părintească comună este necesar acordul ambilor părinți, cu excepțiile legale aplicabile. Verificarea reprezentării și informarea copilului se fac separat. Confirmarea citirii politicii GDPR nu este consimțământ pentru terapie."
+      },
+      {
+        "id": "renuntare",
+        "title": "Reprogramare, anulare și retragere",
+        "text": "Solicită modificările prin email. Termenele și eventualele costuri se precizează în contract înainte de acceptare; site-ul nu stabilește penalități prin prezenta pagină. Regimul legal al retragerii se analizează pentru serviciul concret: unele servicii de sănătate sunt excluse din OUG 34/2014, însă nu orice serviciu psihologic este automat exclus. Dacă ordonanța se aplică, informațiile și drepturile obligatorii se comunică înainte de contract. Plata nu constituie singură renunțarea la un drept legal."
+      },
+      {
+        "id": "urgente",
+        "title": "Situații de urgență",
+        "text": "Formularul și emailul nu sunt canale pentru intervenții de urgență și nu trebuie presupuse monitorizate continuu. În pericol imediat pentru tine sau altcineva, apelează 112 în România ori serviciul local de urgență dacă ești în altă țară. Planul de sprijin pentru situații de criză se discută individual în cadrul colaborării."
+      },
+      {
+        "id": "utilizare",
+        "title": "Utilizare responsabilă și conținut",
+        "text": "Poți citi materialele și distribui linkuri, cu respectarea drepturilor de autor și a excepțiilor legale. Nu folosi formularul pentru spam, acces neautorizat sau conținut ilegal. Disponibilitatea tehnică poate fi afectată de mentenanță ori furnizori. Aceste condiții nu exclud răspunderea sau drepturile care nu pot fi înlăturate prin lege."
+      },
+      {
+        "id": "date",
+        "title": "Date personale",
+        "text": "Politica GDPR și politica cookies explică primul contact, furnizorii și verificarea antiabuz. Informarea pentru serviciile clinice se completează separat înainte de prelucrare. Citirea politicii nu autorizează marketingul, înregistrarea ședințelor sau orice utilizare a datelor de sănătate. Nu trimite date sensibile printr-un canal neagreat pentru acest scop."
+      },
+      {
+        "id": "litigii",
+        "title": "Întrebări și soluționarea disputelor",
+        "text": "Poți trimite o reclamație cabinetului prin email. Aceasta nu împiedică adresarea către autoritatea competentă sau instanță. Aspectele profesionale pot fi sesizate Colegiului Psihologilor din România, iar cele privind datele la ANSPDCP. Bannerul SAL conduce la platforma ANPC; admisibilitatea depinde de serviciu și de competența entității, inclusiv excepțiile pentru sănătate din OG 38/2015. Platforma europeană SOL/ODR a fost închisă în 2025."
+      },
+      {
+        "id": "lege",
+        "title": "Cadrul aplicabil și modificări",
+        "text": "Se aplică dreptul român și normele europene relevante, cu păstrarea protecțiilor imperative ale beneficiarului. Nu impunem prin site o instanță exclusivă sau renunțarea la drepturi. Actualizările se aplică utilizărilor viitoare; nu modifică retroactiv un contract încheiat. Identificarea completă și contractul efectiv trebuie revizuite înainte de publicare și înainte de prima colaborare."
+      }
+    ],
+    "providerLinks": [
+      {
+        "title": "GitHub Pages",
+        "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "EmailJS — Privacy",
+        "url": "https://www.emailjs.com/legal/privacy-policy/"
+      },
+      {
+        "title": "EmailJS — Data Processing Agreement",
+        "url": "https://www.emailjs.com/legal/data-protection-agreement/"
+      },
+      {
+        "title": "Google Cloud — Data Processing Addendum",
+        "url": "https://cloud.google.com/terms/data-processing-addendum"
+      },
+      {
+        "title": "Google reCAPTCHA — FAQ (2026)",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/faq"
+      },
+      {
+        "title": "ANSPDCP",
+        "url": "https://www.dataprotection.ro/?page=Plangeri_pagina_principala"
+      }
+    ],
+    "frameworkLinks": [
+      {
+        "title": "GDPR / RGPD — (UE) 2016/679",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=ro"
+      },
+      {
+        "title": "Legea 190/2018",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocumentAfis/203151"
+      },
+      {
+        "title": "Legea 506/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/257056"
+      },
+      {
+        "title": "Legea 213/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/52375"
+      },
+      {
+        "title": "Codul deontologic al profesiei de psiholog",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/267043"
+      }
+    ]
+  },
+  "footer": {
+    "usefulLinks": "Link-uri utile",
+    "consumerProtection": "Protecția consumatorilor",
+    "cookies": "Politica cookies",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni și condiții",
+    "anpc": "ANPC",
+    "sal": "Soluționarea Alternativă a Litigiilor",
+    "salAlt": "ANPC — Soluționarea Alternativă a Litigiilor (SAL)",
+    "email": "Scrie-mi prin email"
   }
 }

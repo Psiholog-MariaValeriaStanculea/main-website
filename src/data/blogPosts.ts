@@ -146,7 +146,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
       readTime: "7 min",
       content: `
         <h2>De ce apar blocaje în comunicare</h2>
-        <p>Mulți părinți descriu adolescența ca pe o perioadă în care „nu mai pot ajunge” la copilul lor. De fapt, adolescentul nu renunță la nevoie de relație, ci își schimbă felul în care o negociază. Are nevoie de mai mult spațiu, de mai mult control asupra propriei vieți și de mai puțină intruziune. Când adultul insistă prea mult, corectează rapid sau intră direct în rezolvarea problemei, adolescentul se retrage sau răspunde defensiv.</p>
+        <p>Mulți părinți descriu adolescența ca pe o perioadă în care „nu mai pot ajunge” la copilul lor. De fapt, adolescentul nu renunță la nevoia de relație, ci își schimbă felul în care o negociază. Are nevoie de mai mult spațiu, de mai mult control asupra propriei vieți și de mai puțină intruziune. Când adultul insistă prea mult, corectează rapid sau intră direct în rezolvarea problemei, adolescentul se retrage sau răspunde defensiv.</p>
         <h2>Ce ajută concret</h2>
         <p>Comunicarea eficientă începe cu capacitatea adultului de a regla tensiunea din conversație. Tonul, momentul ales și disponibilitatea de a asculta fără a contrazice imediat contează mai mult decât „argumentele bune”. Adolescenții reacționează mai bine când se simt respectați și luați în serios, chiar și atunci când adultul are o limită clară.</p>
         <ul>
@@ -175,6 +175,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>iritabilitate, izbucniri sau blocaje în contexte percepute ca solicitante;</li>
           <li>nevoie intensă de control, de anticipare sau de reasigurare din partea adulților.</li>
         </ul>
+        <p>Aceste semne nu stabilesc singure un diagnostic. Simptomele fizice noi, persistente sau îngrijorătoare trebuie discutate cu medicul copilului; nu le atribui automat anxietății.</p>
         <h2>Ce ajută din partea părinților</h2>
         <p>Primul pas este validarea. Nu înseamnă să confirmi că pericolul este real, ci să arăți că emoția copilului este văzută și înțeleasă. Un copil anxios are nevoie de un adult calm, previzibil și ferm, nu de explicații lungi sau de presiune de tipul „nu ai de ce să te temi”.</p>
         <p>Ajută să menții rutinele, să pregătești din timp tranzițiile și să fragmentezi provocările în pași mici. Dacă adultul intră într-o spirală de reasigurare fără limită, anxietatea se poate menține. Dacă, în schimb, forțează prea abrupt confruntarea, copilul se poate bloca și mai mult. Echilibrul este în susținere + încurajare graduală.</p>
@@ -230,7 +231,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
       readTime: "8 min",
       content: `
         <h2>Copilul nu se dezvoltă izolat</h2>
-        <p>Orice simptom al copilului apare și se menține într-un context relațional. Asta nu înseamnă că familia este „de vină”, ci că mediul emoțional, stilul de răspuns al adulților, presiunile zilnice și istoricul relațional influențează felul în care copilul funcționează. Din acest motiv, terapia centrată exclusiv pe copil are limite atunci când nu există și o înțelegere a sistemului din care face parte.</p>
+        <p>Dificultățile copilului pot avea factori multipli, inclusiv biologici, de dezvoltare, sociali și relaționali. Explorarea contextului familial poate ajuta la înțelegerea situației, fără a presupune că familia este cauza dificultății. Rolul familiei în intervenție se adaptează nevoilor copilului și evaluării individuale.</p>
         <h2>Ce înseamnă implicare utilă</h2>
         <p>Implicarea familiei nu înseamnă că părinții trebuie să fie prezenți în fiecare ședință sau că totul se mută pe umerii lor. Înseamnă, mai degrabă, să existe spații regulate de reflecție în care adulții pot înțelege mai clar nevoile copilului, factorii declanșatori, sensul unui comportament și felul în care pot răspunde mai coerent acasă.</p>
         <ul>
@@ -239,7 +240,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>susținerea generalizării progresului din cabinet în viața de zi cu zi;</li>
           <li>scăderea tensiunii și a confuziei din relațiile apropiate.</li>
         </ul>
-        <h2>De ce accelerează progresul</h2>
+        <h2>Cum poate susține progresul</h2>
         <p>Un copil poate învăța în cabinet o experiență nouă de reglare, de exprimare sau de relație. Dacă însă mediul cotidian rămâne neschimbat, acest progres se menține mai greu. Atunci când părinții înțeleg procesul și participă activ, copilul primește aceleași repere în mai multe contexte: acasă, la școală, în relațiile apropiate.</p>
         <p>În multe cazuri, cea mai importantă schimbare nu este dispariția imediată a unui comportament, ci faptul că familia începe să răspundă diferit la el. Acolo se schimbă climatul emoțional, iar copilul poate folosi mai bine resursele pe care le construiește în terapie.</p>
       `,
@@ -304,6 +305,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>irritability, shutdowns, or meltdowns in situations experienced as demanding;</li>
           <li>an intense need for control, anticipation, or reassurance from adults.</li>
         </ul>
+        <p>These signs do not establish a diagnosis on their own. Discuss new, persistent or concerning physical symptoms with your child’s doctor; do not automatically attribute them to anxiety.</p>
         <h2>What helps from parents</h2>
         <p>Validation is the first step. That does not mean confirming that danger is real; it means showing the child that their emotional experience is seen and understood. An anxious child needs a calm, predictable, and steady adult more than long explanations or pressure in the form of “there is nothing to be afraid of”.</p>
         <p>It helps to keep routines stable, prepare transitions in advance, and break challenges into smaller steps. Endless reassurance can unintentionally maintain anxiety, while pushing too fast can intensify the child's fear. The balance lies in support combined with gradual encouragement.</p>
@@ -359,7 +361,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
       readTime: "8 min",
       content: `
         <h2>Children do not develop in isolation</h2>
-        <p>Any symptom a child shows appears and is maintained in a relational context. That does not mean the family is to blame. It means that the emotional climate, the adults' response patterns, daily pressures, and relationship history all influence how the child functions. For that reason, therapy focused only on the child has limits when there is no understanding of the wider system the child belongs to.</p>
+        <p>A child's difficulties may involve multiple factors, including biological, developmental, social, and relational factors. Exploring family context can help us understand the situation without assuming the family caused the difficulty. Family involvement is adapted to the child's needs and individual assessment.</p>
         <h2>What useful involvement looks like</h2>
         <p>Family involvement does not mean parents need to be present in every session or that everything is placed on their shoulders. It means creating regular spaces for reflection where adults can better understand the child's needs, triggers, the meaning of a behaviour, and the ways they can respond more coherently at home.</p>
         <ul>
@@ -368,7 +370,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>supporting the transfer of progress from the therapy room into daily life;</li>
           <li>reducing tension and confusion in close relationships.</li>
         </ul>
-        <h2>Why it speeds up progress</h2>
+        <h2>How it can support progress</h2>
         <p>A child may learn a new experience of regulation, expression, or relationship in therapy. If daily life remains unchanged, that progress is harder to sustain. When parents understand the process and participate actively, the child receives the same reference points in several contexts: at home, at school, and in close relationships.</p>
         <p>In many cases, the most important change is not the immediate disappearance of a behaviour, but the fact that the family begins to respond differently to it. That is where the emotional climate changes, and where the child can make better use of the resources being built in therapy.</p>
       `,
@@ -433,6 +435,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>irritabilidad, bloqueos o desbordamientos en situaciones vividas como exigentes;</li>
           <li>una necesidad intensa de control, anticipación o tranquilidad por parte de los adultos.</li>
         </ul>
+        <p>Estas señales por sí solas no establecen un diagnóstico. Consulta al médico del niño sobre síntomas físicos nuevos, persistentes o preocupantes; no los atribuyas automáticamente a la ansiedad.</p>
         <h2>Qué ayuda desde el rol parental</h2>
         <p>La validación es el primer paso. No significa confirmar que el peligro es real, sino mostrar al niño que su experiencia emocional es vista y comprendida. Un niño ansioso necesita un adulto calmado, previsible y firme más que explicaciones largas o presión del tipo “no tienes por qué tener miedo”.</p>
         <p>Ayuda mantener rutinas estables, preparar las transiciones con tiempo y dividir los desafíos en pasos pequeños. La tranquilización infinita puede mantener la ansiedad, mientras que empujar demasiado rápido puede intensificarla. El equilibrio está en el apoyo unido a un acompañamiento gradual.</p>
@@ -488,7 +491,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
       readTime: "8 min",
       content: `
         <h2>El niño no se desarrolla de forma aislada</h2>
-        <p>Cualquier síntoma que muestra un niño aparece y se mantiene dentro de un contexto relacional. Eso no significa que la familia tenga la culpa. Significa que el clima emocional, la forma de responder de los adultos, las presiones diarias y la historia del vínculo influyen en cómo funciona el niño. Por eso, una terapia centrada solo en el niño tiene límites si no se comprende también el sistema al que pertenece.</p>
+        <p>Las dificultades del niño pueden tener múltiples factores, incluidos los biológicos, del desarrollo, sociales y relacionales. Explorar el contexto familiar puede ayudar a comprender la situación sin asumir que la familia causó la dificultad. La participación familiar se adapta a las necesidades del niño y a la evaluación individual.</p>
         <h2>Qué significa una implicación útil</h2>
         <p>Implicar a la familia no significa que los padres deban estar en cada sesión ni que todo el peso recaiga sobre ellos. Significa crear espacios regulares de reflexión donde los adultos puedan entender mejor las necesidades del niño, sus desencadenantes, el sentido de ciertos comportamientos y la forma de responder con más coherencia en casa.</p>
         <ul>
@@ -497,7 +500,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>favorecer que los avances de la consulta pasen a la vida diaria;</li>
           <li>reducir la tensión y la confusión en las relaciones cercanas.</li>
         </ul>
-        <h2>Por qué acelera el progreso</h2>
+        <h2>Cómo puede favorecer el progreso</h2>
         <p>Un niño puede aprender en terapia una nueva experiencia de regulación, expresión o relación. Si la vida cotidiana no cambia, ese progreso es más difícil de sostener. Cuando los padres comprenden el proceso y participan activamente, el niño recibe los mismos referentes en varios contextos: en casa, en el colegio y en sus relaciones cercanas.</p>
         <p>En muchos casos, el cambio más importante no es la desaparición inmediata de una conducta, sino que la familia empieza a responder de otro modo. Ahí cambia el clima emocional y el niño puede aprovechar mejor los recursos que está construyendo en terapia.</p>
       `,
@@ -562,6 +565,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>irritabilità, blocchi o crisi in situazioni vissute come molto impegnative;</li>
           <li>un bisogno intenso di controllo, previsione o rassicurazione da parte degli adulti.</li>
         </ul>
+        <p>Questi segnali da soli non stabiliscono una diagnosi. Parla con il medico del bambino di sintomi fisici nuovi, persistenti o preoccupanti; non attribuirli automaticamente all’ansia.</p>
         <h2>Che cosa aiuta da parte dei genitori</h2>
         <p>La validazione è il primo passo. Non significa confermare che il pericolo sia reale, ma mostrare al bambino che la sua esperienza emotiva è vista e compresa. Un bambino ansioso ha bisogno soprattutto di un adulto calmo, prevedibile e saldo, più che di lunghe spiegazioni o frasi del tipo “non hai niente da temere”.</p>
         <p>Aiuta mantenere routine stabili, preparare le transizioni in anticipo e dividere le sfide in piccoli passaggi. Una rassicurazione senza limiti può mantenere l'ansia, mentre spingere troppo velocemente può intensificarla. L'equilibrio sta nel sostegno unito a un incoraggiamento graduale.</p>
@@ -617,7 +621,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
       readTime: "8 min",
       content: `
         <h2>Il bambino non si sviluppa in isolamento</h2>
-        <p>Ogni sintomo che il bambino manifesta compare e si mantiene all'interno di un contesto relazionale. Questo non significa che la famiglia sia “colpevole”. Significa che il clima emotivo, il modo in cui gli adulti rispondono, le pressioni quotidiane e la storia delle relazioni influenzano il funzionamento del bambino. Per questo motivo, una terapia centrata esclusivamente sul bambino ha dei limiti se non si comprende anche il sistema a cui appartiene.</p>
+        <p>Le difficoltà del bambino possono coinvolgere molteplici fattori, inclusi quelli biologici, evolutivi, sociali e relazionali. Esplorare il contesto familiare può aiutare a comprendere la situazione senza presumere che la famiglia abbia causato la difficoltà. Il coinvolgimento familiare viene adattato ai bisogni del bambino e alla valutazione individuale.</p>
         <h2>Che cosa significa un coinvolgimento utile</h2>
         <p>Coinvolgere la famiglia non significa che i genitori debbano essere presenti a ogni seduta o che tutto il peso ricada su di loro. Significa creare spazi regolari di riflessione in cui gli adulti possano comprendere meglio i bisogni del bambino, i fattori scatenanti, il significato di certi comportamenti e il modo di rispondere con maggiore coerenza a casa.</p>
         <ul>
@@ -626,7 +630,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>favorire il trasferimento dei progressi dalla terapia alla vita quotidiana;</li>
           <li>ridurre tensione e confusione nelle relazioni più vicine.</li>
         </ul>
-        <h2>Perché accelera i progressi</h2>
+        <h2>Come può sostenere i progressi</h2>
         <p>Un bambino può apprendere in terapia una nuova esperienza di regolazione, espressione o relazione. Se la vita quotidiana resta invariata, quei progressi sono più difficili da mantenere. Quando i genitori comprendono il processo e partecipano attivamente, il bambino riceve gli stessi punti di riferimento in più contesti: a casa, a scuola e nelle relazioni importanti.</p>
         <p>In molti casi il cambiamento più importante non è la scomparsa immediata di un comportamento, ma il fatto che la famiglia inizi a rispondere in modo diverso. È lì che cambia il clima emotivo e il bambino può utilizzare meglio le risorse che sta costruendo in terapia.</p>
       `,

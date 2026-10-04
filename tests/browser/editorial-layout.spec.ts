@@ -2,7 +2,9 @@ import { readFileSync } from 'node:fs';
 import { captureQa } from './qa';
 import { test, expect } from './fixtures';
 
-const originalText=JSON.parse(readFileSync('docs/qa/about-services-text-before.json','utf8')) as Record<string,string[]>;
+// The historical pre-design fixture remains immutable; this revision includes
+// only the three translated APRICAS ongoing-status corrections.
+const originalText=JSON.parse(readFileSync('docs/qa/about-services-text-2026-10-04.json','utf8')) as Record<string,string[]>;
 for(const language of ['ro','en','it','es'])for(const route of ['despre','servicii']){
  test('polished reading preserves text and reflows in both themes: '+language+'/'+route,async({page},info)=>{
   test.skip(info.project.name!=='desktop','One explicit phone/desktop matrix suffices');

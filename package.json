@@ -17,7 +17,9 @@
     "test:contact": "node scripts/test-contact.mjs",
     "test:responsive": "playwright test --config playwright.responsive.config.ts",
     "check:files": "node scripts/check-project-files.mjs",
-    "test": "npm run check:files && npm run test:unit && npm run build:github-pages && npm run check:seo && npm run check:pages && npm run test:e2e && npm run test:responsive && npm run test:contact"
+    "test": "npm run check:files && npm run check:content && npm run test:unit && npm run build:github-pages && npm run check:seo && npm run check:pages && npm run test:e2e && npm run test:responsive && npm run test:contact",
+    "check:content": "node scripts/check-content.mjs",
+    "check:release": "node scripts/check-release.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

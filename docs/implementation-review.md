@@ -1,5 +1,7 @@
 # Website implementation review
 
+Current status: [4 October 2026 prepublication review](prepublication-review-2026-10-04.md). It supersedes the earlier provider/configuration and source-inventory observations below. Gmail/EmailJS is now configured locally, receipt is unconfirmed, and reCAPTCHA activation is pending. Earlier entries remain historical evidence.
+
 2 October 2026. Local implementation and preview; no production publication or domain changes. This accompanies the approved [design and usability specification](website-design-and-usability-plan.md).
 
 ## Visual refinement — 3 October 2026

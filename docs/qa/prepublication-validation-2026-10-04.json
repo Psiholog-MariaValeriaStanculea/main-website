@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-04",
+  "scope": "Local prepublication candidate; external receipt and real CAPTCHA activation are unverified",
+  "build": {
+    "id": "4ade597f3723fe510c241193b094d832ffb341072729510a27657bbe23703184",
+    "contactConfigured": false,
+    "recaptchaConfigured": false,
+    "localizedPages": 60,
+    "indexablePages": 56,
+    "missingConfiguration": "VITE_RECAPTCHA_SITE_KEY; Google registration and EmailJS secret verification pending"
+  },
+  "lint": "passed, zero warnings",
+  "typescript": "passed",
+  "contentSchema": "passed for RO EN IT ES, professional tokens and 24 articles",
+  "unit": {"passed": 51, "failed": 0},
+  "browser": {
+    "firstRunPassed": 192,
+    "firstRunFailed": 1,
+    "skipped": 15,
+    "failure": "Transient Chromium net::ERR_NO_BUFFER_SPACE while requesting local valeria-serif font on ro/blog/3",
+    "targetedRerun": {"passed": 1, "failed": 0},
+    "effectivePassed": 193,
+    "qualification": "The combined npm test stopped at this transient failure; the failed test and the remaining responsive suite were then completed separately."
+  },
+  "responsive": {"passed": 87, "failed": 0, "qualification": "production artifact without a configured live CAPTCHA key"},
+  "contactAndCaptcha": {
+    "passed": 38,
+    "failed": 0,
+    "emailRequestsIntercepted": true,
+    "googleApiMocked": true,
+    "qualification": "Desktop/mobile tests verify token gating, expiry, retry, navigation, loading failure and blocked storage; no real CAPTCHA challenge or email delivery."
+  },
+  "seo": "passed, 56 indexable pages",
+  "pagesArtifact": "passed, one deployer and compiled assets",
+  "restoration": {
+    "snapshot": ".release-archives/candidate-recaptcha-2026-10-04",
+    "restored": ".release-archives/restored-recaptcha-2026-10-04",
+    "exactBytes": "passed, including hidden .nojekyll",
+    "http": "passed, independently supplied build identity, three pages and five assets on port 4186",
+    "productionRollback": "unverified"
+  },
+  "legacyCleanup": {"files": 51, "backupHashes": "all verified", "deletedPaths": "all absent"},
+  "releaseGate": "expected failure: eight pending review/evidence conditions and unresolved privacy facts",
+  "realEmail": {
+    "reference": "VERIFICARE-SITE-2026-10-04-A1",
+    "testBuild": "4bdae09854a5a88e5b15e5b394c5d66c0ae185edff0c733053f451626d7fd28e",
+    "provider": "EmailJS history OK using Gmail",
+    "recipientReply": "Nu a sosit încă",
+    "inboxOrSpamReceived": "unverified",
+    "replyTo": "unverified",
+    "captchaDuringTest": false
+  }
+}

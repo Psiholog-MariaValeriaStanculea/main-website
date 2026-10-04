@@ -10,8 +10,8 @@ export function SEOHead({title,description,keywords,ogImage='/lovable-uploads/f7
  const location=useLocation();const {copy,language}=useEditorial();
  const suffix=withoutLanguage(location.pathname);
  const key=pageRoutes.find(route=>route.path===suffix)?.key || 'home';
- const descriptions={home:copy.home.intro,about:copy.home.approachText,services:copy.services.intro,resources:copy.resources.intro,blog:copy.resources.intro,contact:copy.contact.intro,faq:copy.faq.intro,privacy:copy.legal.privacyIntro,cookies:copy.legal.cookiesIntro};
- const headings={home:copy.home.title,about:copy.about.title,services:copy.services.title,resources:copy.resources.title,blog:copy.resources.articles,contact:copy.contact.title,faq:copy.faq.title,privacy:copy.legal.privacyTitle,cookies:copy.legal.cookiesTitle};
+ const descriptions={home:copy.home.intro,about:copy.home.approachText,services:copy.services.intro,resources:copy.resources.intro,blog:copy.resources.intro,contact:copy.contact.intro,faq:copy.faq.intro,privacy:copy.legal.privacyIntro,cookies:copy.legal.cookiesIntro,terms:copy.legal.termsIntro};
+ const headings={home:copy.home.title,about:copy.about.title,services:copy.services.title,resources:copy.resources.title,blog:copy.resources.articles,contact:copy.contact.title,faq:copy.faq.title,privacy:copy.legal.privacyTitle,cookies:copy.legal.cookiesTitle,terms:copy.legal.termsTitle};
  const pageTitle=title || headings[key]+' | Valeria Stănculea';
  const pageDescription=description || descriptions[key];
  const url=pageUrl('/'+language+suffix);const image=assetUrl(ogImage);

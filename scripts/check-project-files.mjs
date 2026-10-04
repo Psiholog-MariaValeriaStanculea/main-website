@@ -6,7 +6,7 @@ import ts from 'typescript';
 import { parseDocument } from 'yaml';
 
 const root=process.cwd();
-const excluded=new Set(['.git','node_modules','dist','dist-ssr','.contact-test-dist','.tmp-fonttools','playwright-report','test-results','contact-test-results','contact-playwright-report','responsive-test-results','responsive-playwright-report','blob-report','coverage','.cache','.vite','__pycache__']);
+const excluded=new Set(['.git','.release-archives','node_modules','dist','dist-ssr','.contact-test-dist','.tmp-fonttools','playwright-report','test-results','contact-test-results','contact-playwright-report','responsive-test-results','responsive-playwright-report','blob-report','coverage','.cache','.vite','__pycache__']);
 const paths=[];const excludedDirectories=[];
 function walk(directory){
  for(const entry of readdirSync(directory,{withFileTypes:true})){

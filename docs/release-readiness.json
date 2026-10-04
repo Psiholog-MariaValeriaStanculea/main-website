@@ -1,0 +1,50 @@
+{
+  "clinical": {
+    "status": "pending",
+    "evidence": "docs/prepublication-review-2026-10-04.md: revizuire locală; aprobarea clinică lipsește",
+    "reviewer": "",
+    "date": ""
+  },
+  "professional": {
+    "status": "pending",
+    "evidence": "docs/prepublication-review-2026-10-04.md: proveniență PDF verificată; actualitatea profesională neconfirmată",
+    "reviewer": "",
+    "date": ""
+  },
+  "translations": {
+    "status": "pending",
+    "evidence": "docs/prepublication-review-2026-10-04.md: paritate structurală verificată; aprobarea umană lipsește",
+    "reviewer": "",
+    "date": ""
+  },
+  "privacy": {
+    "status": "pending",
+    "evidence": "docs/legal-review-2026-10-04.md: GDPR/cookies/termeni în patru limbi, flux email/transfer confirmat; CIF/adresa/cod, contract, cookie audit, retenție și acorduri încă pending",
+    "reviewer": "",
+    "date": ""
+  },
+  "providersAndAbuse": {
+    "status": "pending",
+    "evidence": "docs/qa/contact-legal-review-2026-10-04.json: 52 teste formular/CAPTCHA interceptate trecute; fără Analytics; challenge real și livrare neconfirmate",
+    "reviewer": "",
+    "date": ""
+  },
+  "emailDelivery": {
+    "status": "pending",
+    "evidence": "docs/prepublication-review-2026-10-04.md: VERIFICARE-SITE-2026-10-04-A1 acceptat OK de EmailJS; utilizator: Nu a sosit încă; Reply-To neconfirmat",
+    "reviewer": "",
+    "date": ""
+  },
+  "domain": {
+    "status": "pending",
+    "evidence": "docs/prepublication-review-2026-10-04.md: HTTPS/redirect GitHub Pages observate; domeniul final neconfirmat; .ro ENOTFOUND",
+    "reviewer": "",
+    "date": ""
+  },
+  "rollback": {
+    "status": "pending",
+    "evidence": "docs/qa/contact-legal-review-2026-10-04.json: candidat final arhivat/restaurat local; rollback de producție nevalidat",
+    "reviewer": "",
+    "date": ""
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-04",
+  "scope": "Local contact/footer/legal candidate; no publication",
+  "contactConfigured": true,
+  "recaptchaConfigured": true,
+  "buildId": "5a0288c5080edd9705714dd0f742bbe40cdfcefdbeeae0521a5e8e0e038e121c",
+  "languages": [
+    "ro",
+    "en",
+    "it",
+    "es"
+  ],
+  "routes": 64,
+  "indexableRoutes": 52,
+  "legalRoutesNoindex": 12,
+  "content": {
+    "privacySections": 14,
+    "cookieSections": 8,
+    "termsSections": 12,
+    "operatorNameConfirmed": "Cabinet Individual Psihologie - Stănculea Maria Valeria",
+    "onlineConsultations": "confirmed by user",
+    "contract": "email; confirmed by user",
+    "payment": "bank transfer; confirmed by user",
+    "missingIdentification": [
+      "CIF",
+      "professional address",
+      "practice registration",
+      "professional code"
+    ],
+    "acknowledgement": "read notice; not blanket GDPR or clinical consent",
+    "sourceReport": "docs/legal-review-2026-10-04.md"
+  },
+  "footer": {
+    "salOnly": true,
+    "duplicateAnpcAnchorRemoved": true,
+    "officialAsset": "public/consumer-protection/anpc-sal-2026.jpg",
+    "assetSource": "https://legislatie.just.ro/ImaginiDinActe/310590_A457.jpg",
+    "displayDimensions": "250x50",
+    "salUrl": "https://reclamatiisal.anpc.ro/",
+    "netopiaPartnersDiplomasOmitted": true
+  },
+  "checks": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "contentParity": "passed; IDs and schemas match",
+    "unitTests": "51 passed",
+    "contactBrowserTests": "52 passed; Google mocked, EmailJS intercepted",
+    "legalRoutesBrowserTests": "26 passed; desktop and mobile",
+    "seo": "passed; 52 indexable pages",
+    "pagesArtifact": "passed",
+    "finalCss": "draft contrast and scrollable contents visually inspected after final CSS adjustment",
+    "releaseCheck": "expected failure: eight pending gates and unresolved facts"
+  },
+  "realBrowser": {
+    "localUrl": "http://127.0.0.1:4181/main-website/ro/contact/",
+    "googleResult": "Localhost not in supported domain list; real verification blocked",
+    "compact320": "compact requested; no page overflow",
+    "googleErrorFrame": "Google domain-error iframe retains normal width and clips inside compact container; application error/retry readable. Successful compact challenge unverified.",
+    "resizeBack": "fresh mount, normal size, iframe present; not blank",
+    "realChallenge": "not completed",
+    "realDeliveryReplyTo": "not confirmed",
+    "viewportOverride": "reset",
+    "gdprContentsAnchor": "security heading below header; no overflow"
+  },
+  "screenshots": [
+    "docs/qa/contact-legal-form-final-2026-10-04.jpg",
+    "docs/qa/contact-legal-mobile-final-2026-10-04.jpg",
+    "docs/qa/footer-sal-final-2026-10-04.jpg",
+    "docs/qa/legal-gdpr-final-2026-10-04.jpg"
+  ],
+  "rollback": {
+    "candidate": ".release-archives/candidate-contact-legal-2026-10-04",
+    "restored": ".release-archives/restored-contact-legal-2026-10-04",
+    "hashVerification": "passed; identical inventories",
+    "productionRollback": "not performed"
+  },
+  "limitations": [
+    "Software QA is not legal or clinical approval",
+    "Actual agreements, access, transfers and deletion remain to verify",
+    "Automatic CAPTCHA necessity and cookie inventory require validation",
+    "Six-month Gmail retention proposed, not automated",
+    "EmailJS 30 days is a provider declaration, not account deletion evidence",
+    "Actual contract, online platform and withdrawal regime require review"
+  ]
+}

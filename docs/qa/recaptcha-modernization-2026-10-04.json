@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-04",
+  "scope": "Contact UX redesign, automatically loaded Google v2 checkbox, four languages",
+  "userPreference": "User explicitly selected automatic checkbox after being informed that Google receives technical data on opening Contact",
+  "build": {
+    "contactConfigured": true,
+    "recaptchaConfigured": true,
+    "buildId": "e4b4959038bd7b6b56742a5315d4edaf30ce9ca2975edd99d32d91dc1a43b175"
+  },
+  "checks": {
+    "lint": "passed, zero warnings",
+    "typescript": "passed",
+    "content": "passed",
+    "seo": "passed, 56 pages",
+    "pages": "passed",
+    "files": "passed",
+    "contact": {
+      "passed": 42,
+      "failed": 0,
+      "qualification": "Fully intercepted Google and EmailJS; dummy tokens. These tests do not prove a real CAPTCHA or inbox delivery."
+    }
+  },
+  "features": [
+    "automatic loading on Contact only",
+    "normal widget with compact fallback at 320px",
+    "visible loading, verified, expired and failed/retry states",
+    "live feedback and focus on missing verification",
+    "single-use in-memory token and provider validation retained",
+    "four-language privacy/cookie notices updated"
+  ],
+  "realGoogle": {
+    "result": "Localhost not in supported domain list",
+    "typeError": "resolved with supplied v2 Site key",
+    "successfulChallenge": false,
+    "emailSent": false,
+    "screenshot": "docs/qa/recaptcha-modern-contact-2026-10-04.jpg"
+  },
+  "rollback": {
+    "snapshot": ".release-archives/candidate-captcha-modern-2026-10-04",
+    "restored": ".release-archives/restored-captcha-modern-2026-10-04",
+    "result": "Exact file inventory and hashes verified locally; no deployment or production rollback"
+  },
+  "references": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html",
+    "https://www.emailjs.com/docs/user-guide/adding-captcha-verification/"
+  ]
+}

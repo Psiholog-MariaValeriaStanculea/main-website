@@ -11,7 +11,7 @@ const {buildId}=JSON.parse(readFileSync(resolve(dist,'build-info.json'),'utf8'))
 assert.match(buildId,/^[a-f0-9]{64}$/,'Artifact has a build identity');
 assert.deepEqual([...urls].sort(), manifest.filter(page => page.indexable).map(page => page.url).sort(), 'Sitemap matches the shared route manifest');
 assert.equal(new Set(urls).size, urls.length, 'Sitemap URLs must be unique');
-const titles = new Set();
+const titles = new Map();
 const firstPage = new URL(urls[0]);
 const deploymentPath = firstPage.pathname.replace(/\/(ro|en|es|it)(\/.*)?$/, '');
 const checkAssets = (html, page) => {
@@ -29,8 +29,9 @@ for (const url of urls) {
   assert.ok(html.includes(`<html lang="${language}">`), `Language: ${url}`);
   assert.equal((html.match(/<title\b/g) || []).length, 1, `Single title: ${url}`);
   const title = html.match(/<title[^>]*>(.*?)<\/title>/)[1];
-  assert.ok(title.length > 15 && !titles.has(title), `Unique descriptive title: ${url}`);
-  titles.add(title);
+  assert.ok(title.length > 15, `Descriptive title too short: ${url} (${JSON.stringify(title)})`);
+  assert.ok(!titles.has(title), `Duplicate title ${JSON.stringify(title)}: ${url}; first used by ${titles.get(title)}`);
+  titles.set(title, url);
   assert.equal((html.match(/name="description"/g) || []).length, 1, `Single description: ${url}`);
   assert.equal((html.match(/rel="canonical"/g) || []).length, 1, `Single canonical: ${url}`);
   assert.ok(html.includes(`rel="canonical" href="${url}"`), `Canonical matches sitemap: ${url}`);

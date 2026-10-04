@@ -9,9 +9,10 @@ import { SiteRoutes } from './SiteRoutes';
 import { getBlogPosts } from './data/blogPosts';
 import { pageRoutes } from './lib/routes';
 import { pageUrl } from './lib/seo';
-export const getBuildInfo=()=>({contactConfigured:Boolean(import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim() && import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim() && import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim())});
+import { contactConfigured, recaptchaSiteKey } from './lib/inquiryTransport';
+export const getBuildInfo=()=>({contactConfigured,recaptchaConfigured:Boolean(recaptchaSiteKey)});
 export const getPages=()=>supportedLanguages.flatMap(language=>[
- ...pageRoutes.map(route=>({route:route.path,indexable:route.key!=='privacy'||import.meta.env.VITE_PRIVACY_REVIEWED==='true'})),
+ ...pageRoutes.map(route=>({route:route.path,indexable:!['privacy','terms','cookies'].includes(route.key)||import.meta.env.VITE_PRIVACY_REVIEWED==='true'})),
  ...getBlogPosts(language).map(post=>({route:'/blog/'+post.id,indexable:true})),
 ].map(({route,indexable})=>({path:'/'+language+route,language,route,indexable,url:pageUrl('/'+language+route)})));
 export async function render(path:string,language:SupportedLanguage){

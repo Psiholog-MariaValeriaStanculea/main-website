@@ -12,7 +12,7 @@ test('live verifier accepts the production artifact',async({baseURL})=>{
 test('sitemap matches all indexable manifest pages',()=>{
  const sitemap=[...readFileSync('dist/sitemap.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(item=>item[1]);
  expect(sitemap.sort()).toEqual(manifest.filter(page=>page.indexable).map(page=>page.url).sort());
- expect(manifest).toHaveLength(60);
+ expect(manifest).toHaveLength(64);
 });
 for(const item of manifest){
  const url=new URL(item.url);const route=url.pathname.slice(basePath.length);

@@ -30,7 +30,7 @@ Acest README documentează utilizarea și întreținerea proiectului. Istoricul 
 | Stiluri | Tailwind CSS 4, PostCSS, CSS propriu, fonturi locale Inter și Source Serif 4 |
 | Navigare și traduceri | React Router 7, i18next, react-i18next |
 | Componente UI | Componente shadcn/ui și primitive Radix UI, pictograme Lucide |
-| Contact | EmailJS, încărcat la trimiterea solicitării |
+| Contact | EmailJS la trimitere; reCAPTCHA v2 automat pe pagina Contact |
 | SEO și prerandare | react-helmet-async, randare React la build, scripturi Node.js |
 | Verificare | ESLint, TypeScript, Node.js test runner, Playwright |
 | Găzduire și CI/CD | GitHub Pages, GitHub Actions |
@@ -97,8 +97,9 @@ Pentru override-uri ale build-ului de producție, folosește `.env.production.lo
 | `VITE_EMAILJS_SERVICE_ID` | Identificatorul public al serviciului EmailJS |
 | `VITE_EMAILJS_TEMPLATE_ID` | Identificatorul public al template-ului EmailJS |
 | `VITE_EMAILJS_PUBLIC_KEY` | Cheia publică EmailJS pentru client |
+| `VITE_RECAPTCHA_SITE_KEY` | Cheia publică reCAPTCHA v2; cheia secretă se configurează numai în EmailJS |
 
-Prefixul `VITE_` expune valoarea în aplicația livrată vizitatorilor. Nu introduce chei private, parole de email sau alte secrete. Adresa de contact este definită în `src/lib/siteConfig.ts`; câmpurile `VITE_CONTACT_EMAIL` și `VITE_CONTACT_PHONE` din template nu sunt conectate la configurația activă. Înlocuiește URL-ul exemplu înaintea unui build destinat publicării.
+Prefixul `VITE_` expune valoarea în aplicația livrată vizitatorilor. Nu introduce chei private, parole de email sau alte secrete. Adresa de contact este definită în `src/lib/siteConfig.ts`. Înlocuiește URL-ul exemplu înaintea unui build destinat publicării.
 
 ### Verificare și preview de producție
 
@@ -111,7 +112,7 @@ npm test
 
 Pe Linux/CI, instalarea browserului poate necesita `npx playwright install --with-deps chromium`. `npm test` verifică fișierele, testele unitare, build-ul de producție, SEO, structura Pages, navigarea, layout-urile responsive și stările Contact.
 
-Testele Contact interceptează cererile către furnizor și nu trimit emailuri reale. Artifact-ul `.contact-test-dist` folosește configurare fictivă și nu trebuie publicat. Rapoartele și capturile automate sunt salvate în directoarele ignorate `test-results/`, `responsive-test-results/`, `contact-test-results/` și directoarele corespunzătoare `playwright-report/`.
+Testele Contact/reCAPTCHA interceptează cererile către furnizori și folosesc tokenuri fictive; nu trimit emailuri reale și nu rezolvă challenge-uri Google. Artifact-ul `.contact-test-dist` folosește configurare fictivă și nu trebuie publicat. Rapoartele și capturile automate sunt salvate în directoarele ignorate `test-results/`, `responsive-test-results/`, `contact-test-results/` și directoarele corespunzătoare `playwright-report/`.
 
 Pentru a verifica paginile statice generate:
 
@@ -145,7 +146,7 @@ Păstrează formularea și ordinea aprobate ale textelor românești Home/About 
 
 Păstrează ID-urile articolelor și ancorele serviciilor pentru a nu întrerupe linkurile existente. Articolele includ HTML controlat în repository; nu conecta acest câmp direct la conținut introdus de vizitatori sau dintr-un CMS fără validare și sanitizare adecvată.
 
-Există și componente și fișiere de traducere din versiuni anterioare. Pentru paginile actuale, urmărește importurile din `SiteRoutes.tsx` și din componente; modificarea unui fișier neutilizat nu schimbă site-ul.
+Sursele active și autoritatea lor sunt documentate în [registrul de conținut](docs/content-sources.md). Au fost eliminate controlat 51 de fișiere istorice, cu manifest de hash-uri și copii de recuperare. `npm run check:content` verifică structura celor patru limbi, ID-urile serviciilor, informațiile numerice profesionale și prezența articolelor. Revizuirea automată nu reprezintă aprobarea clinică.
 
 ## Deployment
 
@@ -154,9 +155,9 @@ Platforma configurată este **GitHub Pages**, prin GitHub Actions. Artifact-ul p
 1. În **Settings → Pages**, selectează **GitHub Actions** ca sursă. Păstrează workflow-ul **Deploy GitHub Pages** ca singur flux de publicare.
 2. Confirmă URL-ul și base path-ul. Configurația din repository folosește `https://psiholog-mariavaleriastanculea.github.io/main-website` și `/main-website/`. Pentru un domeniu la rădăcină, valorile trebuie să folosească domeniul verificat și `/`.
 3. Configurează cele trei variabile publice EmailJS în **Settings → Secrets and variables → Actions → Variables**. În template-ul furnizorului, fixează destinatarul la adresa cabinetului din `siteConfig.ts` și Reply-To la `{{reply_to}}`. Nu utiliza un destinatar controlat de vizitator.
-4. Completează [condițiile de publicare](docs/implementation-review.md#publication-and-rollback-conditions): conținut, privacy, livrare reală, domeniu/HTTPS și rollback. Setează apoi variabilele repository `VITE_PRIVACY_REVIEWED=true` și `WEBSITE_RELEASE_APPROVED=true`.
+4. Completează [registrul verificărilor](docs/release-readiness.json) cu dovezi, responsabil și dată pentru fiecare condiție din [raportul de prepublicare](docs/prepublication-review-2026-10-04.md). Înlocuiește datele marcate pentru confirmare în notificările celor patru limbi. `npm run check:release` trebuie să treacă; apoi setează variabilele repository `VITE_PRIVACY_REVIEWED=true` și `WEBSITE_RELEASE_APPROVED=true`.
 5. Publică prin push pe `main` sau declanșare manuală a workflow-ului. Acesta validează sursele, construiește site-ul, rulează verificările, verifică aprobările și publică artifact-ul.
-6. Verifică rutele, limbile, HTTPS și sosirea reală a emailului. Păstrează artifact-ul anterior verificat și configurația lui pentru rollback.
+6. Verifică rutele, limbile, HTTPS și sosirea reală a emailului. Workflow-ul păstrează și un artifact `website-release-BUILD_ID` timp de 90 de zile. Descarcă-l și păstrează-l separat, împreună cu identificatorul deployment-ului; urmează [procedura de rollback](docs/rollback.md).
 
 Workflow-ul citește valorile din `vars`: valorile introduse exclusiv în Secrets sau numai în mediul jobului de deploy nu completează variabilele repository ale jobului de build. O aprobare lipsă oprește publicarea; nu reprezintă o eroare de compilare.
 
@@ -178,7 +179,7 @@ Verificatorul compară identitatea build-ului cu `dist/build-info.json`. Fără 
 - **Citire fără JavaScript:** conținutul principal este inclus în HTML-ul prerandat, inclusiv paginile de articole.
 - **Local SEO:** identitatea este centralizată; proiectul nu integrează un profil Google Business verificat sau o schemă `LocalBusiness` cu adresă și program. Acestea necesită informații confirmate înainte de adăugare.
 
-După schimbări de pagini, conținut sau URL, rulează `npm run build:github-pages`, `npm run check:seo` și `npm run check:pages`. Fișierul vechi `src/data/seoMetadata.ts` nu este sursa activă pentru metadata paginilor actuale.
+După schimbări de pagini, conținut sau URL, rulează `npm run check:content`, `npm run build:github-pages`, `npm run check:seo` și `npm run check:pages`. Metadata activă provine din `SEOHead.tsx`; inventarul rutelor din `routes.ts`.
 
 ## Privacy & Security
 
@@ -188,9 +189,11 @@ Draftul este păstrat numai în memoria aplicației, pentru navigare internă ș
 
 **Aplicația nu solicită și nu colectează prin câmpuri dedicate:** CNP, data nașterii, adresa domiciliului, numărul de telefon, documente medicale, diagnostic, date de plată sau fișiere atașate. Nu există conturi de utilizator, instrumente active de analytics/publicitate sau urmărire a locației. Formularul avertizează să nu fie introduse informații medicale ori alte date sensibile; mesajul liber poate totuși conține date introduse voluntar.
 
-Nu se salvează drafturi în `localStorage` sau `sessionStorage` și nu se înregistrează conținutul formularului în logurile aplicației. Furnizorii de hosting și email pot prelucra date tehnice și datele transmise conform propriilor politici; aceste practici și retenția trebuie documentate în notificarea completă. Pagina legală include linkuri către politicile furnizorilor.
+Nu se salvează drafturi în `localStorage` sau `sessionStorage` și nu se înregistrează conținutul formularului în logurile aplicației. La alegerea titularului, EmailJS păstrează numele, emailul, mesajul și ceilalți parametri ai solicitării în istoricul template-ului; Analytics este dezactivat. Retenția și persoanele autorizate să acceseze istoricul rămân de confirmat. Furnizorii de hosting și email pot prelucra date tehnice și datele transmise conform propriilor politici; aceste practici și retenția trebuie documentate în notificarea completă. Pagina legală include linkuri către politicile furnizorilor.
 
 Măsurile din aplicație includ validarea câmpurilor, limitarea lungimii mesajului, acceptarea doar a contextelor de servicii cunoscute, blocarea trimiterilor concurente și feedback distinct pentru trimitere, acceptare, respingere, rezultat incert sau indisponibilitate. Erorile păstrează draftul, fără retry automat. Variabilele client conțin doar identificatori publici; fișierele locale de configurare sunt ignorate de Git.
+
+reCAPTCHA v2 se încarcă automat pe pagina Contact, la opțiunea titularului. Checkbox-ul apare într-un card cu feedback accesibil pentru încărcare, reușită, expirare și eroare/reîncercare; explicația și linkul către informarea GDPR a cabinetului sunt vizibile, potrivit schimbării rolului Google din aprilie 2026. Celelalte pagini nu încarcă scriptul Google. Formularul cere un token nou pentru fiecare încercare; EmailJS trebuie configurat să îl valideze pe server. Fără cheia publică, formularul este indisponibil. Emailul direct rămâne disponibil. [Configurare și test real](docs/recaptcha-setup.md).
 
 Configurarea originilor permise, protecția antiabuz și verificarea livrării se fac și în contul EmailJS. Publicarea depinde de revizuirea completă a informațiilor de privacy; existența paginilor legale și a controalelor tehnice nu reprezintă o certificare GDPR.
 
@@ -219,22 +222,23 @@ Măsurătorile viitoare trebuie făcute pe artifact-ul de producție și să pre
 ## Known Limitations
 
 - Formularul necesită JavaScript și configurare EmailJS; fără acestea, contactul rămâne disponibil prin email. Solicitarea și acceptarea furnizorului nu confirmă programarea sau sosirea în inbox.
-- Configurația de producție inclusă nu furnizează identificatorii EmailJS. Livrarea reală și revizuirea completă a notificării de confidențialitate sunt condiții încă de verificat înainte de release.
+- EmailJS este configurat local; reCAPTCHA Google și variabilele Actions necesită activare. Livrarea în Inbox/Spam și notificarea completă de confidențialitate rămân condiții de release. Vezi [activarea reCAPTCHA](docs/recaptcha-setup.md).
 - Nu există calendar de programări, plăți, conturi, upload de documente sau CMS.
 - Compatibilitatea nativă cu macOS/iOS, Android și Linux, precum și Safari/Firefox, nu este stabilită de emularea viewport-urilor pe Windows. Browserele mai vechi decât cerințele Tailwind 4 nu sunt acoperite.
 - Traducerile și datele profesionale necesită validare editorială; articolele educative nu înlocuiesc evaluarea individuală.
 - Conformitatea completă de accesibilitate, performanța în trafic real și optimizarea pentru căutare locală nu sunt validate integral.
-- În repository există fișiere istorice neutilizate; acestea trebuie diferențiate de sursele active înainte de editare sau eliminare.
+- Primitivele UI reutilizabile și fișierele publice cu URL-uri existente au fost păstrate; eliminarea lor necesită verificarea consumatorilor și a linkurilor externe.
 
 Condițiile și evidențele detaliate sunt în [implementation review](docs/implementation-review.md), [specificația de design](docs/website-design-and-usability-plan.md) și [revizuirea responsive/platforme](docs/responsive-and-platform-review-2026-10-03.md).
 
 ## Roadmap
 
-Următoarele direcții sunt propuse sau rămân de finalizat; nu sunt prezentate ca funcționalități deja livrate:
+Revizuirea editorială, extinderea notificării în patru limbi, consolidarea surselor și eliminarea controlată a fișierelor istorice sunt implementate local. Raportul curent este [revizuirea de prepublicare din 4 octombrie 2026](docs/prepublication-review-2026-10-04.md).
 
-- Revizuirea finală a conținutului clinic, traducerilor și informațiilor profesionale.
-- Completarea notificării de confidențialitate și verificarea setărilor furnizorilor, protecției antiabuz și livrării reale a emailului.
-- Verificarea domeniului, HTTPS, deployment-ului și procedurii de rollback înainte de publicare.
-- Consolidarea surselor de conținut și eliminarea controlată a fișierelor istorice neutilizate.
+Rămân condiții de publicare: confirmarea datelor profesionale și juridice actuale, aprobarea conținutului clinic și a traducerilor, setările furnizorilor și dovada sosirii emailului, alegerea domeniului și validarea rollback-ului pentru versiunea de producție. Starea lor se păstrează în `docs/release-readiness.json`.
 
 Planificarea și rapoartele fiecărei etape se păstrează în documente dedicate, fără a transforma README-ul într-un jurnal al modificărilor.
+
+### Politicile cabinetului — 4 octombrie 2026
+
+Sursa activă este `editorial.json`: GDPR, cookies și termeni în RO/EN/IT/ES. Contractul este prin email, plata prin transfer bancar. CIF/adresa/înregistrarea/codul profesional vor fi completate ulterior. Toate paginile juridice rămân noindex până la validare; `VITE_PRIVACY_REVIEWED=true` nu este o certificare. [Raport, surse, retenție și fapte lipsă](docs/legal-review-2026-10-04.md). [QA candidat final și limitele testelor](docs/qa/contact-legal-review-2026-10-04.json).

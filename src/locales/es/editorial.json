@@ -8,7 +8,8 @@
     "contact": "Contacto",
     "blog": "Artículos",
     "privacy": "Privacidad",
-    "cookies": "Cookies y preferencias"
+    "cookies": "Cookies y preferencias",
+    "terms": "Términos y condiciones"
   },
   "ui": {
     "role": "Psicóloga clínica · Psicoterapeuta integrativa relacional",
@@ -306,47 +307,274 @@
       "online": "Apoyo online",
       "professional": "Consulta profesional",
       "unsure": "No estoy seguro/a"
-    }
+    },
+    "captchaLabel": "Verificación de seguridad",
+    "captchaHelp": "Formulario protegido por Google reCAPTCHA para prevenir abusos.",
+    "captchaRequired": "Completa la verificación “No soy un robot” antes de enviar.",
+    "captchaFailed": "No hemos podido conectar con la verificación de Google. Reintenta o escríbenos directamente por correo.",
+    "captchaLoading": "Preparando la verificación…",
+    "captchaVerified": "Verificación completada. Puedes enviar la solicitud.",
+    "captchaExpired": "La verificación ha caducado. Marca de nuevo “No soy un robot”.",
+    "captchaRetry": "Reintentar la verificación",
+    "identityTitle": "Datos de contacto",
+    "inquiryTitle": "Sobre tu solicitud",
+    "sendTitle": "Verifica y envía",
+    "privacyAgree": "He leído",
+    "privacyPolicy": "política de privacidad",
+    "privacyAgreeError": "Confirma que has leído la política de privacidad antes de enviar.",
+    "sendHelp": "Lee la política de privacidad y completa la verificación de seguridad.",
+    "expectationTitle": "¿Qué ocurre después?",
+    "expectationText": "Hablamos por correo sobre la solicitud, la disponibilidad y las condiciones de una posible colaboración.",
+    "captchaDetails": "Cómo se tratan los datos de la verificación"
   },
   "legal": {
-    "privacyTitle": "Privacidad",
-    "cookiesTitle": "Cookies y preferencias",
-    "privacyIntro": "Información sobre los datos utilizados al navegar o enviar una solicitud.",
-    "cookiesIntro": "Preferencias de visualización e información guardada en el navegador.",
+    "privacyTitle": "Política de privacidad (RGPD)",
+    "cookiesTitle": "Política de cookies",
+    "termsTitle": "Términos y condiciones",
+    "privacyIntro": "Cómo se utilizan los datos al navegar, en el primer contacto y durante los servicios psicológicos.",
+    "cookiesIntro": "Qué conserva el sitio en tu navegador y cómo funciona la prevención de abusos.",
+    "termsIntro": "Uso del sitio, solicitudes de contacto y condiciones de una posible colaboración con la consulta.",
+    "updated": "Revisión: 4 de octubre de 2026",
+    "draftNotice": "Versión preparada para revisión. Los datos marcados “POR CONFIRMAR” y las prácticas de los proveedores deben validarse antes de publicar.",
+    "contents": "En esta página",
+    "related": "Políticas relacionadas",
+    "sourcesTitle": "Fuentes y marco aplicable",
+    "providers": "Proveedores y autoridad de control",
+    "contactHeading": "Preguntas y solicitudes sobre datos",
     "privacySections": [
       {
-        "title": "Primer contacto",
-        "text": "El formulario solicita nombre, email, categoría de consulta y un mensaje opcional. La información se utiliza para recibir y responder a tu solicitud. Evita detalles médicos u otros datos sensibles en este primer mensaje."
+        "id": "operator",
+        "title": "Quién responde de tus datos",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria es responsable del tratamiento de los datos utilizados en la consulta. Contacto: psiholog.mariavaleriabaciu@gmail.com. Identificador fiscal: [POR CONFIRMAR]. Domicilio/dirección profesional: [POR CONFIRMAR]. Registro de la consulta y código profesional: [POR CONFIRMAR]. Personas autorizadas con acceso y, si se designa, contacto del delegado de protección de datos: [POR CONFIRMAR]."
       },
       {
-        "title": "Transmisión de la solicitud",
-        "text": "Cuando está disponible, el formulario transmite la solicitud a través de EmailJS al email de contacto de la consulta. También puedes escribir directamente por email. Una solicitud no confirma una cita."
+        "id": "date",
+        "title": "Datos necesarios",
+        "text": "El formulario solicita nombre, email y categoría; el mensaje es opcional. También se envían el idioma de la página y el servicio elegido, si existe. Nombre y email son necesarios para responder mediante el formulario. No pide archivos, identificadores nacionales, diagnósticos ni datos bancarios. La categoría y el mensaje pueden revelar indirectamente datos de salud: evita detalles clínicos y datos de otras personas en el primer contacto. Los proveedores pueden tratar IP, información del navegador y registros técnicos."
       },
       {
-        "title": "Alojamiento del sitio",
-        "text": "Para el sitio público alojado en GitHub Pages, GitHub registra las direcciones IP de los visitantes con fines de seguridad."
+        "id": "scopuri",
+        "title": "Finalidades y bases jurídicas",
+        "text": "Para medidas precontractuales que solicites y ejecución del contrato: art. 6(1)(b) RGPD. Para preguntas generales y prevención de abusos: interés legítimo, art. 6(1)(f), sujeto a evaluación de necesidad y de tus derechos [POR CONFIRMAR]. Obligaciones legales aplicables: art. 6(1)(c). Los datos del formulario no se usan para marketing. Confirmar la lectura no es un consentimiento general para cualquier tratamiento."
       },
       {
-        "title": "Preguntas sobre tus datos",
-        "text": "Para aclaraciones sobre acceso a la información, conservación o ejercicio de derechos aplicables, puedes escribir al email de contacto indicado abajo."
+        "id": "clinice",
+        "title": "Datos clínicos y secreto profesional",
+        "text": "Antes de los servicios recibes información específica sobre evaluación, asesoramiento o psicoterapia y los límites de confidencialidad. Los datos de salud también necesitan una condición del art. 9 RGPD: para asistencia sanitaria, art. 9(2)(h) junto con el apartado 3, cuando se cumplan las condiciones legales y de secreto profesional. Bases para cada actividad y otros fines: [POR CONFIRMAR]. Consentimiento profesional informado, consentimiento RGPD y consentimiento de cookies tienen funciones distintas."
+      },
+      {
+        "id": "minori",
+        "title": "Niños y adolescentes",
+        "text": "En el primer contacto usa los datos del padre, madre o representante legal y evita identificar al menor o enviar su historial médico en el formulario. Se verifican representación y permisos antes de los servicios. El Código deontológico rumano exige consentimiento de ambos progenitores para asesoramiento y psicoterapia cuando la responsabilidad parental es compartida, salvo excepciones legales aplicables. La información al menor se adapta a su edad y comprensión."
+      },
+      {
+        "id": "destinatari",
+        "title": "Destinatarios y proveedores",
+        "text": "EmailJS envía la solicitud a la consulta mediante el servicio Gmail conectado. El historial EmailJS conserva nombre, email, mensaje y parámetros; Analytics está desactivado. Gmail conserva el correo recibido. GitHub Pages aloja el sitio y puede tratar datos técnicos. Google proporciona la verificación antiabuso. Personas autorizadas, tipo de cuenta Gmail, acuerdos de tratamiento y plataforma de consultas online: [POR CONFIRMAR]. Los datos solo se comunican a autoridades conforme a la ley."
+      },
+      {
+        "id": "securitate",
+        "title": "Verificación reCAPTCHA",
+        "text": "Google reCAPTCHA v2 se carga automáticamente en Contacto. Usa señales técnicas para prevenir abusos y puede establecer cookies. Google declara que desde el 2 de abril de 2026 actúa como encargado del tratamiento de estos datos según los términos Google Cloud. El formulario no envía tu mensaje como parámetro de análisis reCAPTCHA. Necesidad de carga automática y duración de cookies: [POR CONFIRMAR]. También puedes escribir directamente por email."
+      },
+      {
+        "id": "transferuri",
+        "title": "Tratamiento fuera del EEE",
+        "text": "EmailJS declara tratamiento en EE. UU. y cláusulas contractuales tipo para transferencias desde la UE. GitHub, Google y los proveedores de correo pueden implicar tratamiento fuera del Espacio Económico Europeo. Entidades contratantes, ubicaciones, garantías y evaluación de transferencias reales de la consulta: [POR CONFIRMAR]. Puedes solicitar información y copia de las garantías por email. La política pública de un proveedor no verifica la configuración de la cuenta."
+      },
+      {
+        "id": "pastrare",
+        "title": "Conservación",
+        "text": "Regla propuesta para solicitudes Gmail sin contrato: seis meses desde la última interacción, después eliminación periódica. EmailJS declara 30 días para datos de cuentas activas; debe verificarse su aplicación al historial y las copias existentes. Procedimiento de eliminación: [POR CONFIRMAR]. Pruebas psicológicas, resultados, notas y grabaciones profesionales se conservan al menos diez años desde el fin de la relación profesional según el punto 42 del Código deontológico rumano, o más si lo exige la ley. Plazos de contratos, documentos fiscales, litigios y copias de seguridad: [POR CONFIRMAR], separados del primer contacto."
+      },
+      {
+        "id": "browser",
+        "title": "Datos del formulario en el navegador",
+        "text": "El borrador y la confirmación de lectura permanecen en memoria durante la navegación interna y desaparecen al recargar. La aceptación del proveedor vacía los campos personales. El token reCAPTCHA se consume en cada intento y se elimina al caducar o navegar; no se guarda en storage ni en el email. La preferencia visual puede conservarse localmente. El formulario no archiva ni acredita de forma duradera un consentimiento clínico."
+      },
+      {
+        "id": "drepturi",
+        "title": "Tus derechos",
+        "text": "Conforme al RGPD puedes solicitar acceso, rectificación, supresión, limitación, portabilidad y oponerte al tratamiento. Puedes retirar el consentimiento usado como base sin afectar al tratamiento anterior. La supresión no es absoluta: algunos documentos deben conservarse por obligaciones profesionales, legales o defensa de derechos. Las solicitudes se evalúan según los datos y la base aplicable. Contactar no requiere consentimiento de marketing."
+      },
+      {
+        "id": "cereri",
+        "title": "Cómo ejercer los derechos",
+        "text": "Escribe al email de la consulta. La respuesta es normalmente gratuita en un mes; solicitudes complejas o numerosas pueden requerir dos meses más, avisando y justificándolo en el primero. Si existen dudas razonables, solo se pide información necesaria para comprobar la identidad. Puedes reclamar ante ANSPDCP o acudir a un tribunal. Contactar primero con la consulta no elimina esos derechos."
+      },
+      {
+        "id": "automatizare",
+        "title": "Seguridad y decisiones automatizadas",
+        "text": "Usamos conexiones seguras del sitio y sus proveedores, pero email e internet no ofrecen confidencialidad absoluta. Controles de acceso, copias y gestión de incidentes de la consulta: [POR CONFIRMAR]. El sitio no decide automáticamente diagnósticos, admisión a terapia o contratos. reCAPTCHA puede bloquear técnicamente un envío; el email directo es alternativa. Los incidentes deben gestionarse y notificarse cuando lo exige el RGPD."
+      },
+      {
+        "id": "actualizari",
+        "title": "Alcance y actualizaciones",
+        "text": "Esta información cubre el sitio y el marco general de la consulta. Recibes información completada sobre el servicio, plataforma online y datos clínicos antes del tratamiento. Los cambios relevantes se comunican antes de nuevos fines o tecnologías; actualizar el texto no autoriza retroactivamente otros tratamientos. Los elementos por confirmar no son prácticas ya verificadas."
       }
     ],
     "cookieSections": [
       {
-        "title": "Preferencia de apariencia",
-        "text": "Si eliges apariencia clara, oscura o de sistema, la elección puede guardarse localmente en el navegador. Si el almacenamiento está bloqueado, el sitio sigue funcionando, pero la preferencia puede no recordarse."
+        "id": "tehnologii",
+        "title": "Cookies y tecnologías similares",
+        "text": "Cookies y almacenamiento local pueden guardar información en el dispositivo. Esta política cubre la aplicación y componentes externos integrados; los ajustes de proveedores pueden tener efectos distintos. Inventario técnico en el dominio público con nombre, dominio y duración de cada cookie externa: [POR CONFIRMAR]."
       },
       {
-        "title": "Idioma de la página",
-        "text": "El idioma lo determina la página que visitas. Cambiarlo mantiene la misma página y, cuando corresponde, la misma sección."
+        "id": "aspect",
+        "title": "Preferencia visual",
+        "text": "La clave localStorage “lovable-ui-theme” guarda modo claro, oscuro o sistema. Sirve al aspecto solicitado, no a publicidad, y no contiene datos del formulario. La aplicación no establece caducidad automática: permanece hasta cambiar la opción o borrar datos del navegador. El sitio sigue siendo utilizable si el almacenamiento está bloqueado."
       },
       {
-        "title": "Análisis y publicidad",
-        "text": "Esta versión del sitio no carga herramientas de análisis del tráfico ni publicidad. Los datos del formulario no se guardan en el almacenamiento local del navegador."
+        "id": "limba",
+        "title": "Idioma, borrador y verificación",
+        "text": "El idioma depende de la dirección de la página, sin cookie de idioma. Borrador y confirmación de lectura están solo en memoria. El token reCAPTCHA es temporal, se consume al intentar enviar y se elimina al caducar o navegar. El formulario no guarda estos datos en localStorage."
+      },
+      {
+        "id": "captcha",
+        "title": "Google reCAPTCHA en Contacto",
+        "text": "La verificación v2 se carga automáticamente solo en Contacto. Google describe “_GRECAPTCHA” como cookie para analizar riesgos y el tratamiento técnico por seguridad. Dominios y duraciones reales y acceso a otras cookies Google existentes: [POR CONFIRMAR] mediante auditoría. El mensaje no es parámetro reCAPTCHA. Está disponible el email directo."
+      },
+      {
+        "id": "acord",
+        "title": "Información, necesidad y consentimiento",
+        "text": "La ley rumana 506/2004, art. 4(5), exige información y consentimiento para almacenamiento/acceso en el dispositivo, salvo excepciones limitadas del art. 4(6), incluida estricta necesidad para un servicio solicitado. La etiqueta “seguridad” no prueba la excepción. La evaluación de carga automática es [POR CONFIRMAR]. Toda tecnología no esencial debe bloquearse antes del consentimiento, permitiendo rechazo y retirada igual de fáciles. Navegar no es consentir."
+      },
+      {
+        "id": "analiza",
+        "title": "Analítica y publicidad",
+        "text": "La aplicación no carga Google Analytics, píxeles publicitarios ni herramientas de marketing. EmailJS Analytics está desactivado. El historial de solicitudes del proveedor es tratamiento explicado en la política RGPD, no prueba de una cookie analítica del sitio. Nuevas herramientas requieren evaluación e información actualizada."
+      },
+      {
+        "id": "control",
+        "title": "Control del almacenamiento",
+        "text": "Puedes cambiar el aspecto y borrar o bloquear datos de sitios en el navegador. Las cookies Google pueden pertenecer a otro dominio y requerir gestión separada. Bloquear la seguridad puede impedir el formulario; puedes escribir por email. Borrar datos del navegador no borra mensajes ya enviados ni el historial EmailJS."
+      },
+      {
+        "id": "actualizare",
+        "title": "Responsable y actualizaciones",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria responde de elegir las tecnologías del sitio. Preguntas: psiholog.mariavaleriabaciu@gmail.com. Inventario, justificación de necesidad y acuerdos deben validarse antes de publicar. La fecha indica revisión editorial, no certificación de todas las cookies del navegador."
       }
     ],
-    "providers": "Información sobre proveedores",
-    "hostingPolicy": "Declaración de privacidad de GitHub",
-    "deliveryPolicy": "Política de privacidad de EmailJS"
+    "termsSections": [
+      {
+        "id": "furnizor",
+        "title": "Proveedor de los servicios",
+        "text": "Cabinet Individual Psihologie - Stănculea Maria Valeria presenta psicología clínica y psicoterapia integrativa relacional dentro de las competencias autorizadas. El marco profesional incluye la ley rumana 213/2004 y el Código deontológico. Identificador fiscal, dirección profesional, registro y código profesional: [POR CONFIRMAR]. Contacto: psiholog.mariavaleriabaciu@gmail.com. Autorizaciones y especialidades reales deben confirmarse antes de publicar."
+      },
+      {
+        "id": "informatii",
+        "title": "Información del sitio",
+        "text": "Los materiales ofrecen información general y no sustituyen una evaluación individual o consejos de un profesional que conoce tu situación. No se garantizan resultados clínicos o citas disponibles. Las descripciones no constituyen por sí solas una oferta contractual completa. Las condiciones adecuadas se comentan antes de colaborar."
+      },
+      {
+        "id": "solicitare",
+        "title": "Primer contacto",
+        "text": "El formulario inicia una solicitud: no concluye contratos, reserva sesiones ni cobra pagos. La aceptación técnica no prueba llegada a la bandeja de entrada. Nombre y email son necesarios para responder; el mensaje es opcional. Evita información clínica y detalles identificables de menores. Si falla la verificación, usa el email directo."
+      },
+      {
+        "id": "contract",
+        "title": "Contrato por email y transferencia bancaria",
+        "text": "El contrato se envía y concluye por email; el pago se realiza aparte por transferencia bancaria según instrucciones de la consulta. El sitio no tiene checkout ni pagos con tarjeta. Antes de aceptar recibes servicio acordado, identidad completa, tarifa total y régimen fiscal aplicable, duración/frecuencia, pago y reglas de reprogramación, cancelación y finalización. Contrato real y reglas: [POR CONFIRMAR]."
+      },
+      {
+        "id": "online",
+        "title": "Consultas online",
+        "text": "Se ofrecen cuando son adecuadas a la situación y competencia profesional. Plataforma, requisitos técnicos, privacidad y procedimiento si se interrumpe la conexión se explican antes de la sesión; plataforma: [POR CONFIRMAR]. Se necesita espacio privado y condiciones adecuadas. Cualquier grabación de audio/vídeo requiere autorización previa e información sobre finalidad y conservación; leer la política del sitio no la proporciona."
+      },
+      {
+        "id": "consimtamant",
+        "title": "Consentimiento profesional y menores",
+        "text": "Se obtiene consentimiento informado antes de los servicios, también online, explicando finalidad, límites de confidencialidad, beneficios, riesgos, alternativas y tarifas. Asesoramiento/psicoterapia de menores con responsabilidad parental compartida requiere consentimiento de ambos progenitores, salvo excepciones legales aplicables. Representación e información al menor se gestionan por separado. Confirmar lectura del RGPD no es consentimiento para terapia."
+      },
+      {
+        "id": "renuntare",
+        "title": "Reprogramación, cancelación y desistimiento",
+        "text": "Pide cambios por email. Plazos y posibles costes figuran en el contrato antes de aceptar; esta página no establece penalizaciones. El régimen de desistimiento depende del servicio: algunos servicios sanitarios están excluidos de la ordenanza rumana 34/2014, pero no todo servicio psicológico queda automáticamente excluido. Si se aplica, se comunican derechos e información obligatorios antes del contrato. Pagar no supone por sí solo renunciar a un derecho legal."
+      },
+      {
+        "id": "urgente",
+        "title": "Emergencias",
+        "text": "Formulario y email no son canales de emergencia ni deben considerarse supervisados continuamente. Ante peligro inmediato llama al 112 en Rumanía o al servicio local si estás en otro país. El plan individual de apoyo en crisis se trata dentro de la relación profesional."
+      },
+      {
+        "id": "utilizare",
+        "title": "Uso responsable y contenido",
+        "text": "Puedes leer y compartir enlaces respetando derechos de autor y excepciones legales. No uses el formulario para spam, acceso no autorizado o contenido ilegal. Mantenimiento y proveedores pueden afectar a la disponibilidad. Estas condiciones no excluyen responsabilidades o derechos legalmente irrenunciables."
+      },
+      {
+        "id": "date",
+        "title": "Datos personales",
+        "text": "Las políticas RGPD y cookies describen el primer contacto, proveedores y antiabuso. La información clínica específica se completa aparte antes del tratamiento. Leer la política no autoriza marketing, grabaciones o cualquier uso de datos sanitarios. No envíes datos sensibles por un canal no acordado para ese fin."
+      },
+      {
+        "id": "litigii",
+        "title": "Preguntas y conflictos",
+        "text": "Puedes reclamar por email sin perder el derecho de acudir a la autoridad competente o tribunal. Los asuntos profesionales pueden comunicarse al Colegio de Psicólogos de Rumanía y los de datos a ANSPDCP. El banner SAL lleva a ANPC; la admisibilidad depende del servicio y competencia, incluidas exclusiones sanitarias de la ordenanza 38/2015. La plataforma europea ODR cerró en 2025."
+      },
+      {
+        "id": "lege",
+        "title": "Ley aplicable y cambios",
+        "text": "Se aplican el derecho rumano y normas europeas pertinentes, preservando protecciones imperativas. El sitio no impone tribunal exclusivo ni renuncia de derechos. Los cambios se aplican al uso futuro, sin modificar retroactivamente contratos existentes. Identidad completa y contrato real deben revisarse antes de publicar y de la primera colaboración."
+      }
+    ],
+    "providerLinks": [
+      {
+        "title": "GitHub Pages",
+        "url": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "EmailJS — Privacy",
+        "url": "https://www.emailjs.com/legal/privacy-policy/"
+      },
+      {
+        "title": "EmailJS — Data Processing Agreement",
+        "url": "https://www.emailjs.com/legal/data-protection-agreement/"
+      },
+      {
+        "title": "Google Cloud — Data Processing Addendum",
+        "url": "https://cloud.google.com/terms/data-processing-addendum"
+      },
+      {
+        "title": "Google reCAPTCHA — FAQ (2026)",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/faq"
+      },
+      {
+        "title": "ANSPDCP",
+        "url": "https://www.dataprotection.ro/?page=Plangeri_pagina_principala"
+      }
+    ],
+    "frameworkLinks": [
+      {
+        "title": "GDPR / RGPD — (UE) 2016/679",
+        "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=ro"
+      },
+      {
+        "title": "Legea 190/2018",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocumentAfis/203151"
+      },
+      {
+        "title": "Legea 506/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/257056"
+      },
+      {
+        "title": "Legea 213/2004",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/52375"
+      },
+      {
+        "title": "Codul deontologic al profesiei de psiholog",
+        "url": "https://legislatie.just.ro/Public/DetaliiDocument/267043"
+      }
+    ]
+  },
+  "footer": {
+    "usefulLinks": "Enlaces útiles",
+    "consumerProtection": "Protección del consumidor",
+    "cookies": "Política de cookies",
+    "privacy": "Política de privacidad",
+    "terms": "Términos y condiciones",
+    "anpc": "ANPC",
+    "sal": "Resolución alternativa de litigios",
+    "salAlt": "ANPC — Resolución alternativa de litigios (SAL)",
+    "email": "Escríbeme por correo"
   }
 }

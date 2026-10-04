@@ -1,6 +1,27 @@
 @import "tailwindcss" source(none);
 @config "../tailwind.config.ts";
 @source "./";
+.legal-date { font-size: .875rem; color: hsl(var(--muted-foreground)); }
+.legal-layout { display: grid; gap: 2rem; align-items: start; }
+.legal-body { min-width: 0; max-width: 46rem; }
+.legal-contents { padding: 1.25rem; border: 1px solid hsl(var(--border)); border-radius: 1rem; background: hsl(var(--card)); }
+.legal-contents h2, .legal-related h2 { font-family: inherit; font-size: 1rem; font-weight: 600; }
+.legal-contents ol { list-style: decimal; padding-left: 1.25rem; margin-top: .75rem; display: grid; gap: .5rem; }
+.legal-contents a { font-size: .875rem; color: hsl(var(--muted-foreground)); }
+.legal-contents a:hover { color: hsl(var(--foreground)); text-decoration: underline; }
+.legal-draft { padding: 1rem 1.25rem; margin-bottom: 2rem; border: 1px solid hsl(var(--border)); border-left: 3px solid hsl(var(--primary)); border-radius: .5rem; font-size: .9375rem; background: hsl(var(--muted)); color: hsl(var(--foreground)); }
+.legal-section { margin-bottom: 2rem; scroll-margin-top: 8rem; }
+.legal-related { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; padding-block: 1.25rem; border-block: 1px solid hsl(var(--border)); }
+.legal-related h2 { flex-basis: 100%; }
+.legal-related a { text-decoration: underline; text-underline-offset: .2em; }
+.legal-sources { margin-top: 1.5rem; font-size: .875rem; }
+.legal-sources summary { cursor: pointer; font-weight: 600; }
+.legal-sources h3 { margin-top: 1rem; font-family: inherit; font-size: 1rem; }
+.legal-sources ul { display: grid; gap: .6rem; margin-block: 1rem; }
+@media (min-width: 1024px) {
+ .legal-layout { grid-template-columns: 17rem minmax(0, 46rem); gap: 3rem; }
+ .legal-contents { position: sticky; top: 8rem; max-height: calc(100dvh - 10rem); overflow-y: auto; }
+}
 @font-face{font-family:Inter;src:url('./assets/fonts/inter-latin.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Valeria Serif';src:url('./assets/fonts/valeria-serif.woff2') format('woff2');font-weight:200 900;font-style:normal;font-display:swap}
 /* Preserve the existing v3 control defaults while using the patched toolchain. */
@@ -229,3 +250,25 @@ a,button{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px soli
 .contact-page .field-control:focus{background:hsl(var(--card))}
 .mobile-navigation[role=dialog]{height:100%;height:100dvh;padding-top:max(1.25rem,env(safe-area-inset-top,0px));padding-right:max(1.25rem,env(safe-area-inset-right,0px));padding-bottom:max(1.25rem,env(safe-area-inset-bottom,0px));padding-left:max(1.25rem,env(safe-area-inset-left,0px))}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Contact verification: visible widget and accessible feedback without a separate activation step. */
+.captcha-card{min-width:0;padding:1.125rem;border:1px solid hsl(var(--border) / .7);border-radius:1rem;background:hsl(var(--background) / .65);display:grid;gap:.875rem;transition:border-color 150ms,background-color 150ms}
+.captcha-heading{display:flex;align-items:center;gap:.625rem;color:hsl(var(--primary))}.captcha-heading>svg{flex:none}.captcha-heading h3{font-family:Inter,sans-serif;font-size:.9375rem;font-weight:600;line-height:1.4;letter-spacing:0;margin:0}
+.captcha-widget{width:100%;min-width:0;min-height:144px;display:grid;align-content:center;justify-items:start}.captcha-widget[data-size="normal"]{min-height:78px}
+.captcha-feedback{display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem;line-height:1.5;color:hsl(var(--muted-foreground))}.captcha-feedback>svg{flex:none;margin-top:.125rem}.captcha-error{color:hsl(var(--destructive))}
+.captcha-card[data-state="verified"]{border-color:hsl(var(--primary) / .45);background:hsl(var(--primary-light) / .35)}.captcha-card[data-state="verified"] .captcha-feedback{color:hsl(var(--primary))}.captcha-card[data-invalid="true"]{border-color:hsl(var(--destructive) / .6)}
+.captcha-disclosure{font-size:.75rem;line-height:1.6;color:hsl(var(--muted-foreground))}.captcha-disclosure a{text-decoration:underline;text-underline-offset:.15em}
+.captcha-retry{display:inline-flex;align-items:center;justify-self:start;gap:.5rem;min-height:44px;padding:.5rem .875rem;border:1px solid hsl(var(--primary) / .4);border-radius:.625rem;color:hsl(var(--primary));background:hsl(var(--card));font-size:.875rem;font-weight:500}.captcha-retry:hover{background:hsl(var(--primary-light) / .5)}.captcha-retry:disabled{opacity:.6}
+@media(prefers-reduced-motion:reduce){.captcha-card{transition:none}.captcha-feedback .animate-spin{animation:none}}
+
+/* Contact: grouped fields and one submission area, shared with the embedded widget. */
+.inquiry-form{display:grid;gap:2rem}.inquiry-section{display:grid;gap:1.25rem;min-width:0;margin:0;padding:0;border:0}.inquiry-section legend{float:left;width:100%;margin-bottom:1.25rem;font-size:1.125rem;font-weight:600;line-height:1.4;color:hsl(var(--primary))}.inquiry-section legend+*{clear:both}.inquiry-section+.inquiry-section{padding-top:1.5rem;border-top:1px solid hsl(var(--border) / .65)}
+.inquiry-submit-panel{display:grid;gap:1.25rem;padding:1.25rem;border:1px solid hsl(var(--border) / .6);border-radius:1rem;background:hsl(var(--primary-light) / .22);min-width:0}.inquiry-submit-panel>h3{font-family:inherit;font-size:1.125rem;font-weight:600;line-height:1.4}.inquiry-verification-grid{display:grid;gap:1.5rem;min-width:0}.inquiry-verification-grid>*{min-width:0}.inquiry-agreement{display:grid;align-content:start;gap:1rem}.privacy-checkbox-row{display:flex;align-items:flex-start;gap:.75rem;line-height:1.65;font-size:.9375rem}.privacy-checkbox-row input{flex:none;width:1.25rem;height:1.25rem;margin-top:.2rem;accent-color:hsl(var(--primary));cursor:pointer}.privacy-checkbox-row input:focus-visible{outline:2px solid hsl(var(--primary));outline-offset:4px}.privacy-checkbox-row input[aria-invalid=true]{outline:2px solid hsl(var(--destructive));outline-offset:3px}.privacy-checkbox-row label{cursor:pointer;padding-block:.5rem}.privacy-checkbox-row a{display:inline;overflow-wrap:anywhere}.inquiry-submit-panel .editorial-button{justify-self:start;width:100%;justify-content:center;gap:.75rem}.inquiry-appointment{padding-top:1rem;border-top:1px solid hsl(var(--border) / .6)}
+.inquiry-submit-panel .captcha-card{padding:0;border:0;border-radius:0;box-shadow:none;background:none;gap:.625rem}.inquiry-submit-panel .captcha-heading h3{font-size:.875rem}.inquiry-submit-panel .captcha-disclosure{font-size:.75rem;line-height:1.6}.inquiry-submit-panel .captcha-feedback{font-size:.8125rem;line-height:1.55}.inquiry-submit-panel .captcha-card[data-invalid=true]{border:0}.contact-direct>.chapter-icon{margin-bottom:1.25rem}.contact-expectation h3{font-family:inherit;font-size:1rem;font-weight:600;color:hsl(var(--foreground));margin-bottom:.5rem}
+.footer-column{display:flex;flex-direction:column;align-items:flex-start;min-width:0}.footer-column h2{font-family:inherit;font-size:.9375rem;font-weight:600;margin-bottom:.875rem}.footer-column a{line-height:1.6;color:hsl(var(--muted-foreground));text-underline-offset:4px}.footer-column a:hover{color:hsl(var(--primary));text-decoration:underline}.footer-column .footer-sal{display:block;padding:0;margin-top:.75rem;border-radius:.5rem;max-width:100%;overflow:hidden}.footer-sal img{display:block;width:250px;height:50px;object-fit:contain;background:white}.footer-grid{grid-template-columns:minmax(0,1fr);gap:2rem}
+@media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.inquiry-submit-panel{padding:1.5rem}.inquiry-submit-panel .editorial-button{width:auto;min-width:15rem}}
+@media(min-width:1024px){.contact-layout{grid-template-columns:minmax(0,1fr) 20rem;gap:2rem}.footer-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,.9fr) minmax(0,1fr);gap:1.75rem}}
+@media(min-width:1200px){.inquiry-verification-grid{grid-template-columns:minmax(0,1fr) 304px;gap:1.5rem}.inquiry-verification-grid .captcha-widget{min-height:78px}.inquiry-panel{padding:2.25rem}}
+@media(max-width:399px){.inquiry-panel{padding:1rem}.inquiry-heading{gap:.75rem}.inquiry-heading h2{font-size:1.5rem}.inquiry-submit-panel{padding:1rem}.contact-page .contact-direct{padding:1.25rem}}
+
+.site-footer .footer-column a.email-link{font-size:.8125rem;line-height:1.7;max-width:100%}.contact-email{font-size:.875rem;gap:.5rem}.contact-email>svg{width:16px}

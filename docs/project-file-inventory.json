@@ -1,14 +1,15 @@
 {
   "scope": "All workspace files except dependencies, Git internals, build artifacts, test reports and caches. This is structural/file validation, not a line-by-line security review.",
-  "checkedFiles": 325,
-  "jsonCount": 63,
+  "checkedFiles": 301,
+  "jsonCount": 34,
   "yamlCount": 2,
-  "importCount": 248,
-  "assetCount": 98,
+  "importCount": 217,
+  "assetCount": 103,
   "assetReferenceCount": 13,
   "excludedDirectories": [
     ".contact-test-dist",
     ".git",
+    ".release-archives",
     "contact-playwright-report",
     "contact-test-results",
     "dist",
@@ -31,7 +32,7 @@
   "files": [
     {
       "path": ".env.example",
-      "bytes": 227,
+      "bytes": 204,
       "tracked": true,
       "category": "environment template",
       "sha256": null
@@ -44,6 +45,13 @@
       "sha256": null
     },
     {
+      "path": ".env.production.local",
+      "bytes": 218,
+      "tracked": false,
+      "category": "environment template",
+      "sha256": null
+    },
+    {
       "path": ".gitattributes",
       "bytes": 66,
       "tracked": true,
@@ -52,24 +60,24 @@
     },
     {
       "path": ".github/workflows/deploy-github-pages.yml",
-      "bytes": 5088,
+      "bytes": 5568,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "4cfb3cabe0e9b140db67236987f60e28f29798621dc28510e1e363310b8c0aaf"
+      "sha256": "b37aeb864af764be8c8cde059beaf16597e7497a4f7dfab68d1c7ad8bbce6f5a"
     },
     {
       "path": ".github/workflows/test.yml",
-      "bytes": 1247,
+      "bytes": 1279,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "04a00ef599687d22734fa496b0a035d6f6baa0825ea90e6a7c70b2209e8cae44"
+      "sha256": "a546f31f0b5327e4fa5051c04b470647ebfde41606b91a0b788c84f6fa5e163e"
     },
     {
       "path": ".gitignore",
-      "bytes": 800,
+      "bytes": 899,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "234eaeb3c65fdc7654e76c2e3b2cae00a34d32bb273a21bd7e17b2024519915c"
+      "sha256": "5206e87389af3a211bd4277cae1cc89a580437c995b08f891969680b21dcee03"
     },
     {
       "path": "LICENSE",
@@ -80,10 +88,10 @@
     },
     {
       "path": "README.md",
-      "bytes": 14336,
+      "bytes": 20572,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "df0e6bf2fe2d4cef0c459ea7c4bc5abe30178c97f45e77e357ca9117b42443fd"
+      "sha256": "017d43625f1b32a9504042b6c43f92f40ad2e6c9be4dc4a3f39de6b8bb992cbb"
     },
     {
       "path": "components.json",
@@ -170,6 +178,27 @@
       "sha256": "f0816484d3458fb08ba04f10599b430e0daf48ba553dfb82569f808b694394f2"
     },
     {
+      "path": "docs/content-cleanup-manifest.json",
+      "bytes": 8895,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "235aed5f398a1fcbaba672fd5ce0d44f6d247b8cab25184922b8ae3754d3cadb"
+    },
+    {
+      "path": "docs/content-dependency-audit.json",
+      "bytes": 3764,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "7bd468ce3a444746f4d3981729210811ba7f0044a6f4ca989e6af4d273376130"
+    },
+    {
+      "path": "docs/content-sources.md",
+      "bytes": 3379,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "ce9cc6f6317f458a9bd855329d749a52dc127ef408cbb0619fd627b8667585a1"
+    },
+    {
       "path": "docs/header-logo-design.md",
       "bytes": 4917,
       "tracked": true,
@@ -178,14 +207,21 @@
     },
     {
       "path": "docs/implementation-review.md",
-      "bytes": 24315,
+      "bytes": 24647,
       "tracked": true,
       "category": "documentation/evidence",
-      "sha256": "3e19b5999618819f1c5bb203f84aa4c753b29b76a5c9b6f8a0724c8ddf233bfa"
+      "sha256": "8bc208bfcb5e1f74ce979b04132f2c7da8aba9f0ca49f77f5e30aa752d66f0c3"
+    },
+    {
+      "path": "docs/prepublication-review-2026-10-04.md",
+      "bytes": 9762,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "fa9597c8b4b1897133bf13d8b4a1f76bae97c013081b36aba7874dbe5a56e570"
     },
     {
       "path": "docs/project-file-inventory.json",
-      "bytes": 75859,
+      "bytes": 69990,
       "tracked": true,
       "category": "documentation/evidence",
       "sha256": null
@@ -203,6 +239,13 @@
       "tracked": true,
       "category": "documentation/evidence",
       "sha256": "79cc23b6bf798a1f17df8d18b108e65bc39a98db5aaf9fbb455c58effdc9906b"
+    },
+    {
+      "path": "docs/qa/about-services-text-2026-10-04.json",
+      "bytes": 83226,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "fa30925a5e298f0c791cd576633e08020f9dd22ecc8a0b40e3334f6dbaf87cc6"
     },
     {
       "path": "docs/qa/about-services-text-before.json",
@@ -301,6 +344,27 @@
       "tracked": true,
       "category": "documentation/evidence",
       "sha256": "de8992b4aa79e113b4f069eb13b0dee2657ee59d88b62078d39f64f4c3db1b43"
+    },
+    {
+      "path": "docs/qa/emailjs-form-accepted-2026-10-04.jpg",
+      "bytes": 143085,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "1286a1c0e602e66c3ad805a84a58680ffd7de821b1dacfa8b3107c084df5789f"
+    },
+    {
+      "path": "docs/qa/emailjs-history-2026-10-04.jpg",
+      "bytes": 72765,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "0a75b9fbdecafb253056aa5fce681a2d0574fe36a130c54889d0d4cce737ee0a"
+    },
+    {
+      "path": "docs/qa/emailjs-origins-2026-10-04.jpg",
+      "bytes": 84258,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "7c2d9de09f940f569870fc82cd57be2b49f015153224ac0786d88416646320dd"
     },
     {
       "path": "docs/qa/en-home-dark-1440.png",
@@ -429,6 +493,13 @@
       "sha256": "ca759aacc73bef7fb6219432d4991b89de21e77c7e3d30b50426bebc397e2fee"
     },
     {
+      "path": "docs/qa/live-release-2026-10-04.json",
+      "bytes": 29338,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "26c18ce969899be52653365058c360e18c5a8bb020b3fb59a32b3c40711944e0"
+    },
+    {
       "path": "docs/qa/mocked-contact-accepted-desktop.png",
       "bytes": 507062,
       "tracked": true,
@@ -462,6 +533,34 @@
       "tracked": true,
       "category": "documentation/evidence",
       "sha256": "cdcbd39fabdbc034ad3f386211ba63bb2f67704199c6e1d1dd3ebd4773947e6a"
+    },
+    {
+      "path": "docs/qa/prepublication-validation-2026-10-04.json",
+      "bytes": 2535,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "3e73ff6b76bfaf90a265afdc5ee91db28c46f6c8dbf7ebe73dd039b2b1185f09"
+    },
+    {
+      "path": "docs/qa/recaptcha-activation-2026-10-04.json",
+      "bytes": 2657,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "3fd7874dd085d477170ca0dd20542e442c88abea11751c86803b945bbeea7893"
+    },
+    {
+      "path": "docs/qa/recaptcha-invalid-key-type-2026-10-04.jpg",
+      "bytes": 62147,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "b585958a74b7298f8b6e8640794ce8a1101db917a48bfb5f236675cea5570491"
+    },
+    {
+      "path": "docs/qa/recaptcha-secret-field-ready-2026-10-04.jpg",
+      "bytes": 135293,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "750654b542646b9480077b418582072a7bf080b23af749b54b3b4d1aa82d4a07"
     },
     {
       "path": "docs/qa/responsive-contact-1024-short.png",
@@ -779,6 +878,20 @@
       "sha256": "878ab889186fa284f78156c8fca6f517a8cd74bb80e8cd4736dabcc5371018ea"
     },
     {
+      "path": "docs/recaptcha-setup.md",
+      "bytes": 2804,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "30194719ff152c8ecd6d70c2c9ea2c023b54b5076939db9f46248859c48c6623"
+    },
+    {
+      "path": "docs/release-readiness.json",
+      "bytes": 1814,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "60cdf888d3b7030d3e06f79b26188f06b37e368567240d9ba0e74a8c8f3ef919"
+    },
+    {
       "path": "docs/responsive-and-platform-review-2026-10-03.md",
       "bytes": 12574,
       "tracked": true,
@@ -793,6 +906,13 @@
       "sha256": "4cf7545be1fbb07047aadc6c77fd1a8c38198a4f7942ad479bbd34956b30582c"
     },
     {
+      "path": "docs/rollback.md",
+      "bytes": 3800,
+      "tracked": false,
+      "category": "documentation/evidence",
+      "sha256": "8cac7b805e4ca483b9c57c2a067e6fcee988cbdbb46770ff0065f1253e0c7247"
+    },
+    {
       "path": "docs/website-design-and-usability-plan.md",
       "bytes": 46916,
       "tracked": true,
@@ -801,10 +921,10 @@
     },
     {
       "path": "eslint.config.js",
-      "bytes": 1019,
+      "bytes": 998,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "2a7e39399fbd5169ec1ec951a7046980e43e6a8cf40af48906ccb6e6d0c3c4bf"
+      "sha256": "930ce959f9cba1e81f367484e160ad5e276784a9393899f2925aab1c3064c2ef"
     },
     {
       "path": "index.html",
@@ -822,17 +942,17 @@
     },
     {
       "path": "package.json",
-      "bytes": 3863,
+      "bytes": 3998,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "a0dd0fef0061ca24b1309e227868585bd518e259657c96a3bb907bcc676372d5"
+      "sha256": "03f92342e556681109b3eb9e7457c7497f77e8462df85f6c1f7f18a020787854"
     },
     {
       "path": "playwright.config.ts",
-      "bytes": 1525,
+      "bytes": 1570,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "6ffa2ec92d1c440e00a1f2282bb834150ddd46da36611dc09dd2eff5acd06065"
+      "sha256": "66b8f74b1a9eeeda973fa77cd723e5c2d9a24f960e4cc5b2551ac4c309736532"
     },
     {
       "path": "playwright.responsive.config.ts",
@@ -996,6 +1116,20 @@
       "sha256": "19be8c5fa0dbe0a443cd7a49ef58ee78f2ac3f18c7f92e2e2297ae5285118b93"
     },
     {
+      "path": "scripts/check-content.mjs",
+      "bytes": 3169,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "6c136c684d943f7a4222e85975d98eb7487ed7c76cbf315e11a683bdcb3aa000"
+    },
+    {
+      "path": "scripts/check-live-release.mjs",
+      "bytes": 3622,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "ccb72a327f42c962e70551c6c9ab46895bba76a72822956f73ca7922f1988122"
+    },
+    {
       "path": "scripts/check-pages.mjs",
       "bytes": 6022,
       "tracked": true,
@@ -1004,22 +1138,29 @@
     },
     {
       "path": "scripts/check-project-files.mjs",
-      "bytes": 5802,
+      "bytes": 5822,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "eed25baf3a8682b13587850d90b680fd98ee5bef7e4dd7f1ec7f30b0db1bcf7f"
+      "sha256": "77cfc578f66652b3e19157c5b6450c688bea9275b54fd9d7e997989dd3495087"
+    },
+    {
+      "path": "scripts/check-release.mjs",
+      "bytes": 1338,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "15bf33b5f93f76c7ce7018779cf95a640405204fcf6a28551893a944cb142ab7"
     },
     {
       "path": "scripts/check-seo.mjs",
-      "bytes": 4707,
+      "bytes": 4841,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "7fc64d72a012ab592cd18e8ebb55ca25b9ea572165c038816fa88caf83523546"
+      "sha256": "f66b05d7b01ed3660d2ec922452fde1d2595b12bf0e2634677639b745e92f5f0"
     },
     {
       "path": "scripts/html-assets.mjs",
       "bytes": 1762,
-      "tracked": false,
+      "tracked": true,
       "category": "source/configuration",
       "sha256": "8a30effae922ea77a5712ca32ce1b1a0027935338522dd781e00fcb36b393de0"
     },
@@ -1038,6 +1179,13 @@
       "sha256": "92d3d21e45c9cf68641b031d287a02813cda6a708c11ae6ec0a98d77b51084db"
     },
     {
+      "path": "scripts/release-artifact.mjs",
+      "bytes": 3978,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "8d0b599bf91399a4f1ed878871ddb846a604f09848b43056eba72fa377d0f040"
+    },
+    {
       "path": "scripts/serve-pages.mjs",
       "bytes": 2730,
       "tracked": true,
@@ -1046,10 +1194,10 @@
     },
     {
       "path": "scripts/test-contact.mjs",
-      "bytes": 755,
+      "bytes": 807,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "3020b883a8aa89b24045659470d0e67012d309f47ddc95cbc02093ea3ab48d60"
+      "sha256": "8ae64e9522de202e0f0a4da621ada7e556d0080ccde473f5fbd36196a16becce"
     },
     {
       "path": "src/App.tsx",
@@ -1101,13 +1249,6 @@
       "sha256": "3e4dd184f94263cf7b103334091b9877d6ce029434b5a7aca5f34f3cb3c32b8d"
     },
     {
-      "path": "src/components/CookieBanner.tsx",
-      "bytes": 13401,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "fcffcb08da5de9ac8de2c794b9837860ac40dd8cd4fb3ca6785d87ec965475f0"
-    },
-    {
       "path": "src/components/Footer.tsx",
       "bytes": 1233,
       "tracked": true,
@@ -1157,6 +1298,13 @@
       "sha256": "463a3d4e5fddd402b953fa16b34a71c93d5bddce44e81e08515628cf42682690"
     },
     {
+      "path": "src/components/RecaptchaVerification.tsx",
+      "bytes": 2198,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "98da79bd75ab0652238122c6721ae74973b0e2d26e10e78278079cf84446e89b"
+    },
+    {
       "path": "src/components/SEOHead.tsx",
       "bytes": 3804,
       "tracked": true,
@@ -1204,83 +1352,6 @@
       "tracked": true,
       "category": "source/configuration",
       "sha256": "da68942bd2496729dbfc789e42ddf252f5ec2c5f1d8ad44e97ac77713adc890e"
-    },
-    {
-      "path": "src/components/local/HeroStats.tsx",
-      "bytes": 781,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "e335386f5ab69bb75c890b7b46c337330934e3b234c2308629ed9de3918c756c"
-    },
-    {
-      "path": "src/components/local/HomeConsultationForm.tsx",
-      "bytes": 6753,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "213a646e37fc6732af7dd53b0813256e59644880240aa287ceae68361bdf65d6"
-    },
-    {
-      "path": "src/components/local/HomeFAQPreview.tsx",
-      "bytes": 3084,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "82d88d658142689870b1dad5bafe504d0d4aee03052309bc7e5f0f847f968e74"
-    },
-    {
-      "path": "src/components/local/HowTherapyWorks.tsx",
-      "bytes": 2684,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "882eea7ece5cec1c5ff11a7b9e8fe12103424b13ab61573aed82e726c49f70d2"
-    },
-    {
-      "path": "src/components/local/LatestArticles.tsx",
-      "bytes": 4510,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "0e2c238888b9a6acbd576b96ddb8466b3be5f2a20f746a2775d31a7343ef75b6"
-    },
-    {
-      "path": "src/components/local/PracticalInfoRomania.tsx",
-      "bytes": 2320,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "41457144a13b6bf6dbac8c0f6bd55ba7d9cb1fd5a34eba233b23d9c80e0a1210"
-    },
-    {
-      "path": "src/components/local/SectionEyebrow.tsx",
-      "bytes": 319,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "5108a0d88c641330e7a710d0df8aad4355b55b3349640381d4ff72db8b1d4c5e"
-    },
-    {
-      "path": "src/components/local/ServicesLocation.tsx",
-      "bytes": 4445,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "0dc59c88ebbe8dbb79c0c43f6adb888564c94eeb2c15ebbaff7785a20ccf4b01"
-    },
-    {
-      "path": "src/components/local/SessionPackages.tsx",
-      "bytes": 6647,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "b5b9f19a445559521b4f0914de1fbe7c586a00f1dd846465464cb1457f3e4dfb"
-    },
-    {
-      "path": "src/components/local/TestimonialsSection.tsx",
-      "bytes": 4089,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "918e6e7a4e78d206a91b2dc142577be97cb0e7e52d57d638fa8e9a6e71912579"
-    },
-    {
-      "path": "src/components/local/WhyFamiliesChooseMe.tsx",
-      "bytes": 2068,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "df18a740fc5f6cf59a6d8d5fd462035bab80379cd1519f485d3a7209cd478731"
     },
     {
       "path": "src/components/ui/accordion.tsx",
@@ -1626,32 +1697,18 @@
       "sha256": "d48c4c490e5101aa42ceed9b8ca49642d66152ba11daf7ee6c29bee0f5172c37"
     },
     {
-      "path": "src/contexts/LanguageContext.tsx",
-      "bytes": 1519,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "b669d74b31dd6dce4d7242568ced71c03b6d2e88bbbc243c1bf41e23ff609c2a"
-    },
-    {
       "path": "src/data/blogPosts.ts",
-      "bytes": 61279,
+      "bytes": 61742,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "ba1d361ad388c09da64e706a8f07543c26b40023a5773a77605fc47e0f2eba15"
-    },
-    {
-      "path": "src/data/seoMetadata.ts",
-      "bytes": 5867,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "0f514d41a994cd6bdfa5fb786c1e5a3a857a15ef5f7c85a63ff4dcb4269fd4dc"
+      "sha256": "795b97a0cd63e3ba06f79a89bfdafd40cc8bd13eba3c4787b4d90148249c9f3f"
     },
     {
       "path": "src/entry-server.tsx",
-      "bytes": 1948,
+      "bytes": 1912,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "80e11009d72e6e229aaa5eb1cb80d7f563156ae76dc4b16e02117cba0f6cc522"
+      "sha256": "f4c3c1905968a7a07ae606eedd227765e42fc75d61d56da6926cfbd1e1f98c47"
     },
     {
       "path": "src/hooks/use-mobile.tsx",
@@ -1711,10 +1768,17 @@
     },
     {
       "path": "src/lib/inquiryTransport.ts",
-      "bytes": 1208,
+      "bytes": 1376,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "eff9fc9e656c0fa784e91a3794d9b5b479a6d3d2363e9997e66c7bb5af19713d"
+      "sha256": "79dba224f0be83c8a6b3c685b30a821f0213bd4e7f19665962261c3e7f9cad3b"
+    },
+    {
+      "path": "src/lib/recaptcha.ts",
+      "bytes": 1309,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "6187b27327f8335647ad0878d047cab2cf2e995346767f5b76b5fb29d9396808"
     },
     {
       "path": "src/lib/routes.ts",
@@ -1752,291 +1816,53 @@
       "sha256": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
     },
     {
-      "path": "src/locales/en/about.json",
-      "bytes": 4606,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "bf28ab29e6e11b2aa53e01f602969e10454ffe015e653bcbab4a5074b3a35183"
-    },
-    {
-      "path": "src/locales/en/blog.json",
-      "bytes": 1807,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "3cfc86ab96801325339a1de47608b490807492f81d88674fa018f2a98e2f5af7"
-    },
-    {
-      "path": "src/locales/en/common.json",
-      "bytes": 1961,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "a87af3e04d601ee82b466ed78c61375ac132cd87d53c6e7deabce63492e2697d"
-    },
-    {
-      "path": "src/locales/en/contact.json",
-      "bytes": 2377,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "4407cf7e1b40bacbd670b5a1ac159c07dcd51fc1cb092566c132cb59ec0432c3"
-    },
-    {
       "path": "src/locales/en/editorial.json",
-      "bytes": 17479,
+      "bytes": 21057,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "d7e570035bfe64120eeeaaabca550d4106049872a414116d411c93583032d8cc"
-    },
-    {
-      "path": "src/locales/en/faq.json",
-      "bytes": 7814,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "7dbb9a851f330355e1eed648daff9ffb6ff09ec6408f3037dc7c94f1ff45f1c2"
-    },
-    {
-      "path": "src/locales/en/home.json",
-      "bytes": 10589,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "63e71767bda8720bff2e3df717c4f93f540ea21053905318e4cb40cdc4a0dfcd"
-    },
-    {
-      "path": "src/locales/en/local.json",
-      "bytes": 5220,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "fdf6fb5fcdbe4e1f29c0a6d45c68b583e88ade26efb653282f080fe157c34f7d"
+      "sha256": "4c5ea85ea7d9974b7aa92dcb32d07c9ba33f5a144f69d25a38f8ea11c8e52f28"
     },
     {
       "path": "src/locales/en/master-about.json",
-      "bytes": 17186,
+      "bytes": 16984,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "b09c1dd0aa9be801f4e43f26f246bd5b3f0d2fdbd225dc0c05e1204211fbc127"
-    },
-    {
-      "path": "src/locales/en/navigation.json",
-      "bytes": 676,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "dc6ee3c65bec4326cf339ad8fb2774e73f15a48391e83d7721fb05b4ba5dd0b3"
-    },
-    {
-      "path": "src/locales/en/services.json",
-      "bytes": 5470,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "478e888c270a0d308e07fb18c7cd233b4dfa3d4e9e405e81eb75563ac188f573"
-    },
-    {
-      "path": "src/locales/es/about.json",
-      "bytes": 4760,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "a9de5a965d058304298484cd00e0f8f051c640860c21707952a6287576b9c9ff"
-    },
-    {
-      "path": "src/locales/es/blog.json",
-      "bytes": 1896,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "e4d11b03d89ddbc1d5ae5419a2f1e6d73f177e927aa329291738a6c4436e9f17"
-    },
-    {
-      "path": "src/locales/es/common.json",
-      "bytes": 2116,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "bd7e1d9c96d6e8165f4b92168720226b506bd577164eb53727c15609cea1cb54"
-    },
-    {
-      "path": "src/locales/es/contact.json",
-      "bytes": 2502,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "8d2be1ba6ac4466007f28e7b3a4eb1ffb4841e9689d0fe0d4b16108f682a8b85"
+      "sha256": "e888e0a021ac41cb2e19cdac66c7cd694f87a398c2668c4030b2fa17f9843676"
     },
     {
       "path": "src/locales/es/editorial.json",
-      "bytes": 18306,
+      "bytes": 22382,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "f939bb3d785a0ab8493d0bac4b058b6fb802cafd3a0749513917c8d69de44d83"
-    },
-    {
-      "path": "src/locales/es/faq.json",
-      "bytes": 8312,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "c3720f2bbd471fd08aee261fd6dca66fd79758a0cfeee53ddf13ea4319ecd2ae"
-    },
-    {
-      "path": "src/locales/es/home.json",
-      "bytes": 11187,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "96057b386bfe5ee3538aa6d77a66a258042cf170a832e33d5b994b681eadc454"
-    },
-    {
-      "path": "src/locales/es/local.json",
-      "bytes": 5543,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "a91e94565fe40de68519546ea039dea06ba1ac242abb82cd88c478d420a13824"
+      "sha256": "046a04b1f9afe5ad60a43e6a9977e45dcb3b3598e246bcdf69376a41d4d13591"
     },
     {
       "path": "src/locales/es/master-about.json",
-      "bytes": 17526,
+      "bytes": 17327,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "a374e966432a2eae5e3737dec28ebf1f3f418abed1e5397b3098f8620a8cbd88"
-    },
-    {
-      "path": "src/locales/es/navigation.json",
-      "bytes": 706,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "84027c8cb6c2c6be759e3f7ce08493027553f4742a646388bc950c18af85b6c8"
-    },
-    {
-      "path": "src/locales/es/services.json",
-      "bytes": 5806,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "d92791b69d29e7165eaa5955c611841e79b2aa9b93ec3aa466be91bffcb6136f"
-    },
-    {
-      "path": "src/locales/it/about.json",
-      "bytes": 4702,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "bee9fa8ed97a7d9513fff453a73d2e16bd02c5ab1e6e920c010ab9d736c210ba"
-    },
-    {
-      "path": "src/locales/it/blog.json",
-      "bytes": 1911,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "ba138716070b2f0221eab9178cf4a9589d362540f0450d7cb5814b0824dc1d07"
-    },
-    {
-      "path": "src/locales/it/common.json",
-      "bytes": 2119,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "f606acc132a72dcf358f5ff92a9239a805cb81927246023c5e29e35286591f07"
-    },
-    {
-      "path": "src/locales/it/contact.json",
-      "bytes": 2478,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "04be88fbeae919fa36d59b25eaaf27f0c6c15c4bd31e4bf132b4cf78ee4a3c15"
+      "sha256": "2f320011072e0f5afb4d529f76ff8c64bca902668029cb4d6d42a1f6c0d7ddbd"
     },
     {
       "path": "src/locales/it/editorial.json",
-      "bytes": 18189,
+      "bytes": 22087,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "ff1489fce9a363ad44b8bf6c94e3d82dd823e2052c9335ef560f41e35d14d18a"
-    },
-    {
-      "path": "src/locales/it/faq.json",
-      "bytes": 8230,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "2b09709255f809b733d8d381122a67bd5bca82e5fe52e14fa451abd726cc0a6f"
-    },
-    {
-      "path": "src/locales/it/home.json",
-      "bytes": 10923,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "a92cd9af0235f151898de66c946a6012b7695c2bbacd5c79a731ee8ef36e7b98"
-    },
-    {
-      "path": "src/locales/it/local.json",
-      "bytes": 5541,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "efe123d67725f463105bf5676583f844cada4252108e32961af4424ee2b1e756"
+      "sha256": "1c12c2cfe37d48e750fcc656c4bf96357f1834673ca3625e2dc518abf9d6449d"
     },
     {
       "path": "src/locales/it/master-about.json",
-      "bytes": 17318,
+      "bytes": 17119,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "79900de442f6f5bd276f0eb58a563af37e6d64d442a19cd7947b6288f96576f2"
-    },
-    {
-      "path": "src/locales/it/navigation.json",
-      "bytes": 694,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "5c69b4e02b18df9bdc2ef83b354d1c5aa330d75d1040a5bb8204c7843f571906"
-    },
-    {
-      "path": "src/locales/it/services.json",
-      "bytes": 5776,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "b1fe31f1237ba0471049b45245b0e03e9760d5ab3bb86b9630eb45c8fe10caaa"
-    },
-    {
-      "path": "src/locales/ro/about.json",
-      "bytes": 4648,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "8a85ca754b7faac91df3c4a846f50144ac71b0626aab5aabd709ab462ec68604"
-    },
-    {
-      "path": "src/locales/ro/blog.json",
-      "bytes": 1812,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "b04c49b325d5c5b403332e03b807ac5aaecdb9a9634cdf9742bc073998e79ed3"
-    },
-    {
-      "path": "src/locales/ro/common.json",
-      "bytes": 2152,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "86a49084284c04df3285d4aeed7db3643cc2469a03f0a629b6d5642072edb4cf"
-    },
-    {
-      "path": "src/locales/ro/contact.json",
-      "bytes": 2543,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "a119c78cf8b6556637c62f77440b82a83aed26e0d9bb699c7d8b0c7308ea2f43"
+      "sha256": "74e70262611dd873bec5a48e799a5da394255284032d624bad6ad1bd8447a6c9"
     },
     {
       "path": "src/locales/ro/editorial.json",
-      "bytes": 19250,
+      "bytes": 23163,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "6a16c575c5e1e18936caf903ca1ebb755af60ab99d211a4db184909af4bb1eb9"
-    },
-    {
-      "path": "src/locales/ro/faq.json",
-      "bytes": 8075,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "0a1b20e927eb30f5c741d27f0c250343e9bfa36b56b7f4bf650f8d91f6d87f93"
-    },
-    {
-      "path": "src/locales/ro/home.json",
-      "bytes": 11444,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "4deec8b6b45752ef13a03b0d69f6ec1a22e04a7f8487b2f7a4074b76241d7654"
-    },
-    {
-      "path": "src/locales/ro/local.json",
-      "bytes": 6365,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "153916b2eeb56dc69792573c9fd1c8c0b9cb9e9926b619503893661deb57143c"
+      "sha256": "7eea2a25b5eb40e924771685be64db09372a56b515bab97e2b4831f96a037498"
     },
     {
       "path": "src/locales/ro/master-about.json",
@@ -2044,20 +1870,6 @@
       "tracked": true,
       "category": "source/configuration",
       "sha256": "189030654ee34ae168a1f595f3ca55a4f2e270a0c4d75cf3c8dcc2d6b85fd091"
-    },
-    {
-      "path": "src/locales/ro/navigation.json",
-      "bytes": 706,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "873c22ab0ef223dfc66ecc109f2e5c3d8dfbff7e40c337e05cc50a7138d9a89a"
-    },
-    {
-      "path": "src/locales/ro/services.json",
-      "bytes": 5840,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "1e4c7dbcbac16bd6ddb08fdd2008a1666e5c3eb9c40e38463eebee89263f76bd"
     },
     {
       "path": "src/main.tsx",
@@ -2089,10 +1901,10 @@
     },
     {
       "path": "src/pages/Contact.tsx",
-      "bytes": 7606,
+      "bytes": 8442,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "15a5accaf936aa44dfd48479f9d96c3a9386df05ce22b25ba8f95a9f16e2e011"
+      "sha256": "acc9c2bbdc1d2cddd089fb9e175069588fdcb0ee2dc257fc06e05386a19e90ec"
     },
     {
       "path": "src/pages/FAQ.tsx",
@@ -2109,18 +1921,11 @@
       "sha256": "9c95524acec2416ac0f625875f7543eb805cf6563fa9b8cf3b35225e316d68e5"
     },
     {
-      "path": "src/pages/Index.tsx",
-      "bytes": 469,
-      "tracked": true,
-      "category": "source/configuration",
-      "sha256": "8e181bbb0be169fca9672878304930085d6133de8c6a6bef1fcd8482a83a1885"
-    },
-    {
       "path": "src/pages/Legal.tsx",
-      "bytes": 1323,
+      "bytes": 1453,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "069704e496dadecb8cf0f630aa63c353df6be875d34d955d6ee8c3f6a82d40bf"
+      "sha256": "da1e3c1c4cd2d35d2e9b1bbd98d053f42250692b4bd94ada272c83d069d1b0e1"
     },
     {
       "path": "src/pages/NotFound.tsx",
@@ -2138,10 +1943,10 @@
     },
     {
       "path": "src/vite-env.d.ts",
-      "bytes": 402,
+      "bytes": 407,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "02780cd7db2a633eddbe725720147be3d3ea3da2b94949e061b01132c12df655"
+      "sha256": "923938500d24c48fe584c9df6f175564b599cf0f6c63ef38293f9f1a24fc5e4d"
     },
     {
       "path": "tailwind.config.ts",
@@ -2159,24 +1964,24 @@
     },
     {
       "path": "tests/browser/contact.spec.ts",
-      "bytes": 9197,
+      "bytes": 9308,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "3080cef834e3bcb6024fb253885a3a37150cd2bae74e486221b6397774f45427"
+      "sha256": "e8dc4c6bee3630cafebb4183d820d964d48d2c835e399a7350ad5a4a62c842a0"
     },
     {
       "path": "tests/browser/editorial-layout.spec.ts",
-      "bytes": 2812,
+      "bytes": 2960,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "ed900af8060430a55dce096ea56e25ccf567100d3e69dc3142160bf18ebde769"
+      "sha256": "9eaed1aaba4e991dc0e540867de3eb7a1c91557523097cb55e5f9b3b26efd357"
     },
     {
       "path": "tests/browser/fixtures.ts",
-      "bytes": 1874,
+      "bytes": 2533,
       "tracked": true,
       "category": "source/configuration",
-      "sha256": "468a17defb158ab18eec42dc620af55e8203fb4f687b987959606b46efa09873"
+      "sha256": "edc291226ae65d524fc3a763dc19cdd94c57627ede4a9045549c7ea08c3ba3b2"
     },
     {
       "path": "tests/browser/interactions.spec.ts",
@@ -2202,9 +2007,16 @@
     {
       "path": "tests/browser/qa.ts",
       "bytes": 342,
-      "tracked": false,
+      "tracked": true,
       "category": "source/configuration",
       "sha256": "38af88bf8f62186ac5911117a8f9f81aebff3bef6c9c484a07877e1c3a1ad273"
+    },
+    {
+      "path": "tests/browser/recaptcha.spec.ts",
+      "bytes": 5947,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "5f92e8099136cc57bd22bc96ff2d52ac8ab9d3cf6fe9825d7047fedd52811460"
     },
     {
       "path": "tests/browser/routes.spec.ts",
@@ -2230,7 +2042,7 @@
     {
       "path": "tests/unit/html-assets.test.mjs",
       "bytes": 2994,
-      "tracked": false,
+      "tracked": true,
       "category": "source/configuration",
       "sha256": "d19e16a44cac1215a62ef73b26434b1371cd1ef5bcf818aed57d46c8880279b0"
     },
@@ -2249,11 +2061,32 @@
       "sha256": "aa1157da773570022e5552d1579cd70632011bd26709cf3d8cb1bdeead8234bd"
     },
     {
-      "path": "tests/unit/security-dependencies.test.mjs",
-      "bytes": 3652,
+      "path": "tests/unit/release-artifact.test.mjs",
+      "bytes": 1637,
       "tracked": false,
       "category": "source/configuration",
+      "sha256": "f929f12a29ae47abe236b7e1c895618c12d08a17ebb630d874b5b65fad910e84"
+    },
+    {
+      "path": "tests/unit/release.test.mjs",
+      "bytes": 1092,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "2ac651ebb7d22a1939855ac16496ddfe7e1bea7ae3545bafdae6b33dfb74b84b"
+    },
+    {
+      "path": "tests/unit/security-dependencies.test.mjs",
+      "bytes": 3652,
+      "tracked": true,
+      "category": "source/configuration",
       "sha256": "267793cd25f358f7af0e78d394ddc243a1521b79df2e2496a0415f0473f58ebf"
+    },
+    {
+      "path": "tests/unit/seo.test.mjs",
+      "bytes": 1094,
+      "tracked": false,
+      "category": "source/configuration",
+      "sha256": "c99242ff6e67ee2cb84b12aa3174e3257b8965620b94a28b6e77f56e4035f180"
     },
     {
       "path": "tests/unit/storage.test.mjs",
