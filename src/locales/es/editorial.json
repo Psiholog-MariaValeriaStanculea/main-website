@@ -217,7 +217,10 @@
     "emptyText": "Prueba otra palabra o vuelve a todos los temas.",
     "reset": "Restablecer filtros",
     "notice": "La información general no establece un diagnóstico ni sustituye una conversación sobre tu situación.",
-    "countOne": "1 artículo"
+    "countOne": "1 artículo",
+    "reviewedLabel": "Revisión editorial y de fuentes:",
+    "sourcesTitle": "Fuentes y lecturas recomendadas",
+    "sourcesNote": "Referencias en inglés para la información general de este artículo."
   },
   "faq": {
     "title": "Preguntas frecuentes",

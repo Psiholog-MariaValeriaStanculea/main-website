@@ -15,18 +15,22 @@ try {
   const { render, getPages, getBuildInfo } = await server.ssrLoadModule('/src/entry-server.tsx');
   const allPages = getPages();
   const pages = allPages.filter(page => page.indexable);
-  const writePage = async (path, language, file) => {
+  const writePage = async (path, language, file, redirectTo) => {
     const { body, head } = await render(path, language);
-    const html = template
+    let html = template
       .replace(/<html[^>]*>/, `<html lang="${language}">`)
       .replace(/<title>[\s\S]*?<\/title>/g, '')
       .replace(/<meta\s+(?:name|property)="(?:description|author|keywords|robots|og:[^"]+|twitter:[^"]+)"[^>]*>/g, '')
       .replace('</head>', `${head}</head>`)
       .replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+    // Pages has no configurable HTTP redirect rules. Keep crawlable alias HTML,
+    // its canonical target, and an instant refresh that also works without JS.
+    // A pathname target keeps local preview/restored artifacts on their own host.
+    if (redirectTo) html = html.replace('</head>', `<meta http-equiv="refresh" content="0; url=${escapeXml(new URL(redirectTo).pathname)}"></head>`);
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, html, 'utf8');
   };
-  for (const page of allPages) await writePage(page.path, page.language, resolve(outDir, `.${page.path}`, 'index.html'));
+  for (const page of allPages) await writePage(page.path, page.language, resolve(outDir, `.${page.path}`, 'index.html'), page.redirectTo);
   writeFileSync(resolve(outDir, 'route-manifest.json'), JSON.stringify(allPages, null, 2));
   await writePage('/ro', 'ro', resolve(outDir, 'index.html'));
   await writePage('/ro/pagina-inexistenta', 'ro', resolve(outDir, '404.html'));
@@ -34,6 +38,7 @@ try {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${pages.map(page => `  <url>
     <loc>${escapeXml(page.url)}</loc>
+${page.lastModified ? `    <lastmod>${escapeXml(page.lastModified)}</lastmod>\n` : ''}
 ${pages.filter(other => other.route === page.route).map(other => `    <xhtml:link rel="alternate" hreflang="${other.language}" href="${escapeXml(other.url)}" />`).join('\n')}
     <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(pages.find(other => other.route === page.route && other.language === 'ro').url)}" />
   </url>`).join('\n')}

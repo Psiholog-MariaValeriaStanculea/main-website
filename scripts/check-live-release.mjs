@@ -2,6 +2,9 @@ import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { lookup } from 'node:dns/promises';
 import https from 'node:https';
 import { createHash } from 'node:crypto';
+import { resolve,dirname } from 'node:path';
+const outputArg=process.argv.indexOf('--output');
+const output=resolve(outputArg===-1?'docs/qa/live-release-2026-10-04.json':process.argv[outputArg+1]);
 const base = new URL('https://psiholog-mariavaleriastanculea.github.io/main-website/');
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const routes = JSON.parse(readFileSync('dist/route-manifest.json', 'utf8'));
@@ -36,5 +39,5 @@ let customDomain;
 try {customDomain={host:'valeriastanculea.ro',dns:await lookup('valeriastanculea.ro',{all:true}),ownership:'unverified',selection:'source-document candidate; user has not confirmed cutover'};}
 catch(error){customDomain={host:'valeriastanculea.ro',dnsError:error.code,ownership:'unverified',selection:'source-document candidate; user has not confirmed cutover'};}
 const report={checkedAt:new Date().toISOString(),base:base.href,expectedCandidateBuild:expected,githubDns:await lookup(base.hostname,{all:true}),certificate,httpRedirect:{status:http.status,location:http.headers.get('location')},customDomain,pages:pages.sort((a,b)=>a.path.localeCompare(b.path)),assets};
-mkdirSync('docs/qa',{recursive:true});writeFileSync('docs/qa/live-release-2026-10-04.json',JSON.stringify(report,null,2)+'\n');
+mkdirSync(dirname(output),{recursive:true});writeFileSync(output,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({pages:pages.length,statuses:pages.reduce((counts,page)=>(counts[page.status]=(counts[page.status]||0)+1,counts),{}),assets:assets.length,tlsAuthorised:certificate.authorised,httpRedirect:report.httpRedirect,customDomain,candidatePublished:pages.some(page=>page.matchesCandidate)},null,2));

@@ -217,7 +217,10 @@
     "emptyText": "Încearcă un alt cuvânt sau revino la toate subiectele.",
     "reset": "Resetează filtrele",
     "notice": "Informațiile generale nu stabilesc un diagnostic și nu înlocuiesc o discuție despre situația ta.",
-    "countOne": "1 articol"
+    "countOne": "1 articol",
+    "reviewedLabel": "Revizuire editorială și a surselor:",
+    "sourcesTitle": "Surse și lecturi recomandate",
+    "sourcesNote": "Referințe în limba engleză pentru informațiile generale din articol."
   },
   "faq": {
     "title": "Întrebări frecvente",

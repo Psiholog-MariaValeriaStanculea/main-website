@@ -162,9 +162,17 @@ test('deployment has test gates before upload and exactly one deployer', () => {
   assert.deepEqual(deployers[0].jobs.deploy.permissions, { contents: 'read', pages: 'write', 'id-token': 'write' });
   const upload = build.findIndex(step => step.uses?.startsWith('actions/upload-pages-artifact@'));
   assert.ok(upload > 0);
-  for (const command of ['npm run test:unit', 'npm run test:e2e', 'npm run test:contact', 'npm run check:seo', 'npm run check:pages']) {
-    assert.ok(build.slice(0, upload).some(step => step.run?.includes(command)), `${command} must gate artifact upload`);
+  for (const command of ['npm run lint', 'npm run typecheck', 'npm run check:files', 'npm run check:content',
+    'npm run test:unit', 'npm run build', 'npm run test:e2e', 'npm run test:responsive', 'npm run test:contact',
+    'npm run check:seo', 'npm run check:pages', 'npm run check:release']) {
+    const gate=build.slice(0, upload).find(step => step.run?.split('\n').some(line=>line.trim()===command));
+    assert.ok(gate, `${command} must gate artifact upload`);
+    assert.ok(!gate['continue-on-error'] && !gate.if, `${command} must always run and fail the build on errors`);
   }
+  const install=build.findIndex(step=>step.run?.includes('playwright install --with-deps chromium'));
+  const buildSite=build.findIndex(step=>step.run?.split('\n').some(line=>line.trim()==='npm run build'));
+  const browserTests=build.findIndex(step=>step.run?.includes('npm run test:e2e'));
+  assert.ok(install>=0 && install<browserTests && buildSite<browserTests,'Production artifact and browser must exist before browser tests');
   const review=build.slice(0,upload).find(step=>step.env?.RELEASE_APPROVED);
   assert.equal(review?.env.RELEASE_APPROVED,'${{ vars.WEBSITE_RELEASE_APPROVED }}');
   assert.ok(review?.run.includes('"$RELEASE_APPROVED" != "true"'));
@@ -183,8 +191,25 @@ test('pull requests get tests without publishing a Pages artifact', () => {
   const workflow = parse(readFileSync('.github/workflows/test.yml', 'utf8'));
   assert.ok(Object.hasOwn(workflow.on, 'pull_request'));
   const commands = workflow.jobs.test.steps.map(step => step.run || '').join('\n');
-  for (const command of ['npm run lint', 'npx tsc -b', 'npm run test:unit', 'npm run build:github-pages',
-    'npm run check:seo', 'npm run check:pages', 'npm run test:e2e']) assert.ok(commands.includes(command));
+  for (const command of ['npm run lint', 'npm run typecheck', 'npm run check:files', 'npm run check:content',
+    'npm run test:unit', 'npm run build:github-pages', 'npm run check:seo', 'npm run check:pages',
+    'npm run test:e2e', 'npm run test:responsive', 'npm run test:contact']) {
+    assert.ok(commands.includes(command),`${command} must run for pull requests`);
+    const gate=workflow.jobs.test.steps.find(step=>step.run?.split('\n').some(line=>line.trim()===command));
+    assert.ok(gate && !gate['continue-on-error'] && !gate.if,`${command} must fail the pull request check on errors`);
+  }
   assert.ok(!JSON.stringify(workflow).includes('actions/deploy-pages@'));
   assert.equal(workflow.permissions.contents, 'read');
+});
+
+test('the local CI command includes lint, TypeScript and every automated artifact/browser check',()=>{
+  const {scripts}=JSON.parse(readFileSync('package.json','utf8'));
+  assert.equal(scripts.typecheck,'tsc -b');
+  assert.equal(scripts['check:ci'],'npm run lint && npm run typecheck && npm test');
+  const commands=scripts.test.split(' && ');
+  for(const command of ['npm run check:files','npm run check:content','npm run test:unit','npm run build:github-pages',
+    'npm run check:seo','npm run check:pages','npm run test:e2e','npm run test:responsive','npm run test:contact']){
+    assert.ok(commands.includes(command),`${command} must be part of local CI validation`);
+  }
+  assert.ok(commands.indexOf('npm run build:github-pages')<commands.indexOf('npm run test:e2e'));
 });

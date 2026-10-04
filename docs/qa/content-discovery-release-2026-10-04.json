@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-04T13:41:48.905Z",
+  "scope": [
+    "4. Strengthen content and discoverability",
+    "5. Validate and release"
+  ],
+  "build": {
+    "contactConfigured": true,
+    "recaptchaConfigured": true,
+    "buildId": "24dd7f13a580d4d716217c0a8ea475ad6a1a77356737aec0fd9592567d89033a"
+  },
+  "manifest": {
+    "total": 88,
+    "indexable": 52,
+    "legacyAliases": 24,
+    "legalNoindex": 12
+  },
+  "checks": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "files": "passed",
+    "fourLanguageContent": "passed",
+    "unit": {
+      "passed": 52
+    },
+    "productionBuild": "passed",
+    "seo": "passed",
+    "pages": "passed",
+    "browser": {
+      "initialPassed": 247,
+      "initialSkipped": 17,
+      "initialFailedNewTests": 10,
+      "focusedCorrectedMigrationPassed": 10,
+      "totalPassedAcrossRuns": 257,
+      "remainingFailures": 0
+    },
+    "responsive": {
+      "passed": 90
+    },
+    "contactMocked": {
+      "passed": 60,
+      "realProviderRequests": false
+    },
+    "rollbackLocal": {
+      "snapshot": ".release-archives/content-discovery-candidate-2026-10-04",
+      "restored": ".release-archives/content-discovery-restored-2026-10-04",
+      "exactInventoryVerified": true,
+      "httpVerifier": {
+        "pages": 3,
+        "assets": 5
+      },
+      "allManifestRoutes": {
+        "checked": 88,
+        "buildAndCanonicalVerified": true
+      },
+      "missingRouteStatus": 404,
+      "productionRollbackVerified": false
+    }
+  },
+  "release": {
+    "published": false,
+    "status": "blocked",
+    "pendingGates": [
+      "clinical",
+      "professional",
+      "translations",
+      "privacy",
+      "providersAndAbuse",
+      "emailDelivery",
+      "domain",
+      "rollback"
+    ],
+    "unresolvedLegalFacts": true,
+    "realCaptchaSolved": false,
+    "emailInboxAndReplyToConfirmed": false
+  },
+  "liveReport": "docs/qa/content-discovery-live-2026-10-04.json",
+  "limitations": [
+    "Editorial/source review is not clinical approval",
+    "Four-language structural parity is not human translation approval",
+    "Mock CAPTCHA tests do not validate the EmailJS secret or real Google challenge",
+    "Reflow/focus tests are not full WCAG certification",
+    "Field Core Web Vitals were not measured"
+  ]
+}

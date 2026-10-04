@@ -1,0 +1,1018 @@
+{
+  "checkedAt": "2026-10-04T13:32:37.280Z",
+  "base": "https://psiholog-mariavaleriastanculea.github.io/main-website/",
+  "expectedCandidateBuild": "24dd7f13a580d4d716217c0a8ea475ad6a1a77356737aec0fd9592567d89033a",
+  "githubDns": [
+    {
+      "address": "185.199.109.153",
+      "family": 4
+    },
+    {
+      "address": "185.199.111.153",
+      "family": 4
+    },
+    {
+      "address": "185.199.108.153",
+      "family": 4
+    },
+    {
+      "address": "185.199.110.153",
+      "family": 4
+    },
+    {
+      "address": "2606:50c0:8003::153",
+      "family": 6
+    },
+    {
+      "address": "2606:50c0:8002::153",
+      "family": 6
+    },
+    {
+      "address": "2606:50c0:8000::153",
+      "family": 6
+    },
+    {
+      "address": "2606:50c0:8001::153",
+      "family": 6
+    }
+  ],
+  "certificate": {
+    "authorised": true,
+    "subject": {
+      "CN": "*.github.io"
+    },
+    "issuer": {
+      "C": "US",
+      "O": "Let's Encrypt",
+      "CN": "YR1"
+    },
+    "validFrom": "Aug  2 23:38:02 2026 GMT",
+    "validTo": "Oct 31 23:38:01 2026 GMT"
+  },
+  "httpRedirect": {
+    "status": 301,
+    "location": "https://psiholog-mariavaleriastanculea.github.io/main-website/"
+  },
+  "customDomain": {
+    "host": "valeriastanculea.ro",
+    "dnsError": "ENOTFOUND",
+    "ownership": "unverified",
+    "selection": "source-document candidate; user has not confirmed cutover"
+  },
+  "pages": [
+    {
+      "path": "",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "5ce34227789a6bfff7872da92928aee0ce1bdab036886589d8e91a9dfce681e3"
+    },
+    {
+      "path": "build-info.json",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/build-info.json",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "9f467834fd6c9f02cd3ce57d2e16d58a98f15faf67127c27e21818fb2107abdc"
+    },
+    {
+      "path": "en/blog/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "52e3a2333c27ee5d275ab5ee5971e1557e66175f920bd45180c83475313e3e20"
+    },
+    {
+      "path": "en/blog/1/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/1/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/1",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "bc64658a4c52f26dc4a3a469e562dcf160dda375edba0ae1e03b0bf83455c23d"
+    },
+    {
+      "path": "en/blog/2/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/2/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/2",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "b064eace4315b8674b93313854889518904bbf453cf3f30ea3b99d3f2fde3970"
+    },
+    {
+      "path": "en/blog/3/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/3/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/3",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "1a111e71287c2dd3b9aa8ff9993feff6f23816fe1b6d7903c62c9aeb286bcab2"
+    },
+    {
+      "path": "en/blog/4/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/4/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/4",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "9b0332c6a4c012d6d2510d108e2eb5faf349927d73ee371422dc9a3467be4314"
+    },
+    {
+      "path": "en/blog/5/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/5/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/5",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "df46ef35bedd5c515cbae6007f2ed5541d4a4c0420bcb080f0792e6367531590"
+    },
+    {
+      "path": "en/blog/6/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/6/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/6",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "c6321a8953fdf536fb0fc95e98bff4377a3119eae925f1f87e3e6989dc9123d7"
+    },
+    {
+      "path": "en/blog/anxiety-in-children/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/anxiety-in-children/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/blog/communicating-with-your-teenager/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/communicating-with-your-teenager/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/blog/family-support-in-child-therapy/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/family-support-in-child-therapy/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/blog/healthy-boundaries-for-children/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/healthy-boundaries-for-children/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/blog/play-therapy-child-development/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/play-therapy-child-development/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/blog/understanding-childrens-anger/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/blog/understanding-childrens-anger/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/confidentialitate/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/confidentialitate/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/contact/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/contact/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/contact",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "fc4a51ff93d2932b8ca26e2ad175c029eba271f1600a44f2a933ed3decdebc3c"
+    },
+    {
+      "path": "en/cookie-uri/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/cookie-uri/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/despre/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/despre/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/despre",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "66eae1c068e6d7512047211df4d125469502737eb6b731b5f468df9d65cb9625"
+    },
+    {
+      "path": "en/intrebari-frecvente/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/intrebari-frecvente/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/intrebari-frecvente",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "7af527981cec3a89976de943496e7ead5c2d174e959aa04afd805076969cbeae"
+    },
+    {
+      "path": "en/resurse/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/resurse/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "en/servicii/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/servicii/",
+      "language": "en",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/servicii",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "d9f99b1beb698e5e7713ae656bde1b0bd1a16441171d400b572cf738f489f791"
+    },
+    {
+      "path": "en/termeni-si-conditii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/en/termeni-si-conditii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "e748829e5b43eba1c4b5212e529fcb3e26939dc3612bda0ad6fc42d39bb2a7e3"
+    },
+    {
+      "path": "es/blog/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "97bd0125a870cab825add35db459157fd3b16e8d31da831b25a463d409298f3f"
+    },
+    {
+      "path": "es/blog/1/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/1/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/1",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "abcebc6349b4a4fb4db51cde8c49da070d8cc6eb58ae3d1c76a46f988ed998ec"
+    },
+    {
+      "path": "es/blog/2/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/2/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/2",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "dce95afda0fc219ce207dab46869745e9418d29ae68a537af90ae3453aa7c338"
+    },
+    {
+      "path": "es/blog/3/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/3/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/3",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "22dbcc9facbdd4c5986ce51f0d888fc0c847b2d1e20ddd47d3eabefa538a274e"
+    },
+    {
+      "path": "es/blog/4/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/4/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/4",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "53f3ddac44a4eae229e665ef5ee6fc685151299a20859cde39a7830c0cb8813f"
+    },
+    {
+      "path": "es/blog/5/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/5/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/5",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "87881a42ba6c4a32564e6807f672868ef3deab6db4ef6f5a68137c795d52db25"
+    },
+    {
+      "path": "es/blog/6/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/6/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/6",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "a2341ea1388ec610b558f3a77170dca69c2e67e92106230adbc6a8ab0d71a5b5"
+    },
+    {
+      "path": "es/blog/ansiedad-en-ninos/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/ansiedad-en-ninos/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/blog/comprender-ira-infantil/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/comprender-ira-infantil/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/blog/comunicacion-con-adolescentes/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/comunicacion-con-adolescentes/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/blog/familia-en-terapia-infantil/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/familia-en-terapia-infantil/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/blog/limites-saludables-para-ninos/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/limites-saludables-para-ninos/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/blog/terapia-de-juego-desarrollo-infantil/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/blog/terapia-de-juego-desarrollo-infantil/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/confidentialitate/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/confidentialitate/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/contact/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/contact/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/contact",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "4bac0d1328f271bb2470388532e67c1f9e38fd510899a5b29eafa37b9bceadf0"
+    },
+    {
+      "path": "es/cookie-uri/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/cookie-uri/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/despre/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/despre/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/despre",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "d54aa6df8d6eb646f8c175278881e9899168d54fc5dd39b272a64daf439ba0f0"
+    },
+    {
+      "path": "es/intrebari-frecvente/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/intrebari-frecvente/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/intrebari-frecvente",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "80ac5ed64df66e3fb470549b0ad5faafce8459bcc9b821c08d7737beeebf77f6"
+    },
+    {
+      "path": "es/resurse/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/resurse/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "es/servicii/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/servicii/",
+      "language": "es",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/servicii",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "ab565bb5959511c6231ff575e37ed5ac21e24ace5dd6d60f1c3b841d16e6cdd6"
+    },
+    {
+      "path": "es/termeni-si-conditii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/es/termeni-si-conditii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "df0500ef16b6bde1352cd8d3b08a3b2fbae448e51d5a766dd9b75fc15ce1b904"
+    },
+    {
+      "path": "it/blog/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "5ea1a2ebbdd2dbec1c2dcee15e429b791802abd1dcfaa0d8fc11ab368b799cb1"
+    },
+    {
+      "path": "it/blog/1/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/1/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/1",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "02ca8450f16690495983b8551837c413ca5bac1345b6d631d709985d57c8e65a"
+    },
+    {
+      "path": "it/blog/2/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/2/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/2",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "7e300d034cb089b4713e5d6a336249e427c237fa31b13182b2bd761798ec5d79"
+    },
+    {
+      "path": "it/blog/3/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/3/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/3",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "ea3ae8987b99a09d8c9452fba75e05145bddaa09829941e9d8c00deca4902d4a"
+    },
+    {
+      "path": "it/blog/4/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/4/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/4",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "bd740f8b14d74f0198dda8a2c58755a296b4e478306027ca7ebadfe55f5c13e3"
+    },
+    {
+      "path": "it/blog/5/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/5/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/5",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "925f097a27f70d844b0d22a2f5b2a5222bf8406d39fe5c4d6e7c5b437bdb7228"
+    },
+    {
+      "path": "it/blog/6/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/6/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/6",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "c96db856e2249b1b2a06e63837a1a20cb43dee951c26b2946a48ef9ab4b4b63f"
+    },
+    {
+      "path": "it/blog/ansia-nei-bambini/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/ansia-nei-bambini/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/blog/comprendere-rabbia-bambini/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/comprendere-rabbia-bambini/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/blog/comunicare-con-adolescente/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/comunicare-con-adolescente/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/blog/famiglia-nel-percorso-terapeutico/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/famiglia-nel-percorso-terapeutico/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/blog/limiti-sani-per-bambini/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/limiti-sani-per-bambini/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/blog/terapia-del-gioco-sviluppo-bambino/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/blog/terapia-del-gioco-sviluppo-bambino/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/confidentialitate/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/confidentialitate/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/contact/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/contact/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/contact",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "a4eab9f83e8f0ac6d8e301dee790370fcc9d11113d6c8682bf8a778ed7d3849b"
+    },
+    {
+      "path": "it/cookie-uri/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/cookie-uri/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/despre/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/despre/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/despre",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "690621c5bad0cc649cf6793ff4a63e0d35cfc5abfaba597b28e97792747203d3"
+    },
+    {
+      "path": "it/intrebari-frecvente/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/intrebari-frecvente/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/intrebari-frecvente",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "9a2188dc367bc2c1187a485b57e97d78bc6b172e6f0b11b3183b3cde370f5149"
+    },
+    {
+      "path": "it/resurse/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/resurse/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "it/servicii/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/servicii/",
+      "language": "it",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/servicii",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "fdcc0520115eaa2a945fbb76b88f3ecd8ea68d435dc1ab0fe0c772cfb4d426e8"
+    },
+    {
+      "path": "it/termeni-si-conditii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/it/termeni-si-conditii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "pagina-inexistenta-2026-10-04/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta-2026-10-04/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "5ce34227789a6bfff7872da92928aee0ce1bdab036886589d8e91a9dfce681e3"
+    },
+    {
+      "path": "ro/blog/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "feb850e89d65fa2592bb0007a98f37a1f5b2256ce02c3a87b629e55c2019ad49"
+    },
+    {
+      "path": "ro/blog/1/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/1/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/1",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "1bf170b21477f05609f623c49a1d2af5e1e92e2d192ddd82d1e4579a47223d26"
+    },
+    {
+      "path": "ro/blog/2/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/2/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/2",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "676f5e083e30a390c7758e43a05841c641f180e5ae78f945169225bbc9fdacda"
+    },
+    {
+      "path": "ro/blog/3/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/3/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/3",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "a6216f4a683aeda31d40b0653d31e42270e27959ec38ab834eda6dcdbba233b7"
+    },
+    {
+      "path": "ro/blog/4/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/4/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/4",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "7265b2bbc11ba57b82f02ff5c68f7e66965ef7a9156e72661f3e524385d96f9d"
+    },
+    {
+      "path": "ro/blog/5/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/5/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/5",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "24ccc3558b983349c79a08429db2fedeec4223b4b5c58f3521edaa3001a51b76"
+    },
+    {
+      "path": "ro/blog/6/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/6/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/6",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "f1a28187de4dda82a58a111464ab3545da549fe0da330816671bdff5b086d4e6"
+    },
+    {
+      "path": "ro/blog/anxietatea-la-copii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/anxietatea-la-copii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/blog/comunicarea-cu-adolescentul/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/comunicarea-cu-adolescentul/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/blog/familia-in-procesul-terapeutic/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/familia-in-procesul-terapeutic/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/blog/furia-la-copii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/furia-la-copii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/blog/limite-sanatoase-pentru-copii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/limite-sanatoase-pentru-copii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/blog/terapia-prin-joc-dezvoltarea-copilului/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/blog/terapia-prin-joc-dezvoltarea-copilului/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/confidentialitate/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/confidentialitate/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/contact/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/contact/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/contact",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "8037ca08a520059fcbe53e1f7596dffc23328ca781e927f5014f487395846095"
+    },
+    {
+      "path": "ro/cookie-uri/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/cookie-uri/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/despre/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/despre/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/despre",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "c1f50422e49f1cb68095aad5a743dfb2d287e20ec2873ec21fe6f2e654b3434f"
+    },
+    {
+      "path": "ro/intrebari-frecvente/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/intrebari-frecvente/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/intrebari-frecvente",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "faf642d7329d8595ce2b2f910471d936100d5ab14a434176e392f2fee4e811ff"
+    },
+    {
+      "path": "ro/resurse/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/resurse/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    },
+    {
+      "path": "ro/servicii/",
+      "status": 200,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/servicii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/servicii",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "ae91da8edee2e1f06c9f687404de6bed943d0e08ed1e51f91943b5b3c5448150"
+    },
+    {
+      "path": "ro/termeni-si-conditii/",
+      "status": 404,
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/ro/termeni-si-conditii/",
+      "language": "ro",
+      "canonical": "https://psiholog-mariavaleriastanculea.github.io/main-website/pagina-inexistenta/404",
+      "buildId": null,
+      "matchesCandidate": false,
+      "sha256": "106632eaea911c9a8a5e8aab99828b06daabd8d8444a18ee13cd3af64b7240b3"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/index-CpQhMFLU.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 192143,
+      "sha256": "327f7d0ed252004d76db76d65dc36420b362313b4032e64264c5fb560e1dbe97"
+    },
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/react-vendor-CBA4eo2f.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 206254,
+      "sha256": "ee8ad2b7d2642286088ad12d8960471542832129593a3ef19d36d10144fdf605"
+    },
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/ui-vendor-C1dcblrp.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 201768,
+      "sha256": "c59e0297811bc42105a3b2a0ebc74122624dbc0ee4208482513c4b5ef7425096"
+    },
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/i18n-vendor-BMZ_bdu8.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 53936,
+      "sha256": "43d6c62bd648fc534abbb25ef3fcb541e8b248579932d9be38b1006fcb38c4f0"
+    },
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/feature-vendor-BpX6QqPM.js",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 19783,
+      "sha256": "0ebbed149dfdd99046b860e5101b64bb64ddc49a3b2ba724d6d7adc08db87f35"
+    },
+    {
+      "url": "https://psiholog-mariavaleriastanculea.github.io/main-website/assets/index-Ddn_K8j2.css",
+      "status": 200,
+      "type": "text/css; charset=utf-8",
+      "bytes": 94064,
+      "sha256": "c5120a72107b1f24ef17b9206dcdd1ca608fbf9998e2a7fff41695876bad2b00"
+    }
+  ]
+}

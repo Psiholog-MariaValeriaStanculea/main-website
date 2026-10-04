@@ -30,7 +30,12 @@ for(const language of ['ro','en','it','es'])test('localized validation, rejectio
  await page.locator('form button[type=submit]').click();await expect(page.getByRole('status')).toContainText(c.success);expect(requests).toBe(2);
  await expect(page.locator('#name')).toBeDisabled();
  if(language==='ro'){await page.evaluate(()=>scrollTo(0,0));await captureQa(page,info,'mocked-contact-accepted-'+info.project.name+'.png');}
- await page.getByRole('button',{name:c.newRequest,exact:true}).click();await expect(page.locator('#name')).toHaveValue('');
+ const newRequest=page.getByRole('button',{name:c.newRequest,exact:true});
+ await page.setViewportSize({width:717,height:512});
+ await expect(newRequest).toHaveCSS('min-width','240px');
+ await page.setViewportSize({width:280,height:653});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth),'The accepted form must also fit immediately after folding').toBeLessThanOrEqual(281);
+ await newRequest.click();await expect(page.locator('#name')).toHaveValue('');
 });
 test('an optional message sends stable service context once and preserves the draft while sending',async({page})=>{
  let release!:()=>void;let payload:Record<string,unknown>|undefined;let requests=0;

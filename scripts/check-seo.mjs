@@ -47,16 +47,32 @@ for (const url of urls) {
   const data = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(item => JSON.parse(item[1]));
   assert.ok(data[0]['@graph'].some(item => item['@type'] === 'Person'), `Practitioner schema: ${url}`);
   assert.ok(!data[0]['@graph'].some(item => item.address || item.priceRange || item.openingHours), 'No unverified location, price or hours');
-  if (/\/blog\/\d+$/.test(url)) {
+  const page = manifest.find(page => page.url === url);
+  if (page.articleId) {
     const article = data[0]['@graph'].find(item => item['@type'] === 'BlogPosting');
     assert.ok(article?.headline && article.author.url, `Article schema: ${url}`);
     assert.ok(!article.datePublished, 'Unverified article dates must not be published');
+    assert.equal(article.dateModified, page.lastModified, 'Editorial review date matches the manifest');
+    assert.ok(html.includes(`dateTime="${page.lastModified}"`) || html.includes(`datetime="${page.lastModified}"`), 'Review date is visible in the article');
+    assert.ok(article.citation?.length, 'Article has relevant references');
+    for (const reference of article.citation) assert.ok(html.includes(`href="${reference}"`), 'Schema reference is available to readers');
+    for (const translation of manifest.filter(other => other.indexable && other.articleId === page.articleId)) {
+      assert.ok(html.includes(`href="${translation.url}" hrefLang="${translation.language}"`) || html.includes(`hrefLang="${translation.language}" href="${translation.url}"`) || html.includes(`hreflang="${translation.language}" href="${translation.url}"`), 'Article language alternate uses its translated slug');
+    }
     assert.ok(html.includes('<article'), `Rendered article content: ${url}`);
   }
   assert.ok(!data.some(item => item['@type'] === 'FAQPage'), 'Retired Google FAQ schema is omitted');
 }
 for (const page of manifest.filter(page => !page.indexable)) {
   const html = readFileSync(resolve(dist, `.${page.path}`, 'index.html'), 'utf8');
+  if (page.redirectTo) {
+    assert.ok(manifest.some(target => target.indexable && target.url === page.redirectTo), 'Legacy article points to an indexable target');
+    assert.ok(html.includes(`rel="canonical" href="${page.redirectTo}"`), 'Legacy canonical is the new article URL');
+    assert.ok(html.includes(`http-equiv="refresh" content="0; url=${new URL(page.redirectTo).pathname}"`), 'Static legacy redirect works without JavaScript on the current host');
+    assert.ok(html.includes('<article'), 'Legacy page retains readable content');
+    checkAssets(html,page.url);
+    continue;
+  }
   assert.ok(html.includes('noindex,follow'), 'Unreviewed privacy page remains outside search');
   assert.ok(!html.includes('rel="alternate"'), 'Unreviewed pages have no indexed language alternates');
 }

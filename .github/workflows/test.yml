@@ -21,7 +21,7 @@ jobs:
       - name: Source and unit checks
         run: |
           npm run lint
-          npx tsc -b
+          npm run typecheck
           npm run check:files
           npm run check:content
           npm run test:unit

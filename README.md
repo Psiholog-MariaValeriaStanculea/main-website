@@ -107,10 +107,10 @@ Prefixul `VITE_` expune valoarea în aplicația livrată vizitatorilor. Nu intro
 npx playwright install chromium
 npm run lint
 npx tsc -b
-npm test
+npm run check:ci
 ```
 
-Pe Linux/CI, instalarea browserului poate necesita `npx playwright install --with-deps chromium`. `npm test` verifică fișierele, testele unitare, build-ul de producție, SEO, structura Pages, navigarea, layout-urile responsive și stările Contact.
+Pe Linux/CI, instalarea browserului poate necesita `npx playwright install --with-deps chromium`. `npm run check:ci` verifică ESLint, TypeScript, fișierele, conținutul, testele unitare, build-ul de producție, SEO, structura Pages, navigarea, layout-urile responsive și stările Contact. `npm test` rulează aceeași suită fără ESLint și TypeScript. Validarea tehnică este separată de `npm run check:release`, care verifică evidențele și condițiile de publicare.
 
 Testele Contact/reCAPTCHA interceptează cererile către furnizori și folosesc tokenuri fictive; nu trimit emailuri reale și nu rezolvă challenge-uri Google. Artifact-ul `.contact-test-dist` folosește configurare fictivă și nu trebuie publicat. Rapoartele și capturile automate sunt salvate în directoarele ignorate `test-results/`, `responsive-test-results/`, `contact-test-results/` și directoarele corespunzătoare `playwright-report/`.
 

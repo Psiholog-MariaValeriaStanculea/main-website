@@ -2,9 +2,13 @@
 
 **Candidatul local a fost revizuit și consolidat. Publicarea rămâne blocată de fapte și verificări externe neîncheiate.** Nu s-au publicat modificările și nu s-a schimbat domeniul. [Registrul de release](release-readiness.json) și `npm run check:release` refuză publicarea fără dovezi sau cu marcaje de confidențialitate necompletate.
 
-## Actualizare finală contact și politici
+## Actualizare pentru etapele 4 și 5
 
-Candidatul curent: `5a0288c5080edd9705714dd0f742bbe40cdfcefdbeeae0521a5e8e0e038e121c`. Footerul păstrează numai bannerul oficial SAL, fără link ANPC duplicat și fără NETOPIA/parteneri/diplome. GDPR, cookies și termenii sunt rescrise în patru limbi: [raport și surse](legal-review-2026-10-04.md), [dovezi QA](qa/contact-legal-review-2026-10-04.json). Titularul confirmă contract prin email și transfer bancar; CIF/adresă/înregistrare/cod profesional ulterior. Cele 12 pagini juridice rămân noindex. 51 teste unitare, 52 teste contact/CAPTCHA interceptate și 26 verificări rute juridice au trecut; build-ul final, SEO și Pages au trecut. Snapshot-ul final a fost verificat și restaurat local cu inventar identic. CAPTCHA real este încă blocat de lista domeniilor locale Google; challenge-ul, primirea și Reply-To nu sunt confirmate. Retenția, acordurile și auditul cookies necesită validare operațională. Rezultatele anterioare de mai jos sunt istorice și nu înlocuiesc raportul curent.
+Candidatul curent pentru conținut și discoverability: `24dd7f13a580d4d716217c0a8ea475ad6a1a77356737aec0fd9592567d89033a`. [Raportul etapelor 4 și 5](content-discovery-review-2026-10-04.md) este reperul curent pentru implementare și validare. Registrul de release rămâne pending; rezultatele tehnice nu confirmă primirea unui email, aprobarea clinică sau completarea datelor cabinetului. Candidatul a fost arhivat și restaurat local cu aceiași octeți, iar identitatea sa a trecut verificarea HTTP. Auditul HTTPS/DNS/live este păstrat separat în `qa/content-discovery-live-2026-10-04.json`. Secțiunile următoare descriu versiuni și verificări anterioare.
+
+## Actualizare anterioară contact și politici
+
+Candidatul anterior: `5a0288c5080edd9705714dd0f742bbe40cdfcefdbeeae0521a5e8e0e038e121c`. Footerul păstrează numai bannerul oficial SAL, fără link ANPC duplicat și fără NETOPIA/parteneri/diplome. GDPR, cookies și termenii sunt rescrise în patru limbi: [raport și surse](legal-review-2026-10-04.md), [dovezi QA](qa/contact-legal-review-2026-10-04.json). Titularul confirmă contract prin email și transfer bancar; CIF/adresă/înregistrare/cod profesional ulterior. Cele 12 pagini juridice rămân noindex. 51 teste unitare, 52 teste contact/CAPTCHA interceptate și 26 verificări rute juridice au trecut; build-ul final, SEO și Pages au trecut. Snapshot-ul final a fost verificat și restaurat local cu inventar identic. CAPTCHA real este încă blocat de lista domeniilor locale Google; challenge-ul, primirea și Reply-To nu sunt confirmate. Retenția, acordurile și auditul cookies necesită validare operațională. Rezultatele anterioare de mai jos sunt istorice și nu înlocuiesc raportul curent.
 
 ## Conținut și informații profesionale
 

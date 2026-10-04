@@ -91,3 +91,47 @@ test('widget switches to compact at 320px and clears a solved token on resize',a
  await expect(page.getByRole('button',{name:'Solve test verification'})).toBeVisible();
 });
 
+for(const language of ['ro','en','it','es'])test('folded Contact fits while verification loads, fails and resizes: '+language,async({page})=>{
+ let releaseScript:()=>void=()=>{};
+ const gate=new Promise<void>(resolve=>{releaseScript=resolve;});
+ // Match Google's fixed widget dimensions without sending requests to Google.
+ const sizedCaptcha=`window.grecaptcha={render(element,options){
+  window.mockCaptchaOptions=options;
+  const frame=document.createElement('iframe');frame.title='Test verification';
+  frame.width=options.size==='normal'?'304':'164';frame.height=options.size==='normal'?'78':'144';
+  element.append(frame);return 1;},reset(){}};window.siteRecaptchaReady();`;
+ await page.route(api,async route=>{await gate;await route.fulfill({contentType:'application/javascript',body:sizedCaptcha});});
+ const fits=async()=>{
+  const width=page.viewportSize()!.width;
+  await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth),'Contact must fit the viewport').toBeLessThanOrEqual(width+1);
+  const clipped=await page.locator('.inquiry-submit-panel').evaluate(panel=>[...panel.querySelectorAll('h3,p,button,input,iframe')].filter(element=>{
+   const box=element.getBoundingClientRect();const bounds=panel.getBoundingClientRect();
+   return box.width>0&&(box.left<bounds.left||box.right>bounds.right);
+  }).map(element=>element.tagName+': '+element.textContent));
+  expect(clipped,'Verification and submission controls must fit inside their panel').toEqual([]);
+ };
+ await page.setViewportSize({width:280,height:653});
+ await page.goto(language+'/contact/',{waitUntil:'domcontentloaded'});
+ try{
+  await expect(page.locator('#captcha-feedback')).toHaveText(copy(language).captchaLoading);
+  await page.locator('#name').fill('Unsent folded draft');
+  await page.locator('#message').fill('Preserve verification draft on resize');
+  await fits();
+ }finally{releaseScript();}
+ await expect(page.locator('#captcha-verification')).toHaveAttribute('data-state','ready');
+ await expect(page.locator('.captcha-widget')).toHaveAttribute('data-size','compact');await fits();
+ await page.evaluate(()=>{(window as unknown as {mockCaptchaOptions:{'error-callback':()=>void}}).mockCaptchaOptions['error-callback']();});
+ await expect(page.getByTestId('captcha-retry')).toBeVisible();await fits();
+ await page.getByTestId('captcha-retry').click();
+ await expect(page.locator('#captcha-verification')).toHaveAttribute('data-state','ready');
+ for(const width of [1280,280,717,320]){
+  await page.setViewportSize({width,height:900});
+  const normal=width>=717;
+  await expect(page.locator('.captcha-widget')).toHaveAttribute('data-size',normal?'normal':'compact');
+  await expect(page.locator('.captcha-widget iframe')).toHaveAttribute('width',normal?'304':'164');
+  await fits();
+  await expect(page.locator('#name')).toHaveValue('Unsent folded draft');
+  await expect(page.locator('#message')).toHaveValue('Preserve verification draft on resize');
+ }
+});
+

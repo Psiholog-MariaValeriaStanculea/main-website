@@ -217,7 +217,10 @@
     "emptyText": "Try another word or return to all topics.",
     "reset": "Reset filters",
     "notice": "General information does not establish a diagnosis or replace a discussion of your circumstances.",
-    "countOne": "1 article"
+    "countOne": "1 article",
+    "reviewedLabel": "Editorial and source review:",
+    "sourcesTitle": "Sources and further reading",
+    "sourcesNote": "References in English for the general information in this article."
   },
   "faq": {
     "title": "Frequently asked questions",

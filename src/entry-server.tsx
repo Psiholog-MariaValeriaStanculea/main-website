@@ -7,14 +7,21 @@ import { ThemeProvider } from './components/ThemeProvider';
 import { InquiryProvider } from './components/InquiryProvider';
 import { SiteRoutes } from './SiteRoutes';
 import { getBlogPosts } from './data/blogPosts';
+import { getArticlePath } from './data/articleMetadata';
 import { pageRoutes } from './lib/routes';
 import { pageUrl } from './lib/seo';
 import { contactConfigured, recaptchaSiteKey } from './lib/inquiryTransport';
 export const getBuildInfo=()=>({contactConfigured,recaptchaConfigured:Boolean(recaptchaSiteKey)});
 export const getPages=()=>supportedLanguages.flatMap(language=>[
- ...pageRoutes.map(route=>({route:route.path,indexable:!['privacy','terms','cookies'].includes(route.key)||import.meta.env.VITE_PRIVACY_REVIEWED==='true'})),
- ...getBlogPosts(language).map(post=>({route:'/blog/'+post.id,indexable:true})),
-].map(({route,indexable})=>({path:'/'+language+route,language,route,indexable,url:pageUrl('/'+language+route)})));
+ ...pageRoutes.map(route=>({path:'/'+language+route.path,language,route:route.path,indexable:!['privacy','terms','cookies'].includes(route.key)||import.meta.env.VITE_PRIVACY_REVIEWED==='true',url:pageUrl('/'+language+route.path)})),
+ ...getBlogPosts(language).flatMap(post=>{
+  const path='/'+language+getArticlePath(post.id,language);const url=pageUrl(path);
+  return [
+   {path,language,route:'/blog/'+post.id,indexable:true,url,lastModified:post.reviewedOn,articleId:post.id},
+   {path:'/'+language+'/blog/'+post.id,language,route:'/blog/'+post.id,indexable:false,url:pageUrl('/'+language+'/blog/'+post.id),redirectTo:url,articleId:post.id},
+  ];
+ }),
+]);
 export async function render(path:string,language:SupportedLanguage){
  const translations=i18n.cloneInstance({lng:language,initImmediate:false});await translations.changeLanguage(language);
  const context:{helmet?:HelmetServerState}={};

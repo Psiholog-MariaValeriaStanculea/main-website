@@ -1,4 +1,5 @@
 import { defaultLanguage, type SupportedLanguage } from "@/lib/i18n";
+import { articleReviewedOn, getArticleSources } from './articleMetadata';
 
 export interface BlogPost {
   id: string;
@@ -7,7 +8,8 @@ export interface BlogPost {
   content: string;
   category: BlogCategoryId;
   author: string;
-  date: string;
+  reviewedOn: string;
+  sources: ReturnType<typeof getArticleSources>;
   readTime: string;
   image: string;
   featured?: boolean;
@@ -22,7 +24,7 @@ type BlogCategoryId =
 
 type BlogPostTranslation = Pick<BlogPost, "title" | "excerpt" | "content" | "readTime">;
 
-type BlogPostBase = Omit<BlogPost, "title" | "excerpt" | "content" | "readTime">;
+type BlogPostBase = Omit<BlogPost, "title" | "excerpt" | "content" | "readTime" | "reviewedOn" | "sources">;
 
 const closeupPortrait = `${import.meta.env.BASE_URL}lovable-uploads/3001f3a4-f5d4-4ee9-8512-a8602b56875e.png`;
 const standingPortrait = `${import.meta.env.BASE_URL}lovable-uploads/83e7a272-918c-44bb-8772-c1de1e40660d.png`;
@@ -74,7 +76,6 @@ const baseBlogPosts: BlogPostBase[] = [
     id: "1",
     category: "play-therapy",
     author: "Valeria Stănculea",
-    date: "2024-01-15",
     image: seatedPortrait,
     featured: true,
   },
@@ -82,35 +83,30 @@ const baseBlogPosts: BlogPostBase[] = [
     id: "2",
     category: "adolescent-therapy",
     author: "Valeria Stănculea",
-    date: "2024-01-10",
     image: closeupPortrait,
   },
   {
     id: "3",
     category: "child-development",
     author: "Valeria Stănculea",
-    date: "2024-01-05",
     image: standingPortrait,
   },
   {
     id: "4",
     category: "parental-counseling",
     author: "Valeria Stănculea",
-    date: "2024-01-01",
     image: seatedPortrait,
   },
   {
     id: "5",
     category: "child-development",
     author: "Valeria Stănculea",
-    date: "2023-12-28",
     image: closeupPortrait,
   },
   {
     id: "6",
     category: "family-dynamics",
     author: "Valeria Stănculea",
-    date: "2023-12-20",
     image: standingPortrait,
   },
 ];
@@ -135,7 +131,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>consolidarea relației cu adulții de referință.</li>
         </ul>
         <h2>Rolul părinților în proces</h2>
-        <p>În lucrul cu copiii, progresul este mult mai stabil atunci când părinții sunt parte a procesului. Asta poate însemna întâlniri de ghidaj parental, ajustări de rutină acasă, o mai bună înțelegere a factorilor declanșatori și un mod mai coerent de răspuns în momentele tensionate. Copilul are nevoie să fie susținut nu doar în cabinet, ci și în mediile în care trăiește zilnic.</p>
+        <p>Implicarea părinților poate sprijini procesul terapeutic, în funcție de nevoile copilului și de cadrul colaborării. Asta poate însemna întâlniri de ghidaj parental, ajustări de rutină acasă, o mai bună înțelegere a factorilor declanșatori și un mod mai coerent de răspuns în momentele tensionate. Copilul are nevoie să fie susținut nu doar în cabinet, ci și în mediile în care trăiește zilnic.</p>
         <p>Terapia prin joc nu promite soluții rapide, dar oferă un cadru profund și potrivit dezvoltării copilului. Când este bine indicată și bine susținută, ea ajută copilul să se simtă mai în siguranță cu propriile emoții și mai disponibil pentru relație și învățare.</p>
       `,
     },
@@ -179,7 +175,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Ce ajută din partea părinților</h2>
         <p>Primul pas este validarea. Nu înseamnă să confirmi că pericolul este real, ci să arăți că emoția copilului este văzută și înțeleasă. Un copil anxios are nevoie de un adult calm, previzibil și ferm, nu de explicații lungi sau de presiune de tipul „nu ai de ce să te temi”.</p>
         <p>Ajută să menții rutinele, să pregătești din timp tranzițiile și să fragmentezi provocările în pași mici. Dacă adultul intră într-o spirală de reasigurare fără limită, anxietatea se poate menține. Dacă, în schimb, forțează prea abrupt confruntarea, copilul se poate bloca și mai mult. Echilibrul este în susținere + încurajare graduală.</p>
-        <p>Când anxietatea începe să afecteze somnul, școala, relațiile sau funcționarea familiei, evaluarea psihologică și intervenția timpurie pot preveni cronicizarea. Cu sprijin potrivit, copilul învață treptat să tolereze mai bine incertitudinea și să își recâștige sentimentul de siguranță.</p>
+        <p>Când anxietatea începe să afecteze somnul, școala, relațiile sau funcționarea familiei, evaluarea psihologică poate ajuta la clarificarea nevoilor și la alegerea sprijinului potrivit. Cu sprijin potrivit, copilul învață treptat să tolereze mai bine incertitudinea și să își recâștige sentimentul de siguranță.</p>
       `,
     },
     "4": {
@@ -212,7 +208,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Ce ascunde de multe ori furia</h2>
         <p>În spatele episoadelor de furie putem găsi oboseală, supraîncărcare senzorială, rușine, anxietate, neputință sau dificultăți de tranziție. Când adultul vede doar comportamentul și răspunde exclusiv la intensitatea lui, pierde informația esențială: copilul este depășit de propriul sistem emoțional.</p>
         <h2>Ce face diferența în momentul critic</h2>
-        <p>În plin episod, explicațiile lungi nu ajută. Copilul are nevoie mai întâi de contenție, nu de argumente. Asta înseamnă voce mai joasă, propoziții scurte, puțini stimuli și un adult care nu intră într-o luptă de putere. Dacă adultul răspunde cu furie la furia copilului, intensitatea se dublează.</p>
+        <p>În plin episod, explicațiile lungi nu ajută. Copilul are nevoie mai întâi de contenție, nu de argumente. Asta înseamnă voce mai joasă, propoziții scurte, puțini stimuli și un adult care nu intră într-o luptă de putere. Dacă adultul răspunde cu furie la furia copilului, conflictul poate escalada.</p>
         <ul>
           <li>redu stimulii și păstrează cât mai puține cerințe în momentul crizei;</li>
           <li>numește simplu ceea ce vezi: „ești foarte furios, te ajut să te oprești”;</li>
@@ -221,13 +217,13 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         </ul>
         <h2>Ce construim după episod</h2>
         <p>Munca importantă se face după ce copilul s-a liniștit. Acolo putem învăța împreună ce s-a întâmplat, ce a declanșat reacția, ce semnale timpurii au existat și ce alternative putem exersa. Furia se gestionează mai bine când copilul are un vocabular emoțional mai bogat și o experiență repetată de reglare împreună cu un adult.</p>
-        <p>Dacă episoadele sunt foarte frecvente, foarte intense sau afectează semnificativ familia și școala, merită investigat dacă există și alte vulnerabilități: anxietate, ADHD, dificultăți senzoriale, rigiditate sau stres familial acumulat. Intervenția potrivită reduce simptomul tocmai pentru că tratează contextul din care el apare.</p>
+        <p>Dacă episoadele sunt foarte frecvente, foarte intense sau afectează semnificativ familia și școala, merită investigat dacă există și alte vulnerabilități: anxietate, ADHD, dificultăți senzoriale, rigiditate sau stres familial acumulat. Evaluarea individuală ajută la alegerea intervenției, ținând cont de nevoile copilului și de context; rezultatele diferă de la un copil la altul.</p>
       `,
     },
     "6": {
-      title: "De ce implicarea familiei schimbă ritmul și calitatea progresului în terapie",
+      title: "Cum poate sprijini familia procesul terapeutic al copilului",
       excerpt:
-        "În terapia copilului, schimbarea devine mai stabilă când adulții din jurul lui înțeleg ce susține dificultatea și ce poate susține dezvoltarea.",
+        "Familia poate sprijini procesul terapeutic prin înțelegerea nevoilor copilului și a modurilor de a-l susține în viața de zi cu zi.",
       readTime: "8 min",
       content: `
         <h2>Copilul nu se dezvoltă izolat</h2>
@@ -265,7 +261,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>supporting the bond with key caregivers.</li>
         </ul>
         <h2>The role of parents in the process</h2>
-        <p>When working with children, progress is more stable when parents are part of the process. That may include parent guidance sessions, adjustments to routines at home, a clearer understanding of triggers, and a more coherent way of responding in tense moments. Children need support not only in the therapy room, but also in the environments where they live every day.</p>
+        <p>Parent involvement can support therapy, depending on the child's needs and the agreed therapeutic framework. That may include parent guidance sessions, adjustments to routines at home, a clearer understanding of triggers, and a more coherent way of responding in tense moments. Children need support not only in the therapy room, but also in the environments where they live every day.</p>
         <p>Play therapy does not promise quick fixes, but it offers a deep and developmentally appropriate framework. When it is well indicated and well supported, it helps children feel safer with their emotions and more available for connection and learning.</p>
       `,
     },
@@ -309,7 +305,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>What helps from parents</h2>
         <p>Validation is the first step. That does not mean confirming that danger is real; it means showing the child that their emotional experience is seen and understood. An anxious child needs a calm, predictable, and steady adult more than long explanations or pressure in the form of “there is nothing to be afraid of”.</p>
         <p>It helps to keep routines stable, prepare transitions in advance, and break challenges into smaller steps. Endless reassurance can unintentionally maintain anxiety, while pushing too fast can intensify the child's fear. The balance lies in support combined with gradual encouragement.</p>
-        <p>When anxiety starts affecting sleep, school, relationships, or the overall functioning of family life, early psychological support can prevent it from becoming more entrenched. With the right help, children gradually learn to tolerate uncertainty better and recover a stronger sense of safety.</p>
+        <p>When anxiety starts affecting sleep, school, relationships, or the overall functioning of family life, a psychological assessment can help clarify the child's needs and identify appropriate support. With the right help, children gradually learn to tolerate uncertainty better and recover a stronger sense of safety.</p>
       `,
     },
     "4": {
@@ -342,7 +338,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>What anger often hides</h2>
         <p>Behind angry outbursts we often find exhaustion, sensory overload, shame, anxiety, helplessness, or difficulty with transitions. When adults focus only on the behaviour and respond only to its intensity, they miss the central point: the child is overwhelmed by their own emotional system.</p>
         <h2>What matters in the critical moment</h2>
-        <p>In the middle of an outburst, long explanations rarely help. The child first needs containment, not arguments. That means a lower voice, short sentences, fewer stimuli, and an adult who does not enter a power struggle. If the adult answers anger with anger, intensity usually doubles.</p>
+        <p>In the middle of an outburst, long explanations rarely help. The child first needs containment, not arguments. That means a lower voice, short sentences, fewer stimuli, and an adult who does not enter a power struggle. If the adult answers anger with anger, the conflict can escalate.</p>
         <ul>
           <li>reduce stimulation and keep demands to a minimum during the crisis;</li>
           <li>name simply what you see: “You are very angry, and I will help you stop”;</li>
@@ -351,13 +347,13 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         </ul>
         <h2>What gets built afterwards</h2>
         <p>The deeper work happens once the child is calm again. That is when you can reflect together on what happened, what triggered the reaction, what early signs were present, and what alternatives can be practised. Anger becomes easier to manage when children have a richer emotional vocabulary and repeated experiences of co-regulation with an adult.</p>
-        <p>If episodes are very frequent, very intense, or significantly affect family life and school, it is worth exploring other vulnerabilities as well: anxiety, ADHD, sensory difficulties, rigidity, or accumulated family stress. The right intervention helps precisely because it addresses the context in which the symptom appears.</p>
+        <p>If episodes are very frequent, very intense, or significantly affect family life and school, it is worth exploring other vulnerabilities as well: anxiety, ADHD, sensory difficulties, rigidity, or accumulated family stress. Individual assessment helps select an intervention that considers the child's needs and context; outcomes vary from child to child.</p>
       `,
     },
     "6": {
-      title: "Why family involvement changes the pace and quality of progress in therapy",
+      title: "How families can support a child's therapy",
       excerpt:
-        "In child therapy, change becomes more stable when the adults around the child understand both what sustains the difficulty and what can support development.",
+        "Families can support therapy by understanding the child's needs and ways to help in everyday life.",
       readTime: "8 min",
       content: `
         <h2>Children do not develop in isolation</h2>
@@ -395,7 +391,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>reforzar el vínculo con los adultos de referencia.</li>
         </ul>
         <h2>El papel de los padres en el proceso</h2>
-        <p>Cuando se trabaja con niños, el progreso es más estable si los padres forman parte del proceso. Eso puede incluir sesiones de orientación parental, ajustes en las rutinas de casa, una mejor comprensión de los desencadenantes y una respuesta más coherente en momentos de tensión. El niño necesita apoyo no solo en consulta, sino también en los contextos donde vive cada día.</p>
+        <p>La participación de los padres puede apoyar la terapia, según las necesidades del niño y el marco acordado. Eso puede incluir sesiones de orientación parental, ajustes en las rutinas de casa, una mejor comprensión de los desencadenantes y una respuesta más coherente en momentos de tensión. El niño necesita apoyo no solo en consulta, sino también en los contextos donde vive cada día.</p>
         <p>La terapia de juego no promete soluciones rápidas, pero ofrece un marco profundo y adecuado al desarrollo. Cuando está bien indicada y bien acompañada, ayuda al niño a sentirse más seguro con sus emociones y más disponible para el vínculo y el aprendizaje.</p>
       `,
     },
@@ -439,7 +435,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Qué ayuda desde el rol parental</h2>
         <p>La validación es el primer paso. No significa confirmar que el peligro es real, sino mostrar al niño que su experiencia emocional es vista y comprendida. Un niño ansioso necesita un adulto calmado, previsible y firme más que explicaciones largas o presión del tipo “no tienes por qué tener miedo”.</p>
         <p>Ayuda mantener rutinas estables, preparar las transiciones con tiempo y dividir los desafíos en pasos pequeños. La tranquilización infinita puede mantener la ansiedad, mientras que empujar demasiado rápido puede intensificarla. El equilibrio está en el apoyo unido a un acompañamiento gradual.</p>
-        <p>Cuando la ansiedad empieza a afectar al sueño, al colegio, a las relaciones o al funcionamiento familiar, una intervención psicológica temprana puede prevenir que el problema se consolide. Con el apoyo adecuado, el niño aprende poco a poco a tolerar mejor la incertidumbre y a recuperar una sensación interna de seguridad.</p>
+        <p>Cuando la ansiedad empieza a afectar al sueño, al colegio, a las relaciones o al funcionamiento familiar, una evaluación psicológica puede ayudar a aclarar las necesidades del niño y elegir el apoyo adecuado. Con el apoyo adecuado, el niño aprende poco a poco a tolerar mejor la incertidumbre y a recuperar una sensación interna de seguridad.</p>
       `,
     },
     "4": {
@@ -472,7 +468,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Lo que la ira suele esconder</h2>
         <p>Detrás de los estallidos de ira suelen aparecer cansancio, sobrecarga sensorial, vergüenza, ansiedad, impotencia o dificultad con las transiciones. Cuando el adulto se centra solo en la conducta y responde únicamente a su intensidad, pierde la información principal: el niño está desbordado por su propio sistema emocional.</p>
         <h2>Qué marca la diferencia en el momento crítico</h2>
-        <p>En pleno estallido, las explicaciones largas rara vez ayudan. El niño necesita primero contención, no argumentos. Eso implica bajar la voz, usar frases breves, reducir estímulos y evitar entrar en una lucha de poder. Si el adulto responde con ira a la ira del niño, la intensidad suele duplicarse.</p>
+        <p>En pleno estallido, las explicaciones largas rara vez ayudan. El niño necesita primero contención, no argumentos. Eso implica bajar la voz, usar frases breves, reducir estímulos y evitar entrar en una lucha de poder. Si el adulto responde con ira a la ira del niño, el conflicto puede intensificarse.</p>
         <ul>
           <li>reduce los estímulos y las exigencias al mínimo durante la crisis;</li>
           <li>nombra de forma simple lo que ves: “estás muy enfadado, voy a ayudarte a parar”;</li>
@@ -481,13 +477,13 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         </ul>
         <h2>Lo que se construye después</h2>
         <p>El trabajo más importante ocurre cuando el niño ya se ha calmado. Ese es el momento para entender juntos qué pasó, qué disparó la reacción, qué señales tempranas estaban presentes y qué alternativas se pueden practicar. La ira se maneja mejor cuando el niño tiene un vocabulario emocional más rico y experiencias repetidas de corregulación con un adulto.</p>
-        <p>Si los episodios son muy frecuentes, muy intensos o afectan de forma importante a la vida familiar y escolar, conviene explorar otras vulnerabilidades: ansiedad, TDAH, dificultades sensoriales, rigidez o estrés familiar acumulado. La intervención adecuada ayuda porque aborda el contexto en el que el síntoma aparece.</p>
+        <p>Si los episodios son muy frecuentes, muy intensos o afectan de forma importante a la vida familiar y escolar, conviene explorar otras vulnerabilidades: ansiedad, TDAH, dificultades sensoriales, rigidez o estrés familiar acumulado. La evaluación individual ayuda a elegir una intervención que tenga en cuenta las necesidades y el contexto del niño; los resultados varían de un niño a otro.</p>
       `,
     },
     "6": {
-      title: "Por qué la implicación de la familia cambia el ritmo y la calidad del progreso terapéutico",
+      title: "Cómo puede la familia apoyar la terapia infantil",
       excerpt:
-        "En la terapia infantil, el cambio se vuelve más estable cuando los adultos que rodean al niño comprenden tanto lo que sostiene la dificultad como lo que puede favorecer su desarrollo.",
+        "La familia puede apoyar la terapia al comprender las necesidades del niño y cómo acompañarlo en la vida cotidiana.",
       readTime: "8 min",
       content: `
         <h2>El niño no se desarrolla de forma aislada</h2>
@@ -525,7 +521,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
           <li>sostenere il legame con gli adulti di riferimento.</li>
         </ul>
         <h2>Il ruolo dei genitori nel percorso</h2>
-        <p>Quando si lavora con i bambini, i progressi sono più stabili se i genitori fanno parte del processo. Questo può includere incontri di consulenza genitoriale, aggiustamenti delle routine a casa, una comprensione più chiara dei fattori scatenanti e un modo più coerente di rispondere nei momenti di tensione. Il bambino ha bisogno di sostegno non solo in studio, ma anche negli ambienti in cui vive ogni giorno.</p>
+        <p>Il coinvolgimento dei genitori può sostenere la terapia, in base ai bisogni del bambino e al percorso concordato. Questo può includere incontri di consulenza genitoriale, aggiustamenti delle routine a casa, una comprensione più chiara dei fattori scatenanti e un modo più coerente di rispondere nei momenti di tensione. Il bambino ha bisogno di sostegno non solo in studio, ma anche negli ambienti in cui vive ogni giorno.</p>
         <p>La terapia del gioco non promette soluzioni rapide, ma offre una cornice profonda e adatta allo sviluppo. Quando è ben indicata e ben sostenuta, aiuta il bambino a sentirsi più al sicuro con le proprie emozioni e più disponibile alla relazione e all'apprendimento.</p>
       `,
     },
@@ -569,7 +565,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Che cosa aiuta da parte dei genitori</h2>
         <p>La validazione è il primo passo. Non significa confermare che il pericolo sia reale, ma mostrare al bambino che la sua esperienza emotiva è vista e compresa. Un bambino ansioso ha bisogno soprattutto di un adulto calmo, prevedibile e saldo, più che di lunghe spiegazioni o frasi del tipo “non hai niente da temere”.</p>
         <p>Aiuta mantenere routine stabili, preparare le transizioni in anticipo e dividere le sfide in piccoli passaggi. Una rassicurazione senza limiti può mantenere l'ansia, mentre spingere troppo velocemente può intensificarla. L'equilibrio sta nel sostegno unito a un incoraggiamento graduale.</p>
-        <p>Quando l'ansia comincia a influenzare il sonno, la scuola, le relazioni o il funzionamento familiare, un supporto psicologico precoce può evitare che il problema si cristallizzi. Con l'aiuto giusto, il bambino impara gradualmente a tollerare meglio l'incertezza e a recuperare un senso più stabile di sicurezza interna.</p>
+        <p>Quando l'ansia comincia a influenzare il sonno, la scuola, le relazioni o il funzionamento familiare, una valutazione psicologica può aiutare a chiarire i bisogni del bambino e scegliere il sostegno adatto. Con l'aiuto giusto, il bambino impara gradualmente a tollerare meglio l'incertezza e a recuperare un senso più stabile di sicurezza interna.</p>
       `,
     },
     "4": {
@@ -602,7 +598,7 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         <h2>Che cosa nasconde spesso la rabbia</h2>
         <p>Dietro gli scoppi di rabbia troviamo spesso stanchezza, sovraccarico sensoriale, vergogna, ansia, impotenza o difficoltà nelle transizioni. Quando l'adulto vede solo il comportamento e risponde soltanto alla sua intensità, perde il punto centrale: il bambino è sopraffatto dal proprio sistema emotivo.</p>
         <h2>Che cosa fa la differenza nel momento critico</h2>
-        <p>Nel pieno di una crisi, le spiegazioni lunghe servono a poco. Il bambino ha bisogno prima di tutto di contenimento, non di argomenti. Questo significa abbassare la voce, usare frasi brevi, ridurre gli stimoli e non entrare in una lotta di potere. Se l'adulto risponde alla rabbia con altra rabbia, l'intensità tende a raddoppiare.</p>
+        <p>Nel pieno di una crisi, le spiegazioni lunghe servono a poco. Il bambino ha bisogno prima di tutto di contenimento, non di argomenti. Questo significa abbassare la voce, usare frasi brevi, ridurre gli stimoli e non entrare in una lotta di potere. Se l'adulto risponde alla rabbia con altra rabbia, il conflitto può intensificarsi.</p>
         <ul>
           <li>riduci gli stimoli e mantieni al minimo le richieste durante la crisi;</li>
           <li>nomina con semplicità ciò che vedi: “sei molto arrabbiato, ti aiuto a fermarti”;</li>
@@ -611,13 +607,13 @@ const localizedPostContent: Record<SupportedLanguage, Record<string, BlogPostTra
         </ul>
         <h2>Che cosa si costruisce dopo</h2>
         <p>Il lavoro più importante avviene quando il bambino si è già calmato. È lì che si può capire insieme che cosa è successo, che cosa ha attivato la reazione, quali segnali precoci erano presenti e quali alternative si possono allenare. La rabbia si gestisce meglio quando il bambino possiede un vocabolario emotivo più ricco e ripetute esperienze di co-regolazione con un adulto.</p>
-        <p>Se gli episodi sono molto frequenti, molto intensi o incidono in modo significativo sulla vita familiare e scolastica, vale la pena esplorare anche altre vulnerabilità: ansia, ADHD, difficoltà sensoriali, rigidità o stress familiare accumulato. L'intervento adeguato aiuta proprio perché lavora sul contesto in cui il sintomo prende forma.</p>
+        <p>Se gli episodi sono molto frequenti, molto intensi o incidono in modo significativo sulla vita familiare e scolastica, vale la pena esplorare anche altre vulnerabilità: ansia, ADHD, difficoltà sensoriali, rigidità o stress familiare accumulato. La valutazione individuale aiuta a scegliere un intervento che consideri i bisogni e il contesto del bambino; i risultati variano da bambino a bambino.</p>
       `,
     },
     "6": {
-      title: "Perché il coinvolgimento della famiglia cambia il ritmo e la qualità dei progressi in terapia",
+      title: "Come la famiglia può sostenere la terapia del bambino",
       excerpt:
-        "Nella terapia infantile il cambiamento diventa più stabile quando gli adulti intorno al bambino comprendono sia ciò che mantiene la difficoltà sia ciò che può sostenere lo sviluppo.",
+        "La famiglia può sostenere la terapia comprendendo i bisogni del bambino e come aiutarlo nella vita quotidiana.",
       readTime: "8 min",
       content: `
         <h2>Il bambino non si sviluppa in isolamento</h2>
@@ -658,6 +654,8 @@ export const getBlogPosts = (language: SupportedLanguage = defaultLanguage): Blo
 
   return baseBlogPosts.map((post) => ({
     ...post,
+    reviewedOn: articleReviewedOn,
+    sources: getArticleSources(post.id),
     ...(translations[post.id] ?? fallbackTranslations[post.id]),
   }));
 };

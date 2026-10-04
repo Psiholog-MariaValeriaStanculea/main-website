@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { captureQa } from './qa';
 import { execFileSync } from 'node:child_process';
 import { test, expect } from './fixtures';
-const manifest=JSON.parse(readFileSync('dist/route-manifest.json','utf8')) as {url:string;path:string;language:string;indexable:boolean}[];
+const manifest=JSON.parse(readFileSync('dist/route-manifest.json','utf8')) as {url:string;path:string;language:string;indexable:boolean;redirectTo?:string}[];
 const urls=manifest.map(item=>new URL(item.url));
 const languages=['ro','en','it','es'];
 const basePath=urls[0].pathname.replace(/(?:ro|en|it|es)(?:\/.*)?$/,'');
@@ -12,7 +12,8 @@ test('live verifier accepts the production artifact',async({baseURL})=>{
 test('sitemap matches all indexable manifest pages',()=>{
  const sitemap=[...readFileSync('dist/sitemap.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(item=>item[1]);
  expect(sitemap.sort()).toEqual(manifest.filter(page=>page.indexable).map(page=>page.url).sort());
- expect(manifest).toHaveLength(64);
+ expect(manifest).toHaveLength(88);
+ expect(manifest.filter(page=>page.redirectTo)).toHaveLength(24);
 });
 for(const item of manifest){
  const url=new URL(item.url);const route=url.pathname.slice(basePath.length);
@@ -22,8 +23,8 @@ for(const item of manifest){
   await expect(page.locator('main h1')).toHaveCount(1);await expect(page.locator('main h1')).toBeVisible();
   await expect(page.locator('html')).toHaveAttribute('lang',item.language);
   await expect(page.locator('head title')).toHaveCount(1);
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',item.url);
-  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(item.indexable?5:0);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href',item.redirectTo||item.url);
+  await expect(page.locator('link[rel="alternate"][hreflang]')).toHaveCount(item.indexable||item.redirectTo?5:0);
   const width=await page.evaluate(()=>({content:document.documentElement.scrollWidth,viewport:innerWidth}));
   expect(width.content,'No horizontal page scrolling').toBeLessThanOrEqual(width.viewport+1);
   expect(await page.locator('a[href]').evaluateAll((links,base)=>links.map(link=>link.getAttribute('href')).filter(href=>href?.startsWith('/')&&!href.startsWith(base)),basePath)).toEqual([]);
@@ -37,7 +38,7 @@ for(const item of manifest){
 }
 test('root and legacy hash bookmarks reach the intended page',async({page,baseURL})=>{
  await page.goto(baseURL!);await expect(page).toHaveURL(new RegExp(basePath+'ro/?$'));
- await page.goto(baseURL+'#/en/blog/1');await expect(page).toHaveURL(/\/en\/blog\/1$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
+ await page.goto(baseURL+'#/en/blog/1');await expect(page).toHaveURL(/\/en\/blog\/play-therapy-child-development\/?$/);await expect(page.locator('html')).toHaveAttribute('lang','en');
 });
 test('unknown page keeps HTTP 404 and offers localized recovery',async({page})=>{
  expect((await page.goto('en/does-not-exist/'))?.status()).toBe(404);

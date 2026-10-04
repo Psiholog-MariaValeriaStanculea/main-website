@@ -1,4 +1,5 @@
 import { test, expect } from '../browser/fixtures';
+import { readFileSync } from 'node:fs';
 
 test('landscape cutouts and home indicator leave controls in the safe area',async({page,context})=>{
  await page.setViewportSize({width:844,height:390});
@@ -21,15 +22,18 @@ test('landscape cutouts and home indicator leave controls in the safe area',asyn
  await dialog.getByRole('button',{name:'Close menu',exact:true}).click();
 });
 
-test('fold, unfold, rotate and grow to desktop preserve the inquiry draft and release menu lock',async({page})=>{
- await page.goto('en/contact/');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
+for(const language of ['ro','en','it','es'])test('fold, unfold, rotate and grow to desktop preserve the inquiry draft and release menu lock: '+language,async({page})=>{
+ await page.goto(language+'/contact/');await expect(page.locator('html')).toHaveAttribute('data-app-ready','true');
  await page.locator('#name').fill('Unsent local draft');await page.locator('#message').fill('Preserve across viewport changes');
  for(const [width,height] of [[280,653],[717,512],[844,390],[1024,768]]){
   await page.setViewportSize({width,height});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth),'Resizing must fit immediately without animating the submit button width').toBeLessThanOrEqual(width+1);
   await expect(page.locator('#name')).toHaveValue('Unsent local draft');await expect(page.locator('#message')).toHaveValue('Preserve across viewport changes');
-  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+  const layout=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,overflow:[...document.querySelectorAll('main *')].filter(e=>e.getBoundingClientRect().right>document.documentElement.clientWidth+1).slice(0,8).map(e=>({tag:e.tagName,class:e.className,text:e.textContent?.slice(0,70),right:e.getBoundingClientRect().right}))}));
+  expect(layout.scroll,JSON.stringify(layout)).toBeLessThanOrEqual(width+1);
  }
- await page.evaluate(()=>scrollTo(0,0));await page.getByRole('button',{name:'Open menu',exact:true}).click();
+ const openMenu=JSON.parse(readFileSync('src/locales/'+language+'/editorial.json','utf8')).ui.openMenu;
+ await page.evaluate(()=>scrollTo(0,0));await page.getByRole('button',{name:openMenu,exact:true}).click();
  await expect(page.getByRole('dialog')).toBeVisible();await page.setViewportSize({width:1280,height:900});
  await expect(page.getByRole('dialog')).toHaveCount(0);await expect(page.locator('body')).not.toHaveCSS('overflow','hidden');
  await expect(page.locator('#name')).toHaveValue('Unsent local draft');
